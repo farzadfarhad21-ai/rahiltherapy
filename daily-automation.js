@@ -11,7 +11,6 @@
  */
 
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const fs = require('fs');
 const { execSync } = require('child_process');
