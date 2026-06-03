@@ -135,3 +135,13 @@
 [2026-06-03T12:53:15.780Z] [INFO] Updated blog.html with new article card
 [2026-06-03T12:53:15.780Z] [INFO] Updated sitemap.xml
 [2026-06-03T12:53:15.781Z] [INFO] ========== Automation Completed Successfully in 65.7s ==========
+[2026-06-03T13:02:02.346Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-03T13:02:02.348Z] [INFO] Selected topic: والدین و فرزندپروری (Topic #8/10)
+[2026-06-03T13:02:02.348Z] [INFO] Generating article for topic: والدین و فرزندپروری
+[2026-06-03T13:02:52.553Z] [INFO] Article created: articles/1780491772553-parenting.html
+[2026-06-03T13:02:52.553Z] [INFO] Article generated: راهنمای جامع والدین برای فرزندپروری مثبت و موثر
+[2026-06-03T13:02:52.553Z] [INFO] Generating image for topic: والدین
+[2026-06-03T13:02:52.902Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-03T13:02:52.903Z] [INFO] Updated blog.html with new article card
+[2026-06-03T13:02:52.903Z] [INFO] Updated sitemap.xml
+[2026-06-03T13:02:52.904Z] [INFO] ========== Automation Completed Successfully in 50.6s ==========
