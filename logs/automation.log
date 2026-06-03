@@ -102,3 +102,16 @@
 [2026-06-03T10:38:06.774Z] [INFO] Vercel deployment completed
 [2026-06-03T10:38:18.309Z] [INFO] Telegram photo sent successfully
 [2026-06-03T10:38:18.310Z] [INFO] ========== Automation Completed Successfully in 109.4s ==========
+[2026-06-03T10:50:01.342Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-03T10:50:01.344Z] [INFO] Selected topic: والدین و فرزندپروری (Topic #8/10)
+[2026-06-03T10:50:01.344Z] [INFO] Generating article for topic: والدین و فرزندپروری
+[2026-06-03T10:50:59.230Z] [INFO] Article created: articles/1780483859229-parenting.html
+[2026-06-03T10:50:59.230Z] [INFO] Article generated: راهنمای والدین برای فرزندپروری مثبت و موثر
+[2026-06-03T10:50:59.230Z] [INFO] Generating image for topic: والدین
+[2026-06-03T10:50:59.526Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-03T10:50:59.526Z] [INFO] Updated blog.html with new article card
+[2026-06-03T10:50:59.527Z] [INFO] Updated sitemap.xml
+[2026-06-03T10:50:59.527Z] [INFO] Starting Vercel deployment...
+[2026-06-03T10:51:27.282Z] [INFO] Vercel deployment completed
+[2026-06-03T10:51:58.954Z] [INFO] Telegram photo sent successfully
+[2026-06-03T10:51:58.954Z] [INFO] ========== Automation Completed Successfully in 117.6s ==========
