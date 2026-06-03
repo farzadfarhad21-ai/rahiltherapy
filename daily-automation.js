@@ -105,8 +105,21 @@ function getTag(topicKey) {
   return map[topicKey] || 'روانشناسی';
 }
 
-function getCategoryImage(topicKey) {
-  return CATEGORY_IMAGES[topicKey] || 'cat-growth.png';
+const TOPIC_ENGLISH = {
+  'اضطراب': 'anxiety',
+  'افسردگی': 'depression',
+  'روابط': 'relationships',
+  'عزت نفس': 'self-esteem',
+  'طرحواره درمانی': 'schema-therapy',
+  'OCD': 'ocd',
+  'رشد فردی': 'personal-growth',
+  'والدین': 'parenting',
+  'ADHD': 'adhd',
+  'ذهن‌آگاهی': 'mindfulness'
+};
+
+function getEnglishName(topicKey) {
+  return TOPIC_ENGLISH[topicKey] || 'article';
 }
 
 function getPersianDate() {
@@ -230,7 +243,7 @@ async function generateBlogPost(topicKey, topicFull) {
   const categoryImage = getCategoryImage(topicKey);
 
   const timestamp = Date.now();
-  const filename = `${timestamp}-${slugify(topicKey)}.html`;
+  const filename = `${timestamp}-${getEnglishName(topicKey)}.html`;
   const filepath = path.join(BLOG_DIR, filename);
 
   const fullArticle = `<!DOCTYPE html>
@@ -349,7 +362,7 @@ async function generateImage(topicKey, seoTitle) {
 
   const imageUrl = data.data[0].url;
   const timestamp = Date.now();
-  const imageFilename = `${timestamp}-${slugify(topicKey)}.png`;
+  const imageFilename = `${timestamp}-${getEnglishName(topicKey)}.png`;
   const imageFilepath = path.join(BLOG_DIR, imageFilename);
 
   const imageResponse = await fetch(imageUrl);
