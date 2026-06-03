@@ -122,6 +122,10 @@ function getEnglishName(topicKey) {
   return TOPIC_ENGLISH[topicKey] || 'article';
 }
 
+function getCategoryImage(topicKey) {
+  return CATEGORY_IMAGES[topicKey] || 'cat-growth.png';
+}
+
 function getPersianDate() {
   return new Date().toLocaleDateString('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' });
 }
@@ -531,9 +535,11 @@ async function runDailyAutomation() {
     updateBlogHtml(articleInfo);
     updateSitemap(articleInfo);
 
-    await sendTelegramPhoto(articleInfo);
-
     deployToVercel();
+
+    await new Promise(resolve => setTimeout(resolve, 10000));
+
+    await sendTelegramPhoto(articleInfo);
 
     success = true;
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
