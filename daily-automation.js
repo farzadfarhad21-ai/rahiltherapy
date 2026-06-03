@@ -484,7 +484,7 @@ function deployToVercel() {
   log('Starting Vercel deployment...');
 
   try {
-    execSync('npx vercel --prod', { stdio: 'inherit' });
+    execSync('npx vercel --prod --yes --token $VERCEL_TOKEN', { stdio: 'inherit' });
     log('Vercel deployment completed');
   } catch (error) {
     log('Vercel deployment failed: ' + error.message, 'ERROR');
