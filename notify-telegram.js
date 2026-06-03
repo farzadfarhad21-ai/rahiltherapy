@@ -104,7 +104,9 @@ ${safeSummary}
 
   const formData = new FormData();
   formData.append('chat_id', channelId);
-  formData.append('photo', fs.createReadStream(imagePath));
+  if (!fs.existsSync(imagePath)) { console.error('Image not found: ' + imagePath); process.exit(1); }
+  const imageBuffer = fs.readFileSync(imagePath);
+  formData.append('photo', new Blob([imageBuffer]), imageFilename);
   formData.append('caption', caption);
   formData.append('parse_mode', 'HTML');
 
