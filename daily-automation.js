@@ -46,6 +46,7 @@ const CATEGORY_IMAGES = {
   'افسردگی': 'cat-depression.png',
   'روابط': 'cat-relationships.png',
   'عزت نفس': 'cat-selfawareness.png',
+  'خودشناسی': 'cat-selfawareness.png',
   'طرحواره درمانی': 'cat-schema.png',
   'OCD': 'cat-ocd.png',
   'رشد فردی': 'cat-growth.png',
