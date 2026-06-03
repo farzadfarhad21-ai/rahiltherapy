@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /index-options.html
+
+Sitemap: https://rahiltherapy.com/sitemap.xml

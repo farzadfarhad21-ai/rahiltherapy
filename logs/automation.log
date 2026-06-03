@@ -1,0 +1,65 @@
+[2026-06-02T10:47:56.019Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T10:47:56.021Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T10:47:56.021Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T10:52:18.190Z] [ERROR] Automation failed: No text block in API response
+[2026-06-02T10:54:18.126Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T10:54:18.132Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T10:54:18.132Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T10:57:24.557Z] [INFO] Article created: articles/1780397844556-رشد-فردی.html
+[2026-06-02T10:57:24.558Z] [INFO] Article generated: رشد فردی و خودشناسی: سفری به سوی زندگی آگاهانه و پرمعنا
+[2026-06-02T10:57:24.559Z] [INFO] Updated blog.html with new article card
+[2026-06-02T10:57:24.559Z] [INFO] Updated sitemap.xml
+[2026-06-02T10:57:25.572Z] [INFO] Telegram message sent successfully
+[2026-06-02T10:57:25.573Z] [INFO] Starting Vercel deployment...
+[2026-06-02T10:57:25.593Z] [ERROR] Vercel deployment failed: Command failed: vercel --prod
+[2026-06-02T10:57:25.593Z] [ERROR] Automation failed: Command failed: vercel --prod
+[2026-06-02T10:57:41.910Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T10:57:41.912Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T10:57:41.912Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:01:18.962Z] [INFO] Article created: articles/1780398078960-رشد-فردی.html
+[2026-06-02T11:01:18.965Z] [INFO] Article generated: رشد فردی و خودشناسی: کلید طلایی زندگی آگاهانه و موفق
+[2026-06-02T11:01:18.966Z] [INFO] Updated blog.html with new article card
+[2026-06-02T11:01:18.967Z] [INFO] Updated sitemap.xml
+[2026-06-02T11:01:19.691Z] [INFO] Telegram message sent successfully
+[2026-06-02T11:01:19.692Z] [INFO] Starting Vercel deployment...
+[2026-06-02T11:01:34.928Z] [INFO] Vercel deployment completed
+[2026-06-02T11:01:34.929Z] [INFO] ========== Automation Completed Successfully in 233.0s ==========
+[2026-06-02T11:16:10.192Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T11:16:10.199Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T11:16:10.199Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:19:13.900Z] [INFO] Article created: articles/1780399153899-رشد-فردی.html
+[2026-06-02T11:19:13.901Z] [INFO] Article generated: چگونه با خودشناسی عمیق، رشد فردی پایدار را تجربه کنیم؟
+[2026-06-02T11:19:13.901Z] [INFO] Generating image for topic: رشد فردی
+[2026-06-02T11:19:14.370Z] [ERROR] Automation failed: Image API Error 404: 404 page not found
+[2026-06-02T11:20:35.380Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T11:20:35.387Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T11:20:35.388Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:24:36.854Z] [ERROR] Automation failed: No text block in API response
+[2026-06-02T11:25:08.213Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T11:25:08.219Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T11:25:08.219Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:29:22.242Z] [ERROR] Automation failed: No text block in API response
+[2026-06-02T11:29:32.426Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T11:29:32.427Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T11:29:32.428Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:32:11.768Z] [INFO] Article created: articles/1780399931766-رشد-فردی.html
+[2026-06-02T11:32:11.768Z] [INFO] Article generated: مسیر رشد فردی و خودشناسی؛ گام‌هایی برای زندگی آگاهانه
+[2026-06-02T11:32:11.768Z] [INFO] Generating image for topic: رشد فردی
+[2026-06-02T11:32:12.263Z] [ERROR] Automation failed: Image API Error 404: 404 page not found
+[2026-06-02T11:32:43.974Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T11:32:43.981Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T11:32:43.981Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:36:45.464Z] [ERROR] Automation failed: No regular text block found in response
+[2026-06-02T11:37:00.895Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-02T11:37:00.902Z] [INFO] Selected topic: رشد فردی و خودشناسی (Topic #7/10)
+[2026-06-02T11:37:00.902Z] [INFO] Generating article for topic: رشد فردی و خودشناسی
+[2026-06-02T11:39:59.659Z] [INFO] Article created: articles/1780400399658-رشد-فردی.html
+[2026-06-02T11:39:59.660Z] [INFO] Article generated: مسیر رشد فردی: چگونه خودشناسی زندگی ما را متحول می‌کند؟
+[2026-06-02T11:39:59.660Z] [INFO] Generating image for topic: رشد فردی
+[2026-06-02T11:39:59.986Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-02T11:39:59.990Z] [INFO] Updated blog.html with new article card
+[2026-06-02T11:39:59.992Z] [INFO] Updated sitemap.xml
+[2026-06-02T11:40:02.352Z] [INFO] Telegram photo sent successfully
+[2026-06-02T11:40:02.353Z] [INFO] Starting Vercel deployment...
+[2026-06-02T11:40:18.471Z] [INFO] Vercel deployment completed
+[2026-06-02T11:40:18.472Z] [INFO] ========== Automation Completed Successfully in 197.6s ==========

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درباره راحله اوینی‌پور — روانشناس عمومی</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8TSXZKEW9N');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .ahero{background:linear-gradient(150deg,var(--blush-mid),var(--cream2));}
+  .ahero .hgrid{align-items:center;}
+  .ahero .ph{height:440px;border-radius:26px;}
+  .ahero h1{font-size:58px;margin:14px 0 8px;}
+  .ahero .role{font-size:19px;color:var(--rose-2);font-weight:500;margin:0 0 22px;}
+  .story{max-width:760px;margin:0 auto;}
+  .story p{font-size:17.5px;line-height:2.1;color:#4a3b36;margin:0 0 22px;}
+  .story p:first-of-type::first-letter{font-family:'Markazi Text',serif;font-size:64px;float:right;line-height:.8;margin:6px 14px 0 0;color:var(--rose);}
+  .specs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .spec{text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 16px;}
+  .spec .sicon{margin:0 auto 14px;}
+  .spec .nm{font-weight:600;font-size:15.5px;}
+  .spec .en{font-size:12.5px;color:var(--muted);margin-top:3px;}
+  /* ---------- MOBILE NAV DRAWER ---------- */
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;background:rgba(59,46,42,.45);z-index:999;
+  opacity:0;transition:opacity .3s ease;
+}
+.mobile-nav-overlay.open{display:block;opacity:1;}
+.mobile-nav{
+  position:fixed;top:0;right:0;bottom:0;width:280px;max-width:85vw;
+  background:#fff;z-index:1000;transform:translateX(100%);transition:transform .3s ease;
+  display:flex;flex-direction:column;padding:0;
+}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-nav-header{
+  display:flex;align-items:center;justify-content:space-between;padding:20px 24px;
+  border-bottom:1px solid var(--line);
+}
+.mobile-nav-header .logo{font-family:'Markazi Text',serif;font-weight:700;font-size:22px;}
+.mobile-nav-close{
+  background:none;border:none;cursor:pointer;color:var(--ink);
+  width:40px;height:40px;display:grid;place-items:center;border-radius:10px;
+}
+.mobile-nav-close:hover{background:var(--blush);}
+.mobile-nav-links{
+  display:flex;flex-direction:column;padding:16px 0;flex:1;
+}
+.mobile-nav-links a{
+  display:block;padding:16px 24px;font-size:17px;font-weight:500;color:var(--ink);
+  border-bottom:1px solid var(--line);transition:background .15s,color .15s;
+}
+.mobile-nav-links a:hover{background:var(--cream);color:var(--rose);}
+.mobile-nav-links a.active{color:var(--rose);font-weight:700;}
+.mobile-nav-cta{
+  padding:20px 24px;border-top:1px solid var(--line);
+}
+.mobile-nav-cta .btn-fill{width:100%;justify-content:center;}
+  @media(max-width:980px){
+    html{overflow-x:hidden;}
+    body{max-width:100vw;overflow-x:hidden;}
+    .specs{grid-template-columns:1fr 1fr 1fr;}
+    .ahero .ph{height:320px;}
+    .mobilebar{display:flex;right:0;left:0;}
+    body{padding-bottom:74px;}
+  }
+  @media(max-width:600px){.specs{grid-template-columns:1fr 1fr;}}
+</style>
+<meta name="description" content="آشنایی با راحله اوینی‌پور، روانشناس عمومی با بیش از ۱۵ سال تجربه. متخصص CBT و طرحواره‌درمانی، مقیم دبی.">
+<meta property="og:title" content="درباره راحله اوینی‌پور — روانشناس عمومی">
+<meta property="og:description" content="آشنایی با راحله اوینی‌پور، روانشناس عمومی با بیش از ۱۵ سال تجربه. متخصص CBT و طرحواره‌درمانی، مقیم دبی.">
+<meta property="og:type" content="profile">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="درباره راحله اوینی‌پور — روانشناس عمومی">
+<meta name="twitter:description" content="آشنایی با راحله اوینی‌پور، روانشناس عمومی با بیش از ۱۵ سال تجربه. متخصص CBT و طرحواره‌درمانی، مقیم دبی.">
+
+<!-- Schema.org: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://rahiltherapy.com/about.html#person",
+  "name": "راحله اوینی‌پور",
+  "alternateName": "Raheleh Evinipour",
+  "jobTitle": "روانشناس عمومی",
+  "description": "روانشناس عمومی با بیش از ۱۵ سال تجربه در درمان اضطراب، افسردگی، OCD و طرحواره‌درمانی. مقیم دبی.",
+  "url": "https://rahiltherapy.com/about.html",
+  "image": "https://rahiltherapy.com/profile.PNG",
+  "email": "ravinipour@gmail.com",
+  "telephone": "+989124228995",
+  "gender": "Female",
+  "knowsLanguage": ["fa", "en"],
+  "knowsAbout": [
+    "CBT",
+    "Cognitive Behavioral Therapy",
+    "Schema Therapy",
+    "طرحواره درمانی",
+    "Anxiety",
+    "اضطراب",
+    "Depression",
+    "افسردگی",
+    "OCD",
+    "وسواس",
+    "ADHD",
+    "Family Therapy",
+    "مشاوره خانواده",
+    "Self-Esteem",
+    "عزت نفس",
+    "Mindfulness",
+    "ذهن‌آگاهی"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "تخصص روانشناسی بالینی"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "name": "کارشناسی ارشد روانشناسی عمومی"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certificate",
+      "name": "CBT - Cognitive Behavioral Therapy"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "certificate",
+      "name": "Schema Therapy"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "دانشگاه تهران"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "دانشگاه علوم پزشکی تهران"
+    }
+  ],
+  "workLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "AE"
+    }
+  },
+  "areaServed": "Worldwide",
+  "availableService": {
+    "@type": "Service",
+    "name": "مشاوره روانشناختی آنلاین",
+    "serviceType": "Psychotherapy",
+    "areaServed": "Worldwide"
+  },
+  "sameAs": [
+    "https://rahiltherapy.com",
+    "https://rahiltherapy.com/about.html",
+    "https://www.instagram.com/ravinipour",
+    "https://t.me/raheleh21"
+  ]
+}
+</script>
+
+<!-- Schema.org: AboutPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": "https://rahiltherapy.com/about.html",
+  "name": "درباره راحله اوینی‌پور",
+  "description": "آشنایی با راحله اوینی‌پور، روانشناس عمومی با بیش از ۱۵ سال تجربه.",
+  "inLanguage": "fa-IR",
+  "mainEntity": {
+    "@id": "https://rahiltherapy.com/about.html#person"
+  }
+}
+</script>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav">
+    <a class="logo" href="index.html"><span class="mk"></span>راحله اوینی‌پور</a>
+    <nav class="navlinks">
+      <a href="services.html">خدمات</a>
+      <a href="about.html" class="active">درباره من</a>
+      <a href="blog.html">مقالات</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+    <div class="navcta">
+      <a class="btn btn-fill" href="booking.html">رزرو جلسه</a>
+      <button class="menu-btn" aria-label="منو"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="navOverlay"></div>
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a class="logo" href="index.html">راحله اوینی‌پور</a>
+    <button class="mobile-nav-close" id="navClose" aria-label="بستن"><i data-lucide="x"></i></button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="services.html">خدمات</a>
+    <a href="about.html">درباره من</a>
+    <a href="blog.html">مقالات</a>
+    <a href="contact.html">تماس</a>
+    <a href="faq.html">سوالات متداول</a>
+  </nav>
+  <div class="mobile-nav-cta">
+    <a class="btn btn-fill" href="booking.html">رزرو جلسهٔ رایگان</a>
+  </div>
+</div>
+
+<!-- HERO BANNER -->
+<section class="ahero" style="padding:60px 0;">
+  <div class="container">
+    <div class="hgrid">
+      <div>
+        <span class="kicker">درباره من</span>
+        <h1>راحله اوینی‌پور</h1>
+        <p class="role">روانشناس عمومی و مشاور</p>
+        <p class="lead" style="color:var(--ink);opacity:.8;">با شما هستم تا در فضایی امن و بدون قضاوت، مسیر تغییر را با آرامش طی کنید — به زبان فارسی، هرکجای دنیا که باشید.</p>
+        <div class="hbtns" style="margin-top:8px;">
+          <a class="btn btn-fill" href="booking.html">رزرو جلسهٔ رایگان</a>
+          <a class="btn btn-ghost" href="contact.html">تماس با من</a>
+        </div>
+      </div>
+      <img src="about-hero.jpg" alt="راحله اوینی‌پور" style="width:100%;height:460px;object-fit:cover;object-position:center top;border-radius:20px;">
+    </div>
+  </div>
+</section>
+
+<!-- HER STORY -->
+<section>
+  <div class="container">
+    <div class="shead"><span class="kicker">داستان من</span><h2>چرا این مسیر را انتخاب کردم</h2></div>
+    <div class="story">
+      <p>سال‌ها پیش، وقتی خودم در میان پیچیدگی‌های زندگی به دنبال آرامش می‌گشتم، فهمیدم چقدر داشتنِ کسی که با مهربانی گوش بدهد و مسیر را نشان بدهد ارزشمند است. همین تجربه بود که مرا به سمت روانشناسی کشاند؛ نه فقط به‌عنوان یک حرفه، بلکه به‌عنوان راهی برای کنار هم بودن در سخت‌ترین لحظه‌ها.</p>
+      <p>در بیش از پانزده سال گذشته، با صدها مراجع از سراسر جهان کار کرده‌ام — از تهران تا دبی، از اروپا تا آمریکای شمالی. باور دارم که هر انسان، فارغ از داستان و گذشته‌اش، توان تغییر و رشد دارد. نقش من این است که این توان را با ابزارهای علمی و اثبات‌شده — مانند درمان شناختی‌رفتاری و طرحواره درمانی — بیدار کنم.</p>
+      <p>برای من، درمان یعنی همراهی؛ یعنی ساختن فضایی که در آن بتوانید بدون ترس از قضاوت، صادقانه با خودتان روبه‌رو شوید. مأموریت من این است که آرامش روانی را برای فارسی‌زبانان سراسر دنیا در دسترس‌تر کنم.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CREDENTIALS -->
+<section class="sec-blush">
+  <div class="container">
+    <div class="shead"><span class="kicker">تحصیلات و مدارک</span><h2>آموزش و تخصص</h2></div>
+    <div class="timeline">
+      <div class="tl-item"><div class="yr">تخصص</div><h3>روانشناسی بالینی</h3><p>مدرک تخصصی روانشناسی بالینی با تمرکز بر درمان اختلالات اضطرابی و خلقی.</p></div>
+      <div class="tl-item"><div class="yr">فوق‌لیسانس</div><h3>روانشناسی عمومی</h3><p>کارشناسی ارشد روانشناسی عمومی و پایه‌های نظری رواندرمانی.</p></div>
+      <div class="tl-item"><div class="yr">دوره تخصصی</div><h3>درمان شناختی‌رفتاری (CBT)</h3><p>گذراندن دوره‌های پیشرفتهٔ CBT برای درمان اضطراب، افسردگی و وسواس.</p></div>
+      <div class="tl-item"><div class="yr">دانشگاه تهران</div><h3>آموزش طرحواره درمانی</h3><p>دورهٔ تخصصی Schema Therapy زیر نظر اساتید برجستهٔ دانشگاه تهران.</p></div>
+      <div class="tl-item"><div class="yr">علوم پزشکی تهران</div><h3>دورهٔ Schema Therapy</h3><p>تکمیل دورهٔ پیشرفته با سوپروایزری آقای کوری در دانشگاه علوم پزشکی تهران.</p></div>
+      <div class="tl-item"><div class="yr">مدرس</div><h3>دوره‌های خودشناسی</h3><p>برگزاری کارگاه‌ها و دوره‌های خودشناسی و رشد فردی برای عموم.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section>
+  <div class="container">
+    <div class="shead"><span class="kicker">رویکردها</span><h2>روش‌هایی که با آن‌ها کار می‌کنم</h2></div>
+    <div class="specs">
+      <div class="spec"><div class="sicon"><i data-lucide="brain"></i></div><div class="nm">شناختی‌رفتاری</div><div class="en">CBT</div></div>
+      <div class="spec"><div class="sicon"><i data-lucide="layers"></i></div><div class="nm">طرحواره درمانی</div><div class="en">Schema Therapy</div></div>
+      <div class="spec"><div class="sicon"><i data-lucide="flower-2"></i></div><div class="nm">ذهن‌آگاهی</div><div class="en">Mindfulness</div></div>
+      <div class="spec"><div class="sicon"><i data-lucide="lightbulb"></i></div><div class="nm">شناخت‌درمانی</div><div class="en">Cognitive</div></div>
+      <div class="spec"><div class="sicon"><i data-lucide="activity"></i></div><div class="nm">رفتاردرمانی</div><div class="en">Behavioral</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="sec-blush">
+  <div class="container">
+    <div class="shead"><span class="kicker">ارزش‌های من</span><h2>چه چیزی کار من را شکل می‌دهد</h2></div>
+    <div class="grid2" style="max-width:900px;margin:0 auto;">
+      <div class="vcard"><div class="sicon"><i data-lucide="lock"></i></div><h3>محرمانگی کامل</h3><p>هرآنچه در جلسه گفته می‌شود، کاملاً محرمانه و امن باقی می‌ماند.</p></div>
+      <div class="vcard"><div class="sicon"><i data-lucide="heart-handshake"></i></div><h3>احترام بدون قضاوت</h3><p>فضایی امن که در آن خودتان باشید، بدون ترس از قضاوت شدن.</p></div>
+      <div class="vcard"><div class="sicon"><i data-lucide="sprout"></i></div><h3>رشد واقعی</h3><p>تمرکز بر تغییر پایدار و معنادار، نه راه‌حل‌های موقت.</p></div>
+      <div class="vcard"><div class="sicon"><i data-lucide="globe"></i></div><h3>در دسترس بودن</h3><p>همراهی فارسی‌زبانان سراسر جهان، آنلاین و بدون مرز.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>برای آشنایی بیشتر، اولین جلسه را رزرو کنید</h2>
+    <p>جلسهٔ اول رایگان است — بیایید با هم گفت‌وگو کنیم.</p>
+    <a class="btn btn-white" href="booking.html">رزرو جلسهٔ رایگان</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="footer">
+  <div class="container">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="index.html"><span class="mk"></span>راحله اوینی‌پور</a>
+        <p class="ftag">روانشناس عمومی و مشاور — همراه شما در مسیر آرامش، به زبان فارسی.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/ravinipour" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+          <a href="https://t.me/raheleh21" aria-label="Telegram" target="_blank" rel="noopener"><i data-lucide="send"></i></a>
+
+        </div>
+      </div>
+      <div class="fcol"><h4>صفحات</h4>
+        <a href="index.html">صفحه اصلی</a><a href="about.html">درباره من</a><a href="services.html">خدمات</a><a href="blog.html">مقالات</a><a href="booking.html">رزرو جلسه</a><a href="faq.html">سوالات متداول</a>
+      </div>
+      <div class="fcol"><h4>خدمات</h4>
+        <a href="services.html">درمان اضطراب</a><a href="services.html">طرحواره درمانی</a><a href="services.html">افسردگی</a><a href="services.html">مشاوره خانواده</a>
+      </div>
+      <div class="fcol"><h4>تماس</h4>
+        <a href="mailto:ravinipour@gmail.com">ravinipour@gmail.com</a>
+        <a href="https://wa.me/989124228995" target="_blank" rel="noopener">واتساپ: ‎+98 912 422 8995</a>
+        <a href="#">ساعات پاسخگویی: ۹ تا ۲۱</a>
+        <a href="#">دبی، امارات</a>
+      </div>
+    </div>
+    <div class="fbar">© ۲۰۲۵ راحله اوینی‌پور — تمامی حقوق محفوظ است.</div>
+  </div>
+</footer>
+
+<div class="mobilebar">
+  <a class="btn btn-fill" href="booking.html">رزرو جلسهٔ رایگان</a>
+  <a class="wa" href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+</div>
+
+<script>
+  lucide.createIcons();
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
+  window.addEventListener('scroll',onScroll);onScroll();
+
+  // Mobile nav
+  const menuBtn = document.querySelector('.menu-btn');
+  const mobileNav = document.getElementById('mobileNav');
+  const navOverlay = document.getElementById('navOverlay');
+  const navClose = document.getElementById('navClose');
+
+  function openMobileNav(){
+    mobileNav.classList.add('open');
+    navOverlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  if(menuBtn) menuBtn.addEventListener('click', openMobileNav);
+  if(navClose) navClose.addEventListener('click', closeMobileNav);
+  if(navOverlay) navOverlay.addEventListener('click', closeMobileNav);
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/989124228995" target="_blank" rel="noopener"
+   style="position:fixed;bottom:24px;left:24px;z-index:999;
+          background:#25D366;color:#fff;border-radius:50%;
+          width:56px;height:56px;display:flex;align-items:center;justify-content:center;
+          box-shadow:0 4px 20px rgba(37,211,102,.5);text-decoration:none;
+          transition:transform .2s ease;"
+   onmouseover="this.style.transform='scale(1.1)'"
+   onmouseout="this.style.transform='scale(1)'"
+   aria-label="تماس از طریق واتساپ">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "id": "session-1780323539167",
+  "startedAt": "2026-06-01T14:18:59.167Z",
+  "platform": "darwin",
+  "cwd": "/Users/farzaden/Downloads/ruflow-project/raheleh_project",
+  "context": {},
+  "metrics": {
+    "edits": 49,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-06-01T16:45:58.220Z",
+  "duration": 8819054
+}

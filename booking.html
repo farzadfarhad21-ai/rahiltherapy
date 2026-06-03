@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رزرو جلسه آنلاین — راحله اوینی‌پور</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8TSXZKEW9N');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .booklayout{display:grid;grid-template-columns:1.4fr .85fr;gap:34px;align-items:start;}
+  .sidecard{background:linear-gradient(160deg,var(--blush-mid),var(--cream2));border-radius:24px;padding:32px;position:sticky;top:100px;}
+  .sidecard h3{font-size:28px;margin:0 0 18px;}
+  .sidecard .li{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start;}
+  .sidecard .li i{width:20px;height:20px;color:var(--rose-2);flex:none;margin-top:4px;}
+  .sidecard .li b{display:block;font-size:15px;}
+  .sidecard .li span{font-size:13.5px;color:var(--muted);}
+  .okmsg{display:none;background:var(--blush);border:1px solid var(--rose-soft);border-radius:16px;padding:18px 22px;color:var(--rose-2);font-weight:600;margin-bottom:22px;align-items:center;gap:10px;}
+  .okmsg.show{display:flex;}
+  /* ---------- MOBILE NAV DRAWER ---------- */
+.mobile-nav-overlay{
+  display:none;position:fixed;inset:0;background:rgba(59,46,42,.45);z-index:999;
+  opacity:0;transition:opacity .3s ease;
+}
+.mobile-nav-overlay.open{display:block;opacity:1;}
+.mobile-nav{
+  position:fixed;top:0;right:0;bottom:0;width:280px;max-width:85vw;
+  background:#fff;z-index:1000;transform:translateX(100%);transition:transform .3s ease;
+  display:flex;flex-direction:column;padding:0;
+}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-nav-header{
+  display:flex;align-items:center;justify-content:space-between;padding:20px 24px;
+  border-bottom:1px solid var(--line);
+}
+.mobile-nav-header .logo{font-family:'Markazi Text',serif;font-weight:700;font-size:22px;}
+.mobile-nav-close{
+  background:none;border:none;cursor:pointer;color:var(--ink);
+  width:40px;height:40px;display:grid;place-items:center;border-radius:10px;
+}
+.mobile-nav-close:hover{background:var(--blush);}
+.mobile-nav-links{
+  display:flex;flex-direction:column;padding:16px 0;flex:1;
+}
+.mobile-nav-links a{
+  display:block;padding:16px 24px;font-size:17px;font-weight:500;color:var(--ink);
+  border-bottom:1px solid var(--line);transition:background .15s,color .15s;
+}
+.mobile-nav-links a:hover{background:var(--cream);color:var(--rose);}
+.mobile-nav-links a.active{color:var(--rose);font-weight:700;}
+.mobile-nav-cta{
+  padding:20px 24px;border-top:1px solid var(--line);
+}
+.mobile-nav-cta .btn-fill{width:100%;justify-content:center;}
+  @media(max-width:980px){
+    html{overflow-x:hidden;}
+    body{max-width:100vw;overflow-x:hidden;}
+    .booklayout{grid-template-columns:1fr;}
+    .sidecard{position:static;}
+    .mobilebar{display:flex;right:0;left:0;}
+    body{padding-bottom:74px;}
+  }
+</style>
+<meta name="description" content="همین حالا جلسه مشاوره روانشناسی آنلاین رزرو کنید. جلسه اول رایگان و بدون تعهد. پاسخ در کمتر از ۲۴ ساعت از طریق Zoom یا واتساپ.">
+<link rel="canonical" href="https://rahiltherapy.com/booking.html">
+<meta property="og:title" content="رزرو جلسه آنلاین — راحله اوینی‌پور">
+<meta property="og:description" content="همین حالا جلسه مشاوره روانشناسی آنلاین رزرو کنید. جلسه اول رایگان و بدون تعهد. پاسخ در کمتر از ۲۴ ساعت از طریق Zoom یا واتساپ.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rahiltherapy.com/booking.html">
+<meta property="og:image" content="https://rahiltherapy.com/hero-portrait.jpg">
+<meta property="og:site_name" content="راحله اوینی‌پور — روانشناس عمومی">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="رزرو جلسه آنلاین — راحله اوینی‌پور">
+<meta name="twitter:description" content="همین حالا جلسه مشاوره روانشناسی آنلاین رزرو کنید. جلسه اول رایگان و بدون تعهد. پاسخ در کمتر از ۲۴ ساعت از طریق Zoom یا واتساپ.">
+<meta name="twitter:image" content="https://rahiltherapy.com/hero-portrait.jpg">
+
+<!-- Schema.org: Service with PriceSpecification -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://rahiltherapy.com/booking.html#service",
+  "name": "مشاوره روانشناختی آنلاین",
+  "alternateName": "Online Psychotherapy Session",
+  "description": "جلسه مشاوره روانشناختی آنلاین به زبان فارسی. جلسه اول رایگان. از طریق Zoom، WhatsApp یا Google Meet.",
+  "serviceType": "Psychotherapy",
+  "provider": {
+    "@id": "https://rahiltherapy.com/about.html#person"
+  },
+  "areaServed": [
+    {"@type": "Country", "name": "Iran"},
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Country", "name": "Canada"},
+    {"@type": "Country", "name": "Germany"},
+    {"@type": "Country", "name": "United Kingdom"},
+    {"@type": "Country", "name": "United States"},
+    {"@type": "Country", "name": "Australia"}
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://rahiltherapy.com/booking.html",
+    "availableLanguage": ["fa", "en"]
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "جلسهٔ اول رایگان",
+      "alternateName": "Free First Session",
+      "price": "0",
+      "priceCurrency": "USD",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 30,
+        "unitCode": "MIN"
+      },
+      "description": "جلسهٔ آشنایی رایگان — بدون تعهد"
+    },
+    {
+      "@type": "Offer",
+      "name": "جلسهٔ آنلاین بین‌المللی",
+      "alternateName": "International Online Session",
+      "price": "50",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "MIN"
+      },
+      "description": "هر جلسه ۵۰ دقیقه‌ای — برای ایرانیان خارج از کشور"
+    },
+    {
+      "@type": "Offer",
+      "name": "جلسهٔ آنلاین از ایران",
+      "alternateName": "Online Session from Iran",
+      "price": "25",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "eligibleDuration": {
+        "@type": "QuantitativeValue",
+        "value": 50,
+        "unitCode": "MIN"
+      },
+      "description": "تعرفهٔ ویژه برای مراجعان داخل ایران"
+    },
+    {
+      "@type": "Offer",
+      "name": "بستهٔ ۴ جلسه",
+      "alternateName": "4-Session Package",
+      "price": "180",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2026-12-31",
+      "description": "چهار جلسهٔ کامل با صرفه‌جویی"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "50",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
+<!-- Schema.org: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "خانه",
+      "item": "https://rahiltherapy.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "رزرو جلسه",
+      "item": "https://rahiltherapy.com/booking.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="container nav">
+    <a class="logo" href="index.html"><span class="mk"></span>راحله اوینی‌پور</a>
+    <nav class="navlinks">
+      <a href="services.html">خدمات</a>
+      <a href="about.html">درباره من</a>
+      <a href="blog.html">مقالات</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+    <div class="navcta">
+      <a class="btn btn-fill" href="booking.html">رزرو جلسه</a>
+      <button class="menu-btn" aria-label="منو"><i data-lucide="menu"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="navOverlay"></div>
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <a class="logo" href="index.html">راحله اوینی‌پور</a>
+    <button class="mobile-nav-close" id="navClose" aria-label="بستن"><i data-lucide="x"></i></button>
+  </div>
+  <nav class="mobile-nav-links">
+    <a href="services.html">خدمات</a>
+    <a href="about.html">درباره من</a>
+    <a href="blog.html">مقالات</a>
+    <a href="contact.html">تماس</a>
+    <a href="faq.html">سوالات متداول</a>
+  </nav>
+  <div class="mobile-nav-cta">
+    <a class="btn btn-fill" href="booking.html">رزرو جلسهٔ رایگان</a>
+  </div>
+</div>
+
+<!-- PAGE HEADER -->
+<section class="pagehead">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">خانه</a> / رزرو جلسه</div>
+    <span class="kicker">رزرو جلسه</span>
+    <h1>بیایید گفت‌وگو را شروع کنیم</h1>
+    <p>فرم زیر را پر کنید؛ معمولاً ظرف ۲۴ ساعت با شما تماس می‌گیرم و زمان جلسهٔ اول رایگان را هماهنگ می‌کنیم.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="padding:60px 0 0;">
+  <div class="container">
+    <div class="shead" style="margin-bottom:36px;">
+      <span class="kicker">تعرفه جلسات</span>
+      <h2>شفاف و بدون ابهام</h2>
+      <p>جلسهٔ اول همیشه رایگان است — بدون تعهد، فقط برای آشنایی.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:860px;margin:0 auto 60px;">
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 28px;text-align:center;">
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--cream2);display:grid;place-items:center;color:var(--rose-2);margin:0 auto 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div style="font-family:'Markazi Text',serif;font-size:42px;font-weight:700;color:var(--rose);line-height:1;">رایگان</div>
+        <div style="font-size:14px;color:var(--muted);margin:6px 0 20px;">جلسهٔ اول</div>
+        <p style="font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.9;">آشنایی بدون فشار — ببینیم آیا با هم راحت هستیم.</p>
+        <a href="#bookform" class="btn btn-fill" style="width:100%;justify-content:center;">رزرو جلسه رایگان</a>
+      </div>
+
+      <div style="background:linear-gradient(155deg,var(--rose),var(--rose-2));border-radius:24px;padding:34px 28px;text-align:center;position:relative;box-shadow:0 20px 40px -18px rgba(156,106,96,.55);">
+        <div style="position:absolute;top:-12px;right:50%;transform:translateX(50%);background:var(--ink);color:#fff;font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:.04em;">بیشترین انتخاب</div>
+        <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff;margin:0 auto 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div style="font-family:'Markazi Text',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;">$50</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.8);margin:6px 0 20px;">هر جلسه — بین‌الملل</div>
+        <p style="font-size:14px;color:rgba(255,255,255,.85);margin:0 0 24px;line-height:1.9;">برای ایرانیان خارج از ایران — Zoom، WhatsApp یا Google Meet.</p>
+        <a href="#bookform" class="btn" style="width:100%;justify-content:center;background:#fff;color:var(--rose-2);font-weight:700;">رزرو جلسه</a>
+      </div>
+
+      <div style="background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 28px;text-align:center;">
+        <div style="width:52px;height:52px;border-radius:14px;background:var(--cream2);display:grid;place-items:center;color:var(--rose-2);margin:0 auto 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div style="font-family:'Markazi Text',serif;font-size:42px;font-weight:700;color:var(--rose);line-height:1;">$25</div>
+        <div style="font-size:14px;color:var(--muted);margin:6px 0 20px;">هر جلسه — از ایران</div>
+        <p style="font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.9;">با توجه به شرایط اقتصادی، تعرفه ویژه برای مراجعان داخل ایران.</p>
+        <a href="#bookform" class="btn btn-ghost" style="width:100%;justify-content:center;">رزرو جلسه</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section style="padding-top:60px;" id="bookform-section">
+  <div class="container">
+    <div class="booklayout">
+      <!-- FORM -->
+      <div class="formcard">
+        <div class="okmsg" id="okmsg"><i data-lucide="check-circle-2"></i> درخواست شما با موفقیت ثبت شد. به‌زودی با شما تماس می‌گیرم.</div>
+        <form id="bookform">
+          <div class="tworow">
+            <div class="field"><label>نام و نام خانوادگی</label><input class="input" type="text" placeholder="نام شما" required></div>
+            <div class="field"><label>ایمیل</label><input class="input" type="email" placeholder="you@example.com" required></div>
+          </div>
+          <div class="tworow">
+            <div class="field"><label>شماره واتساپ</label><input class="input" type="tel" placeholder="+۹۸ ... یا +۹۷۱ ..." required></div>
+            <div class="field"><label>کشور محل سکونت</label>
+              <select class="input" required>
+                <option value="">انتخاب کنید…</option>
+                <option>ایران</option><option>امارات</option><option>کانادا</option><option>آلمان</option>
+                <option>انگلستان</option><option>آمریکا</option><option>استرالیا</option><option>سایر کشورها</option>
+              </select>
+            </div>
+          </div>
+          <div class="tworow">
+            <div class="field"><label>موضوع اصلی</label>
+              <select class="input" required>
+                <option value="">انتخاب کنید…</option>
+                <option>اضطراب</option><option>افسردگی</option><option>روابط</option>
+                <option>وسواس (OCD)</option><option>عزت نفس</option><option>سایر</option>
+              </select>
+            </div>
+            <div class="field"><label>روش جلسهٔ ترجیحی</label>
+              <select class="input" required>
+                <option value="">انتخاب کنید…</option>
+                <option>Zoom</option><option>WhatsApp</option><option>تماس تلفنی</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>روزها و ساعات مناسب <span class="hint">(چند مورد را می‌توانید انتخاب کنید)</span></label>
+            <div class="checks" style="display:flex;flex-wrap:wrap;gap:10px;">
+              <button type="button" class="checkpill" data-slot="شنبه تا چهارشنبه — صبح">شنبه تا چهارشنبه — صبح</button>
+              <button type="button" class="checkpill" data-slot="شنبه تا چهارشنبه — عصر">شنبه تا چهارشنبه — عصر</button>
+              <button type="button" class="checkpill" data-slot="پنجشنبه — صبح">پنجشنبه — صبح</button>
+              <button type="button" class="checkpill" data-slot="پنجشنبه — عصر">پنجشنبه — عصر</button>
+              <button type="button" class="checkpill" data-slot="آخر هفته">آخر هفته</button>
+            </div>
+          </div>
+          <div class="field"><label>توضیحات بیشتر <span class="hint">(اختیاری)</span></label>
+            <textarea class="input" placeholder="هرچه دوست دارید پیش از جلسه بدانم…"></textarea>
+          </div>
+          <button class="btn btn-fill" type="submit" style="width:100%;justify-content:center;font-size:16px;padding:15px;">ارسال درخواست</button>
+        </form>
+      </div>
+
+      <!-- SIDE -->
+      <div class="sidecard">
+        <h3>چرا جلسهٔ اول رایگان؟</h3>
+        <div class="li"><i data-lucide="heart"></i><div><b>بدون فشار</b><span>فرصتی برای آشنایی و اطمینان از اینکه با هم راحت هستیم.</span></div></div>
+        <div class="li"><i data-lucide="shield-check"></i><div><b>کاملاً محرمانه</b><span>هرآنچه گفته می‌شود، امن و خصوصی باقی می‌ماند.</span></div></div>
+        <div class="li"><i data-lucide="clock"></i><div><b>پاسخ سریع</b><span>معمولاً ظرف ۲۴ ساعت پاسخ می‌دهم.</span></div></div>
+        <div class="li"><i data-lucide="globe"></i><div><b>هرکجای دنیا</b><span>جلسات آنلاین به زبان فارسی، بدون محدودیت مکانی.</span></div></div>
+        <a class="btn btn-ghost" href="contact.html" style="width:100%;justify-content:center;margin-top:8px;">ترجیح می‌دهید مستقیم پیام بدهید؟</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS NEXT -->
+<section class="sec-blush">
+  <div class="container">
+    <div class="shead"><span class="kicker">بعد از ارسال چه می‌شود؟</span><h2>سه قدم ساده تا اولین جلسه</h2></div>
+    <div class="flowrow">
+      <div class="flowstep"><span class="n">۱</span><span>درخواست شما دریافت می‌شود</span></div>
+      <i class="flowarr" data-lucide="arrow-left"></i>
+      <div class="flowstep"><span class="n">۲</span><span>زمان جلسه تأیید می‌شود</span></div>
+      <i class="flowarr" data-lucide="arrow-left"></i>
+      <div class="flowstep"><span class="n">۳</span><span>جلسهٔ اول رایگان برگزار می‌شود</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECT CONTACT -->
+<section>
+  <div class="container">
+    <div class="shead"><span class="kicker">ترجیح می‌دهید مستقیم تماس بگیرید؟</span><h2>راه‌های ارتباط مستقیم</h2></div>
+    <div class="grid2" style="max-width:760px;margin:0 auto;">
+      <a class="ccard" href="https://wa.me/989124228995" style="display:block;"><div style="width:56px;height:56px;border-radius:16px;background:#25D366;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</div><h3>واتساپ</h3><p class="val">‎+98 912 422 8995</p><span class="arrow-link">ارسال پیام <i data-lucide="arrow-left"></i></span></a>
+      <a class="ccard" href="mailto:ravinipour@gmail.com" style="display:block;"><div style="width:56px;height:56px;border-radius:16px;background:#9C6A60;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+</div><h3>ایمیل</h3><p class="val">ravinipour@gmail.com</p><span class="arrow-link">ارسال ایمیل <i data-lucide="arrow-left"></i></span></a>
+    </div>
+    <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:14.5px;">معمولاً ظرف ۲۴ ساعت پاسخ می‌دهم.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="fgrid">
+      <div>
+        <a class="logo" href="index.html"><span class="mk"></span>راحله اوینی‌پور</a>
+        <p class="ftag">روانشناس عمومی و مشاور — همراه شما در مسیر آرامش، به زبان فارسی.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/ravinipour" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a>
+          <a href="https://t.me/raheleh21" aria-label="Telegram" target="_blank" rel="noopener"><i data-lucide="send"></i></a>
+
+        </div>
+      </div>
+      <div class="fcol"><h4>صفحات</h4>
+        <a href="index.html">صفحه اصلی</a><a href="about.html">درباره من</a><a href="services.html">خدمات</a><a href="blog.html">مقالات</a><a href="booking.html">رزرو جلسه</a><a href="faq.html">سوالات متداول</a>
+      </div>
+      <div class="fcol"><h4>خدمات</h4>
+        <a href="services.html">درمان اضطراب</a><a href="services.html">طرحواره درمانی</a><a href="services.html">افسردگی</a><a href="services.html">مشاوره خانواده</a>
+      </div>
+      <div class="fcol"><h4>تماس</h4>
+        <a href="mailto:ravinipour@gmail.com">ravinipour@gmail.com</a>
+        <a href="https://wa.me/989124228995" target="_blank" rel="noopener">واتساپ: ‎+98 912 422 8995</a>
+        <a href="#">ساعات پاسخگویی: ۹ تا ۲۱</a>
+        <a href="#">دبی، امارات</a>
+      </div>
+    </div>
+    <div class="fbar">© ۲۰۲۵ راحله اوینی‌پور — تمامی حقوق محفوظ است.</div>
+  </div>
+</footer>
+
+<div class="mobilebar">
+  <a class="btn btn-fill" href="#bookform">رزرو جلسهٔ رایگان</a>
+  <a class="wa" href="#" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+</div>
+
+<script>
+  lucide.createIcons();
+  const hdr=document.getElementById('hdr');
+  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
+  window.addEventListener('scroll',onScroll);onScroll();
+
+  // Mobile nav
+  const menuBtn = document.querySelector('.menu-btn');
+  const mobileNav = document.getElementById('mobileNav');
+  const navOverlay = document.getElementById('navOverlay');
+  const navClose = document.getElementById('navClose');
+
+  function openMobileNav(){
+    mobileNav.classList.add('open');
+    navOverlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    navOverlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  if(menuBtn) menuBtn.addEventListener('click', openMobileNav);
+  if(navClose) navClose.addEventListener('click', closeMobileNav);
+  if(navOverlay) navOverlay.addEventListener('click', closeMobileNav);
+
+  // day/time slot toggle
+  document.querySelectorAll('.checkpill[data-slot]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      this.classList.toggle('selected');
+      if(this.classList.contains('selected')) {
+        this.style.background = '#9C6A60';
+        this.style.color = '#fff';
+        this.style.borderColor = '#9C6A60';
+      } else {
+        this.style.background = '';
+        this.style.color = '';
+        this.style.borderColor = '';
+      }
+    });
+  });
+
+  // form submit → WhatsApp
+  const form = document.getElementById('bookform');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(form);
+    const name = form.querySelector('[placeholder="نام شما"]').value;
+    const email = form.querySelector('[type="email"]').value;
+    const whatsapp = form.querySelector('[type="tel"]').value;
+    const country = form.querySelector('select').value;
+    const concern = form.querySelectorAll('select')[1].value;
+    const session = form.querySelectorAll('select')[2].value;
+    const notes = form.querySelector('textarea').value;
+    const days = [...form.querySelectorAll('.checkpill.selected')].map(b => b.dataset.slot).join(', ') || 'نامشخص';
+    const msg = `📋 درخواست مشاوره\n\n👤 نام: ${name}\n📧 ایمیل: ${email}\n📱 واتساپ: ${whatsapp}\n🌍 کشور: ${country}\n\n📌 موضوع: ${concern}\n💬 روش جلسه: ${session}\n📅 زمان‌های مناسب: ${days}\n\n📝 توضیحات: ${notes || 'ندارد'}`;
+    const encoded = encodeURIComponent(msg);
+    window.open(`https://wa.me/989124228995?text=${encoded}`, '_blank');
+    const ok = document.getElementById('okmsg');
+    ok.classList.add('show');
+    form.reset();
+    document.querySelectorAll('.checkpill').forEach(p => {
+      p.classList.remove('selected');
+      p.style.background = '';
+      p.style.color = '';
+      p.style.borderColor = '';
+    });
+  });
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/989124228995" target="_blank" rel="noopener"
+   style="position:fixed;bottom:24px;left:24px;z-index:999;
+          background:#25D366;color:#fff;border-radius:50%;
+          width:56px;height:56px;display:flex;align-items:center;justify-content:center;
+          box-shadow:0 4px 20px rgba(37,211,102,.5);text-decoration:none;
+          transition:transform .2s ease;"
+   onmouseover="this.style.transform='scale(1.1)'"
+   onmouseout="this.style.transform='scale(1)'"
+   aria-label="تماس از طریق واتساپ">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+</body>
+</html>
