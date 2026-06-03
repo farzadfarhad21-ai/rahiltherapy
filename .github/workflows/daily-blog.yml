@@ -38,3 +38,6 @@ jobs:
           git add -A
           git diff --staged --quiet && echo "No changes to commit" || git commit -m "Automated daily blog post"
           git push
+
+      - name: Deploy to Vercel
+        run: npx vercel --prod --yes --token $VERCEL_TOKEN

@@ -450,7 +450,7 @@ async function sendTelegramPhoto(articleInfo) {
 
 ${summary}
 
-🔗 ادامهٔ مطلب: ${articleUrl}
+🔗 [ادامهٔ مطلب](${articleUrl})
 
 ━━━━━━━━━━━━━━━
 📅 ${articleInfo.date}
