@@ -460,9 +460,13 @@ async function sendTelegramPhoto(articleInfo) {
   const emoji = topicEmoji[articleInfo.tag] || '📝';
 
   const articleContent = fs.readFileSync(path.join(BLOG_DIR, articleInfo.filename), 'utf8');
-  const paragraphs = articleContent.match(/<p[^>]*>(.{50,250})<\/p>/g) || [];
-  const summaryLines = paragraphs.slice(1, 4).map(p => p.replace(/<[^>]+>/g, '').trim()).filter(l => l.length > 20);
-  const summary = summaryLines.length >= 3 ? summaryLines.slice(0, 3).join('\n') : articleInfo.excerpt;
+  const paragraphs = articleContent.match(/<p[^>]*>([\s\S]*?)<\/p>/g) || [];
+  const summaryLines = paragraphs.slice(1, 4)
+    .map(p => p.replace(/<[^>]+>/g, '').trim())
+    .filter(l => l.length > 30)
+    .slice(0, 3)
+    .map(s => s.length > 200 ? s.substring(0, 197) + '...' : s);
+  const summary = summaryLines.length >= 3 ? summaryLines.join('\n') : articleInfo.excerpt;
 
   const caption = `${emoji} *${articleInfo.seoTitle}*
 
@@ -536,11 +540,17 @@ async function runDailyAutomation() {
     updateBlogHtml(articleInfo);
     updateSitemap(articleInfo);
 
-    deployToVercel();
-
-    await new Promise(resolve => setTimeout(resolve, 30000));
-
-    await sendTelegramPhoto(articleInfo);
+    // Write article info for workflow steps (Vercel deploy + Telegram poll happen in CI)
+    const articleData = JSON.stringify({
+      filename: articleInfo.filename,
+      seoTitle: articleInfo.seoTitle,
+      tag: articleInfo.tag,
+      date: articleInfo.date,
+      imageFilename: articleInfo.imageFilename,
+      articleUrl: `${SITE_URL}/articles/${articleInfo.filename}`
+    });
+    fs.writeFileSync(path.join(__dirname, '.article-info.json'), articleData, 'utf8');
+    console.log('ARTICLE_INFO:' + articleData);
 
     success = true;
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);

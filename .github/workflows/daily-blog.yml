@@ -41,3 +41,81 @@ jobs:
 
       - name: Deploy to Vercel
         run: npx vercel --prod --yes --token $VERCEL_TOKEN
+
+      - name: Poll article until live
+        run: |
+          ARTICLE_INFO=$(cat .article-info.json)
+          ARTICLE_URL=$(echo "$ARTICLE_INFO" | node -pe "JSON.parse(require('fs').readFileSync('.article-info.json','utf8')).articleUrl")
+          FILENAME=$(echo "$ARTICLE_INFO" | node -pe "JSON.parse(require('fs').readFileSync('.article-info.json','utf8')).filename")
+          IMAGE_FILENAME=$(echo "$ARTICLE_INFO" | node -pe "JSON.parse(require('fs').readFileSync('.article-info.json','utf8')).imageFilename")
+          SEO_TITLE=$(echo "$ARTICLE_INFO" | node -pe "JSON.parse(require('fs').readFileSync('.article-info.json','utf8')).seoTitle")
+          TAG=$(echo "$ARTICLE_INFO" | node -pe "JSON.parse(require('fs').readFileSync('.article-info.json','utf8')).tag")
+          DATE=$(echo "$ARTICLE_INFO" | node -pe "JSON.parse(require('fs').readFileSync('.article-info.json','utf8')).date")
+          echo "Polling $ARTICLE_URL"
+          MAX_ATTEMPTS=48
+          for i in $(seq 1 $MAX_ATTEMPTS); do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$ARTICLE_URL")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "Article is live after ${i} attempts"
+              echo "FILENAME=$FILENAME" >> $GITHUB_OUTPUT
+              echo "ARTICLE_URL=$ARTICLE_URL" >> $GITHUB_OUTPUT
+              echo "IMAGE_FILENAME=$IMAGE_FILENAME" >> $GITHUB_OUTPUT
+              echo "SEO_TITLE=$SEO_TITLE" >> $GITHUB_OUTPUT
+              echo "TAG=$TAG" >> $GITHUB_OUTPUT
+              echo "DATE=$DATE" >> $GITHUB_OUTPUT
+              break
+            fi
+            echo "Attempt $i: HTTP $HTTP_CODE - retrying in 5s..."
+            sleep 5
+          done
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Article never came up after $MAX_ATTEMPTS attempts"
+            exit 1
+          fi
+
+      - name: Send Telegram
+        run: |
+          ARTICLE_URL=$(echo "$ARTICLE_URL")
+          SEO_TITLE=$(echo "$SEO_TITLE")
+          TAG=$(echo "$TAG")
+          DATE=$(echo "$DATE")
+          IMAGE_FILENAME=$(echo "$IMAGE_FILENAME")
+
+          TOPIC_EMOJI='{"اضطراب":"😰","افسردگی":"😔","روابط":"💝","عزت نفس":"✨","طرحواره":"🧠","OCD":"🔄","رشد فردی":"🌱","والدین":"👨‍👩‍👧","ADHD":"🎯","ذهن‌آگاهی":"🧘"}'
+          EMOJI=$(node -e "console.log(JSON.parse('$TOPIC_EMOJI')['$TAG'] || '📝')")
+
+          ARTICLE_HTML=$(curl -s "$ARTICLE_URL")
+          PARAGRAPHS=$(echo "$ARTICLE_HTML" | node -e "
+            const fs = require('fs');
+            let html = '';
+            process.stdin.on('data', d => html += d);
+            process.stdin.on('end', () => {
+              const ps = html.match(/<p[^>]*>([\\s\\S]*?)<\\/p>/g) || [];
+              const lines = ps.slice(1,4).map(p => p.replace(/<[^>]+>/g,'').trim()).filter(l => l.length > 30).slice(0,3).map(s => s.length > 200 ? s.substring(0,197)+'...' : s);
+              console.log(lines.join('\n'));
+            });
+          ")
+
+          CAPTION="${EMOJI} *${SEO_TITLE}*
+
+${PARAGRAPHS}
+
+🔗 [ادامهٔ مطلب](${ARTICLE_URL})
+
+━━━━━━━━━━━━━━━
+📅 ${DATE}
+🏷️ #${TAG}
+💡 روانشناس عمومی | راحله اوینی‌پور"
+
+          IMAGE_PATH=""
+          if [[ "$IMAGE_FILENAME" == cat-* ]]; then
+            IMAGE_PATH="./$IMAGE_FILENAME"
+          else
+            IMAGE_PATH="./articles/$IMAGE_FILENAME"
+          fi
+
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
+            -F "chat_id=${TELEGRAM_CHANNEL_ID}" \
+            -F "photo=@${IMAGE_PATH}" \
+            -F "caption=${CAPTION}" \
+            -F "parse_mode=Markdown"
