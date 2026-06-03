@@ -47,8 +47,5 @@ jobs:
             sleep 5
           done
 
-      - name: Deploy to Vercel
-        run: npx vercel --prod --yes --token $VERCEL_TOKEN
-
       - name: Poll and Send Telegram
         run: node notify-telegram.js
