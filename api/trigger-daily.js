@@ -33,11 +33,14 @@ module.exports = async (req, res) => {
   let status;
   let body;
 
+  const cleanToken = (process.env.GH_DISPATCH_TOKEN || '').trim();
+  console.log('TOKEN DIAG:', cleanToken ? (cleanToken.length + ' chars, prefix=' + cleanToken.slice(0,11)) : 'MISSING');
+
   try {
     const response = await fetch(url, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${cleanToken}`,
         'Accept': 'application/vnd.github+json',
         'X-GitHub-Api-Version': '2022-11-28',
         'User-Agent': 'rahiltherapy-cron',
