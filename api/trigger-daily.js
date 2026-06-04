@@ -48,6 +48,7 @@ module.exports = async (req, res) => {
 
     status = response.status;
     body = await response.text();
+    console.log('GitHub dispatch result:', status, body);
 
     if (status === 204) {
       return res.status(200).json({ ok: true, triggered: true });
