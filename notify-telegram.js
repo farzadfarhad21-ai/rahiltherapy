@@ -73,8 +73,10 @@ async function main() {
   const live = await pollUntilLive(articleUrl);
   if (!live) process.exit(1);
 
-  const articleHtml = await fetch(articleUrl).then(r => r.text());
+  const localArticlePath = path.join(__dirname, 'articles', filename);
+  const articleHtml = fs.readFileSync(localArticlePath, 'utf8');
   const summary = extractSummary(articleHtml);
+  if (!summary) console.warn('Warning: summary extraction returned empty');
   const emoji = TOPIC_EMOJI[tag] || '📝';
 
   const safeTitle = htmlEscape(seoTitle);
