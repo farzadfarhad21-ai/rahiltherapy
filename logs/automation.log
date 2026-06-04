@@ -165,3 +165,13 @@
 [2026-06-04T08:38:40.289Z] [INFO] Updated blog.html with new article card
 [2026-06-04T08:38:40.289Z] [INFO] Updated sitemap.xml
 [2026-06-04T08:38:40.289Z] [INFO] ========== Automation Completed Successfully in 45.5s ==========
+[2026-06-04T10:05:01.648Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-04T10:05:01.651Z] [INFO] Selected topic: ADHD در بزرگسالان (Topic #9/10)
+[2026-06-04T10:05:01.651Z] [INFO] Generating article for topic: ADHD در بزرگسالان
+[2026-06-04T10:05:47.377Z] [INFO] Article created: articles/1780567547377-adhd.html
+[2026-06-04T10:05:47.377Z] [INFO] Article generated: ADHD در بزرگسالان: راهنمای جامع تشخیص و مدیریت
+[2026-06-04T10:05:47.377Z] [INFO] Generating image for topic: ADHD
+[2026-06-04T10:05:47.733Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-04T10:05:47.734Z] [INFO] Updated blog.html with new article card
+[2026-06-04T10:05:47.735Z] [INFO] Updated sitemap.xml
+[2026-06-04T10:05:47.735Z] [INFO] ========== Automation Completed Successfully in 46.1s ==========
