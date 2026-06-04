@@ -132,8 +132,12 @@ function getPersianDate() {
 }
 
 function slugify(text) {
-  return text.replace(/[^آابپتثجچحخدذرزژسشصضطظعغفقکگلمنوهی\s]/g, '')
-    .trim().replace(/\s+/g, '-').substring(0, 50);
+  // ASCII-only slugs — safe for Vercel routing and all browsers
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .substring(0, 50);
 }
 
 function extractExcerpt(html) {
@@ -502,6 +506,51 @@ ${summary}
   log('Telegram photo sent successfully');
 }
 
+async function sendTelegramAlert(message) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const channelId = process.env.TELEGRAM_CHANNEL_ID;
+  if (!botToken || !channelId) return;
+
+  try {
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: channelId,
+        text: message,
+        parse_mode: 'Markdown'
+      })
+    });
+  } catch (err) {
+    log(`Failed to send Telegram alert: ${err.message}`, 'ERROR');
+  }
+}
+
+async function checkDeployedUrl(articleUrl) {
+  log(`Post-deploy check: waiting 30s for Vercel to propagate...`);
+  await new Promise(resolve => setTimeout(resolve, 30000));
+
+  try {
+    const response = await fetch(articleUrl, { method: 'HEAD' });
+    if (response.ok) {
+      log(`Post-deploy check PASSED: ${articleUrl} → ${response.status}`);
+      return true;
+    } else {
+      log(`Post-deploy check FAILED: ${articleUrl} → ${response.status}`, 'ERROR');
+      await sendTelegramAlert(
+        `⚠️ *Deploy check failed!*\n\nURL: ${articleUrl}\nStatus: ${response.status}\n\nPlease check the site manually.`
+      );
+      return false;
+    }
+  } catch (err) {
+    log(`Post-deploy check ERROR: ${err.message}`, 'ERROR');
+    await sendTelegramAlert(
+      `⚠️ *Deploy check error!*\n\nURL: ${articleUrl}\nError: ${err.message}`
+    );
+    return false;
+  }
+}
+
 function deployToVercel() {
   log('Starting Vercel deployment...');
 
@@ -551,6 +600,10 @@ async function runDailyAutomation() {
     });
     fs.writeFileSync(path.join(__dirname, '.article-info.json'), articleData, 'utf8');
     console.log('ARTICLE_INFO:' + articleData);
+
+    // Post-deploy URL check
+    const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
+    await checkDeployedUrl(articleUrl);
 
     success = true;
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
