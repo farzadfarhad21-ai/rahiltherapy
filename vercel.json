@@ -1,5 +1,5 @@
 {
-  "crons": [],
+  "crons": [{ "path": "/api/trigger-daily", "schedule": "0 8 * * *" }],
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
