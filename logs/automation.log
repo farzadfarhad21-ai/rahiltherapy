@@ -175,3 +175,15 @@
 [2026-06-04T10:05:47.734Z] [INFO] Updated blog.html with new article card
 [2026-06-04T10:05:47.735Z] [INFO] Updated sitemap.xml
 [2026-06-04T10:05:47.735Z] [INFO] ========== Automation Completed Successfully in 46.1s ==========
+[2026-06-05T08:47:44.544Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-05T08:47:44.545Z] [INFO] Selected topic: ذهن‌آگاهی و مدیتیشن (Topic #10/10)
+[2026-06-05T08:47:44.546Z] [INFO] Generating article for topic: ذهن‌آگاهی و مدیتیشن
+[2026-06-05T08:48:32.802Z] [INFO] Article created: articles/1780649312801-mindfulness.html
+[2026-06-05T08:48:32.802Z] [INFO] Article generated: ذهن‌آگاهی و مدیتیشن؛ راهی به سوی آرامش درونی
+[2026-06-05T08:48:32.802Z] [INFO] Generating image for topic: ذهن‌آگاهی
+[2026-06-05T08:48:33.124Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-05T08:48:33.125Z] [INFO] Updated blog.html with new article card
+[2026-06-05T08:48:33.125Z] [INFO] Updated sitemap.xml
+[2026-06-05T08:48:33.125Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
+[2026-06-05T08:49:03.474Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780649312801-mindfulness.html → 404
+[2026-06-05T08:49:04.200Z] [INFO] ========== Automation Completed Successfully in 79.7s ==========
