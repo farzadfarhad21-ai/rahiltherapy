@@ -187,3 +187,15 @@
 [2026-06-05T08:48:33.125Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
 [2026-06-05T08:49:03.474Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780649312801-mindfulness.html → 404
 [2026-06-05T08:49:04.200Z] [INFO] ========== Automation Completed Successfully in 79.7s ==========
+[2026-06-06T08:52:43.434Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-06T08:52:43.437Z] [INFO] Selected topic: اضطراب و راه‌های کنترل آن (Topic #1/10)
+[2026-06-06T08:52:43.437Z] [INFO] Generating article for topic: اضطراب و راه‌های کنترل آن
+[2026-06-06T08:53:40.077Z] [INFO] Article created: articles/1780736020076-anxiety.html
+[2026-06-06T08:53:40.077Z] [INFO] Article generated: اضطراب و راه‌های کنترل آن؛ راهنمای عملی آرامش
+[2026-06-06T08:53:40.077Z] [INFO] Generating image for topic: اضطراب
+[2026-06-06T08:53:40.573Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-06T08:53:40.574Z] [INFO] Updated blog.html with new article card
+[2026-06-06T08:53:40.574Z] [INFO] Updated sitemap.xml
+[2026-06-06T08:53:40.575Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
+[2026-06-06T08:54:11.058Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780736020076-anxiety.html → 404
+[2026-06-06T08:54:11.636Z] [INFO] ========== Automation Completed Successfully in 88.2s ==========
