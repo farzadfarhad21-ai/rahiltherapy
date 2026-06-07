@@ -211,3 +211,15 @@
 [2026-06-07T08:51:18.285Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
 [2026-06-07T08:51:49.290Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780822277758-depression.html → 404
 [2026-06-07T08:51:49.800Z] [INFO] ========== Automation Completed Successfully in 102.5s ==========
+[2026-06-07T15:00:05.118Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-07T15:00:05.120Z] [INFO] Selected topic: افسردگی و نشانه‌های اولیه (Topic #2/10)
+[2026-06-07T15:00:05.121Z] [INFO] Generating article for topic: افسردگی و نشانه‌های اولیه
+[2026-06-07T15:01:13.104Z] [INFO] Article created: articles/1780844473104-depression.html
+[2026-06-07T15:01:13.104Z] [INFO] Article generated: افسردگی و نشانه‌های اولیه: راهنمای تشخیص به‌موقع
+[2026-06-07T15:01:13.105Z] [INFO] Generating image for topic: افسردگی
+[2026-06-07T15:01:13.519Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-07T15:01:13.520Z] [INFO] Updated blog.html with new article card
+[2026-06-07T15:01:13.521Z] [INFO] Updated sitemap.xml
+[2026-06-07T15:01:13.521Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
+[2026-06-07T15:01:43.972Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780844473104-depression.html → 404
+[2026-06-07T15:01:44.551Z] [INFO] ========== Automation Completed Successfully in 99.4s ==========
