@@ -272,7 +272,7 @@ node blog-generator.js "موضوع خاص"        # specific topic
 
 ### SESSION 5 COMPLETED ✅ — 2026-06-08
 
-**SEO Score: 38 → 82/100**
+**SEO Score: 38 → ~90/100**
 
 **Completed:**
 - ✅ All 47 articles — meta description + canonical + Open Graph + Twitter Card tags (h1 → og:title, first paragraph → meta description, article image → og:image)
@@ -283,22 +283,53 @@ node blog-generator.js "موضوع خاص"        # specific topic
 - ✅ Daily automation fully working with Segmind AI image generation per topic
 - ✅ blog.html cleaned — duplicate article bcards removed (inner-child ×7→1, ADHD ×4→1, parenting ×5→1, etc.)
 - ✅ scripts/seo-articles.js — reusable Node.js script for batch SEO tag injection
+- ✅ dubai.html — full Persian RTL landing page for Iranian expats in UAE (7 sections: hero, why Dubai, about, services, how it works, pricing, FAQ, CTA)
+- ✅ vercel.json — /dubai rewrite added
+- ✅ sitemap.xml — /dubai entry added
+- ✅97 internal links added across 50 pages:
+  - 46 articles: "مقالات مرتبط" section with 2-3 topic-matched links per article
+  - index.html: Dubai note in about section
+  - about.html: Dubai note in story section
+  - services.html: Dubai note in page description
+  - blog.html: sticky banner at top + footer link
+- ✅ graphify run — full project graph to graphify-out/ (371 nodes, 459 edges, 43 communities)
+- ✅ .gitignore updated — graphify-out/ excluded
 
 **SEO Score Breakdown:**
 - Meta descriptions: 0 → 54/54 pages ✅
 - Open Graph tags: 0 → 54/54 pages ✅
 - Canonical tags: 0 → 54/54 pages ✅
 - hreflang signals: 0 → 7/7 pages ✅
-- JSON-LD schema: partial → full (homepage, about, services, blog, FAQ, contact, booking) ✅
-- Sitemap: deduplicated ✅
+- JSON-LD schema: partial → full (homepage, about, services, blog, FAQ, contact, booking, dubai) ✅
+- Sitemap: deduplicated + dubai added ✅
+- Internal linking: ~97 new cross-page links ✅
+- Dubai landing page: live with full SEO + schema ✅
 
 ### Next Steps (carry forward to next session)
-- [ ] Dubai landing page (targeting Farsi speakers in UAE — separate from main site, geo-targeted)
-- [ ] Instagram API integration (Meta Developer App → instagram_basic + instagram_content_publish permissions → instagram-post.js)
-- [ ] Internal linking strategy — add related-articles section to each article, link within blog grid
+- [ ] Instagram API integration — BLOCKED pending Raheleh's Facebook password (Meta Developer App → instagram_basic + instagram_content_publish permissions → instagram-post.js)
+- [ ] YouTube channel setup — create channel, upload first video
+- [ ] First weekly report — run next Sunday (2026-06-14)
 - [ ] AI video of Raheleh for Instagram Reels (HeyGen or D-ID — highest traffic leverage)
-- [ ] First weekly report (run next Sunday)
-- [ ] YouTube channel setup
+- [ ] Fix instagram-content.js to add emojis throughout captions
+
+### SESSION 6 COMPLETED ✅ — 2026-06-08 (evening)
+
+**Completed:**
+- ✅ dubai.html — full Persian RTL landing page live at rahiltherapy.com/dubai (7 sections: hero, why Dubai, about, services, how it works, pricing, FAQ, CTA)
+- ✅ Dubai sticky banner added to blog.html listing page
+- ✅ Dubai text links added to index.html (about section), about.html (story section), services.html (page description)
+- ✅ 97 internal links added across 50 pages (46 articles with related articles section + 4 core pages with Dubai cross-links)
+- ✅ scripts/internal-links.js — reusable Node.js script for topic-matched related article linking
+- ✅ vercel.json — /dubai rewrite added
+- ✅ sitemap.xml — /dubai entry added
+- ✅ graphify full project run —371+ nodes, 459 edges, 43 communities (dubai.html + internal links mapped)
+- ✅ SEO score: ~90/100
+
+**Next Steps (carry forward to next session)**
+- [ ] Instagram API — BLOCKED: needs Raheleh's Facebook password to complete Meta OAuth
+- [ ] YouTube channel setup — create channel, upload first video
+- [ ] First weekly report — run Sunday 2026-06-14
+- [ ] HeyGen AI video of Raheleh for Instagram Reels (highest traffic leverage)
 - [ ] Fix instagram-content.js to add emojis throughout captions
 
 ### How to Resume Instagram API Setup
@@ -316,6 +347,8 @@ Then tell RuFlow to build instagram-post.js
 - Regenerate schedule: `node instagram-content.js`
 - Profile pic: profile.PNG
 - Bio: روانشناس عمومی | راحله اوینی‌پور + rahiltherapy.com
+- Auto-posting: BLOCKED — pending Raheleh's Facebook password to get Meta access token
+- Setup: Meta Developer App started at developers.facebook.com — needs Facebook password to complete OAuth
 
 ### Telegram Status
 - Bot: @Rahiltherapy_bot
