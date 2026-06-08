@@ -93,9 +93,7 @@ ${safeSummary}
 🏷️ #${tag}
 💡 روانشناس عمومی | راحله اوینی‌پور`;
 
-  const imagePath = imageFilename.startsWith('cat-')
-    ? path.join(__dirname, imageFilename)
-    : path.join(__dirname, 'articles', imageFilename);
+  const imagePath = path.join(__dirname, imageFilename); // all images in root
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const channelId = process.env.TELEGRAM_CHANNEL_ID;
