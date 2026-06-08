@@ -345,9 +345,14 @@ async function generateImage(topicKey, seoTitle) {
   const encodedPrompt = encodeURIComponent(imagePrompt);
   const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
 
-  const imageResponse = await fetch(imageUrl);
-  if (!imageResponse.ok) {
-    throw new Error(`Pollinations image fetch failed: ${imageResponse.status}`);
+  // Retry up to 3 times with 5s delay
+  let imageResponse;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    await new Promise(r => setTimeout(r, 5000));
+    imageResponse = await fetch(imageUrl);
+    if (imageResponse.ok) break;
+    log(`Pollinations attempt ${attempt} failed: ${imageResponse.status}`, 'WARN');
+    if (attempt === 3) throw new Error(`Pollinations image fetch failed: ${imageResponse.status}`);
   }
 
   const timestamp = Date.now();
@@ -559,6 +564,17 @@ async function runDailyAutomation() {
 
     updateBlogHtml(articleInfo);
     updateSitemap(articleInfo);
+
+    // Write article info for notify-telegram.js
+    const articleData = JSON.stringify({
+      filename: articleInfo.filename,
+      seoTitle: articleInfo.seoTitle,
+      tag: articleInfo.tag,
+      date: articleInfo.date,
+      imageFilename: articleInfo.imageFilename,
+      articleUrl: `${SITE_URL}/articles/${articleInfo.filename}`
+    });
+    fs.writeFileSync(path.join(__dirname, '.article-info.json'), articleData, 'utf8');
 
     // Deploy to Vercel
     deployToVercel();
