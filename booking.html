@@ -24,6 +24,7 @@
 
 <!-- Canonical -->
 <link rel="canonical" href="https://rahiltherapy.com/booking.html">
+<link rel="alternate" hreflang="fa" href="https://rahiltherapy.com/booking.html">
 
 <!-- Open Graph -->
 <meta property="og:title" content="رزرو جلسه آنلاین — راحله اوینی‌پور">
@@ -39,6 +40,83 @@
 <meta name="twitter:title" content="رزرو جلسه آنلاین — راحله اوینی‌پور">
 <meta name="twitter:description" content="جلسه اول رایگان. مشاوره آنلاین روانشناسی به فارسی با راحله اوینی‌پور.">
 <meta name="twitter:image" content="https://rahiltherapy.com/profile.PNG">
+
+<!-- JSON-LD: Service + Person Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Service", "ProfessionalService"],
+  "name": "روانشناسی آنلاین — راحله اوینی‌پور",
+  "description": "جلسه مشاوره آنلاین با راحله اوینی‌پور، روانشناس عمومی فارسی‌زبان. جلسه اول رایگان. درمان اضطراب، افسردگی، OCD، ADHD و طرحواره‌درمانی.",
+  "url": "https://rahiltherapy.com/booking.html",
+  "telephone": "+989124228995",
+  "email": "ravinipour@gmail.com",
+  "image": "https://rahiltherapy.com/profile.PNG",
+  "provider": {
+    "@type": "Person",
+    "name": "راحله اوینی‌پور",
+    "jobTitle": "روانشناس عمومی",
+    "description": "روانشناس عمومی فارسی‌زبان مقیم دبی، متخصص CBT و طرحواره‌درمانی",
+    "nationality": {
+      "@type": "Country",
+      "name": "Iran"
+    },
+    "knowsAbout": ["CBT", "طرحواره‌درمانی", "درمان اضطراب", "درمان افسردگی", "OCD", "ADHD", "عزت نفس"],
+    "availableLanguage": ["Persian", "Farsi", "English"]
+  },
+  "areaServed": "WORLDWIDE",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "جلسات مشاوره",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "جلسه اول (رایگان)",
+        "description": "جلسه آشنایی و ارزیابی اولیه — رایگان",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "جلسه بین‌المللی",
+        "description": "جلسه مشاوره آنلاین برای مراجعین خارج از ایران",
+        "price": "50",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      {
+        "@type": "Offer",
+        "name": "جلسه از ایران",
+        "description": "جلسه مشاوره آنلاین برای مراجعین داخل ایران (با احتساب تحریم‌ها)",
+        "price": "25",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    ]
+  },
+  "location": [
+    {
+      "@type": "Place",
+      "name": "دبی، امارات",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      }
+    },
+    {
+      "@type": "VirtualLocation",
+      "name": "مشاوره آنلاین",
+      "url": "https://rahiltherapy.com/booking.html"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/rahiltherapy",
+    "https://t.me/raheleh21"
+  ]
+}
+</script>
 
 <style>
   .booklayout{display:grid;grid-template-columns:1.4fr .85fr;gap:34px;align-items:start;}
