@@ -261,3 +261,20 @@
 [2026-06-08T09:58:00.084Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-08T10:01:00.360Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780912651215-inner-child.html → 404
 [2026-06-08T10:01:00.360Z] [INFO] ========== Automation Completed Successfully in 277.9s ==========
+[2026-06-08T10:04:25.955Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-08T10:04:25.958Z] [INFO] Selected topic: کودک درون؛ زخم‌هایی که بزرگ شدیم اما فراموش نکردیم (Topic #3/10)
+[2026-06-08T10:04:25.958Z] [INFO] Generating article for topic: کودک درون؛ زخم‌هایی که بزرگ شدیم اما فراموش نکردیم
+[2026-06-08T10:05:49.337Z] [INFO] Article created: articles/1780913149337-inner-child.html
+[2026-06-08T10:05:49.337Z] [INFO] Article generated: کودک درون؛ زخم‌هایی که بزرگ شدیم اما فراموش نکردیم
+[2026-06-08T10:05:49.338Z] [INFO] Generating image via Pollinations.ai for topic: کودک درون
+[2026-06-08T10:05:55.103Z] [WARN] Pollinations attempt 1 failed: 402
+[2026-06-08T10:06:00.511Z] [WARN] Pollinations attempt 2 failed: 402
+[2026-06-08T10:06:05.948Z] [WARN] Pollinations attempt 3 failed: 402
+[2026-06-08T10:06:05.948Z] [WARN] Image generation failed, using fallback: Pollinations image fetch failed: 402
+[2026-06-08T10:06:05.949Z] [INFO] Updated blog.html with new article card
+[2026-06-08T10:06:05.949Z] [INFO] Updated sitemap.xml
+[2026-06-08T10:06:05.950Z] [INFO] Starting Vercel deployment...
+[2026-06-08T10:06:33.625Z] [INFO] Vercel deployment completed
+[2026-06-08T10:06:33.626Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-08T10:09:34.115Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780913149337-inner-child.html → 404
+[2026-06-08T10:09:34.115Z] [INFO] ========== Automation Completed Successfully in 308.2s ==========
