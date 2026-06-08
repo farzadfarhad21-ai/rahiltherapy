@@ -374,7 +374,7 @@ async function generateImage(topicKey, seoTitle) {
 
   const timestamp = Date.now();
   const imageFilename = `${timestamp}-${getEnglishName(topicKey)}.jpg`;
-  const imageFilepath = path.join(BLOG_DIR, imageFilename);
+  const imageFilepath = path.join(__dirname, imageFilename);
 
   const buffer = await response.arrayBuffer();
   fs.writeFileSync(imageFilepath, Buffer.from(buffer));
