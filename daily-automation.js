@@ -256,6 +256,8 @@ async function generateBlogPost(topicKey, topicFull) {
   const date = getPersianDate();
   const excerpt = extractExcerpt(articleHtml);
   const categoryImage = getCategoryImage(topicKey);
+  const imagePrompt = IMAGE_PROMPTS[topicKey] || 'Peaceful therapy room with warm light and plants, soft cream tones, calming atmosphere';
+  const articleImage = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
 
   const timestamp = Date.now();
   const filename = `${timestamp}-${getEnglishName(topicKey)}.html`;
@@ -312,7 +314,7 @@ async function generateBlogPost(topicKey, topicFull) {
 </header>
 
 <main class="article-wrap">
-<img src="../${categoryImage}" alt="${seoTitle}" style="width:100%;height:320px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;">
+<img src="${articleImage}" alt="${seoTitle}" style="width:100%;height:320px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;" onerror="this.src='../${categoryImage}'">
 ${articleHtml}
 <div style="background:linear-gradient(135deg,#F4E9E2,#FBF5F0);border-radius:20px;padding:40px;text-align:center;margin:48px 0;">
   <p style="font-family:'Markazi Text',serif;font-size:28px;color:#3B2E2A;margin-bottom:8px;">آماده‌اید قدم بعدی را بردارید؟</p>
@@ -553,14 +555,9 @@ async function runDailyAutomation() {
     articleInfo = await generateBlogPost(topicKey, topicFull);
     log(`Article generated: ${articleInfo.seoTitle}`);
 
-    try {
-      const imageFilename = await generateImage(topicKey, articleInfo.seoTitle);
-      articleInfo.imageFilename = imageFilename;
-      updateArticleImage(articleInfo.filename, imageFilename);
-    } catch (imageError) {
-      log(`Image generation failed, using fallback: ${imageError.message}`, 'WARN');
-      articleInfo.imageFilename = getCategoryImage(topicKey);
-    }
+    // Article image is already embedded as Pollinations URL in HTML at generation time
+    // Telegram uses category image (reliable, no external fetch in GA)
+    articleInfo.imageFilename = getCategoryImage(topicKey);
 
     updateBlogHtml(articleInfo);
     updateSitemap(articleInfo);
