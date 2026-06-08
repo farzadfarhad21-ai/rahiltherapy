@@ -387,7 +387,8 @@ function updateArticleImage(filename, imageFilename) {
   const filepath = path.join(BLOG_DIR, filename);
   let content = fs.readFileSync(filepath, 'utf8');
 
-  const oldImageRegex = /<img src="\.\.\/[^"]+" alt="[^"]*" style="width:100%;height:320px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;">/;
+  // Match any img tag in article-wrap (handles both ../path and https:// sources)
+  const oldImageRegex = /<img src="[^"]*" alt="[^"]*" style="width:100%;height:[^"]*;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;"[^>]*>/;
   const newImageTag = `<img src="../${imageFilename}" alt="" style="width:100%;height:400px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;">`;
 
   content = content.replace(oldImageRegex, newImageTag);
