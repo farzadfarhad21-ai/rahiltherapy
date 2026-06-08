@@ -12,6 +12,7 @@ env:
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  SEGMIND_API_KEY: ${{ secrets.SEGMIND_API_KEY }}
 
 concurrency:
   group: daily-blog
