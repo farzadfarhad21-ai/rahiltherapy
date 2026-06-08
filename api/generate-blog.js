@@ -14,42 +14,42 @@
  */
 
 const TOPICS = [
-  'اضطراب و راه‌های کنترل آن',
-  'افسردگی و نشانه‌های اولیه',
-  'روابط سالم و مرزهای شخصی',
-  'عزت نفس و رابطه با خود',
-  'طرحواره درمانی چیست؟',
-  'OCD - وسواس فکری عملی',
-  'رشد فردی و خودشناسی',
-  'والدین و فرزندپروری',
-  'ADHD در بزرگسالان',
-  'ذهن‌آگاهی و مدیتیشن'
+  'تنهایی؛ فرار از خود یا بازگشت به خود؟',
+  'عشق به خود؛ نه خودشیفتگی، بلکه مهربانی با خویشتن',
+  'کودک درون؛ زخم‌هایی که بزرگ شدیم اما فراموش نکردیم',
+  'ترس چیست و چگونه می‌توانیم آزاد شویم؟',
+  'توکل؛ رها کردن کنترل و اعتماد به زندگی',
+  'چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره',
+  'وقتی حافظ روانشناس بود؛ تفسیر شعر فارسی با دیدگاه روان‌شناختی',
+  'عزت نفس واقعی چیست و از کجا می‌آید؟',
+  'چرا در روابط آسیب می‌بینیم؟ الگوهای دلبستگی و تأثیر آن‌ها',
+  'چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟'
 ];
 
 const TAGS = {
-  'اضطراب': 'اضطراب',
-  'افسردگی': 'افسردگی',
-  'روابط': 'روابط',
+  'تنهایی': 'تنهایی',
+  'عشق به خود': 'عشق به خود',
+  'کودک درون': 'کودک درون',
+  'ترس': 'ترس',
+  'توکل': 'معنویت',
+  'معنا': 'معنا',
+  'حافظ': 'شعر فارسی',
   'عزت نفس': 'عزت نفس',
-  'طرحواره': 'طرحواره',
-  'OCD': 'OCD',
-  'رشد': 'رشد فردی',
-  'والدین': 'والدین',
-  'ADHD': 'ADHD',
-  'ذهن‌آگاهی': 'ذهن‌آگاهی'
+  'روابط': 'روابط',
+  'آرامش': 'آرامش'
 };
 
 const CATEGORY_IMAGES = {
-  'اضطراب': 'cat-anxiety.png',
-  'افسردگی': 'cat-depression.png',
+  'تنهایی': 'cat-mindfulness.png',
+  'عشق به خود': 'cat-selfawareness.png',
+  'کودک درون': 'cat-growth.png',
+  'ترس': 'cat-anxiety.png',
+  'توکل': 'cat-mindfulness.png',
+  'معنا': 'cat-growth.png',
+  'حافظ': 'cat-schema.png',
+  'عزت نفس': 'cat-selfawareness.png',
   'روابط': 'cat-relationships.png',
-  'رشد فردی': 'cat-growth.png',
-  'طرحواره': 'cat-schema.png',
-  'OCD': 'cat-ocd.png',
-  'والدین': 'cat-parenting.png',
-  'ADHD': 'cat-adhd.png',
-  'خودشناسی': 'cat-selfawareness.png',
-  'ذهن‌آگاهی': 'cat-mindfulness.png'
+  'آرامش': 'cat-mindfulness.png'
 };
 
 function getCategoryImage(tag) {
@@ -90,39 +90,46 @@ async function generateBlogPost(topic) {
     throw new Error('ANTHROPIC_API_KEY environment variable is not set');
   }
 
-  const prompt = `یک مقاله وبلاگی کامل و حرفه‌ای به زبان فارسی معیار درباره "${topic}" بنویس.
+  const prompt = `تو راحله اوینی‌پور هستی — روانشناس فارسی‌زبان مقیم دبی، با قلمی گرم، شاعرانه و عمیق.
+یک مقاله وبلاگی درباره "${topic}" بنویس.
 
-قوانین سخت:
-- دقیقاً ۶۰۰ تا ۸۰۰ کلمه
-- ۱ عنوان SEO جذاب (بین ۵۰-۶۰ کاراکتر)
-- ۱ پاراگراف مقدمه (۳-۴ جمله)
-- ۳ تا ۴ بخش با عنوان‌های مرتب (h3)
-- هر بخش ۲-۳ پاراگراف
-- ۱ بخش "نکات عملی" با ۳ توصیه مشخص
-- ۱ نتیجه‌گیری با CTA برای رزرو جلسه
-- لحن: آرام، تخصصی، دوستانه
+لحن و سبک — این مهم‌ترین بخش است:
+- مثل یک نامه صمیمانه به خواننده بنویس، نه یک مقاله آکادمیک
+- از استعاره، تصویرسازی و زبان شاعرانه فارسی استفاده کن
+- سؤال‌هایی بپرس که خواننده را به درون خودش ببرد
+- می‌توانی از شعر حافظ، مولانا یا سعدی (یک بیت) به‌عنوان آغازگر یا میانه استفاده کنی
+- احساس بده که یک دوست دانا کنارت نشسته، نه یک کتاب درسی
+- پر رنگ، پر از حس، پر از زندگی — نه خشک و کلینیکال
+
+قوانین ساختاری:
+- ۷۰۰ تا ۹۰۰ کلمه
+- ۱ عنوان جذاب و انسانی (نه عنوان درسی)
+- مقدمه‌ای که فوری خواننده را «ببیند» — با یک لحظه، یک سؤال، یا یک تصویر شروع کن
+- ۳ تا ۴ بخش با عنوان‌های احساسی (h3)
+- ۱ بخش «یک قدم کوچک» با ۳ تمرین عملی ساده
+- ۱ نتیجه‌گیری گرم با دعوت ملایم به رزرو جلسه
 - برچسب: ${getTag(topic)}
 
 ساختار خروجی (فقط HTML، بدون توضیح):
 
 <article class="generated-post">
-<h1>[عنوان SEO]</h1>
+<h1>[عنوان]</h1>
 <div class="meta">[برچسب] · [تاریخ فارسی] · [مدت زمان: X دقیقه]</div>
-<p>[مقدمه]</p>
+<p>[مقدمه — با تصویر یا سؤال یا لحظه شروع کن]</p>
 <h3>[عنوان بخش ۱]</h3>
 <p>[محتوا]</p>
 <h3>[عنوان بخش ۲]</h3>
 <p>[محتوا]</p>
 <h3>[عنوان بخش ۳]</h3>
 <p>[محتوا]</p>
-<h3>نکات عملی</h3>
+<h3>یک قدم کوچک</h3>
 <ul>
-<li>[نکته ۱]</li>
-<li>[نکته ۲]</li>
-<li>[نکته ۳]</li>
+<li>[تمرین ۱]</li>
+<li>[تمرین ۲]</li>
+<li>[تمرین ۳]</li>
 </ul>
-<h3>نتیجه‌گیری</h3>
-<p>[جمع‌بندی + CTA]</p>
+<h3>در پایان</h3>
+<p>[جمع‌بندی گرم + دعوت ملایم]</p>
 </article>
 
 مهم: فقط و فقط HTML برگردان، بدون هیچ متن اضافی.`;
@@ -181,6 +188,22 @@ export default async function handler(req, res) {
     const excerpt = extractExcerpt(articleHtml);
     const topicIndex = TOPICS.indexOf(topic) + 1;
     const filename = `${Date.now()}-article-${topicIndex}.html`;
+
+    // Pollinations.ai — free AI image, no API key needed
+    const imagePromptMap = {
+      'تنهایی': 'Woman sitting alone by window in quiet morning light, peaceful solitude, soft cream and rose tones, reflective mood, warm interior, photorealistic',
+      'عشق به خود': 'Woman with eyes closed, gentle smile, hand on heart, soft golden light, self-compassion moment, cream and rose tones, intimate portrait, cinematic',
+      'کودک درون': 'Soft vintage photograph of a child toy on wooden floor, warm afternoon light, nostalgic and gentle, cream and amber tones, lifestyle photography',
+      'ترس': 'Person opening hands releasing light, standing at cliff overlooking misty valley, freedom and release, golden sunrise, cinematic wide shot',
+      'توکل': 'Hands clasped in prayer near window with soft morning light, dried flowers nearby, spiritual calm, cream and rose tones, intimate lifestyle photography',
+      'معنا': 'Woman writing in journal at sunrise on rooftop, city lights fading, first light of day, purposeful and contemplative, warm golden tones, cinematic',
+      'شعر فارسی': 'Old Persian poetry book open on wooden desk with dried rose petals, candlelight, vintage ink pen, warm amber tones, literary atmosphere',
+      'عزت نفس': 'Woman standing tall in soft morning light, confident yet gentle posture, looking into mirror with warmth, cream and rose tones, empowerment portrait',
+      'روابط': 'Two people sitting close in warm cafe light, genuine emotional connection, soft focus, cream and rose tones, authentic human moment, photorealistic',
+      'آرامش': 'Single candle flame in dark room, small circle of warm light, stillness and peace, cream and amber tones, zen minimal, meditative atmosphere'
+    };
+    const imagePrompt = imagePromptMap[tag] || 'Peaceful therapy room with warm light, plants, and cozy furniture, soft cream tones, calming atmosphere';
+    const pollinationsImage = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
     const categoryImage = getCategoryImage(tag);
 
     // Full article HTML (matching blog-generator.js template)
@@ -224,7 +247,7 @@ export default async function handler(req, res) {
 </header>
 
 <main class="article-wrap">
-<img src="../${categoryImage}" alt="${seoTitle}" style="width:100%;height:320px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;">
+<img src="${pollinationsImage}" alt="${seoTitle}" style="width:100%;height:320px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;" onerror="this.src='../${categoryImage}'">
 ${articleHtml}
 <div style="background:linear-gradient(135deg,#F4E9E2,#FBF5F0);border-radius:20px;padding:40px;text-align:center;margin:48px 0;">
   <p style="font-family:'Markazi Text',serif;font-size:28px;color:#3B2E2A;margin-bottom:8px;">آماده‌اید قدم بعدی را بردارید؟</p>
@@ -250,7 +273,7 @@ ${articleHtml}
     let blogContent = fs.readFileSync(blogPath, 'utf8');
 
     const featHtml = `<article class="feat">
-      <a id="feat-img-link" href="/articles/${filename}"><img src="${categoryImage}" alt="${seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;"></a>
+      <a id="feat-img-link" href="/articles/${filename}"><img src="${pollinationsImage}" alt="${seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;" onerror="this.src='${categoryImage}'"></a>
       <div class="fbody">
         <span class="btag">${tag}</span>
         <h2><a id="feat-title-link" href="/articles/${filename}" style="color:inherit;text-decoration:none;">${seoTitle}</a></h2>
@@ -259,7 +282,7 @@ ${articleHtml}
       </div>
     </article>`;
 
-    const bcardHtml = `<article class="bcard"><a href="/articles/${filename}"><img src="${categoryImage}" alt="مقاله روانشناسی" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;"></a><div class="bbody"><span class="btag">${tag}</span><h3>${seoTitle}</h3><div class="meta">${date} · ۵ دقیقه</div><a class="more" href="/articles/${filename}">ادامهٔ مطلب ←</a></div></article>`;
+    const bcardHtml = `<article class="bcard"><a href="/articles/${filename}"><img src="${pollinationsImage}" alt="مقاله روانشناسی" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;" onerror="this.src='${categoryImage}'"></a><div class="bbody"><span class="btag">${tag}</span><h3>${seoTitle}</h3><div class="meta">${date} · ۵ دقیقه</div><a class="more" href="/articles/${filename}">ادامهٔ مطلب ←</a></div></article>`;
 
     const featuredMatch = blogContent.match(/<!-- FEATURED -->\s*<article class="feat">[\s\S]*?<\/article>\s*<!-- GRID -->/);
     if (featuredMatch) {
@@ -280,9 +303,9 @@ ${articleHtml}
       try {
         const articleUrl = `${siteUrl}/articles/${filename}`;
         const topicEmoji = {
-          'اضطراب': '😰', 'افسردگی': '😔', 'روابط': '💝', 'عزت نفس': '✨',
-          'طرحواره': '🧠', 'OCD': '🔄', 'رشد': '🌱', 'والدین': '👨‍👩‍👧',
-          'ADHD': '🎯', 'ذهن‌آگاهی': '🧘'
+          'تنهایی': '🌙', 'عشق به خود': '🌸', 'کودک درون': '🧸', 'ترس': '🕊️',
+          'معنویت': '✨', 'معنا': '🌅', 'شعر فارسی': '📖', 'عزت نفس': '💎',
+          'روابط': '🤍', 'آرامش': '🕯️'
         };
         const emoji = topicEmoji[tag] || '📝';
 

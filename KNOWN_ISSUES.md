@@ -7,6 +7,23 @@
 
 ## 2026-06-04
 
+### [FIX] Persian-filename articles deleted from articles/ + sitemap
+**Symptom:** 7 article files had Persian characters in filenames (e.g. `1780397844556-رشد-فردی.html`), which can cause 404s on Vercel routing.
+**Fix:** Deleted the 7 Persian-filename files. Removed their `<url>` entries from sitemap.xml.
+**Files changed:** articles/ (7 files deleted), sitemap.xml
+
+### [FIX] Canonical tags added to about.html and blog.html
+**Symptom:** About and blog pages missing canonical tags, causing potential duplicate content issues.
+**Fix:** Added `<link rel="canonical">` to both pages:
+- about.html → `https://rahiltherapy.com/about`
+- blog.html → `https://rahiltherapy.com/blog`
+**Files changed:** about.html, blog.html
+
+### [FIX] Missing articles synced into blog.html grid
+**Symptom:** blog.html showed only 21 of 36 articles. 15 articles were absent from the listing grid.
+**Fix:** Added bcard entries for all 15 missing articles (timestamps + foundations + depth series) into blog.html grid, using correct category images per topic.
+**Files changed:** blog.html
+
 ### [FIX] slugify() produced Persian filenames
 **Symptom:** If `slugify()` was called for article filenames, it would output Persian characters (e.g., `اضطراب-و-کنترل-آن.html`), which can break Vercel routing and URL parsing in some browsers.
 **Root cause:** Regex in `slugify()` kept Persian unicode chars instead of stripping them.

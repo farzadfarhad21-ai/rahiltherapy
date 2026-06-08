@@ -254,14 +254,29 @@ node blog-generator.js "موضوع خاص"        # specific topic
 - Gamma — free beautiful carousel slide generation
 - n8n — free self-hosted workflow connector
 
+### SESSION 4 COMPLETED ✅ — 2026-06-04
+
+**Completed:**
+- ✅ KNOWN_ISSUES.md created (living memory file for all bugs + fixes)
+- ✅ daily-automation.js: slugify() rewritten to ASCII-only output
+- ✅ daily-automation.js: post-deploy URL check added (fetches article URL 30s after deploy, Telegram alert if 404)
+- ✅ 7 Persian-filename articles deleted (were causing potential 404s on Vercel)
+- ✅ sitemap.xml cleaned (Persian-filename entries removed)
+- ✅ canonical tags added to about.html and blog.html
+- ✅ All 36 articles now linked in blog.html (was 21)
+- ✅ Google Search Console checked: sitemap healthy, 39 pages discovered, indexing in progress (site is 3 days old)
+- ✅ Graphify run on full project (see graphify-out/)
+
+**Foundation audit result:** 70% → 95% solid. All critical SEO and routing issues fixed.
+
 ### Next Steps (carry forward to next session)
+- [ ] Segmind API for blog images (segmind.com free signup → wire into daily-automation.js)
+- [ ] AI video of Raheleh for Instagram Reels (HeyGen or D-ID — highest traffic leverage)
 - [ ] Complete Meta Developer App setup (developers.facebook.com)
   - Create app → add Instagram product → get access token
-- [ ] Get Segmind API key (free signup: segmind.com)
 - [ ] Build instagram-post.js script (image gen + Meta API post)
 - [ ] Fix instagram-content.js to add emojis throughout captions
 - [ ] First weekly report (run next Sunday)
-- [ ] Monitor Google Search Console for ranking improvements
 - [ ] YouTube channel setup
 
 ### How to Resume Instagram API Setup

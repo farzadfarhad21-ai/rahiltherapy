@@ -16,56 +16,55 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 
 const TOPICS = [
-  'اضطراب',
-  'افسردگی',
-  'روابط',
-  'عزت نفس',
-  'طرحواره درمانی',
-  'OCD',
-  'رشد فردی',
-  'والدین',
-  'ADHD',
-  'ذهن‌آگاهی'
+  'تنهایی و خلوت',
+  'عشق به خود',
+  'کودک درون',
+  'ترس و رهایی',
+  'توکل و معنویت',
+  'معنا و هدف زندگی',
+  'شعر و روان‌شناسی',
+  'عزت نفس و ارزشمندی',
+  'روابط و دلبستگی',
+  'آرامش در جهان ناپایدار'
 ];
 
 const TOPIC_FULL = {
-  'اضطراب': 'اضطراب و راه‌های کنترل آن',
-  'افسردگی': 'افسردگی و نشانه‌های اولیه',
-  'روابط': 'روابط سالم و مرزهای شخصی',
-  'عزت نفس': 'عزت نفس و رابطه با خود',
-  'طرحواره درمانی': 'طرحواره درمانی چیست؟',
-  'OCD': 'OCD - وسواس فکری عملی',
-  'رشد فردی': 'رشد فردی و خودشناسی',
-  'والدین': 'والدین و فرزندپروری',
-  'ADHD': 'ADHD در بزرگسالان',
-  'ذهن‌آگاهی': 'ذهن‌آگاهی و مدیتیشن'
+  'تنهایی و خلوت': 'تنهایی؛ فرار از خود یا بازگشت به خود؟',
+  'عشق به خود': 'عشق به خود؛ نه خودشیفتگی، بلکه مهربانی با خویشتن',
+  'کودک درون': 'کودک درون؛ زخم‌هایی که بزرگ شدیم اما فراموش نکردیم',
+  'ترس و رهایی': 'ترس چیست و چگونه می‌توانیم آزاد شویم؟',
+  'توکل و معنویت': 'توکل؛ رها کردن کنترل و اعتماد به زندگی',
+  'معنا و هدف زندگی': 'چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره',
+  'شعر و روان‌شناسی': 'وقتی حافظ روانشناس بود؛ تفسیر شعر فارسی با دیدگاه روان‌شناختی',
+  'عزت نفس و ارزشمندی': 'عزت نفس واقعی چیست و از کجا می‌آید؟',
+  'روابط و دلبستگی': 'چرا در روابط آسیب می‌بینیم؟ الگوهای دلبستگی و تأثیر آن‌ها',
+  'آرامش در جهان ناپایدار': 'چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟'
 };
 
 const CATEGORY_IMAGES = {
-  'اضطراب': 'cat-anxiety.png',
-  'افسردگی': 'cat-depression.png',
-  'روابط': 'cat-relationships.png',
-  'عزت نفس': 'cat-selfawareness.png',
-  'خودشناسی': 'cat-selfawareness.png',
-  'طرحواره درمانی': 'cat-schema.png',
-  'OCD': 'cat-ocd.png',
-  'رشد فردی': 'cat-growth.png',
-  'والدین': 'cat-parenting.png',
-  'ADHD': 'cat-adhd.png',
-  'ذهن‌آگاهی': 'cat-mindfulness.png'
+  'تنهایی و خلوت': 'cat-mindfulness.png',
+  'عشق به خود': 'cat-selfawareness.png',
+  'کودک درون': 'cat-growth.png',
+  'ترس و رهایی': 'cat-anxiety.png',
+  'توکل و معنویت': 'cat-mindfulness.png',
+  'معنا و هدف زندگی': 'cat-growth.png',
+  'شعر و روان‌شناسی': 'cat-schema.png',
+  'عزت نفس و ارزشمندی': 'cat-selfawareness.png',
+  'روابط و دلبستگی': 'cat-relationships.png',
+  'آرامش در جهان ناپایدار': 'cat-mindfulness.png'
 };
 
 const IMAGE_PROMPTS = {
-  'اضطراب': 'Person sitting peacefully by a window with morning light, hands relaxed on lap, soft cream and rose tones, calm breathing moment, warm interior, photorealistic',
-  'افسردگی': 'Warm golden light breaking through dark clouds over a peaceful landscape, hope and renewal feeling, soft rose and amber tones, cinematic',
-  'روابط': 'Two women having warm conversation over coffee, genuine connection, soft natural light, cream and rose tones, cozy cafe setting, photorealistic',
-  'عزت نفس': 'Woman standing at sunrise looking at horizon, empowered confident posture, golden morning light, open landscape, warm tones, cinematic',
-  'طرحواره درمانی': 'Open journal with pen and dried flowers on wooden desk, soft window light, cream and rose aesthetic, mindful journaling moment, lifestyle photography',
-  'OCD': 'Minimal clean organized desk with single plant and candle, perfectly calm space, soft natural light, cream tones, zen atmosphere',
-  'والدین': 'Parent and child walking hand in hand in soft afternoon light, warm golden tones, gentle connection, park setting, lifestyle photography',
-  'ADHD': 'Creative colorful workspace with plants and natural light, energetic yet organized, warm tones, productive atmosphere, lifestyle photography',
-  'رشد فردی': 'Woman standing at sunrise looking at horizon, empowered confident posture, golden morning light, open landscape, warm tones, cinematic',
-  'ذهن‌آگاهی': 'Candle flame with dried flowers and tea cup on white surface, zen minimal setup, soft diffused light, cream and rose tones, lifestyle photography'
+  'تنهایی و خلوت': 'Woman sitting alone by a window in quiet morning light, peaceful solitude, soft cream and rose tones, tea cup in hand, reflective mood, warm interior, photorealistic',
+  'عشق به خود': 'Woman with eyes closed, gentle smile, hand on heart, soft golden light, self-compassion moment, cream and rose tones, intimate portrait, cinematic',
+  'کودک درون': 'Soft vintage photograph of a child\'s toy on wooden floor with warm afternoon light, nostalgic and gentle, cream and amber tones, emotional depth, lifestyle photography',
+  'ترس و رهایی': 'Person opening their hands releasing light, standing at edge of cliff overlooking misty valley, freedom and release, golden sunrise, cinematic wide shot',
+  'توکل و معنویت': 'Hands clasped in prayer near window with soft morning light streaming in, dried flowers nearby, spiritual calm, cream and rose tones, intimate lifestyle photography',
+  'معنا و هدف زندگی': 'Woman writing in journal at sunrise on a rooftop, city lights fading, first light of day, purposeful and contemplative, warm golden tones, cinematic',
+  'شعر و روان‌شناسی': 'Old Persian poetry book open on wooden desk with dried rose petals, candlelight, vintage ink pen, warm amber tones, literary and intimate atmosphere',
+  'عزت نفس و ارزشمندی': 'Woman standing tall in soft morning light, confident yet gentle posture, looking into mirror with warmth, cream and rose tones, empowerment portrait',
+  'روابط و دلبستگی': 'Two people sitting close in warm café light, genuine emotional connection, soft focus, cream and rose tones, authentic human moment, photorealistic',
+  'آرامش در جهان ناپایدار': 'Single candle flame in a dark room, small circle of warm light, stillness and peace, cream and amber tones, zen minimal, meditative atmosphere'
 };
 
 const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
@@ -92,31 +91,31 @@ function getTodayTopic() {
 
 function getTag(topicKey) {
   const map = {
-    'اضطراب': 'اضطراب',
-    'افسردگی': 'افسردگی',
-    'روابط': 'روابط',
-    'عزت نفس': 'عزت نفس',
-    'طرحواره درمانی': 'طرحواره',
-    'OCD': 'OCD',
-    'رشد فردی': 'رشد فردی',
-    'والدین': 'والدین',
-    'ADHD': 'ADHD',
-    'ذهن‌آگاهی': 'ذهن‌آگاهی'
+    'تنهایی و خلوت': 'تنهایی',
+    'عشق به خود': 'عشق به خود',
+    'کودک درون': 'کودک درون',
+    'ترس و رهایی': 'ترس',
+    'توکل و معنویت': 'معنویت',
+    'معنا و هدف زندگی': 'معنا',
+    'شعر و روان‌شناسی': 'شعر فارسی',
+    'عزت نفس و ارزشمندی': 'عزت نفس',
+    'روابط و دلبستگی': 'روابط',
+    'آرامش در جهان ناپایدار': 'آرامش'
   };
   return map[topicKey] || 'روانشناسی';
 }
 
 const TOPIC_ENGLISH = {
-  'اضطراب': 'anxiety',
-  'افسردگی': 'depression',
-  'روابط': 'relationships',
-  'عزت نفس': 'self-esteem',
-  'طرحواره درمانی': 'schema-therapy',
-  'OCD': 'ocd',
-  'رشد فردی': 'personal-growth',
-  'والدین': 'parenting',
-  'ADHD': 'adhd',
-  'ذهن‌آگاهی': 'mindfulness'
+  'تنهایی و خلوت': 'solitude',
+  'عشق به خود': 'self-love',
+  'کودک درون': 'inner-child',
+  'ترس و رهایی': 'fear-liberation',
+  'توکل و معنویت': 'spirituality',
+  'معنا و هدف زندگی': 'meaning-life',
+  'شعر و روان‌شناسی': 'persian-poetry-psychology',
+  'عزت نفس و ارزشمندی': 'self-worth',
+  'روابط و دلبستگی': 'human-connection',
+  'آرامش در جهان ناپایدار': 'peace-impermanence'
 };
 
 function getEnglishName(topicKey) {
@@ -152,39 +151,46 @@ async function generateBlogPost(topicKey, topicFull) {
   }
 
   const tag = getTag(topicKey);
-  const prompt = `یک مقاله وبلاگی کامل و حرفه‌ای به زبان فارسی معیار درباره "${topicFull}" بنویس.
+  const prompt = `تو راحله اوینی‌پور هستی — روانشناس فارسی‌زبان مقیم دبی، با قلمی گرم، شاعرانه و عمیق.
+یک مقاله وبلاگی درباره "${topicFull}" بنویس.
 
-قوانین سخت:
-- دقیقاً ۶۰۰ تا ۸۰۰ کلمه
-- ۱ عنوان SEO جذاب (بین ۵۰-۶۰ کاراکتر)
-- ۱ پاراگراف مقدمه (۳-۴ جمله)
-- ۳ تا ۴ بخش با عنوان‌های مرتب (h3)
-- هر بخش ۲-۳ پاراگراف
-- ۱ بخش "نکات عملی" با ۳ توصیه مشخص
-- ۱ نتیجه‌گیری با CTA برای رزرو جسله
-- لحن: آرام، تخصصی، دوستانه
+لحن و سبک — این مهم‌ترین بخش است:
+- مثل یک نامه صمیمانه به خواننده بنویس، نه یک مقاله آکادمیک
+- از استعاره، تصویرسازی و زبان شاعرانه فارسی استفاده کن
+- سؤال‌هایی بپرس که خواننده را به درون خودش ببرد
+- می‌توانی از شعر حافظ، مولانا یا سعدی (یک بیت) به‌عنوان آغازگر یا میانه استفاده کنی
+- احساس بده که یک دوست دانا کنارت نشسته، نه یک کتاب درسی
+- پر رنگ، پر از حس، پر از زندگی — نه خشک و کلینیکال
+
+قوانین ساختاری:
+- ۷۰۰ تا ۹۰۰ کلمه
+- ۱ عنوان جذاب و انسانی (نه عنوان درسی)
+- مقدمه‌ای که فوری خواننده را «ببیند» — با یک لحظه، یک سؤال، یا یک تصویر شروع کن
+- ۳ تا ۴ بخش با عنوان‌های احساسی (h3)
+- ۱ بخش «یک قدم کوچک» با ۳ تمرین عملی ساده
+- ۱ نتیجه‌گیری گرم با دعوت ملایم به رزرو جلسه
 - برچسب: ${tag}
 
 ساختار خروجی (فقط HTML، بدون توضیح):
 
 <article class="generated-post">
-<h1>[عنوان SEO]</h1>
+<h1>[عنوان]</h1>
 <div class="meta">[برچسب] · [تاریخ فارسی] · [مدت زمان: X دقیقه]</div>
-<p>[مقدمه]</p>
+<p>[مقدمه — با تصویر یا سؤال یا لحظه شروع کن]</p>
 <h3>[عنوان بخش ۱]</h3>
 <p>[محتوا]</p>
 <h3>[عنوان بخش ۲]</h3>
 <p>[محتوا]</p>
 <h3>[عنوان بخش ۳]</h3>
 <p>[محتوا]</p>
-<h3>نکات عملی</h3>
+<h3>یک قدم کوچک</h3>
 <ul>
-<li>[نکته ۱]</li>
-<li>[نکته ۲]</li>
-<li>[نکته ۳]</li>
+<li>[تمرین ۱]</li>
+<li>[تمرین ۲]</li>
+<li>[تمرین ۳]</li>
 </ul>
-<h3>نتیجه‌گیری</h3>
-<p>[جمع‌بندی + CTA]</p>
+<h3>در پایان</h3>
+<p>[جمع‌بندی گرم + دعوت ملایم]</p>
 </article>
 
 مهم: فقط و فقط HTML برگردان، بدون هیچ متن اضافی.`;
@@ -328,56 +334,25 @@ ${articleHtml}
 }
 
 async function generateImage(topicKey, seoTitle) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) {
-    throw new Error('ANTHROPIC_API_KEY environment variable is required');
-  }
-
   const imagePrompt = IMAGE_PROMPTS[topicKey];
   if (!imagePrompt) {
     log(`No image prompt for topic: ${topicKey}, using fallback`, 'WARN');
     return getCategoryImage(topicKey);
   }
 
-  log(`Generating image for topic: ${topicKey}`);
+  log(`Generating image via Pollinations.ai for topic: ${topicKey}`);
 
-  // Use direct MiniMax API (not the anthropic proxy path)
-  const baseUrl = 'https://api.minimax.io';
-
-  const response = await fetch(`${baseUrl}/v1/images/generations`, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'image-01',
-      prompt: imagePrompt,
-      number: 1,
-      size: '1024x1024'
-    })
-  });
-
-  if (!response.ok) {
-    const err = await response.text();
-    throw new Error(`Image API Error ${response.status}: ${err}`);
-  }
-
-  const data = await response.json();
-
-  if (!data.data || !data.data[0] || !data.data[0].url) {
-    throw new Error('No image URL in API response');
-  }
-
-  const imageUrl = data.data[0].url;
-  const timestamp = Date.now();
-  const imageFilename = `${timestamp}-${getEnglishName(topicKey)}.png`;
-  const imageFilepath = path.join(BLOG_DIR, imageFilename);
+  const encodedPrompt = encodeURIComponent(imagePrompt);
+  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
 
   const imageResponse = await fetch(imageUrl);
   if (!imageResponse.ok) {
-    throw new Error(`Failed to download image: ${imageResponse.status}`);
+    throw new Error(`Pollinations image fetch failed: ${imageResponse.status}`);
   }
+
+  const timestamp = Date.now();
+  const imageFilename = `${timestamp}-${getEnglishName(topicKey)}.jpg`;
+  const imageFilepath = path.join(BLOG_DIR, imageFilename);
 
   const buffer = await imageResponse.arrayBuffer();
   fs.writeFileSync(imageFilepath, Buffer.from(buffer));
@@ -449,16 +424,16 @@ async function sendTelegramPhoto(articleInfo) {
     ? path.join(__dirname, articleInfo.imageFilename)
     : path.join(BLOG_DIR, articleInfo.imageFilename);
   const topicEmoji = {
-    'اضطراب': '😰',
-    'افسردگی': '😔',
-    'روابط': '💝',
-    'عزت نفس': '✨',
-    'طرحواره': '🧠',
-    'OCD': '🔄',
-    'رشد فردی': '🌱',
-    'والدین': '👨‍👩‍👧',
-    'ADHD': '🎯',
-    'ذهن‌آگاهی': '🧘'
+    'تنهایی': '🌙',
+    'عشق به خود': '🌸',
+    'کودک درون': '🧸',
+    'ترس': '🕊️',
+    'معنویت': '✨',
+    'معنا': '🌅',
+    'شعر فارسی': '📖',
+    'عزت نفس': '💎',
+    'روابط': '🤍',
+    'آرامش': '🕯️'
   };
 
   const emoji = topicEmoji[articleInfo.tag] || '📝';
@@ -527,8 +502,8 @@ async function sendTelegramAlert(message) {
 }
 
 async function checkDeployedUrl(articleUrl) {
-  log(`Post-deploy check: waiting 30s for Vercel to propagate...`);
-  await new Promise(resolve => setTimeout(resolve, 30000));
+  log(`Post-deploy check: waiting 3min for Vercel to propagate...`);
+  await new Promise(resolve => setTimeout(resolve, 180000));
 
   try {
     const response = await fetch(articleUrl, { method: 'HEAD' });
@@ -537,16 +512,12 @@ async function checkDeployedUrl(articleUrl) {
       return true;
     } else {
       log(`Post-deploy check FAILED: ${articleUrl} → ${response.status}`, 'ERROR');
-      await sendTelegramAlert(
-        `⚠️ *Deploy check failed!*\n\nURL: ${articleUrl}\nStatus: ${response.status}\n\nPlease check the site manually.`
-      );
+      // Silent — log only, no Telegram spam
       return false;
     }
   } catch (err) {
     log(`Post-deploy check ERROR: ${err.message}`, 'ERROR');
-    await sendTelegramAlert(
-      `⚠️ *Deploy check error!*\n\nURL: ${articleUrl}\nError: ${err.message}`
-    );
+    // Silent — log only, no Telegram spam
     return false;
   }
 }
@@ -589,19 +560,10 @@ async function runDailyAutomation() {
     updateBlogHtml(articleInfo);
     updateSitemap(articleInfo);
 
-    // Write article info for workflow steps (Vercel deploy + Telegram poll happen in CI)
-    const articleData = JSON.stringify({
-      filename: articleInfo.filename,
-      seoTitle: articleInfo.seoTitle,
-      tag: articleInfo.tag,
-      date: articleInfo.date,
-      imageFilename: articleInfo.imageFilename,
-      articleUrl: `${SITE_URL}/articles/${articleInfo.filename}`
-    });
-    fs.writeFileSync(path.join(__dirname, '.article-info.json'), articleData, 'utf8');
-    console.log('ARTICLE_INFO:' + articleData);
+    // Deploy to Vercel
+    deployToVercel();
 
-    // Post-deploy URL check
+    // Post-deploy URL check (3 min wait — Vercel needs time to propagate)
     const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
     await checkDeployedUrl(articleUrl);
 
