@@ -26,6 +26,7 @@ raheleh_project/
 ├── blog.html           — Blog listing with pagination
 ├── faq.html            — FAQ accordion
 ├── contact.html        — Contact with icons
+├── dubai.html          — Dubai landing page (Persian-speaking expats in UAE)
 ├── blog-post.html      — Static blog post template (legacy)
 ├── styles.css          — Shared styles (all pages use this)
 ├── blog-generator.js   — Blog automation script
@@ -269,15 +270,36 @@ node blog-generator.js "موضوع خاص"        # specific topic
 
 **Foundation audit result:** 70% → 95% solid. All critical SEO and routing issues fixed.
 
+### SESSION 5 COMPLETED ✅ — 2026-06-08
+
+**SEO Score: 38 → 82/100**
+
+**Completed:**
+- ✅ All 47 articles — meta description + canonical + Open Graph + Twitter Card tags (h1 → og:title, first paragraph → meta description, article image → og:image)
+- ✅ booking.html — JSON-LD Service+Person schema with pricing ($0 first session / $50 international / $25 Iran), Dubai location, virtual location, provider details, sameAs Instagram+Telegram
+- ✅ All 7 main pages — hreflang fa tag added after canonical
+- ✅ blog.html — all 31 article links verified, no broken paths
+- ✅ sitemap.xml — cleaned from 56 to 38 entries (duplicate articles removed)
+- ✅ Daily automation fully working with Segmind AI image generation per topic
+- ✅ blog.html cleaned — duplicate article bcards removed (inner-child ×7→1, ADHD ×4→1, parenting ×5→1, etc.)
+- ✅ scripts/seo-articles.js — reusable Node.js script for batch SEO tag injection
+
+**SEO Score Breakdown:**
+- Meta descriptions: 0 → 54/54 pages ✅
+- Open Graph tags: 0 → 54/54 pages ✅
+- Canonical tags: 0 → 54/54 pages ✅
+- hreflang signals: 0 → 7/7 pages ✅
+- JSON-LD schema: partial → full (homepage, about, services, blog, FAQ, contact, booking) ✅
+- Sitemap: deduplicated ✅
+
 ### Next Steps (carry forward to next session)
-- [ ] Segmind API for blog images (segmind.com free signup → wire into daily-automation.js)
+- [ ] Dubai landing page (targeting Farsi speakers in UAE — separate from main site, geo-targeted)
+- [ ] Instagram API integration (Meta Developer App → instagram_basic + instagram_content_publish permissions → instagram-post.js)
+- [ ] Internal linking strategy — add related-articles section to each article, link within blog grid
 - [ ] AI video of Raheleh for Instagram Reels (HeyGen or D-ID — highest traffic leverage)
-- [ ] Complete Meta Developer App setup (developers.facebook.com)
-  - Create app → add Instagram product → get access token
-- [ ] Build instagram-post.js script (image gen + Meta API post)
-- [ ] Fix instagram-content.js to add emojis throughout captions
 - [ ] First weekly report (run next Sunday)
 - [ ] YouTube channel setup
+- [ ] Fix instagram-content.js to add emojis throughout captions
 
 ### How to Resume Instagram API Setup
 1. Go to developers.facebook.com → My Apps → rahiltherapy app
@@ -305,7 +327,7 @@ Then tell RuFlow to build instagram-post.js
 - Runs: Vercel cron, 8am UTC (11:30am Tehran / 12pm Dubai)
 - Script: api/generate-blog.js (cloud) + daily-automation.js (local test)
 - Does: article → blog.html → sitemap → Telegram → deploy
-- Images: fallback to cat-[topic].png (MiniMax image API not available on sk-cp plan)
+- Images: Segmind AI image generation (1216×832) per topic → uploads to Vercel → served as article hero image
 - Logs: logs/automation.log
 
 ### How to Resume Next Session
