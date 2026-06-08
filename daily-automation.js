@@ -336,32 +336,47 @@ ${articleHtml}
 }
 
 async function generateImage(topicKey, seoTitle) {
-  const imagePrompt = IMAGE_PROMPTS[topicKey];
-  if (!imagePrompt) {
-    log(`No image prompt for topic: ${topicKey}, using fallback`, 'WARN');
-    return getCategoryImage(topicKey);
+  const apiKey = process.env.SEGMIND_API_KEY;
+  if (!apiKey) {
+    throw new Error('SEGMIND_API_KEY not set');
   }
 
-  log(`Generating image via Pollinations.ai for topic: ${topicKey}`);
+  const basePrompt = IMAGE_PROMPTS[topicKey] || 'Peaceful therapy room with warm light and plants, soft cream tones';
+  // Blend topic prompt with article title for better content match
+  const fullPrompt = `${basePrompt}, mood inspired by: ${seoTitle}, warm cream and rose color palette, soft natural lighting, cinematic, high quality, 4k`;
+  const negativePrompt = 'ugly, blurry, low quality, watermark, text, logo, cartoon, anime, distorted, dark, harsh lighting';
 
-  const encodedPrompt = encodeURIComponent(imagePrompt);
-  const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
+  log(`Generating image via Segmind for topic: ${topicKey}`);
 
-  // Retry up to 3 times with 5s delay
-  let imageResponse;
-  for (let attempt = 1; attempt <= 3; attempt++) {
-    await new Promise(r => setTimeout(r, 5000));
-    imageResponse = await fetch(imageUrl);
-    if (imageResponse.ok) break;
-    log(`Pollinations attempt ${attempt} failed: ${imageResponse.status}`, 'WARN');
-    if (attempt === 3) throw new Error(`Pollinations image fetch failed: ${imageResponse.status}`);
+  const response = await fetch('https://api.segmind.com/v1/flux-schnell', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      prompt: fullPrompt,
+      negative_prompt: negativePrompt,
+      steps: 4,
+      seed: Math.floor(Math.random() * 1000000),
+      sampler: 'euler',
+      scheduler: 'simple',
+      width: 1216,
+      height: 832,
+      base64: false
+    })
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Segmind API error ${response.status}: ${err}`);
   }
 
   const timestamp = Date.now();
   const imageFilename = `${timestamp}-${getEnglishName(topicKey)}.jpg`;
   const imageFilepath = path.join(BLOG_DIR, imageFilename);
 
-  const buffer = await imageResponse.arrayBuffer();
+  const buffer = await response.arrayBuffer();
   fs.writeFileSync(imageFilepath, Buffer.from(buffer));
 
   log(`Image saved: articles/${imageFilename}`);
@@ -555,9 +570,14 @@ async function runDailyAutomation() {
     articleInfo = await generateBlogPost(topicKey, topicFull);
     log(`Article generated: ${articleInfo.seoTitle}`);
 
-    // Article image is already embedded as Pollinations URL in HTML at generation time
-    // Telegram uses category image (reliable, no external fetch in GA)
-    articleInfo.imageFilename = getCategoryImage(topicKey);
+    try {
+      const imageFilename = await generateImage(topicKey, articleInfo.seoTitle);
+      articleInfo.imageFilename = imageFilename;
+      updateArticleImage(articleInfo.filename, imageFilename);
+    } catch (imageError) {
+      log(`Image generation failed, using fallback: ${imageError.message}`, 'WARN');
+      articleInfo.imageFilename = getCategoryImage(topicKey);
+    }
 
     updateBlogHtml(articleInfo);
     updateSitemap(articleInfo);
