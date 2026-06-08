@@ -235,3 +235,15 @@
 [2026-06-08T08:34:43.951Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
 [2026-06-08T08:35:14.182Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780907683598-relationships.html → 404
 [2026-06-08T08:35:14.919Z] [INFO] ========== Automation Completed Successfully in 83.3s ==========
+[2026-06-08T09:44:32.036Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-08T09:44:32.038Z] [INFO] Selected topic: روابط سالم و مرزهای شخصی (Topic #3/10)
+[2026-06-08T09:44:32.039Z] [INFO] Generating article for topic: روابط سالم و مرزهای شخصی
+[2026-06-08T09:45:18.466Z] [INFO] Article created: articles/1780911918466-relationships.html
+[2026-06-08T09:45:18.467Z] [INFO] Article generated: روابط سالم و مرزهای شخصی: کلید زندگی متعادل
+[2026-06-08T09:45:18.467Z] [INFO] Generating image for topic: روابط
+[2026-06-08T09:45:18.791Z] [WARN] Image generation failed, using fallback: Image API Error 404: 404 page not found
+[2026-06-08T09:45:18.792Z] [INFO] Updated blog.html with new article card
+[2026-06-08T09:45:18.792Z] [INFO] Updated sitemap.xml
+[2026-06-08T09:45:18.793Z] [INFO] Post-deploy check: waiting 30s for Vercel to propagate...
+[2026-06-08T09:45:49.009Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1780911918466-relationships.html → 404
+[2026-06-08T09:45:49.664Z] [INFO] ========== Automation Completed Successfully in 77.6s ==========
