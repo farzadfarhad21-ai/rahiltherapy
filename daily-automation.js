@@ -401,7 +401,7 @@ function updateBlogHtml(articleInfo) {
   let blogContent = fs.readFileSync(blogPath, 'utf8');
 
   const featHtml = `<article class="feat">
-      <a id="feat-img-link" href="/articles/${articleInfo.filename}"><img src="/articles/${articleInfo.imageFilename}" alt="${articleInfo.seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;"></a>
+      <a id="feat-img-link" href="/articles/${articleInfo.filename}"><img src="/${articleInfo.imageFilename}" alt="${articleInfo.seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;"></a>
       <div class="fbody">
         <span class="btag">${articleInfo.tag}</span>
         <h2><a id="feat-title-link" href="/articles/${articleInfo.filename}" style="color:inherit;text-decoration:none;">${articleInfo.seoTitle}</a></h2>
@@ -410,7 +410,7 @@ function updateBlogHtml(articleInfo) {
       </div>
     </article>`;
 
-  const bcardHtml = `<article class="bcard"><a href="/articles/${articleInfo.filename}"><img src="/articles/${articleInfo.imageFilename}" alt="مقاله روانشناسی" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;"></a><div class="bbody"><span class="btag">${articleInfo.tag}</span><h3>${articleInfo.seoTitle}</h3><div class="meta">${articleInfo.date} · ۵ دقیقه</div><a class="more" href="/articles/${articleInfo.filename}">ادامهٔ مطلب ←</a></div></article>`;
+  const bcardHtml = `<article class="bcard"><a href="/articles/${articleInfo.filename}"><img src="/${articleInfo.imageFilename}" alt="مقاله روانشناسی" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;"></a><div class="bbody"><span class="btag">${articleInfo.tag}</span><h3>${articleInfo.seoTitle}</h3><div class="meta">${articleInfo.date} · ۵ دقیقه</div><a class="more" href="/articles/${articleInfo.filename}">ادامهٔ مطلب ←</a></div></article>`;
 
   const featuredMatch = blogContent.match(/<!-- FEATURED -->\s*<article class="feat">[\s\S]*?<\/article>\s*<!-- GRID -->/);
   if (featuredMatch) {
