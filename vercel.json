@@ -10,7 +10,8 @@
     { "source": "/blog", "destination": "/blog.html" },
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/dubai", "destination": "/dubai.html" }
+    { "source": "/dubai", "destination": "/dubai.html" },
+    { "source": "/privacy", "destination": "/privacy.html" }
   ],
   "headers": [
     {
