@@ -1,5 +1,66 @@
+# rahiltherapy.com — robots.txt
+# Persian-language therapy practice. AI crawlers explicitly welcomed with attribution.
+
 User-agent: *
 Allow: /
 Disallow: /index-options.html
+Disallow: /api/
+
+# Google AI training crawler
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Microsoft Copilot / Bing
+User-agent: bingbot
+Allow: /
+
+# Common Crawl (used by many AI models for training)
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
 
 Sitemap: https://rahiltherapy.com/sitemap.xml

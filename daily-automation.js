@@ -173,7 +173,7 @@ async function generateBlogPost(topicKey, topicFull) {
 
 ساختار خروجی (فقط HTML، بدون توضیح):
 
-<article class="generated-post">
+<article class="blog-article">
 <h1>[عنوان]</h1>
 <div class="meta">[برچسب] · [تاریخ فارسی] · [مدت زمان: X دقیقه]</div>
 <p>[مقدمه — با تصویر یا سؤال یا لحظه شروع کن]</p>
@@ -247,7 +247,7 @@ async function generateBlogPost(topicKey, topicFull) {
   } else {
     throw new Error('No content in API response');
   }
-  const articleMatch = rawContent.match(/<article class="generated-post">[\s\S]*?<\/article>/);
+  const articleMatch = rawContent.match(/<article class="blog-article">[\s\S]*?<\/article>/);
   if (!articleMatch) throw new Error('Failed to parse generated article');
 
   const articleHtml = articleMatch[0];

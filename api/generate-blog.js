@@ -112,7 +112,7 @@ async function generateBlogPost(topic) {
 
 ساختار خروجی (فقط HTML، بدون توضیح):
 
-<article class="generated-post">
+<article class="blog-article">
 <h1>[عنوان]</h1>
 <div class="meta">[برچسب] · [تاریخ فارسی] · [مدت زمان: X دقیقه]</div>
 <p>[مقدمه — با تصویر یا سؤال یا لحظه شروع کن]</p>
@@ -173,7 +173,7 @@ export default async function handler(req, res) {
     const rawContent = await generateBlogPost(topic);
 
     // Parse the generated HTML
-    const articleMatch = rawContent.match(/<article class="generated-post">[\s\S]*?<\/article>/);
+    const articleMatch = rawContent.match(/<article class="blog-article">[\s\S]*?<\/article>/);
     if (!articleMatch) {
       throw new Error('Failed to parse generated article');
     }
