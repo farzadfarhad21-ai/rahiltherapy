@@ -423,3 +423,18 @@
 [2026-06-10T08:39:25.140Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-10T08:42:25.318Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781080732519-spirituality.html → 404
 [2026-06-10T08:42:25.319Z] [INFO] ========== Automation Completed Successfully in 278.2s ==========
+[2026-06-11T08:54:25.806Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-11T08:54:25.809Z] [INFO] Selected topic: چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره (Topic #6/10)
+[2026-06-11T08:54:25.809Z] [INFO] Generating article for topic: چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره
+[2026-06-11T08:55:26.049Z] [INFO] Article created: articles/1781168126048-meaning-life.html
+[2026-06-11T08:55:26.049Z] [INFO] Article generated: چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره
+[2026-06-11T08:55:26.049Z] [INFO] Generating image via Segmind for topic: معنا و هدف زندگی
+[2026-06-11T08:55:31.690Z] [INFO] Image saved: articles/1781168130913-meaning-life.jpg
+[2026-06-11T08:55:31.690Z] [INFO] Updated article with new image: 1781168130913-meaning-life.jpg
+[2026-06-11T08:55:31.691Z] [INFO] Updated blog.html with new article card
+[2026-06-11T08:55:31.692Z] [INFO] Updated sitemap.xml
+[2026-06-11T08:55:31.692Z] [INFO] Starting Vercel deployment...
+[2026-06-11T08:56:02.270Z] [INFO] Vercel deployment completed
+[2026-06-11T08:56:02.271Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-11T08:59:02.801Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781168126048-meaning-life.html → 404
+[2026-06-11T08:59:02.801Z] [INFO] ========== Automation Completed Successfully in 277.0s ==========
