@@ -18,23 +18,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 
-<!-- Organization + ProfessionalService Schema -->
+<!-- MedicalBusiness + ProfessionalService Schema -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Organization", "ProfessionalService"],
+  "@type": ["MedicalBusiness", "ProfessionalService"],
+  "@id": "https://rahiltherapy.com/#business",
   "name": "راحله اوینی‌پور — روانشناس عمومی",
+  "alternateName": "Raheleh Avinipour Therapy",
   "description": "روانشناس عمومی فارسی‌زبان، مقیم دبی، متخصص CBT و طرحواره‌درمانی. خدمات مشاوره آنلاین برای ایرانیان در سراسر دنیا.",
   "url": "https://rahiltherapy.com",
   "telephone": "+989124228995",
   "email": "ravinipour@gmail.com",
+  "priceRange": "$$",
+  "inLanguage": ["fa", "en"],
+  "medicalSpecialty": "Psychiatric",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Dubai",
     "addressCountry": "AE"
   },
-  "areaServed": "WORLDWIDE",
-  "image": "https://rahiltherapy.com/profile.PNG",
+  "areaServed": [
+    {"@type": "Country", "name": "Iran"},
+    {"@type": "Country", "name": "United Arab Emirates"},
+    {"@type": "Place", "name": "Worldwide (Persian-speaking diaspora)"}
+  ],
+  "image": "https://rahiltherapy.com/profile.png",
+  "logo": "https://rahiltherapy.com/profile.png",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://rahiltherapy.com/about#therapist",
+    "name": "راحله اوینی‌پور",
+    "alternateName": "Raheleh Avinipour",
+    "jobTitle": "روانشناس عمومی — General Psychologist",
+    "knowsLanguage": ["fa", "en"],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "educationalLevel": "Master's degree", "name": "M.Sc. General Psychology (Clinical Psychology specialization)"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Certified CBT Therapist"},
+      {"@type": "EducationalOccupationalCredential", "credentialCategory": "certification", "name": "Certified Schema Therapist"}
+    ]
+  },
+  "availableService": [
+    {"@type": "MedicalTherapy", "name": "Cognitive Behavioral Therapy (CBT)"},
+    {"@type": "MedicalTherapy", "name": "Schema Therapy"},
+    {"@type": "MedicalTherapy", "name": "درمان اضطراب — Anxiety Treatment"},
+    {"@type": "MedicalTherapy", "name": "درمان افسردگی — Depression Treatment"},
+    {"@type": "MedicalTherapy", "name": "درمان OCD — OCD Treatment (ERP)"},
+    {"@type": "MedicalTherapy", "name": "درمان ADHD — ADHD Counseling"},
+    {"@type": "MedicalTherapy", "name": "مشاوره خانواده و زوج — Family & Couples Therapy"},
+    {"@type": "MedicalTherapy", "name": "افزایش عزت نفس — Self-Esteem Work"}
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Services",
@@ -48,7 +81,10 @@
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "افزایش عزت نفس"}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "مشاوره آنلاین"}}
     ]
-  }
+  },
+  "sameAs": [
+    "https://www.instagram.com/ravinipour"
+  ]
 }
 </script>
 
@@ -64,7 +100,7 @@
 <meta property="og:description" content="مشاوره روانشناسی آنلاین به فارسی برای ایرانیان سراسر جهان. متخصص CBT و طرحواره‌درمانی. درمان اضطراب، افسردگی، OCD و عزت نفس. جلسه اول رایگان.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rahiltherapy.com/">
-<meta property="og:image" content="https://rahiltherapy.com/profile.PNG">
+<meta property="og:image" content="https://rahiltherapy.com/profile.png">
 <meta property="og:site_name" content="راحله اوینی‌پور — روانشناس عمومی">
 <meta property="og:locale" content="fa_IR">
 
@@ -72,7 +108,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="راحله اوینی‌پور — روانشناس عمومی و مشاور آنلاین فارسی‌زبان">
 <meta name="twitter:description" content="مشاوره روانشناسی آنلاین به فارسی برای ایرانیان سراسر جهان. متخصص CBT و طرحواره‌درمانی. درمان اضطراب، افسردگی، OCD. جلسه اول رایگان.">
-<meta name="twitter:image" content="https://rahiltherapy.com/profile.PNG">
+<meta name="twitter:image" content="https://rahiltherapy.com/profile.png">
 
 <style>
   :root{
@@ -417,7 +453,7 @@
 <section id="about" class="about">
   <div class="container">
     <div class="agrid">
-      <div><img src="profile.PNG" alt="راحله اوینی‌پور" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%"></div>
+      <div><img src="profile.png" alt="راحله اوینی‌پور" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%"></div>
       <div>
         <span class="kicker">درباره من</span>
         <h2>راحله اوینی‌پور</h2>
