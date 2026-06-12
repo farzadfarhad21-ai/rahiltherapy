@@ -49,6 +49,16 @@ Verify nothing left: `grep -rc TODO_LICENSE_NUMBER --include="*.html"`
 - [x] Replaced unsourced "40% faster" stat → clinical observation phrasing (YMYL fix)
 - [x] Added `/privacy.html` to sitemap.xml
 
+### Batch 4 — Quality cleanup (June 12)
+- [x] Noindex 24 duplicate/low-quality articles (5 parenting dups, 10 inner-child dups, 2 adhd dups, 1 depression dup, 1 relationships dup, 7 templated article-N.html)
+- [x] Removed noindexed articles from sitemap.xml (35 URLs remain, was 41)
+- [x] Added `Article` + `BreadcrumbList` JSON-LD to daily-automation.js generator (future posts auto-have it)
+- [x] Updated article template footer in generator (2026 copyright + license placeholder + privacy link)
+- [x] Backfilled `Article` + `BreadcrumbList` schema on 39 existing articles (50 now have Article schema)
+- [x] Added meta description, og:tags, canonical to daily-automation.js article template
+- [x] Expanded homepage about-teaser content (3 paragraphs → much richer YMYL signals)
+- [x] Expanded /about story section (3 paragraphs → 5 paragraphs with credentials + specialty + diaspora context)
+
 ### Batch 3 — Medium (June 11)
 - [x] License placeholder block on About page (large, visible, prominent)
 - [x] License placeholder in footer (sitewide, all 9 main pages)
@@ -66,12 +76,11 @@ Verify nothing left: `grep -rc TODO_LICENSE_NUMBER --include="*.html"`
 - [ ] **Fill in real license number** (see top of file)
 
 ### 🟠 High
-- [ ] Rewrite top 5 AI-batch articles (mindfulness, parenting, early ADHD, early depression, generic relationships) — they all use identical template + "تیم ما" multi-therapist phrasing
-  - OR noindex them in `<head>`: `<meta name="robots" content="noindex,follow">`
+- [x] ~~Rewrite/noindex top 5 AI-batch articles~~ → noindexed 24 duplicates in batch 4
 - [ ] Add `<time datetime="ISO">` tags around all Jalali dates in articles (AI freshness signal)
-- [ ] Expand `/about` Persian content (currently ~280 words → need 500+)
-- [ ] Expand `/index.html` hero/about Persian content (currently ~320 visible words → need 500+)
-- [ ] Add explicit `Article` schema to all auto-generated articles (timestamp IDs `1780334xxx+`) — generator needs update
+- [x] ~~Expand `/about` Persian content~~ → done in batch 4
+- [x] ~~Expand `/index.html` hero/about Persian content~~ → done in batch 4
+- [x] ~~Add explicit `Article` schema to all auto-generated articles~~ → done in batch 4 (generator + backfill)
 
 ### 🟡 Medium
 - [ ] Expand FAQ answers from 1-3 sentences → 134-167 words each for AI citation extraction

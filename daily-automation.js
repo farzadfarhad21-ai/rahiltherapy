@@ -269,6 +269,56 @@ async function generateBlogPost(topicKey, topicFull) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${seoTitle} — راحله اوینی‌پور</title>
+<meta name="description" content="${excerpt}">
+<link rel="canonical" href="https://rahiltherapy.com/articles/${filename}">
+<meta property="og:title" content="${seoTitle}">
+<meta property="og:description" content="${excerpt}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://rahiltherapy.com/articles/${filename}">
+<meta property="og:image" content="https://rahiltherapy.com/${getCategoryImage(topicKey)}">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${seoTitle}">
+<meta name="twitter:description" content="${excerpt}">
+
+<!-- Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": ${JSON.stringify(seoTitle)},
+  "description": ${JSON.stringify(excerpt)},
+  "image": "https://rahiltherapy.com/${getCategoryImage(topicKey)}",
+  "author": {
+    "@type": "Person",
+    "name": "راحله اوینی‌پور",
+    "jobTitle": "روانشناس عمومی",
+    "url": "https://rahiltherapy.com/about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "راحله اوینی‌پور — رهیل تراپی",
+    "logo": {"@type": "ImageObject", "url": "https://rahiltherapy.com/profile.png"}
+  },
+  "datePublished": "${new Date(timestamp).toISOString().split('T')[0]}",
+  "dateModified": "${new Date(timestamp).toISOString().split('T')[0]}",
+  "inLanguage": "fa",
+  "articleSection": ${JSON.stringify(tag)},
+  "mainEntityOfPage": "https://rahiltherapy.com/articles/${filename}"
+}
+</script>
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "خانه", "item": "https://rahiltherapy.com/"},
+    {"@type": "ListItem", "position": 2, "name": "بلاگ", "item": "https://rahiltherapy.com/blog"},
+    {"@type": "ListItem", "position": 3, "name": ${JSON.stringify(tag)}, "item": "https://rahiltherapy.com/articles/${filename}"}
+  ]
+}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -324,7 +374,7 @@ ${articleHtml}
 </div>
 </main>
 
-<footer class="footer"><div class="container"><div class="fbar">© ۲۰۲۵ راحله اوینی‌پور — تمامی حقوق محفوظ است.</div></div></footer>
+<footer class="footer"><div class="container"><div class="fbar">© ۲۰۲۶ راحله اوینی‌پور — تمامی حقوق محفوظ است. | شماره پروانه روانشناسی: <span style="font-family:monospace;letter-spacing:1px;opacity:.9;">TODO_LICENSE_NUMBER</span> | <a href="/privacy" style="color:#fff;text-decoration:underline;">حریم خصوصی</a></div></div></footer>
 <script>lucide.createIcons();</script>
 </body>
 </html>`;
