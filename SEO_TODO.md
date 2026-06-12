@@ -49,6 +49,12 @@ Verify nothing left: `grep -rc TODO_LICENSE_NUMBER --include="*.html"`
 - [x] Replaced unsourced "40% faster" stat → clinical observation phrasing (YMYL fix)
 - [x] Added `/privacy.html` to sitemap.xml
 
+### Batch 6 — Time + sitemap polish (June 12)
+- [x] Wrapped Jalali dates with `<time datetime="ISO">` on 49 articles (AI freshness signal)
+- [x] Updated generator template so future posts emit `<time>` automatically
+- [x] Added `<lastmod>` to all 35 sitemap URLs (article dates pulled from each article's Article schema)
+- [x] Confirmed cat-*.png alt text is topic-descriptive (no rewrite needed)
+
 ### Batch 5 — Medium polish (June 12)
 - [x] Expanded all 12 FAQ answers to 134-167 words each (both schema + visible HTML) for AI citation extraction
 - [x] Added `hreflang="x-default"` to 9 main pages
@@ -93,11 +99,11 @@ Verify nothing left: `grep -rc TODO_LICENSE_NUMBER --include="*.html"`
 - [x] ~~Expand FAQ answers~~ → done in batch 5 (all 12 to ~140 words each)
 - [ ] Cite at least one source per article ("طبق راهنمای DSM-5", "بر اساس APA") — ongoing as new content is created
 - [x] ~~Add `hreflang="x-default"` to homepage~~ → done in batch 5 (9 pages)
-- [ ] Sitemap: add `<lastmod>` dates to entries
+- [x] ~~Sitemap: add `<lastmod>` dates~~ → done in batch 6
 - [x] ~~Internal linking: from article footers back to /services and /booking~~ → done in batch 5
-- [ ] Improve image alt text for category icons (cat-*.png) — currently generic
+- [x] ~~Improve image alt text for category icons~~ → confirmed topic-descriptive
 - [ ] Audit auto-generated `meta description` for duplicates across articles
-- [ ] Add `<time datetime="ISO">` tags around Jalali dates in articles
+- [x] ~~Add `<time datetime="ISO">` tags around Jalali dates in articles~~ → done in batch 6
 
 ### 🟢 Low / Strategic
 - [ ] YouTube channel — strongest brand-mention signal (0.737 correlation with AI citations)

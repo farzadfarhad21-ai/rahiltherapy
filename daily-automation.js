@@ -175,7 +175,7 @@ async function generateBlogPost(topicKey, topicFull) {
 
 <article class="blog-article">
 <h1>[عنوان]</h1>
-<div class="meta">[برچسب] · [تاریخ فارسی] · [مدت زمان: X دقیقه]</div>
+<div class="meta">[برچسب] · <time datetime="[تاریخ ISO YYYY-MM-DD]">[تاریخ فارسی]</time> · [مدت زمان: X دقیقه]</div>
 <p>[مقدمه — با تصویر یا سؤال یا لحظه شروع کن]</p>
 <h3>[عنوان بخش ۱]</h3>
 <p>[محتوا]</p>
