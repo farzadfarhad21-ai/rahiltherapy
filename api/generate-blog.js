@@ -40,23 +40,23 @@ const TAGS = {
 };
 
 const CATEGORY_IMAGES = {
-  'تنهایی': 'cat-mindfulness.png',
-  'عشق به خود': 'cat-selfawareness.png',
-  'کودک درون': 'cat-growth.png',
-  'ترس': 'cat-anxiety.png',
-  'توکل': 'cat-mindfulness.png',
-  'معنا': 'cat-growth.png',
-  'حافظ': 'cat-schema.png',
-  'عزت نفس': 'cat-selfawareness.png',
-  'روابط': 'cat-relationships.png',
-  'آرامش': 'cat-mindfulness.png'
+  'تنهایی': 'cat-mindfulness.jpg',
+  'عشق به خود': 'cat-selfawareness.jpg',
+  'کودک درون': 'cat-growth.jpg',
+  'ترس': 'cat-anxiety.jpg',
+  'توکل': 'cat-mindfulness.jpg',
+  'معنا': 'cat-growth.jpg',
+  'حافظ': 'cat-schema.jpg',
+  'عزت نفس': 'cat-selfawareness.jpg',
+  'روابط': 'cat-relationships.jpg',
+  'آرامش': 'cat-mindfulness.jpg'
 };
 
 function getCategoryImage(tag) {
   for (const [key, img] of Object.entries(CATEGORY_IMAGES)) {
     if (tag.includes(key)) return img;
   }
-  return 'cat-growth.png';
+  return 'cat-growth.jpg';
 }
 
 function getTag(topic) {

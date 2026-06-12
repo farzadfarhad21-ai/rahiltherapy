@@ -41,23 +41,23 @@ const TAGS = {
 };
 
 const CATEGORY_IMAGES = {
-  'اضطراب': 'cat-anxiety.png',
-  'افسردگی': 'cat-depression.png',
-  'روابط': 'cat-relationships.png',
-  'رشد فردی': 'cat-growth.png',
-  'طرحواره': 'cat-schema.png',
-  'OCD': 'cat-ocd.png',
-  'والدین': 'cat-parenting.png',
-  'ADHD': 'cat-adhd.png',
-  'خودشناسی': 'cat-selfawareness.png',
-  'ذهن‌آگاهی': 'cat-mindfulness.png'
+  'اضطراب': 'cat-anxiety.jpg',
+  'افسردگی': 'cat-depression.jpg',
+  'روابط': 'cat-relationships.jpg',
+  'رشد فردی': 'cat-growth.jpg',
+  'طرحواره': 'cat-schema.jpg',
+  'OCD': 'cat-ocd.jpg',
+  'والدین': 'cat-parenting.jpg',
+  'ADHD': 'cat-adhd.jpg',
+  'خودشناسی': 'cat-selfawareness.jpg',
+  'ذهن‌آگاهی': 'cat-mindfulness.jpg'
 };
 
 function getCategoryImage(tag) {
   for (const [key, img] of Object.entries(CATEGORY_IMAGES)) {
     if (tag.includes(key)) return img;
   }
-  return 'cat-growth.png';
+  return 'cat-growth.jpg';
 }
 
 function getTag(topic) {

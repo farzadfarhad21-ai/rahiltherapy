@@ -55,6 +55,19 @@ Verify nothing left: `grep -rc "۲۸۴۶۳" --include="*.html" --include="*.js"`
 - [x] Replaced unsourced "40% faster" stat → clinical observation phrasing (YMYL fix)
 - [x] Added `/privacy.html` to sitemap.xml
 
+### Batch 9 — Performance (June 12)
+- [x] Image footprint: **33MB → 8.9MB** (73% reduction!)
+- [x] Converted 19 photo PNGs → JPG (cat-*.png, service-*.png) — 10.7MB → 1.7MB
+- [x] Resized all images to sensible max-widths (1000-1400px)
+- [x] Updated all references in HTML/JS/XML from .png to .jpg
+- [x] Deleted obsolete PNG files
+- [x] Added `loading="lazy"` to 54 HTML files' below-fold images
+- [x] Added `<link rel="preload" as="image" fetchpriority="high">` for hero on index.html + about.html
+- [x] Confirmed `font-display=swap` on Google Fonts URL
+- [x] Article images footprint: just 768KB total for all 5 generated post images
+
+**Expected Core Web Vitals impact:** LCP should drop significantly. Mobile page weight cut by ~25MB.
+
 ### Batch 8 — Citations + article footer cleanup (June 12)
 - [x] Updated 47 article footers from 2025 → 2026 + license placeholder + privacy link (previously missed by sitewide replace)
 - [x] Added inline source citations to 5 articles missing them (DSM-5, APA, WHO, NIMH, Young, Foa, Beck Institute)

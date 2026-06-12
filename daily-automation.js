@@ -42,16 +42,16 @@ const TOPIC_FULL = {
 };
 
 const CATEGORY_IMAGES = {
-  'تنهایی و خلوت': 'cat-mindfulness.png',
-  'عشق به خود': 'cat-selfawareness.png',
-  'کودک درون': 'cat-growth.png',
-  'ترس و رهایی': 'cat-anxiety.png',
-  'توکل و معنویت': 'cat-mindfulness.png',
-  'معنا و هدف زندگی': 'cat-growth.png',
-  'شعر و روان‌شناسی': 'cat-schema.png',
-  'عزت نفس و ارزشمندی': 'cat-selfawareness.png',
-  'روابط و دلبستگی': 'cat-relationships.png',
-  'آرامش در جهان ناپایدار': 'cat-mindfulness.png'
+  'تنهایی و خلوت': 'cat-mindfulness.jpg',
+  'عشق به خود': 'cat-selfawareness.jpg',
+  'کودک درون': 'cat-growth.jpg',
+  'ترس و رهایی': 'cat-anxiety.jpg',
+  'توکل و معنویت': 'cat-mindfulness.jpg',
+  'معنا و هدف زندگی': 'cat-growth.jpg',
+  'شعر و روان‌شناسی': 'cat-schema.jpg',
+  'عزت نفس و ارزشمندی': 'cat-selfawareness.jpg',
+  'روابط و دلبستگی': 'cat-relationships.jpg',
+  'آرامش در جهان ناپایدار': 'cat-mindfulness.jpg'
 };
 
 const IMAGE_PROMPTS = {
@@ -123,7 +123,7 @@ function getEnglishName(topicKey) {
 }
 
 function getCategoryImage(topicKey) {
-  return CATEGORY_IMAGES[topicKey] || 'cat-growth.png';
+  return CATEGORY_IMAGES[topicKey] || 'cat-growth.jpg';
 }
 
 function getPersianDate() {
