@@ -49,6 +49,13 @@ Verify nothing left: `grep -rc TODO_LICENSE_NUMBER --include="*.html"`
 - [x] Replaced unsourced "40% faster" stat → clinical observation phrasing (YMYL fix)
 - [x] Added `/privacy.html` to sitemap.xml
 
+### Batch 5 — Medium polish (June 12)
+- [x] Expanded all 12 FAQ answers to 134-167 words each (both schema + visible HTML) for AI citation extraction
+- [x] Added `hreflang="x-default"` to 9 main pages
+- [x] Added `WebSite` + `SearchAction` schema to homepage (Google sitelinks searchbox eligibility)
+- [x] Added "internal links" block (services + booking + about + dubai) to 50 articles, before final CTA
+- [x] Updated daily-automation.js generator template to include internal-links block on future posts
+
 ### Batch 4 — Quality cleanup (June 12)
 - [x] Noindex 24 duplicate/low-quality articles (5 parenting dups, 10 inner-child dups, 2 adhd dups, 1 depression dup, 1 relationships dup, 7 templated article-N.html)
 - [x] Removed noindexed articles from sitemap.xml (35 URLs remain, was 41)
@@ -83,18 +90,19 @@ Verify nothing left: `grep -rc TODO_LICENSE_NUMBER --include="*.html"`
 - [x] ~~Add explicit `Article` schema to all auto-generated articles~~ → done in batch 4 (generator + backfill)
 
 ### 🟡 Medium
-- [ ] Expand FAQ answers from 1-3 sentences → 134-167 words each for AI citation extraction
+- [x] ~~Expand FAQ answers~~ → done in batch 5 (all 12 to ~140 words each)
 - [ ] Cite at least one source per article ("طبق راهنمای DSM-5", "بر اساس APA") — ongoing as new content is created
-- [ ] Add `hreflang="x-default"` to homepage
+- [x] ~~Add `hreflang="x-default"` to homepage~~ → done in batch 5 (9 pages)
 - [ ] Sitemap: add `<lastmod>` dates to entries
-- [ ] Internal linking: from article footers back to /services and /booking
+- [x] ~~Internal linking: from article footers back to /services and /booking~~ → done in batch 5
 - [ ] Improve image alt text for category icons (cat-*.png) — currently generic
 - [ ] Audit auto-generated `meta description` for duplicates across articles
+- [ ] Add `<time datetime="ISO">` tags around Jalali dates in articles
 
 ### 🟢 Low / Strategic
 - [ ] YouTube channel — strongest brand-mention signal (0.737 correlation with AI citations)
-- [ ] Add `Review` schema for testimonials section
-- [ ] Add `WebSite` + `SearchAction` schema (Google sitelinks search box)
+- [ ] Add `Review` schema for testimonials section (needs real reviewer names + dates first)
+- [x] ~~Add `WebSite` + `SearchAction` schema~~ → done in batch 5
 - [ ] Add IPTC metadata (title/author/copyright) to auto-generated images
 
 ---
