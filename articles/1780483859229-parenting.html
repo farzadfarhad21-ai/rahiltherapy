@@ -13,8 +13,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&family=Markazi+Text:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&family=Markazi+Text:wght@400;700&display=swap"></noscript>
+<script defer src="https://unpkg.com/lucide@latest"></script>
 <link rel="stylesheet" href="../styles.css">
 <style>
 .article-wrap{max-width:760px;margin:0 auto;padding:60px 26px;}
@@ -144,7 +144,7 @@
 </main>
 
 <footer class="footer"><div class="container"><div class="fbar">© ۲۰۲۶ راحله اوینی‌پور — تمامی حقوق محفوظ است. | شماره پروانه روانشناسی: <span style="font-family:monospace;letter-spacing:1px;opacity:.9;">۲۸۴۶۳</span> | <a href="/privacy" style="color:#fff;text-decoration:underline;">حریم خصوصی</a></div></div></footer>
-<script>lucide.createIcons();</script>
+<script>document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});</script>
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="فرزندپروری یکی از چالش‌برانگیزترین و در عین حال پاداش‌دهنده‌ترین تجربه‌های زندگی است. والدین امروز با سوالات متعددی درباره چگونگی تربیت فرزندانی سالم، مستقل ...">
