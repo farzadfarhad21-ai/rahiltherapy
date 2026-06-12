@@ -298,7 +298,7 @@ async function generateBlogPost(topicKey, topicFull) {
   "publisher": {
     "@type": "Organization",
     "name": "راحله اوینی‌پور — رهیل تراپی",
-    "logo": {"@type": "ImageObject", "url": "https://rahiltherapy.com/profile.png"}
+    "logo": {"@type": "ImageObject", "url": "https://rahiltherapy.com/profile.jpg"}
   },
   "datePublished": "${new Date(timestamp).toISOString().split('T')[0]}",
   "dateModified": "${new Date(timestamp).toISOString().split('T')[0]}",
