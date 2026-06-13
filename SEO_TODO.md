@@ -1,9 +1,85 @@
 # SEO Progress Tracker — rahiltherapy.com
 
-> Live tracker of SEO fixes. Update after every batch.
+> Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-06-11
-**Current SEO health score:** ~62/100 → targeting 85+
+**Last updated:** 2026-06-12 (end of day 2)
+**Status:** 13 batches done — site went from ~62/100 → ~92/100
+
+## 📊 Verified live scores (PageSpeed Insights, Mobile)
+
+| Category | Run 1 | Run 2 | Run 3 | Stable estimate |
+|---|---|---|---|---|
+| Performance | 69 | **92** | 85 | **85-92** (PSI variance ±5-10) |
+| Accessibility | 86 | 86 | **88** | 88-92 |
+| SEO | 92 | 92 | 92 | **92** stable |
+| Best Practices | 100 | 100 | 100 | **100** stable |
+
+Core Web Vitals (best run):
+- FCP: 1.5s ✅ (was 4.1s baseline)
+- LCP: 2.6s 🟡 (need <2.5s for green; was 5.2s)
+- TBT: 20ms ✅
+- CLS: 0.118 🟡 (need <0.1; was 0)
+- Speed Index: 1.5s ✅
+
+---
+
+## 🚀 NEXT SESSION — START HERE
+
+When you come back, the priorities in order:
+
+### 1. 🔴 BLOCKER: Replace fake license number (1 min)
+Run:
+```bash
+cd ~/Downloads/ruflow-project/raheleh_project
+grep -rl "۲۸۴۶۳" --include="*.html" --include="*.js" | xargs sed -i '' 's|۲۸۴۶۳|YOUR_REAL_NUMBER|g'
+git add -A && git commit -m "feat: add real license number" && git push
+```
+
+### 2. Verify current state of site
+- Open https://rahiltherapy.com in private/incognito tab
+- Run PageSpeed: https://pagespeed.web.dev/?url=https://rahiltherapy.com
+- Confirm scores match: Perf 85-92, A11y 88+, SEO 92, BP 100
+- Check that license # placeholder is gone after step 1
+
+### 3. Pick a focus area (suggestions)
+
+**A) Conversion (highest revenue lever):**
+- Lead magnet: free PDF "راهنمای ۷ روزه آرامش ذهن" → email capture form
+- Email nurture sequence (5-7 emails over 2 weeks)
+- Add real testimonial videos with names → `Review` schema
+
+**B) Traffic / backlinks:**
+- Get listed in Persian directories: روانشناسان.ir, دکترتو, ...
+- Guest posts on Iranian women's lifestyle blogs (2/month)
+- Start YouTube channel (1 short Persian explainer/week — biggest AI citation lever)
+
+**C) Content velocity:**
+- Translate top 5 articles to English for diaspora search
+- Topic clusters: pillar pages linking sub-articles
+- Persian self-assessment quizzes (anxiety, attachment style, etc.)
+
+**D) Remaining perf polish (diminishing returns):**
+- Fix CLS 0.118 → <0.1 (font-display tuning + fallback font metrics)
+- Color contrast a11y fix (some light text on cream bg)
+- Defer GA until interaction (66 KiB JS savings)
+- Self-host Vazirmatn font (skip Google Fonts redirect)
+
+### 4. Context for any AI assistant resuming this work
+
+- **Project root:** `/Users/farzaden/Downloads/ruflow-project/raheleh_project`
+- **Stack:** Static HTML on Vercel, Persian-language (lang="fa" dir="rtl"), no framework
+- **Auto-blogger:** `daily-automation.js` runs at 8am via Vercel cron, generates 1 Persian blog post per day to `/articles/`
+- **Instagram generator:** `instagram-content.js` outputs `instagram-schedule.md` weekly (synced with blog topics)
+- **Memory file:** `/Users/farzaden/Downloads/F21-Brain/01-F21-Studio/clients/rahiltherapy.md` (if exists)
+- **Brand context:** Raheleh Avinipour (راحله اوینی‌پور), Persian-speaking psychotherapist based in Dubai, CBT + Schema Therapy specialist for Iranian diaspora
+- **License placeholder:** `۲۸۴۶۳` is FAKE — see top of file
+- **Schema highlights:** MedicalBusiness + Person + ProfessionalService on homepage, Article+BreadcrumbList on every blog post, FAQPage on /faq + key articles
+- **Performance baselines (don't break):**
+  - All images compressed (33MB → 4.7MB)
+  - Font weights: Vazirmatn 400/600/700 + Markazi 400/700 only (DON'T re-add others)
+  - lucide.js has `defer` attribute (DON'T remove)
+  - lucide.createIcons() wrapped in DOMContentLoaded handler
+  - 1-year immutable cache headers on all static assets in vercel.json
 
 ---
 
@@ -54,6 +130,42 @@ Verify nothing left: `grep -rc "۲۸۴۶۳" --include="*.html" --include="*.js"`
 - [x] Removed duplicate testimonials block in `index.html`
 - [x] Replaced unsourced "40% faster" stat → clinical observation phrasing (YMYL fix)
 - [x] Added `/privacy.html` to sitemap.xml
+
+### Batch 13 — Perf v2 + revert async fonts (June 12, evening)
+- [x] Reverted async font CSS trick (`preload+onload`) → plain stylesheet
+  - Was causing FCP regression because Persian fonts must be available before text renders
+  - `display=swap` on Google Fonts URL already gives optimal behavior
+- [x] Aggressive compression of remaining large hero images:
+  - `about-hero.jpg`: 2013KB → 654KB (-67%)
+  - `hero-portrait.jpg`: 1985KB → 660KB (-67%)
+  - `therapy-session.jpg`: 886KB → 393KB (-56%)
+- [x] Total images: 33MB → 4.7MB (-86% over the day)
+
+### Batch 12 — Perf + Accessibility (June 12, evening)
+- [x] Added `width=779 height=1000` to homepage hero image (LCP/CLS fix — browser reserves space)
+- [x] Added `decoding="async"` to all `<img>` on 56 files (LCP win)
+- [x] Added `<main>` landmark to 8 main pages (was missing on all — a11y critical)
+- [x] Added `aria-label` to 2 generic "بیشتر بدانید" links on homepage
+- [x] Result: Accessibility 86 → 88
+
+### Batch 11 — Font/JS render-blocking fix (June 12, evening)
+- [x] Trimmed Vazirmatn font weights: 6 (300-800) → 3 (400, 600, 700)
+- [x] Trimmed Markazi Text weights: 4 → 2 (400, 700)
+- [x] Added `defer` to lucide-icons script (was render-blocking)
+- [x] Wrapped `lucide.createIcons()` in `DOMContentLoaded` (safe race-condition fix)
+- [x] vercel.json: 1-year immutable cache on .jpg/.png/.webp/.css/.js/.woff
+- [x] Result: Performance 69 → 92 (best run), FCP 4.1s → 1.5s, LCP 5.2s → 2.6s
+
+### Batch 10 — Trust + WhatsApp pre-fill (June 12, afternoon)
+- [x] Added 4 trust badges row above hero CTA on index.html
+  - 🎁 جلسه اول رایگان
+  - 🟢 پروانه رسمی روانشناسی
+  - 🔒 محرمانگی کامل
+  - 🌍 ایران، دبی و سراسر دنیا
+- [x] All 51 wa.me links across site now pre-fill Persian intro message
+  - Reduces friction: opens WhatsApp with polite greeting ready to send
+- [x] raheleh1.PNG (929KB) → raheleh1.jpg (86KB) — 91% smaller hero
+- [x] Hero `fetchpriority="high"`, removed wrong `loading="lazy"` from above-fold
 
 ### Batch 9 — Performance (June 12)
 - [x] Image footprint: **33MB → 8.9MB** (73% reduction!)
@@ -144,6 +256,11 @@ Verify nothing left: `grep -rc "۲۸۴۶۳" --include="*.html" --include="*.js"`
 - [ ] Add `Review` schema for testimonials section (needs real reviewer names + dates first)
 - [x] ~~Add `WebSite` + `SearchAction` schema~~ → done in batch 5
 - [ ] Add IPTC metadata (title/author/copyright) to auto-generated images
+- [ ] Fix CLS 0.118 → <0.1 (font-display tuning + matching fallback font metrics)
+- [ ] Reduce unused JavaScript 66 KiB (defer GA until user interaction)
+- [ ] Fix color contrast a11y warning (specific light text on cream bg)
+- [ ] Self-host Vazirmatn (skip Google Fonts redirect chain)
+- [ ] Touch-target spacing fix (mobile buttons too close)
 
 ---
 
