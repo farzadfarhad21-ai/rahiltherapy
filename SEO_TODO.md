@@ -23,6 +23,38 @@ Core Web Vitals (best run):
 
 ---
 
+## 📅 Session 3 (June 13, 2026) — Recap
+
+### What was accomplished
+- ✅ **Daily blog issue diagnosed**: Anthropic API credit ran out → June 12 missed + June 13 failed
+- ✅ User added credit, blog manually triggered, ran successfully (`self-worth.html` published)
+- ✅ **Poetry removed from generators** — blog + Instagram + Telegram now produce clinical/practical content (no Hafez/Rumi/Saadi)
+- ✅ Replaced "شعر و روان‌شناسی" topic with "روان‌شناسی مهاجرت" (better diaspora fit)
+- ✅ Created `BACKLINK_PLAN.md` — 12 prioritized directory targets, ready-to-paste descriptions
+- ✅ **Google Business Profile CREATED** — rahiltherapy listing live (verification pending 1-5 days)
+  - Mode: Service Area Business (home address stays private)
+  - Phone: 050 347 5269 (UAE local)
+  - Service area: Dubai - UAE
+  - Hours: 09:00-18:00 (suggested expanding to 21:00)
+  - Status: "Google is processing your verification"
+
+### Still pending after verification (do when GBP goes live)
+- [ ] Add full bilingual description to GBP "Edit profile"
+- [ ] Upload 5+ photos (profile.jpg, raheleh1.jpg, about-hero.jpg, hero-portrait.jpg, therapy-session.jpg)
+- [ ] Add 10 services in "Edit services" tab
+- [ ] Pre-seed 3-4 Q&A items
+- [ ] Link "Bookings" → /booking
+- [ ] Add Instagram URL + email to "More" section
+- [ ] Add secondary categories: Mental Health Service, Counselor
+- [ ] Consider expanding hours 09:00-21:00 (evening sessions)
+
+### Next quick wins (15 min each)
+1. **Apple Maps Business Connect** — https://mapsconnect.apple.com (same info as GBP)
+2. **Bing Places** — https://www.bingplaces.com (Microsoft Copilot uses Bing data)
+3. **Psychology Today** — $30/month, huge DR backlink
+
+---
+
 ## 🚀 NEXT SESSION — START HERE
 
 When you come back, the priorities in order:
