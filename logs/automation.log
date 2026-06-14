@@ -453,3 +453,18 @@
 [2026-06-13T12:44:13.067Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-13T12:47:13.346Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781354619679-self-worth.html → 404
 [2026-06-13T12:47:13.346Z] [INFO] ========== Automation Completed Successfully in 298.6s ==========
+[2026-06-14T08:50:21.156Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-14T08:50:21.159Z] [INFO] Selected topic: چرا در روابط آسیب می‌بینیم؟ الگوهای دلبستگی و تأثیر آن‌ها (Topic #9/10)
+[2026-06-14T08:50:21.160Z] [INFO] Generating article for topic: چرا در روابط آسیب می‌بینیم؟ الگوهای دلبستگی و تأثیر آن‌ها
+[2026-06-14T08:51:44.123Z] [INFO] Article created: articles/1781427104123-human-connection.html
+[2026-06-14T08:51:44.123Z] [INFO] Article generated: چرا همان داستان را تکرار می‌کنیم؟ — سفری به ریشه‌های آسیب در روابط
+[2026-06-14T08:51:44.124Z] [INFO] Generating image via Segmind for topic: روابط و دلبستگی
+[2026-06-14T08:51:50.156Z] [INFO] Image saved: articles/1781427109472-human-connection.jpg
+[2026-06-14T08:51:50.157Z] [INFO] Updated article with new image: 1781427109472-human-connection.jpg
+[2026-06-14T08:51:50.158Z] [INFO] Updated blog.html with new article card
+[2026-06-14T08:51:50.158Z] [INFO] Updated sitemap.xml
+[2026-06-14T08:51:50.159Z] [INFO] Starting Vercel deployment...
+[2026-06-14T08:52:16.234Z] [INFO] Vercel deployment completed
+[2026-06-14T08:52:16.235Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-14T08:55:16.625Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781427104123-human-connection.html → 404
+[2026-06-14T08:55:16.626Z] [INFO] ========== Automation Completed Successfully in 295.5s ==========
