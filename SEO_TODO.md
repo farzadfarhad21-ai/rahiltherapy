@@ -57,17 +57,53 @@ Core Web Vitals (best run):
 
 ## 🚀 NEXT SESSION — START HERE
 
-When you come back, the priorities in order:
+> **Just say "continue rahiltherapy"** and I'll read this file and resume.
 
-### 1. 🔴 BLOCKER: Replace fake license number (1 min)
-Run:
+### 🟢 What's WORKING right now (last verified 2026-06-14)
+
+- Daily blog auto-cron is running successfully again (Anthropic credits added)
+- Generator now produces clinical content (no poetry/Hafez/Rumi/Saadi)
+- Google Business Profile created (status: verification pending 1-5 days)
+- Blog topic rotation: 10 topics, "روان‌شناسی مهاجرت" replaced poetry topic
+- PageSpeed scores: Performance 85-92, SEO 92, BP 100, A11y 88
+- All schemas valid, 50/50 articles have Article + BreadcrumbList schema
+
+### 🔴 TOP PRIORITY when you walk back in
+
+#### 1. Check Google Business Profile verification status (30 sec)
+- Open https://business.google.com (or search "my business" in Google)
+- Look for "Your business is not visible to customers" — if gone, you're verified ✅
+- If still pending: nothing to do, just wait (postcard or call may have arrived)
+- Once verified: tell me, and we'll complete the profile (photos, services, Q&A)
+
+#### 2. Replace fake license number (1 min — only if you have the real number)
 ```bash
 cd ~/Downloads/ruflow-project/raheleh_project
 grep -rl "۲۸۴۶۳" --include="*.html" --include="*.js" | xargs sed -i '' 's|۲۸۴۶۳|YOUR_REAL_NUMBER|g'
 git add -A && git commit -m "feat: add real license number" && git push
 ```
 
-### 2. Verify current state of site
+### 3. Then pick from these (in priority order)
+
+#### A) Backlinks (highest impact for ranking — 15-30 min each)
+Read `BACKLINK_PLAN.md` — has 12 prioritized targets with ready-to-paste descriptions.
+**Next 2 after GBP:**
+- Apple Maps Business Connect → https://mapsconnect.apple.com
+- Bing Places for Business → https://www.bingplaces.com
+
+#### B) Telegram failure alerts (20 min)
+So you never get another silent blog failure like June 12/13 again.
+Add Telegram webhook to GitHub Actions workflow `.github/workflows/daily-blog.yml`.
+
+#### C) Lead magnet / email capture (45 min — biggest revenue lever)
+Free PDF "راهنمای ۷ روزه آرامش ذهن" with email capture on homepage.
+Captures the 90% of visitors who won't book directly.
+
+#### D) Image generation fix (15 min)
+Today's blog had a cropped-head AI image (fixed manually with cat-relationships.jpg).
+Add fallback to `daily-automation.js`: if Segmind output looks bad, fall back to category image.
+
+### 4. Verify current state of site
 - Open https://rahiltherapy.com in private/incognito tab
 - Run PageSpeed: https://pagespeed.web.dev/?url=https://rahiltherapy.com
 - Confirm scores match: Perf 85-92, A11y 88+, SEO 92, BP 100
