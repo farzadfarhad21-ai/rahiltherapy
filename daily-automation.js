@@ -22,7 +22,7 @@ const TOPICS = [
   'ترس و رهایی',
   'توکل و معنویت',
   'معنا و هدف زندگی',
-  'شعر و روان‌شناسی',
+  'روان‌شناسی مهاجرت',
   'عزت نفس و ارزشمندی',
   'روابط و دلبستگی',
   'آرامش در جهان ناپایدار'
@@ -35,7 +35,7 @@ const TOPIC_FULL = {
   'ترس و رهایی': 'ترس چیست و چگونه می‌توانیم آزاد شویم؟',
   'توکل و معنویت': 'توکل؛ رها کردن کنترل و اعتماد به زندگی',
   'معنا و هدف زندگی': 'چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره',
-  'شعر و روان‌شناسی': 'وقتی حافظ روانشناس بود؛ تفسیر شعر فارسی با دیدگاه روان‌شناختی',
+  'روان‌شناسی مهاجرت': 'روان‌شناسی مهاجرت؛ چالش‌های هویت، تعلق و سازگاری در سرزمین تازه',
   'عزت نفس و ارزشمندی': 'عزت نفس واقعی چیست و از کجا می‌آید؟',
   'روابط و دلبستگی': 'چرا در روابط آسیب می‌بینیم؟ الگوهای دلبستگی و تأثیر آن‌ها',
   'آرامش در جهان ناپایدار': 'چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟'
@@ -48,7 +48,7 @@ const CATEGORY_IMAGES = {
   'ترس و رهایی': 'cat-anxiety.jpg',
   'توکل و معنویت': 'cat-mindfulness.jpg',
   'معنا و هدف زندگی': 'cat-growth.jpg',
-  'شعر و روان‌شناسی': 'cat-schema.jpg',
+  'روان‌شناسی مهاجرت': 'cat-relationships.jpg',
   'عزت نفس و ارزشمندی': 'cat-selfawareness.jpg',
   'روابط و دلبستگی': 'cat-relationships.jpg',
   'آرامش در جهان ناپایدار': 'cat-mindfulness.jpg'
@@ -61,7 +61,7 @@ const IMAGE_PROMPTS = {
   'ترس و رهایی': 'Person opening their hands releasing light, standing at edge of cliff overlooking misty valley, freedom and release, golden sunrise, cinematic wide shot',
   'توکل و معنویت': 'Hands clasped in prayer near window with soft morning light streaming in, dried flowers nearby, spiritual calm, cream and rose tones, intimate lifestyle photography',
   'معنا و هدف زندگی': 'Woman writing in journal at sunrise on a rooftop, city lights fading, first light of day, purposeful and contemplative, warm golden tones, cinematic',
-  'شعر و روان‌شناسی': 'Old Persian poetry book open on wooden desk with dried rose petals, candlelight, vintage ink pen, warm amber tones, literary and intimate atmosphere',
+  'روان‌شناسی مهاجرت': 'Woman looking out airport window with thoughtful expression, soft natural light, suitcase nearby, warm cream and rose tones, reflective mood, cinematic, photorealistic',
   'عزت نفس و ارزشمندی': 'Woman standing tall in soft morning light, confident yet gentle posture, looking into mirror with warmth, cream and rose tones, empowerment portrait',
   'روابط و دلبستگی': 'Two people sitting close in warm café light, genuine emotional connection, soft focus, cream and rose tones, authentic human moment, photorealistic',
   'آرامش در جهان ناپایدار': 'Single candle flame in a dark room, small circle of warm light, stillness and peace, cream and amber tones, zen minimal, meditative atmosphere'
@@ -97,7 +97,7 @@ function getTag(topicKey) {
     'ترس و رهایی': 'ترس',
     'توکل و معنویت': 'معنویت',
     'معنا و هدف زندگی': 'معنا',
-    'شعر و روان‌شناسی': 'شعر فارسی',
+    'روان‌شناسی مهاجرت': 'مهاجرت',
     'عزت نفس و ارزشمندی': 'عزت نفس',
     'روابط و دلبستگی': 'روابط',
     'آرامش در جهان ناپایدار': 'آرامش'
@@ -112,7 +112,7 @@ const TOPIC_ENGLISH = {
   'ترس و رهایی': 'fear-liberation',
   'توکل و معنویت': 'spirituality',
   'معنا و هدف زندگی': 'meaning-life',
-  'شعر و روان‌شناسی': 'persian-poetry-psychology',
+  'روان‌شناسی مهاجرت': 'migration-psychology',
   'عزت نفس و ارزشمندی': 'self-worth',
   'روابط و دلبستگی': 'human-connection',
   'آرامش در جهان ناپایدار': 'peace-impermanence'
@@ -151,23 +151,26 @@ async function generateBlogPost(topicKey, topicFull) {
   }
 
   const tag = getTag(topicKey);
-  const prompt = `تو راحله اوینی‌پور هستی — روانشناس فارسی‌زبان مقیم دبی، با قلمی گرم، شاعرانه و عمیق.
+  const prompt = `تو راحله اوینی‌پور هستی — روان‌شناس فارسی‌زبان مقیم دبی، با قلمی گرم، حرفه‌ای و علمی.
 یک مقاله وبلاگی درباره "${topicFull}" بنویس.
 
 لحن و سبک — این مهم‌ترین بخش است:
-- مثل یک نامه صمیمانه به خواننده بنویس، نه یک مقاله آکادمیک
-- از استعاره، تصویرسازی و زبان شاعرانه فارسی استفاده کن
-- سؤال‌هایی بپرس که خواننده را به درون خودش ببرد
-- می‌توانی از شعر حافظ، مولانا یا سعدی (یک بیت) به‌عنوان آغازگر یا میانه استفاده کنی
-- احساس بده که یک دوست دانا کنارت نشسته، نه یک کتاب درسی
-- پر رنگ، پر از حس، پر از زندگی — نه خشک و کلینیکال
+- لحن گرم، انسانی و قابل اعتماد، اما حرفه‌ای و علمی — نه شاعرانه
+- ❌ از شعر، بیت، استعاره‌های ادبی، یا ارجاع به حافظ/مولانا/سعدی استفاده نکن
+- ❌ از زبان شاعرانه، غزل‌گونه یا ادبی استفاده نکن
+- ✅ نوشتار باید شبیه یک روان‌شناس واقعی باشد که با مهربانی توضیح می‌دهد
+- ✅ بر مفاهیم علمی و اثبات‌شده روان‌شناسی تکیه کن (CBT، طرحواره‌درمانی، دلبستگی، و غیره)
+- ✅ مثال‌های واقعی و کاربردی از زندگی روزمره بزن
+- ✅ سؤال‌هایی بپرس که خواننده را به تأمل علمی درباره خودش ببرد
+- ✅ احساس بده که یک روان‌شناس متخصص با تجربه دارد توضیح می‌دهد، نه یک شاعر
+- اگر مرجع علمی مرتبط داری (DSM-5, APA, WHO, محققان مشهور)، اشاره کن
 
 قوانین ساختاری:
 - ۷۰۰ تا ۹۰۰ کلمه
-- ۱ عنوان جذاب و انسانی (نه عنوان درسی)
-- مقدمه‌ای که فوری خواننده را «ببیند» — با یک لحظه، یک سؤال، یا یک تصویر شروع کن
-- ۳ تا ۴ بخش با عنوان‌های احساسی (h3)
-- ۱ بخش «یک قدم کوچک» با ۳ تمرین عملی ساده
+- ۱ عنوان جذاب و کاربردی (نه شاعرانه، نه آکادمیک خشک)
+- مقدمه‌ای که خواننده را با یک مثال واقعی یا سؤال عملی درگیر کند
+- ۳ تا ۴ بخش با عنوان‌های روشن و واضح (h3)
+- ۱ بخش «یک قدم کوچک» با ۳ تمرین عملی و علمی
 - ۱ نتیجه‌گیری گرم با دعوت ملایم به رزرو جلسه
 - برچسب: ${tag}
 
@@ -513,7 +516,7 @@ async function sendTelegramPhoto(articleInfo) {
     'ترس': '🕊️',
     'معنویت': '✨',
     'معنا': '🌅',
-    'شعر فارسی': '📖',
+    'مهاجرت': '🌍',
     'عزت نفس': '💎',
     'روابط': '🤍',
     'آرامش': '🕯️'
