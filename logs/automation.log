@@ -468,3 +468,18 @@
 [2026-06-14T08:52:16.235Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-14T08:55:16.625Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781427104123-human-connection.html → 404
 [2026-06-14T08:55:16.626Z] [INFO] ========== Automation Completed Successfully in 295.5s ==========
+[2026-06-15T08:51:12.239Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-15T08:51:12.242Z] [INFO] Selected topic: چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟ (Topic #10/10)
+[2026-06-15T08:51:12.242Z] [INFO] Generating article for topic: چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟
+[2026-06-15T08:52:14.003Z] [INFO] Article created: articles/1781513534003-peace-impermanence.html
+[2026-06-15T08:52:14.003Z] [INFO] Article generated: چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟
+[2026-06-15T08:52:14.003Z] [INFO] Generating image via Segmind for topic: آرامش در جهان ناپایدار
+[2026-06-15T08:52:19.113Z] [INFO] Image saved: articles/1781513538645-peace-impermanence.jpg
+[2026-06-15T08:52:19.113Z] [INFO] Updated article with new image: 1781513538645-peace-impermanence.jpg
+[2026-06-15T08:52:19.114Z] [INFO] Updated blog.html with new article card
+[2026-06-15T08:52:19.114Z] [INFO] Updated sitemap.xml
+[2026-06-15T08:52:19.115Z] [INFO] Starting Vercel deployment...
+[2026-06-15T08:52:46.520Z] [INFO] Vercel deployment completed
+[2026-06-15T08:52:46.520Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-15T08:55:46.887Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781513534003-peace-impermanence.html → 404
+[2026-06-15T08:55:46.888Z] [INFO] ========== Automation Completed Successfully in 274.6s ==========
