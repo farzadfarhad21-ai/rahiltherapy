@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="styles.css?v=2">
 <style>
   .ctacard{background:linear-gradient(160deg,var(--blush-mid),var(--cream2));border-radius:18px;padding:26px;text-align:center;}
-  .ctacard h4{font-family:'Markazi Text',serif;font-size:24px;font-weight:600;margin:0 0 8px;}
+  .ctacard h4{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:24px;font-weight:600;margin:0 0 8px;}
   .ctacard p{font-size:13.5px;color:var(--muted);margin:0 0 16px;}
 </style>
 </head>
@@ -164,7 +164,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});
+  window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons();});
   const hdr=document.getElementById('hdr');
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
   window.addEventListener('scroll',onScroll);onScroll();

@@ -241,7 +241,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});
+  window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons();});
   const hdr=document.getElementById('hdr');
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
   window.addEventListener('scroll',onScroll);onScroll();
@@ -328,7 +328,7 @@
           document.getElementById('filters').scrollIntoView({behavior:'smooth', block:'start'});
         });
         pager.appendChild(next);
-        document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});
+        window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons();});
       }
     }
 

@@ -18,8 +18,8 @@
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
-body{margin:0;background:#fff;color:var(--ink);font-family:'Vazirmatn',sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-h1,h2,h3,.serif{font-family:'Markazi Text',serif;font-weight:600;line-height:1.2;letter-spacing:0;}
+body{margin:0;background:#fff;color:var(--ink);font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+h1,h2,h3,.serif{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-weight:600;line-height:1.2;letter-spacing:0;}
 a{color:inherit;text-decoration:none;}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 26px;}
 .em{color:var(--rose-2);}
@@ -41,7 +41,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdro
   border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s;}
 header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgba(59,46,42,.4);}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px;}
-.logo{display:flex;align-items:center;gap:11px;font-family:'Markazi Text',serif;font-weight:700;font-size:25px;}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-weight:700;font-size:25px;}
 .logo .mk{width:30px;height:30px;border-radius:10px 10px 10px 2px;background:var(--rose-soft);transform:rotate(8deg);display:grid;place-items:center;}
 .logo .mk::after{content:"";width:11px;height:11px;border-radius:50%;background:#fff;}
 .navlinks{display:flex;gap:32px;font-size:15.5px;font-weight:500;}
@@ -72,14 +72,14 @@ header.scrolled{border-color:var(--line);box-shadow:0 4px 20px -16px rgba(59,46,
 .ph::after{content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:13px;color:var(--rose-2);font-weight:600;padding:16px;opacity:.85;}
 .hphoto{height:420px;border-radius:24px;}
 .statcard{background:var(--ink);color:#fff;border-radius:20px;padding:22px 26px;display:flex;gap:34px;}
-.statcard .num{font-family:'Markazi Text',serif;font-size:32px;font-weight:700;line-height:1;}
+.statcard .num{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:32px;font-weight:700;line-height:1;}
 .statcard .lbl{font-size:13px;color:#ffffffb0;margin-top:4px;}
 
 /* ---------- TRUST BAR ---------- */
 .trust{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:40px 0 8px;}
 .titem{flex:1;min-width:150px;text-align:center;padding:8px 18px;border-left:1px solid var(--line);}
 .titem:last-child{border-left:none;}
-.titem .num{font-family:'Markazi Text',serif;font-size:34px;font-weight:700;color:var(--rose);line-height:1;}
+.titem .num{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:34px;font-weight:700;color:var(--rose);line-height:1;}
 .titem .lbl{font-size:14px;color:var(--muted);margin-top:6px;}
 
 /* ---------- SECTION HEADERS ---------- */
@@ -137,7 +137,7 @@ section{padding:84px 0;}
 .stars{color:var(--rose);letter-spacing:3px;font-size:16px;margin-bottom:14px;}
 .tcard .quote{font-size:16px;color:var(--ink);opacity:.9;margin:0 0 22px;line-height:1.9;}
 .tperson{display:flex;align-items:center;gap:12px;}
-.tavatar{width:46px;height:46px;border-radius:50%;background:var(--blush-mid);display:grid;place-items:center;color:var(--rose-2);font-weight:700;font-family:'Markazi Text',serif;font-size:22px;}
+.tavatar{width:46px;height:46px;border-radius:50%;background:var(--blush-mid);display:grid;place-items:center;color:var(--rose-2);font-weight:700;font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:22px;}
 .tperson .nm{font-weight:600;font-size:15px;}
 .tperson .ct{font-size:13px;color:var(--muted);}
 
@@ -244,7 +244,7 @@ select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
 .pcard.featured{border-color:var(--rose-soft);box-shadow:0 22px 50px -30px rgba(156,106,96,.6);}
 .pcard .pill{position:absolute;top:-13px;right:50%;transform:translateX(50%);background:var(--rose);color:#fff;font-size:12.5px;font-weight:700;padding:5px 16px;border-radius:999px;}
 .pcard h3{font-size:25px;margin:0 0 6px;}
-.pcard .price{font-family:'Markazi Text',serif;font-size:46px;font-weight:700;color:var(--rose);line-height:1.1;}
+.pcard .price{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:46px;font-weight:700;color:var(--rose);line-height:1.1;}
 .pcard .price small{font-family:'Vazirmatn';font-size:14px;color:var(--muted);font-weight:400;}
 .pcard ul{list-style:none;padding:0;margin:20px 0 24px;text-align:right;}
 .pcard li{display:flex;gap:9px;font-size:14.5px;color:var(--muted);margin-bottom:11px;}
@@ -285,7 +285,7 @@ select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
 .article h3{font-size:26px;margin:30px 0 12px;}
 .article p{font-size:17px;color:#4a3b36;margin:0 0 20px;line-height:2;}
 .article .pull{border-right:4px solid var(--rose);background:var(--blush);border-radius:0 14px 14px 0;padding:22px 26px;margin:30px 0;
-  font-family:'Markazi Text',serif;font-size:26px;line-height:1.5;color:var(--rose-2);}
+  font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:26px;line-height:1.5;color:var(--rose-2);}
 .authorbox{display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(--cream);border:1px solid var(--line);border-radius:16px;margin-bottom:30px;}
 .authorbox .av{width:54px;height:54px;border-radius:50%;background:var(--blush-mid);flex:none;}
 .authorbox .nm{font-weight:700;}
@@ -330,7 +330,7 @@ select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
   display:flex;align-items:center;justify-content:space-between;padding:20px 24px;
   border-bottom:1px solid var(--line);
 }
-.mobile-nav-header .logo{font-family:'Markazi Text',serif;font-weight:700;font-size:22px;}
+.mobile-nav-header .logo{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-weight:700;font-size:22px;}
 .mobile-nav-close{
   background:none;border:none;cursor:pointer;color:var(--ink);
   width:40px;height:40px;display:grid;place-items:center;border-radius:10px;

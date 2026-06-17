@@ -53,7 +53,7 @@
   .ahero .role{font-size:19px;color:var(--rose-2);font-weight:500;margin:0 0 22px;}
   .story{max-width:760px;margin:0 auto;}
   .story p{font-size:17.5px;line-height:2.1;color:#4a3b36;margin:0 0 22px;}
-  .story p:first-of-type::first-letter{font-family:'Markazi Text',serif;font-size:64px;float:right;line-height:.8;margin:6px 14px 0 0;color:var(--rose);}
+  .story p:first-of-type::first-letter{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:64px;float:right;line-height:.8;margin:6px 14px 0 0;color:var(--rose);}
   .specs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
   .spec{text-align:center;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 16px;}
   .spec .sicon{margin:0 auto 14px;}
@@ -75,7 +75,7 @@
   display:flex;align-items:center;justify-content:space-between;padding:20px 24px;
   border-bottom:1px solid var(--line);
 }
-.mobile-nav-header .logo{font-family:'Markazi Text',serif;font-weight:700;font-size:22px;}
+.mobile-nav-header .logo{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-weight:700;font-size:22px;}
 .mobile-nav-close{
   background:none;border:none;cursor:pointer;color:var(--ink);
   width:40px;height:40px;display:grid;place-items:center;border-radius:10px;
@@ -319,9 +319,9 @@
     </div>
 
     <!-- ============ ENGLISH SUMMARY (for diaspora + AI search) ============ -->
-    <div lang="en" dir="ltr" style="max-width:760px;margin:48px auto 0;background:#FBF5F0;border:1px solid var(--blush-mid);border-radius:18px;padding:28px 32px;text-align:left;font-family:'Vazirmatn',sans-serif;">
+    <div lang="en" dir="ltr" style="max-width:760px;margin:48px auto 0;background:#FBF5F0;border:1px solid var(--blush-mid);border-radius:18px;padding:28px 32px;text-align:left;font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;">
       <p style="font-size:12px;letter-spacing:.04em;color:var(--rose);font-weight:700;margin:0 0 12px;text-transform:uppercase;">About — English Summary</p>
-      <h3 style="font-family:'Markazi Text',serif;font-size:26px;margin:0 0 14px;color:var(--ink);">Raheleh Avinipour — Persian-Speaking Online Therapist</h3>
+      <h3 style="font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:26px;margin:0 0 14px;color:var(--ink);">Raheleh Avinipour — Persian-Speaking Online Therapist</h3>
       <p style="font-size:15px;line-height:1.85;color:#3a3230;margin:0 0 12px;">Raheleh Avinipour is a Persian-speaking general psychologist based in <strong>Dubai, UAE</strong>, serving Iranian and Persian-speaking clients worldwide. With over 15 years of clinical experience and 3,000+ therapy hours, she specializes in <strong>Cognitive Behavioral Therapy (CBT)</strong> and <strong>Schema Therapy</strong>.</p>
       <p style="font-size:15px;line-height:1.85;color:#3a3230;margin:0 0 12px;">Her practice focuses on: anxiety, depression, OCD, ADHD, self-esteem, attachment patterns, inner-child healing, and the unique psychological challenges of the Iranian diaspora — identity, migration stress, and bicultural belonging.</p>
       <p style="font-size:15px;line-height:1.85;color:#3a3230;margin:0 0 16px;">All sessions are conducted in Farsi via secure video platforms (Zoom, Google Meet, WhatsApp). The first consultation is free.</p>
@@ -341,7 +341,7 @@
         <span style="width:8px;height:8px;background:var(--green);border-radius:50%;"></span>
         روانشناس دارای پروانه رسمی
       </div>
-      <h3 style="font-family:'Markazi Text',serif;font-size:24px;margin:6px 0 10px;">پروانه فعالیت روانشناسی</h3>
+      <h3 style="font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:24px;margin:6px 0 10px;">پروانه فعالیت روانشناسی</h3>
       <p style="color:var(--muted);font-size:15px;line-height:1.8;margin:0 0 6px;">عضو سازمان نظام روانشناسی و مشاوره جمهوری اسلامی ایران</p>
       <p style="color:var(--ink);font-size:15px;font-weight:600;margin:0;">
         شماره پروانه: <span id="license-number" style="color:var(--rose);font-family:monospace;letter-spacing:1px;">۲۸۴۶۳</span>
@@ -432,7 +432,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});
+  window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons();});
   const hdr=document.getElementById('hdr');
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
   window.addEventListener('scroll',onScroll);onScroll();

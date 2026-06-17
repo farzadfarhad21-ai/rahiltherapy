@@ -147,7 +147,7 @@
   display:flex;align-items:center;justify-content:space-between;padding:20px 24px;
   border-bottom:1px solid var(--line);
 }
-.mobile-nav-header .logo{font-family:'Markazi Text',serif;font-weight:700;font-size:22px;}
+.mobile-nav-header .logo{font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-weight:700;font-size:22px;}
 .mobile-nav-close{
   background:none;border:none;cursor:pointer;color:var(--ink);
   width:40px;height:40px;display:grid;place-items:center;border-radius:10px;
@@ -363,7 +363,7 @@
 
       <div style="background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 28px;text-align:center;">
         <div style="width:52px;height:52px;border-radius:14px;background:var(--cream2);display:grid;place-items:center;color:var(--rose-2);margin:0 auto 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div style="font-family:'Markazi Text',serif;font-size:42px;font-weight:700;color:var(--rose);line-height:1;">رایگان</div>
+        <div style="font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:42px;font-weight:700;color:var(--rose);line-height:1;">رایگان</div>
         <div style="font-size:14px;color:var(--muted);margin:6px 0 20px;">جلسهٔ اول</div>
         <p style="font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.9;">آشنایی بدون فشار — ببینیم آیا با هم راحت هستیم.</p>
         <a href="#bookform" class="btn btn-fill" style="width:100%;justify-content:center;">رزرو جلسه رایگان</a>
@@ -372,7 +372,7 @@
       <div style="background:linear-gradient(155deg,var(--rose),var(--rose-2));border-radius:24px;padding:34px 28px;text-align:center;position:relative;box-shadow:0 20px 40px -18px rgba(156,106,96,.55);">
         <div style="position:absolute;top:-12px;right:50%;transform:translateX(50%);background:var(--ink);color:#fff;font-size:11px;font-weight:700;padding:5px 16px;border-radius:999px;letter-spacing:.04em;">بیشترین انتخاب</div>
         <div style="width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff;margin:0 auto 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <div style="font-family:'Markazi Text',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;">$50</div>
+        <div style="font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;">$50</div>
         <div style="font-size:14px;color:rgba(255,255,255,.8);margin:6px 0 20px;">هر جلسه — بین‌الملل</div>
         <p style="font-size:14px;color:rgba(255,255,255,.85);margin:0 0 24px;line-height:1.9;">برای ایرانیان خارج از ایران — Zoom، WhatsApp یا Google Meet.</p>
         <a href="#bookform" class="btn" style="width:100%;justify-content:center;background:#fff;color:var(--rose-2);font-weight:700;">رزرو جلسه</a>
@@ -380,7 +380,7 @@
 
       <div style="background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px 28px;text-align:center;">
         <div style="width:52px;height:52px;border-radius:14px;background:var(--cream2);display:grid;place-items:center;color:var(--rose-2);margin:0 auto 18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <div style="font-family:'Markazi Text',serif;font-size:42px;font-weight:700;color:var(--rose);line-height:1;">$25</div>
+        <div style="font-family:'Markazi Text',Georgia,'Times New Roman',serif;font-size:42px;font-weight:700;color:var(--rose);line-height:1;">$25</div>
         <div style="font-size:14px;color:var(--muted);margin:6px 0 20px;">هر جلسه — از ایران</div>
         <p style="font-size:14px;color:var(--muted);margin:0 0 24px;line-height:1.9;">با توجه به شرایط اقتصادی، تعرفه ویژه برای مراجعان داخل ایران.</p>
         <a href="#bookform" class="btn btn-ghost" style="width:100%;justify-content:center;">رزرو جلسه</a>
@@ -524,7 +524,7 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});
+  window.addEventListener('load',()=>{if(window.lucide)lucide.createIcons();});
   const hdr=document.getElementById('hdr');
   const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
   window.addEventListener('scroll',onScroll);onScroll();
