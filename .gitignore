@@ -3,3 +3,12 @@ node_modules/
 .vercel/
 .vercel
 graphify-out/
+
+# Private — do not commit
+raheleh_voice/
+.image-backup-pre-swap/
+.DS_Store
+**/.DS_Store
+instagram-pipeline/.env
+instagram-pipeline/audio/
+instagram-pipeline/output/
