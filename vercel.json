@@ -11,6 +11,7 @@
     { "source": "/faq", "destination": "/faq.html" },
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/dubai", "destination": "/dubai.html" },
+    { "source": "/parents", "destination": "/parents.html" },
     { "source": "/privacy", "destination": "/privacy.html" }
   ],
   "headers": [
