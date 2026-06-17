@@ -126,7 +126,7 @@ Target: Service pages, About page, homepage.
 | روانشناس فارسی‌زبان در دبی | Strong transactional | About + Services |
 | مشاوره روانشناسی آنلاین | Mixed | Services + Blog |
 | بهترین روانشناس ایرانی | Mixed | About + Testimonials |
-| روانشناس بالینی آنلاین | Strong transactional | Services |
+| روانشناس عمومی آنلاین | Strong transactional | Services |
 | مشاور خانواده فارسی | Mixed | Family Therapy service page |
 | روان‌درمانگر ایرانی خارج از کشور | Strong transactional | Diaspora service page |
 | متخصص CBT فارسی | Medium transactional | Schema/CBT content |
@@ -205,7 +205,7 @@ Each article targets one of the 8 service pillars with full Pillar-Page depth (1
 **Title (Persian):** راهنمای جامع درمان اضطراب: از شناخت تا بهبودی
 **Target keyword:** درمان اضطراب / راهنمای کامل اضطراب
 **Secondary keywords:** علائم اضطراب، انواع اضطراب، CBT برای اضطراب، درمان اضطراب اجتماعی
-**Meta description (Persian):** راهنمای کامل درمان اضطراب به زبان فارسی. با انواع اضطراب، علائم، و مؤثرترین روش‌های درمان (CBT، طرحواره، دارو) آشنا شوید. مشاوره آنلاین با روانشناس بالینی.
+**Meta description (Persian):** راهنمای کامل درمان اضطراب به زبان فارسی. با انواع اضطراب، علائم، و مؤثرترین روش‌های درمان (CBT، طرحواره، دارو) آشنا شوید. مشاوره آنلاین با روانشناس عمومی.
 **Estimated word count:** 1,800 words
 **URL slug:** /articles/foundations-anxiety-guide.html
 **Category image:** cat-anxiety.png
@@ -226,7 +226,7 @@ Each article targets one of the 8 service pillars with full Pillar-Page depth (1
 - → about.html (معرفی راحله)
 - → booking.html (CTA)
 
-**Author E-E-A-T signal box:** پاسخ‌دهنده: راحله اوینی‌پور، روانشناس بالینی، ۱۵+ سال تجربه در درمان اضطراب
+**Author E-E-A-T signal box:** پاسخ‌دهنده: راحله اوینی‌پور، روانشناس عمومی، ۱۵+ سال تجربه در درمان اضطراب
 
 ---
 
@@ -534,7 +534,7 @@ These articles leverage first-hand experience, original frameworks, and demonstr
 **Title (Persian):** حالت‌های طرحواره؛ ابزاری برای درک عمیق‌تر خود (آموزش تخصصی)
 **Target keyword:** حالت‌های طرحواره / Schema Modes
 **Secondary keywords:** حالت کودک، حالت والد، حالت سالم، mode work
-**Meta description (Persian):** آشنایی عمیق با حالت‌های طرحواره (Schema Modes)؛ ابزاری برای تشخیص اینکه در لحظه، کدام بخش از شما در حال واکنش است. آموزش تخصصی توسط روانشناس بالینی.
+**Meta description (Persian):** آشنایی عمیق با حالت‌های طرحواره (Schema Modes)؛ ابزاری برای تشخیص اینکه در لحظه، کدام بخش از شما در حال واکنش است. آموزش تخصصی توسط روانشناس عمومی.
 **Estimated word count:** 1,800 words
 **URL slug:** /articles/authority-schema-modes.html
 **Category image:** cat-schema.png
@@ -624,7 +624,7 @@ Add `author` schema markup to every article:
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "راحله اوینی‌پور",
-  "jobTitle": "روانشناس بالینی",
+  "jobTitle": "روانشناس عمومی",
   "url": "https://rahiltherapy.com/about.html",
   "knowsAbout": ["CBT", "Schema Therapy", "Anxiety", "Depression", "OCD"],
   "alumniOf": ["دانشگاه تهران", "دانشگاه علوم پزشکی تهران"]

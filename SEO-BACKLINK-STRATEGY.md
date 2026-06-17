@@ -2,7 +2,7 @@
 **Persian RTL Psychology Therapy Site · Dubai-based, Globally Serving Persian Speakers**
 
 **Prepared:** ۱۲ خرداد ۱۴۰۵ (June 2, 2026)
-**Owner:** Raheleh Evinipour, Clinical Psychologist (Dubai, UAE)
+**Owner:** Raheleh Evinipour, General Psychologist (Dubai, UAE)
 **Primary Goal:** Build authoritative backlink profile to rank for "روانشناس آنلاین فارسی", "مشاوره روانشناختی", "طرحواره درمانی فارسی" and related transactional Persian keywords
 **Secondary Goal:** Establish local SEO presence in Dubai/UAE + diaspora citations in North America, Europe, Australia
 
@@ -101,10 +101,10 @@ This is the highest-leverage local SEO action. GBP is the dominant source of "ne
 ### 2.2 GBP Setup Checklist
 
 1. **Create / Claim** the business at https://business.google.com
-   - Business name: `راحله اوینی‌پور | روانشناس بالینی` (Persian-primary, may add English: `Raheleh Evinipour | Clinical Psychologist`)
+   - Business name: `راحله اوینی‌پور | روانشناس عمومی` (Persian-primary, may add English: `Raheleh Evinipour | General Psychologist`)
    - Use the EXACT name on the website for NAP consistency.
 
-2. **Primary Category:** `Psychologist` (English) — or `Clinical Psychologist` if available in UAE category set.
+2. **Primary Category:** `Psychologist` (English) — or `General Psychologist` if available in UAE category set.
    - **Add 4-5 secondary categories:** `Mental Health Service`, `Therapist`, `Counselor`, `Psychotherapist`, `Family Counselor`.
 
 3. **Address:** Real Dubai clinic address. If virtual only, configure as a **service-area business** covering Dubai + Sharjah + Ajman (the wider catchment).
@@ -120,7 +120,7 @@ This is the highest-leverage local SEO action. GBP is the dominant source of "ne
 8. **Appointment link:** `https://rahiltherapy.com/booking.html`
 
 9. **Description (750 char limit):** Use both English and Persian. Lead with the unique value prop:
-   - Persian (primary): "روانشناس بالینی و مشاور دکتر راحله اوینی‌پور. خدمات: اضطراب، افسردگی، OCD، ADHD، طرحواره درمانی، مشاوره خانواده، جلسات آنلاین به زبان فارسی برای ایرانیان سراسر جهان. دفتر دبی، جلسات حضوری و آنلاین."
+   - Persian (primary): "روانشناس عمومی و مشاور دکتر راحله اوینی‌پور. خدمات: اضطراب، افسردگی، OCD، ADHD، طرحواره درمانی، مشاوره خانواده، جلسات آنلاین به زبان فارسی برای ایرانیان سراسر جهان. دفتر دبی، جلسات حضوری و آنلاین."
    - English: "Clinical psychologist Dr. Raheleh Evinipour. Specialties: anxiety, depression, OCD, ADHD, schema therapy, family therapy. Online sessions in Persian for Iranian diaspora worldwide. Dubai clinic + global online."
 
 10. **Services (GBP "Services" section):** Add all 8 services with descriptions (one per service, 200-300 chars each):
@@ -267,7 +267,7 @@ For every profile, use the SAME bio structure:
 
 **Persian:**
 ```
-راحله اوینی‌پور | روانشناس بالینی
+راحله اوینی‌پور | روانشناس عمومی
 دبی، امارات
 متخصص: اضطراب، افسردگی، OCD، ADHD، طرحواره درمانی
 جلسات آنلاین فارسی برای ایرانیان سراسر جهان
@@ -276,7 +276,7 @@ rahiltherapy.com
 
 **English:**
 ```
-Raheleh Evinipour | Clinical Psychologist
+Raheleh Evinipour | General Psychologist
 Dubai, UAE
 Specialties: Anxiety, Depression, OCD, ADHD, Schema Therapy
 Online sessions in Persian for the Iranian diaspora
@@ -327,7 +327,7 @@ The site has 12+ articles. To build backlinks via content, identify Persian-lang
 ```
 سلام [نام],
 
-من راحله اوینی‌پور هستم، روانشناس بالینی مستقر در دبی که به فارسی‌زبانان
+من راحله اوینی‌پور هستم، روانشناس عمومی مستقر در دبی که به فارسی‌زبانان
 سراسر جهان خدمات آنلاین ارائه می‌دهم.
 
 پیشنهاد همکاری برای نگارش یک مقاله کارشناسی:
