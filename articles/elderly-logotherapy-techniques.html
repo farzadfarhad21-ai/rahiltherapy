@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>تکنیک‌های معنادرمانی؛ سه ابزار عملی فرانکل برای سالمندی — راحله اوینی‌پور</title>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
+<!-- Google Analytics (lazy-loaded after window.load to protect LCP) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8TSXZKEW9N');
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-8TSXZKEW9N');
+  });
 </script>
 
 <meta name="description" content="معنادرمانی فقط فلسفه نیست — تکنیک‌های عملی دارد. سه تکنیک اصلی فرانکل: قصد متناقض، تمرکز‌زدایی، و گفتگوی سقراطی. کاربرد آن‌ها در سالمندی.">

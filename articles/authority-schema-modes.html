@@ -11,13 +11,18 @@
 <link rel="canonical" href="https://rahiltherapy.com/articles/authority-schema-modes.html">
 <link rel="alternate" hreflang="fa" href="https://rahiltherapy.com/articles/authority-schema-modes.html">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
+<!-- Google Analytics (lazy-loaded after window.load to protect LCP) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8TSXZKEW9N');
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-8TSXZKEW9N');
+  });
 </script>
 
 <link rel="preconnect" href="https://www.googletagmanager.com">

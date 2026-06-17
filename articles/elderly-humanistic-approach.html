@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>رویکرد انسان‌گرایی در درمان سالمندان؛ احترام به اراده و انتخاب — راحله اوینی‌پور</title>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
+<!-- Google Analytics (lazy-loaded after window.load to protect LCP) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8TSXZKEW9N');
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-8TSXZKEW9N');
+  });
 </script>
 
 <meta name="description" content="رویکرد انسان‌گرایی، به‌جای تمرکز بر اختلال، بر اراده آزاد، خودشناسی و رشد فرد تمرکز می‌کند. مناسب برای سالمندانی که نمی‌خواهند «بیمار» شناخته شوند.">

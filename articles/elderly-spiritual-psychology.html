@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>روانشناسی معنوی؛ مولانا، عرفان ایرانی، و آرامش سالمندی — راحله اوینی‌پور</title>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N"></script>
+<!-- Google Analytics (lazy-loaded after window.load to protect LCP) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8TSXZKEW9N');
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8TSXZKEW9N';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-8TSXZKEW9N');
+  });
 </script>
 
 <meta name="description" content="روانشناسی معنوی، با تکیه بر عرفان ایرانی (مولانا، حافظ، عطار)، یک رویکرد منحصربه‌فرد برای آرامش سالمندان ایرانی است. اتصال به اصل خویش، کلید معنای زندگی.">
