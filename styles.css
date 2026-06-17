@@ -11,7 +11,7 @@
   --rose-2:#8A574F;
   --rose-soft:#C99488;
   --ink:#3B2E2A;
-  --muted:#806B63;
+  --muted:#6B5751;
   --line:rgba(59,46,42,.12);
   --green:#5BA37A;
   --maxw:1200px;
@@ -154,7 +154,7 @@ footer{background:var(--ink);color:#fff;padding:64px 0 0;}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px;}
 footer .logo{color:#fff;}
 footer .ftag{color:#ffffff9a;font-size:15px;margin:18px 0 22px;max-width:280px;}
-.fcol h4{font-family:'Vazirmatn';font-size:15px;font-weight:700;margin:0 0 18px;color:#fff;}
+.fcol h3{font-family:'Vazirmatn';font-size:15px;font-weight:700;margin:0 0 18px;color:#fff;}
 .fcol a{display:block;color:#ffffffb0;font-size:14.5px;margin-bottom:11px;transition:color .15s;}
 .fcol a:hover{color:var(--rose-soft);}
 .socials{display:flex;gap:12px;margin-top:8px;}
