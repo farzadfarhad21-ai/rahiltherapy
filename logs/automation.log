@@ -498,3 +498,18 @@
 [2026-06-16T08:07:16.455Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-16T08:10:16.811Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781597202288-solitude.html → 404
 [2026-06-16T08:10:16.812Z] [INFO] ========== Automation Completed Successfully in 277.4s ==========
+[2026-06-17T08:38:27.934Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-17T08:38:27.937Z] [INFO] Selected topic: عشق به خود؛ نه خودشیفتگی، بلکه مهربانی با خویشتن (Topic #2/10)
+[2026-06-17T08:38:27.937Z] [INFO] Generating article for topic: عشق به خود؛ نه خودشیفتگی، بلکه مهربانی با خویشتن
+[2026-06-17T08:39:30.453Z] [INFO] Article created: articles/1781685570453-self-love.html
+[2026-06-17T08:39:30.453Z] [INFO] Article generated: عشق به خود؛ نه خودشیفتگی، بلکه مهربانی با خویشتن
+[2026-06-17T08:39:30.454Z] [INFO] Generating image via Segmind for topic: عشق به خود
+[2026-06-17T08:39:35.989Z] [INFO] Image saved: articles/1781685575349-self-love.jpg
+[2026-06-17T08:39:35.990Z] [INFO] Updated article with new image: 1781685575349-self-love.jpg
+[2026-06-17T08:39:35.990Z] [INFO] Updated blog.html with new article card
+[2026-06-17T08:39:35.991Z] [INFO] Updated sitemap.xml
+[2026-06-17T08:39:35.991Z] [INFO] Starting Vercel deployment...
+[2026-06-17T08:40:02.330Z] [INFO] Vercel deployment completed
+[2026-06-17T08:40:02.330Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-17T08:43:02.525Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781685570453-self-love.html → 404
+[2026-06-17T08:43:02.525Z] [INFO] ========== Automation Completed Successfully in 274.6s ==========
