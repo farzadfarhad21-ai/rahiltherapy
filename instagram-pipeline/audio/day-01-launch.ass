@@ -1,0 +1,28 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Tahoma,76,&H00FFFFFF,&H00FFFFFF,&H00604A57,&H80000000,1,0,0,0,100,100,0,0,1,5,2,2,80,80,360,178
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.85,Default,,0,0,0,,سلام ازیزانم. اگه پدار یا مادر
+Dialogue: 0,0:00:02.85,0:00:06.08,Default,,0,0,0,,سالمندد اخیران ساکت تر شده, گوشگی
+Dialogue: 0,0:00:06.08,0:00:08.67,Default,,0,0,0,,شده یا اینگار از زندگی فاصله
+Dialogue: 0,0:00:08.67,0:00:11.82,Default,,0,0,0,,گرفته این فقط پیری نیست. این
+Dialogue: 0,0:00:11.82,0:00:16.44,Default,,0,0,0,,بوهران منست. در سالمندی فرد بسه
+Dialogue: 0,0:00:16.44,0:00:20.00,Default,,0,0,0,,از دستادن بزور گروبرو میشه. شوقل,
+Dialogue: 0,0:00:20.19,0:00:23.55,Default,,0,0,0,,حضور فرزندان گاهی فقدانه هم سر.
+Dialogue: 0,0:00:24.44,0:00:26.14,Default,,0,0,0,,اما خبر خوبینه که این خلا
+Dialogue: 0,0:00:26.14,0:00:29.87,Default,,0,0,0,,قابل پورشدنه. نبا دارو. بلکه با
+Dialogue: 0,0:00:29.87,0:00:32.96,Default,,0,0,0,,یا افتن منعی جدید برای زندگی.
+Dialogue: 0,0:00:33.74,0:00:36.28,Default,,0,0,0,,امروز یه بخشه ویجه بسایت ازافه
+Dialogue: 0,0:00:36.28,0:00:39.43,Default,,0,0,0,,کردم فقط برای فرزندانی که نگرانه
+Dialogue: 0,0:00:39.43,0:00:43.71,Default,,0,0,0,,والدینشون هستن. جلسه اشنایی رایگان فقط
+Dialogue: 0,0:00:43.71,0:00:46.38,Default,,0,0,0,,برای شما نب دارو مادر تون.
+Dialogue: 0,0:00:46.89,0:00:49.74,Default,,0,0,0,,لنک در بایو تنها نیستید.

@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Tahoma,68,&H00FFFFFF,&H00FFFFFF,&H00604A57,&H80000000,1,0,0,0,100,100,0,0,3,3,2,2,80,80,260,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:03.83,Default,,0,0,0,,سلام عزیزانم
+Dialogue: 0,0:00:03.83,0:00:07.66,Default,,0,0,0,,اگه پدر یا مادر سالمندت اخیراً ساکت‌تر شده، گوشه‌گیر شده
+Dialogue: 0,0:00:07.66,0:00:11.48,Default,,0,0,0,,یا انگار از زندگی فاصله گرفته،
+Dialogue: 0,0:00:11.48,0:00:15.31,Default,,0,0,0,,این فقط پیری نیست
+Dialogue: 0,0:00:15.31,0:00:19.14,Default,,0,0,0,,این بحرانِ معناست
+Dialogue: 0,0:00:19.14,0:00:22.97,Default,,0,0,0,,در سالمندی، فرد با سه از دست دادن بزرگ روبه‌رو میشه: شغل، حضور فرزندان
+Dialogue: 0,0:00:22.97,0:00:26.79,Default,,0,0,0,,گاهی فقدان همسر
+Dialogue: 0,0:00:26.79,0:00:30.62,Default,,0,0,0,,اما خبر خوب اینه که این خلأ، قابل پر شدنه
+Dialogue: 0,0:00:30.62,0:00:34.45,Default,,0,0,0,,نه با دارو، بلکه با یافتنِ معنای جدید برای زندگی
+Dialogue: 0,0:00:34.45,0:00:38.28,Default,,0,0,0,,امروز یه بخش ویژه به سایت اضافه کردم، فقط برای فرزندانی که نگران والدینشون هستن
+Dialogue: 0,0:00:38.28,0:00:42.10,Default,,0,0,0,,جلسهٔ آشنایی رایگان، فقط برای شما، نه پدر و مادرتون
+Dialogue: 0,0:00:42.10,0:00:45.93,Default,,0,0,0,,لینک در بایو
+Dialogue: 0,0:00:45.93,0:00:49.76,Default,,0,0,0,,تنها نیستید
