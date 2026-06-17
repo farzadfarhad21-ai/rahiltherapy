@@ -672,8 +672,17 @@
 <script>
   document.addEventListener('DOMContentLoaded',()=>{if(window.lucide)lucide.createIcons();});
   const hdr=document.getElementById('hdr');
-  const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>10);
-  window.addEventListener('scroll',onScroll);onScroll();
+  let ticking=false;
+  const onScroll=()=>{
+    if(!ticking){
+      requestAnimationFrame(()=>{
+        hdr.classList.toggle('scrolled',window.scrollY>10);
+        ticking=false;
+      });
+      ticking=true;
+    }
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
 
   // Mobile nav
   const menuBtn = document.querySelector('.menu-btn');
