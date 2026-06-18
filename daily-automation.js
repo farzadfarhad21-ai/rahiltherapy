@@ -592,7 +592,7 @@ async function checkDeployedUrl(articleUrl) {
   await new Promise(resolve => setTimeout(resolve, 180000));
 
   try {
-    const response = await fetch(articleUrl, { method: 'HEAD' });
+    const response = await fetch(articleUrl, { method: 'GET', redirect: 'follow' });
     if (response.ok) {
       log(`Post-deploy check PASSED: ${articleUrl} → ${response.status}`);
       return true;
