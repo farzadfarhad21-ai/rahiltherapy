@@ -5,6 +5,28 @@
 
 ---
 
+## 2026-06-18
+
+### [FIX] Duplicate meta+canonical blocks in about.html and contact.html
+**Symptom:** about.html had 2 canonical tags (lines 34+119 with different values) and 2 meta descriptions. contact.html had 2 canonical tags and 2 meta descriptions.
+**Fix:** Deleted the duplicate blocks (about lines 112-119, contact lines 105-117). Updated about.html canonical to clean URL (no .html).
+**Files changed:** about.html, contact.html
+
+### [FIX] Duplicate pricing section in services.html
+**Symptom:** services.html had two pricing sections — structured 3-card version AND simpler 2-card inline version.
+**Fix:** Deleted the duplicate (lines 519-553). Kept the structured 3-card CSS-based version.
+**Files changed:** services.html
+
+### [FIX] daily-automation.js redirect-follow bug
+**Symptom:** checkDeployedUrl() used `fetch(url,{method:'HEAD'})` without `{redirect:'follow'}`. Caused false-404 on every deploy (Jun 14-17). Vercel 308-redirects .html→clean URL but HEAD doesn't follow.
+**Fix:** Changed to `fetch(url,{method:'GET',redirect:'follow'})`.
+**Files changed:** daily-automation.js
+
+### [FIX] Added GENERATION_PROVIDER env flag
+**Symptom:** No way to switch between RuFlo/MiniMax and direct Anthropic.
+**Fix:** GENERATION_PROVIDER='ruflo' (default/MiniMax) | 'anthropic' (direct). Each generation logged to logs/generations.log.
+**Files changed:** blog-generator.js, daily-automation.js
+
 ## 2026-06-04
 
 ### [FIX] Persian-filename articles deleted from articles/ + sitemap
