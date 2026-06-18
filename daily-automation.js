@@ -71,6 +71,23 @@ const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
 const BLOG_DIR = path.join(__dirname, 'articles');
 const SITE_URL = 'https://rahiltherapy.com';
 
+/**
+ * Append UTM tracking params to a URL.
+ * Use ONLY on URLs shared to Telegram/Instagram — never on canonical, og:url,
+ * JSON-LD, sitemap, or checkDeployedUrl targets.
+ */
+function withUtm(url, source, medium = 'social', campaign = 'daily-blog') {
+  try {
+    const u = new URL(url);
+    u.searchParams.set('utm_source', source);
+    u.searchParams.set('utm_medium', medium);
+    u.searchParams.set('utm_campaign', campaign);
+    return u.toString();
+  } catch (_) {
+    return url; // fallback: return URL unchanged
+  }
+}
+
 function log(message, type = 'INFO') {
   const timestamp = new Date().toISOString();
   const logLine = `[${timestamp}] [${type}] ${message}`;
@@ -510,6 +527,9 @@ async function sendTelegramPhoto(articleInfo) {
   }
 
   const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
+  // Keep articleUrl CLEAN for checkDeployedUrl, sitemap, article-info.json
+  // Only tag the URL that goes into the Telegram caption
+  const shareUrl = withUtm(articleUrl, 'telegram', 'social', 'daily-blog');
   const imagePath = articleInfo.imageFilename.startsWith('cat-')
     ? path.join(__dirname, articleInfo.imageFilename)
     : path.join(BLOG_DIR, articleInfo.imageFilename);
@@ -541,7 +561,7 @@ async function sendTelegramPhoto(articleInfo) {
 
 ${summary}
 
-🔗 [ادامهٔ مطلب](${articleUrl})
+🔗 ادامهٔ مطلب: ${shareUrl}
 
 ━━━━━━━━━━━━━━━
 📅 ${articleInfo.date}
@@ -651,13 +671,15 @@ async function runDailyAutomation() {
     updateSitemap(articleInfo);
 
     // Write article info for notify-telegram.js
+    const cleanUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
     const articleData = JSON.stringify({
       filename: articleInfo.filename,
       seoTitle: articleInfo.seoTitle,
       tag: articleInfo.tag,
       date: articleInfo.date,
       imageFilename: articleInfo.imageFilename,
-      articleUrl: `${SITE_URL}/articles/${articleInfo.filename}`
+      articleUrl: cleanUrl,
+      shareUrl: withUtm(cleanUrl, 'telegram', 'social', 'daily-blog')
     });
     fs.writeFileSync(path.join(__dirname, '.article-info.json'), articleData, 'utf8');
 

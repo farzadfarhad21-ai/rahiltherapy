@@ -12,6 +12,22 @@ const path = require('path');
 const WHATSAPP = '989124228995';
 const SITE = 'https://rahiltherapy.com';
 
+/**
+ * Append UTM tracking params — use ONLY on social-share URLs,
+ * NOT on canonical/og:url/sitemap entries.
+ */
+function withUtm(url, source, medium = 'social', campaign = 'daily-blog') {
+  try {
+    const u = new URL(url);
+    u.searchParams.set('utm_source', source);
+    u.searchParams.set('utm_medium', medium);
+    u.searchParams.set('utm_campaign', campaign);
+    return u.toString();
+  } catch (_) {
+    return url;
+  }
+}
+
 // MUST match daily-automation.js TOPICS order exactly
 const TOPICS = [
   'تنهایی و خلوت',
@@ -194,7 +210,7 @@ function generateCaption(topic, date) {
 ${lines.join('\n')}
 
 📖 مقاله کامل امروز در بلاگ:
-👉 ${SITE}/blog
+👉 ${withUtm(`${SITE}/blog`, 'instagram', 'social', 'daily-blog')}
 
 ${cta} رزرو جلسهٔ اول رایگان
 📱 واتساپ: +${WHATSAPP}

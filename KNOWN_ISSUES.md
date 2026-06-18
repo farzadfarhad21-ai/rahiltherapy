@@ -5,6 +5,13 @@
 
 ---
 
+### [PATTERN] UTM tagging for social shares
+- Telegram URLs: `?utm_source=telegram&utm_medium=social&utm_campaign=daily-blog`
+- Instagram URLs: `?utm_source=instagram&utm_medium=social&utm_campaign=daily-blog`
+- Helper: `withUtm(url, source, medium, campaign)` in daily-automation.js
+- NEVER add UTMs to: canonical, og:url, JSON-LD, sitemap, checkDeployedUrl target
+- Telegram caption uses plain URL (not markdown-wrapped) so iOS opens Safari
+
 ## 2026-06-18
 
 ### [FIX] Duplicate meta+canonical blocks in about.html and contact.html

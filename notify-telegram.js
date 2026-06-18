@@ -68,7 +68,8 @@ const TOPIC_EMOJI = {
 
 async function main() {
   const info = readArticleInfo();
-  const { filename, seoTitle, tag, date, imageFilename, articleUrl } = info;
+  // articleUrl = clean (for polling), shareUrl = UTM-tagged (for Telegram caption)
+  const { filename, seoTitle, tag, date, imageFilename, articleUrl, shareUrl } = info;
 
   const live = await pollUntilLive(articleUrl);
   if (!live) process.exit(1);
@@ -82,11 +83,13 @@ async function main() {
   const safeTitle = htmlEscape(seoTitle);
   const safeSummary = htmlEscape(summary);
 
+  // Use UTM-tagged shareUrl in the caption (plain URL, no markdown)
+  const captionUrl = shareUrl || articleUrl;
   const caption = `${emoji} <b>${safeTitle}</b>
 
 ${safeSummary}
 
-🔗 <a href="${articleUrl}">ادامهٔ مطلب</a>
+🔗 ادامهٔ مطلب: ${captionUrl}
 
 ━━━━━━━━━━━━━━━
 📅 ${date}
