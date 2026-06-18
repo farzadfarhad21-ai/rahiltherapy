@@ -8,7 +8,12 @@
  *   node blog-generator.js --preview          # Preview without writing
  *
  * Environment:
- *   ANTHROPIC_API_KEY - your Anthropic API key (required)
+ *   ANTHROPIC_API_KEY  - your API key (required)
+ *   GENERATION_PROVIDER - 'ruflo' (default, MiniMax via RuFlo) | 'anthropic' (direct)
+ *
+ * When GENERATION_PROVIDER=ruflo:
+ *   - Uses ANTHROPIC_BASE_URL from env (defaults to MiniMax endpoint)
+ *   - Logs each generation to logs/generations.log
  */
 
 const fs = require('fs');
@@ -93,6 +98,24 @@ async function generateBlogPost(topic) {
     process.exit(1);
   }
 
+  const provider = process.env.GENERATION_PROVIDER || 'ruflo';
+
+  // Determine endpoint based on provider
+  let baseUrl;
+  if (provider === 'anthropic') {
+    baseUrl = 'https://api.anthropic.com';
+  } else {
+    // ruflo (default) — uses MiniMax via RuFlo compatibility layer
+    baseUrl = process.env.ANTHROPIC_BASE_URL || 'https://api.minimax.io/anthropic';
+  }
+
+  // Log generation attempt
+  const logPath = path.join(__dirname, 'logs', 'generations.log');
+  const logEntry = `[${new Date().toISOString()}] TOPIC=${topic} PROVIDER=${provider} MODEL=${process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-5'}\n`;
+  try {
+    fs.appendFileSync(logPath, logEntry, 'utf8');
+  } catch (_) {}
+
   const prompt = `یک مقاله وبلاگی کامل و حرفه‌ای به زبان فارسی معیار درباره "${topic}" بنویس.
 
 قوانین سخت:
@@ -133,7 +156,6 @@ async function generateBlogPost(topic) {
   console.log(`\n📝 Generating: ${topic}\n`);
 
   try {
-    const baseUrl = process.env.ANTHROPIC_BASE_URL || 'https://api.anthropic.com';
     const response = await fetch(`${baseUrl}/v1/messages`, {
       method: 'POST',
       headers: {

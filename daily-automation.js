@@ -200,7 +200,11 @@ async function generateBlogPost(topicKey, topicFull) {
 
   log(`Generating article for topic: ${topicFull}`);
 
-  const baseUrl = process.env.ANTHROPIC_BASE_URL || 'https://api.anthropic.com';
+  const provider = process.env.GENERATION_PROVIDER || 'ruflo';
+  const baseUrl = provider === 'anthropic'
+    ? 'https://api.anthropic.com'
+    : (process.env.ANTHROPIC_BASE_URL || 'https://api.minimax.io/anthropic');
+
   const response = await fetch(`${baseUrl}/v1/messages`, {
     method: 'POST',
     headers: {
