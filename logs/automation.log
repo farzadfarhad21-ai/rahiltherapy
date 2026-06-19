@@ -528,3 +528,18 @@
 [2026-06-18T08:55:05.911Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-18T08:58:06.486Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781772867258-inner-child.html → 404
 [2026-06-18T08:58:06.486Z] [INFO] ========== Automation Completed Successfully in 291.2s ==========
+[2026-06-19T11:26:07.525Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-19T11:26:07.527Z] [INFO] Selected topic: ترس چیست و چگونه می‌توانیم آزاد شویم؟ (Topic #4/10)
+[2026-06-19T11:26:07.528Z] [INFO] Generating article for topic: ترس چیست و چگونه می‌توانیم آزاد شویم؟
+[2026-06-19T11:27:32.108Z] [INFO] Article created: articles/1781868452108-fear-liberation.html
+[2026-06-19T11:27:32.109Z] [INFO] Article generated: ترس چیست و چگونه می‌توانیم آزاد شویم؟
+[2026-06-19T11:27:32.109Z] [INFO] Generating image via Segmind for topic: ترس و رهایی
+[2026-06-19T11:27:37.403Z] [INFO] Image saved: articles/1781868456927-fear-liberation.jpg
+[2026-06-19T11:27:37.404Z] [INFO] Updated article with new image: 1781868456927-fear-liberation.jpg
+[2026-06-19T11:27:37.405Z] [INFO] Updated blog.html with new article card
+[2026-06-19T11:27:37.406Z] [INFO] Updated sitemap.xml
+[2026-06-19T11:27:37.407Z] [INFO] Starting Vercel deployment...
+[2026-06-19T11:28:05.544Z] [INFO] Vercel deployment completed
+[2026-06-19T11:28:05.544Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-19T11:31:06.193Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1781868452108-fear-liberation.html → 404
+[2026-06-19T11:31:06.193Z] [INFO] ========== Automation Completed Successfully in 298.7s ==========
