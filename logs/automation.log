@@ -573,3 +573,18 @@
 [2026-06-21T08:26:59.358Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-21T08:29:59.609Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782030384086-meaning-life.html → 404
 [2026-06-21T08:29:59.609Z] [INFO] ========== Automation Completed Successfully in 288.5s ==========
+[2026-06-22T08:12:21.660Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-22T08:12:21.663Z] [INFO] Selected topic: روان‌شناسی مهاجرت؛ چالش‌های هویت، تعلق و سازگاری در سرزمین تازه (Topic #7/10)
+[2026-06-22T08:12:21.663Z] [INFO] Generating article for topic: روان‌شناسی مهاجرت؛ چالش‌های هویت، تعلق و سازگاری در سرزمین تازه
+[2026-06-22T08:14:02.386Z] [INFO] Article created: articles/1782116042385-migration-psychology.html
+[2026-06-22T08:14:02.386Z] [INFO] Article generated: روان‌شناسی مهاجرت؛ چالش‌های هویت، تعلق و سازگاری در سرزمین تازه
+[2026-06-22T08:14:02.386Z] [INFO] Generating image via Segmind for topic: روان‌شناسی مهاجرت
+[2026-06-22T08:14:07.403Z] [INFO] Image saved: articles/1782116046764-migration-psychology.jpg
+[2026-06-22T08:14:07.404Z] [INFO] Updated article with new image: 1782116046764-migration-psychology.jpg
+[2026-06-22T08:14:07.406Z] [INFO] Updated blog.html with new article card
+[2026-06-22T08:14:07.406Z] [INFO] Updated sitemap.xml
+[2026-06-22T08:14:07.407Z] [INFO] Starting Vercel deployment...
+[2026-06-22T08:14:35.993Z] [INFO] Vercel deployment completed
+[2026-06-22T08:14:35.994Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-22T08:17:36.319Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782116042385-migration-psychology.html → 404
+[2026-06-22T08:17:36.319Z] [INFO] ========== Automation Completed Successfully in 314.7s ==========
