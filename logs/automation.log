@@ -588,3 +588,18 @@
 [2026-06-22T08:14:35.994Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-22T08:17:36.319Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782116042385-migration-psychology.html → 404
 [2026-06-22T08:17:36.319Z] [INFO] ========== Automation Completed Successfully in 314.7s ==========
+[2026-06-23T08:46:26.013Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-23T08:46:26.015Z] [INFO] Selected topic: عزت نفس واقعی چیست و از کجا می‌آید؟ (Topic #8/10)
+[2026-06-23T08:46:26.016Z] [INFO] Generating article for topic: عزت نفس واقعی چیست و از کجا می‌آید؟
+[2026-06-23T08:47:44.347Z] [INFO] Article created: articles/1782204464347-self-worth.html
+[2026-06-23T08:47:44.347Z] [INFO] Article generated: عزت نفس واقعی چیست و از کجا می‌آید؟
+[2026-06-23T08:47:44.348Z] [INFO] Generating image via Segmind for topic: عزت نفس و ارزشمندی
+[2026-06-23T08:47:48.646Z] [INFO] Image saved: articles/1782204468015-self-worth.jpg
+[2026-06-23T08:47:48.647Z] [INFO] Updated article with new image: 1782204468015-self-worth.jpg
+[2026-06-23T08:47:48.649Z] [INFO] Updated blog.html with new article card
+[2026-06-23T08:47:48.649Z] [INFO] Updated sitemap.xml
+[2026-06-23T08:47:48.650Z] [INFO] Starting Vercel deployment...
+[2026-06-23T08:48:17.139Z] [INFO] Vercel deployment completed
+[2026-06-23T08:48:17.140Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-23T08:51:17.352Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782204464347-self-worth.html → 404
+[2026-06-23T08:51:17.353Z] [INFO] ========== Automation Completed Successfully in 291.3s ==========
