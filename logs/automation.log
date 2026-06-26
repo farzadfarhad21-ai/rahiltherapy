@@ -633,3 +633,18 @@
 [2026-06-25T08:50:33.447Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-25T08:53:33.641Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782377401644-peace-impermanence.html → 404
 [2026-06-25T08:53:33.641Z] [INFO] ========== Automation Completed Successfully in 282.6s ==========
+[2026-06-26T08:41:28.709Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-26T08:41:28.712Z] [INFO] Selected topic: تنهایی؛ فرار از خود یا بازگشت به خود؟ (Topic #1/10)
+[2026-06-26T08:41:28.712Z] [INFO] Generating article for topic: تنهایی؛ فرار از خود یا بازگشت به خود؟
+[2026-06-26T08:42:48.530Z] [INFO] Article created: articles/1782463368530-solitude.html
+[2026-06-26T08:42:48.531Z] [INFO] Article generated: تنهایی؛ فرار از خود یا بازگشت به خود؟
+[2026-06-26T08:42:48.531Z] [INFO] Generating image via Segmind for topic: تنهایی و خلوت
+[2026-06-26T08:42:53.747Z] [INFO] Image saved: articles/1782463372932-solitude.jpg
+[2026-06-26T08:42:53.747Z] [INFO] Updated article with new image: 1782463372932-solitude.jpg
+[2026-06-26T08:42:53.749Z] [INFO] Updated blog.html with new article card
+[2026-06-26T08:42:53.749Z] [INFO] Updated sitemap.xml
+[2026-06-26T08:42:53.750Z] [INFO] Starting Vercel deployment...
+[2026-06-26T08:43:23.028Z] [INFO] Vercel deployment completed
+[2026-06-26T08:43:23.028Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-26T08:46:23.295Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782463368530-solitude.html → 404
+[2026-06-26T08:46:23.295Z] [INFO] ========== Automation Completed Successfully in 294.6s ==========
