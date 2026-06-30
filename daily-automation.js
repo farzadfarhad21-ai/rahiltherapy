@@ -16,55 +16,95 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 
 const TOPICS = [
-  'تنهایی و خلوت',
-  'عشق به خود',
-  'کودک درون',
-  'ترس و رهایی',
-  'توکل و معنویت',
-  'معنا و هدف زندگی',
-  'روان‌شناسی مهاجرت',
-  'عزت نفس و ارزشمندی',
-  'روابط و دلبستگی',
-  'آرامش در جهان ناپایدار'
+  'تئوری انتخاب',
+  'خشم و کنترل خشم',
+  'کنترل ذهن',
+  'پاکسازی ذهن',
+  'نشخوار فکری',
+  'راه‌های افزایش عزت نفس',
+  'راه‌های افزایش اعتماد به نفس',
+  'خود پنداره',
+  'خطاهای شناختی',
+  'دلبستگی ایمن',
+  'گفتگوی مثبت با خود',
+  'پاکسازی ضمیر ناخودآگاه',
+  'NLP',
+  'هوش هیجانی',
+  'شکرگزاری',
+  'مدیتیشن',
+  'شادی پایدار',
+  'مکانیزم‌های دفاعی',
+  'تاب‌آوری',
+  'قدرت تفکر'
 ];
 
 const TOPIC_FULL = {
-  'تنهایی و خلوت': 'تنهایی؛ فرار از خود یا بازگشت به خود؟',
-  'عشق به خود': 'عشق به خود؛ نه خودشیفتگی، بلکه مهربانی با خویشتن',
-  'کودک درون': 'کودک درون؛ زخم‌هایی که بزرگ شدیم اما فراموش نکردیم',
-  'ترس و رهایی': 'ترس چیست و چگونه می‌توانیم آزاد شویم؟',
-  'توکل و معنویت': 'توکل؛ رها کردن کنترل و اعتماد به زندگی',
-  'معنا و هدف زندگی': 'چرا صبح بیدار می‌شوی؟ جستجوی معنا در زندگی روزمره',
-  'روان‌شناسی مهاجرت': 'روان‌شناسی مهاجرت؛ چالش‌های هویت، تعلق و سازگاری در سرزمین تازه',
-  'عزت نفس و ارزشمندی': 'عزت نفس واقعی چیست و از کجا می‌آید؟',
-  'روابط و دلبستگی': 'چرا در روابط آسیب می‌بینیم؟ الگوهای دلبستگی و تأثیر آن‌ها',
-  'آرامش در جهان ناپایدار': 'چگونه در دنیایی پر از تغییر، آرامش درونی داشته باشیم؟'
+  'تئوری انتخاب': 'تئوری انتخاب گلسر؛ چرا انتخاب‌های ما زندگی‌مان را می‌سازند',
+  'خشم و کنترل خشم': 'خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون',
+  'کنترل ذهن': 'کنترل ذهن؛ چگونه ذهن سرکش را آرام کنیم',
+  'پاکسازی ذهن': 'پاکسازی ذهن؛ رهایی از افکار سمی و باورهای محدودکننده',
+  'نشخوار فکری': 'نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن',
+  'راه‌های افزایش عزت نفس': 'راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی',
+  'راه‌های افزایش اعتماد به نفس': 'راه‌های افزایش اعتماد به نفس؛ از باور درونی تا عمل بیرونی',
+  'خود پنداره': 'خود پنداره؛ تصویری که از خود داریم چگونه ساخته می‌شود',
+  'خطاهای شناختی': 'خطاهای شناختی؛ تله‌های ذهنی که ما را اسیر می‌کنند',
+  'دلبستگی ایمن': 'دلبستگی ایمن؛ ریشه‌های روابط سالم و عمیق',
+  'گفتگوی مثبت با خود': 'گفتگوی مثبت با خود؛ صدای درون مهربان را پرورش دهیم',
+  'پاکسازی ضمیر ناخودآگاه': 'پاکسازی ضمیر ناخودآگاه؛ آزاد کردن باورهای کودکی',
+  'NLP': 'NLP؛ برنامه‌ریزی عصبی-کلامی و قدرت بازنویسی ذهن',
+  'هوش هیجانی': 'هوش هیجانی؛ کلید موفقیت در روابط و زندگی',
+  'شکرگزاری': 'شکرگزاری؛ تمرینی ساده برای تغییر کیفیت زندگی',
+  'مدیتیشن': 'مدیتیشن؛ سفری به سکوت درون',
+  'شادی پایدار': 'شادی پایدار؛ راز خوشبختی فراتر از لحظه',
+  'مکانیزم‌های دفاعی': 'مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن',
+  'تاب‌آوری': 'تاب‌آوری؛ هنر برخاستن دوباره از سختی‌ها',
+  'قدرت تفکر': 'قدرت تفکر؛ افکار ما چگونه واقعیت ما را می‌سازند'
 };
 
 const CATEGORY_IMAGES = {
-  'تنهایی و خلوت': 'cat-mindfulness.jpg',
-  'عشق به خود': 'cat-selfawareness.jpg',
-  'کودک درون': 'cat-growth.jpg',
-  'ترس و رهایی': 'cat-anxiety.jpg',
-  'توکل و معنویت': 'cat-mindfulness.jpg',
-  'معنا و هدف زندگی': 'cat-growth.jpg',
-  'روان‌شناسی مهاجرت': 'cat-relationships.jpg',
-  'عزت نفس و ارزشمندی': 'cat-selfawareness.jpg',
-  'روابط و دلبستگی': 'cat-relationships.jpg',
-  'آرامش در جهان ناپایدار': 'cat-mindfulness.jpg'
+  'تئوری انتخاب': 'cat-growth.jpg',
+  'خشم و کنترل خشم': 'cat-anxiety.jpg',
+  'کنترل ذهن': 'cat-mindfulness.jpg',
+  'پاکسازی ذهن': 'cat-mindfulness.jpg',
+  'نشخوار فکری': 'cat-anxiety.jpg',
+  'راه‌های افزایش عزت نفس': 'cat-selfawareness.jpg',
+  'راه‌های افزایش اعتماد به نفس': 'cat-selfawareness.jpg',
+  'خود پنداره': 'cat-selfawareness.jpg',
+  'خطاهای شناختی': 'cat-anxiety.jpg',
+  'دلبستگی ایمن': 'cat-relationships.jpg',
+  'گفتگوی مثبت با خود': 'cat-selfawareness.jpg',
+  'پاکسازی ضمیر ناخودآگاه': 'cat-growth.jpg',
+  'NLP': 'cat-growth.jpg',
+  'هوش هیجانی': 'cat-relationships.jpg',
+  'شکرگزاری': 'cat-mindfulness.jpg',
+  'مدیتیشن': 'cat-mindfulness.jpg',
+  'شادی پایدار': 'cat-growth.jpg',
+  'مکانیزم‌های دفاعی': 'cat-anxiety.jpg',
+  'تاب‌آوری': 'cat-growth.jpg',
+  'قدرت تفکر': 'cat-growth.jpg'
 };
 
 const IMAGE_PROMPTS = {
-  'تنهایی و خلوت': 'Woman sitting alone by a window in quiet morning light, peaceful solitude, soft cream and rose tones, tea cup in hand, reflective mood, warm interior, photorealistic',
-  'عشق به خود': 'Woman with eyes closed, gentle smile, hand on heart, soft golden light, self-compassion moment, cream and rose tones, intimate portrait, cinematic',
-  'کودک درون': 'Soft vintage photograph of a child\'s toy on wooden floor with warm afternoon light, nostalgic and gentle, cream and amber tones, emotional depth, lifestyle photography',
-  'ترس و رهایی': 'Person opening their hands releasing light, standing at edge of cliff overlooking misty valley, freedom and release, golden sunrise, cinematic wide shot',
-  'توکل و معنویت': 'Hands clasped in prayer near window with soft morning light streaming in, dried flowers nearby, spiritual calm, cream and rose tones, intimate lifestyle photography',
-  'معنا و هدف زندگی': 'Woman writing in journal at sunrise on a rooftop, city lights fading, first light of day, purposeful and contemplative, warm golden tones, cinematic',
-  'روان‌شناسی مهاجرت': 'Woman looking out airport window with thoughtful expression, soft natural light, suitcase nearby, warm cream and rose tones, reflective mood, cinematic, photorealistic',
-  'عزت نفس و ارزشمندی': 'Woman standing tall in soft morning light, confident yet gentle posture, looking into mirror with warmth, cream and rose tones, empowerment portrait',
-  'روابط و دلبستگی': 'Two people sitting close in warm café light, genuine emotional connection, soft focus, cream and rose tones, authentic human moment, photorealistic',
-  'آرامش در جهان ناپایدار': 'Single candle flame in a dark room, small circle of warm light, stillness and peace, cream and amber tones, zen minimal, meditative atmosphere'
+  'تئوری انتخاب': 'Woman at a crossroads path in soft morning light, contemplating a choice, warm cream and rose tones, cinematic wide shot, photorealistic',
+  'خشم و کنترل خشم': 'Person taking deep calming breath with closed eyes in quiet room, releasing tension, soft natural window light, cream tones, intimate lifestyle photography',
+  'کنترل ذهن': 'Calm person sitting cross-legged with subtle glow around head, focused mind, soft golden hour light, cream and warm tones, photorealistic portrait',
+  'پاکسازی ذهن': 'Fresh open window with white linen curtains flowing in morning breeze, clearing energy, minimal interior, soft cream and rose tones',
+  'نشخوار فکری': 'Person staring out night window with reflective expression, looping thoughts as soft swirling light, warm interior, intimate mood, cinematic',
+  'راه‌های افزایش عزت نفس': 'Woman writing positive affirmations in journal at sunny desk, gentle confidence, soft morning light, cream and rose tones, lifestyle',
+  'راه‌های افزایش اعتماد به نفس': 'Woman walking confidently down sunlit street with relaxed shoulders, golden hour light, warm cream tones, cinematic photography',
+  'خود پنداره': 'Soft layered reflections of woman in gentle mirrors exploring self-image, warm cream and rose tones, artistic conceptual portrait',
+  'خطاهای شناختی': 'Tangled threads being slowly untangled by gentle hands on wooden table, symbolizing mental clarity, soft natural light, cream tones',
+  'دلبستگی ایمن': 'Mother and adult daughter holding hands in soft afternoon light, deep emotional bond, warm cream and rose tones, intimate portrait',
+  'گفتگوی مثبت با خود': 'Woman writing kind words to self in journal with warm tea, soft morning window light, cream and rose tones, lifestyle photography',
+  'پاکسازی ضمیر ناخودآگاه': 'Person releasing glowing orbs of light into dawn sky, releasing old beliefs, soft purple and cream tones, ethereal cinematic',
+  'NLP': 'Glowing neural pathways being rewritten with soft golden light, abstract brain visualization, warm tones, conceptual art',
+  'هوش هیجانی': 'Two people in deep empathetic conversation in warm cafe, genuine emotional connection, soft focus, cream and rose tones, photorealistic',
+  'شکرگزاری': 'Hands holding gratitude journal with morning tea and dried flowers, soft window light, warm cream tones, intimate lifestyle photography',
+  'مدیتیشن': 'Woman meditating cross-legged in serene minimal space with candle and plants, soft morning light, cream and rose tones, peaceful',
+  'شادی پایدار': 'Woman laughing genuinely with friend in sunlit garden, deep authentic joy, warm cream and rose tones, lifestyle photography',
+  'مکانیزم‌های دفاعی': 'Person slowly lowering invisible shield revealing vulnerability, soft warm light, cream and amber tones, conceptual portrait',
+  'تاب‌آوری': 'Single delicate flower growing through cracked stone in soft morning light, resilience, warm cream and rose tones, photorealistic',
+  'قدرت تفکر': 'Person with eyes closed and subtle warm light emanating from forehead, creative thought, cream and golden tones, conceptual portrait'
 };
 
 const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
@@ -108,31 +148,51 @@ function getTodayTopic() {
 
 function getTag(topicKey) {
   const map = {
-    'تنهایی و خلوت': 'تنهایی',
-    'عشق به خود': 'عشق به خود',
-    'کودک درون': 'کودک درون',
-    'ترس و رهایی': 'ترس',
-    'توکل و معنویت': 'معنویت',
-    'معنا و هدف زندگی': 'معنا',
-    'روان‌شناسی مهاجرت': 'مهاجرت',
-    'عزت نفس و ارزشمندی': 'عزت نفس',
-    'روابط و دلبستگی': 'روابط',
-    'آرامش در جهان ناپایدار': 'آرامش'
+    'تئوری انتخاب': 'تئوری انتخاب',
+    'خشم و کنترل خشم': 'خشم',
+    'کنترل ذهن': 'کنترل ذهن',
+    'پاکسازی ذهن': 'پاکسازی ذهن',
+    'نشخوار فکری': 'نشخوار فکری',
+    'راه‌های افزایش عزت نفس': 'عزت نفس',
+    'راه‌های افزایش اعتماد به نفس': 'اعتماد به نفس',
+    'خود پنداره': 'خود پنداره',
+    'خطاهای شناختی': 'خطاهای شناختی',
+    'دلبستگی ایمن': 'دلبستگی',
+    'گفتگوی مثبت با خود': 'گفتگوی درونی',
+    'پاکسازی ضمیر ناخودآگاه': 'ناخودآگاه',
+    'NLP': 'NLP',
+    'هوش هیجانی': 'هوش هیجانی',
+    'شکرگزاری': 'شکرگزاری',
+    'مدیتیشن': 'مدیتیشن',
+    'شادی پایدار': 'شادی',
+    'مکانیزم‌های دفاعی': 'مکانیزم دفاعی',
+    'تاب‌آوری': 'تاب‌آوری',
+    'قدرت تفکر': 'تفکر'
   };
   return map[topicKey] || 'روانشناسی';
 }
 
 const TOPIC_ENGLISH = {
-  'تنهایی و خلوت': 'solitude',
-  'عشق به خود': 'self-love',
-  'کودک درون': 'inner-child',
-  'ترس و رهایی': 'fear-liberation',
-  'توکل و معنویت': 'spirituality',
-  'معنا و هدف زندگی': 'meaning-life',
-  'روان‌شناسی مهاجرت': 'migration-psychology',
-  'عزت نفس و ارزشمندی': 'self-worth',
-  'روابط و دلبستگی': 'human-connection',
-  'آرامش در جهان ناپایدار': 'peace-impermanence'
+  'تئوری انتخاب': 'choice-theory',
+  'خشم و کنترل خشم': 'anger-management',
+  'کنترل ذهن': 'mind-control',
+  'پاکسازی ذهن': 'mind-cleanse',
+  'نشخوار فکری': 'rumination',
+  'راه‌های افزایش عزت نفس': 'self-esteem-boost',
+  'راه‌های افزایش اعتماد به نفس': 'self-confidence',
+  'خود پنداره': 'self-concept',
+  'خطاهای شناختی': 'cognitive-distortions',
+  'دلبستگی ایمن': 'secure-attachment',
+  'گفتگوی مثبت با خود': 'positive-self-talk',
+  'پاکسازی ضمیر ناخودآگاه': 'subconscious-cleanse',
+  'NLP': 'nlp',
+  'هوش هیجانی': 'emotional-intelligence',
+  'شکرگزاری': 'gratitude',
+  'مدیتیشن': 'meditation',
+  'شادی پایدار': 'lasting-happiness',
+  'مکانیزم‌های دفاعی': 'defense-mechanisms',
+  'تاب‌آوری': 'resilience',
+  'قدرت تفکر': 'power-of-thought'
 };
 
 function getEnglishName(topicKey) {
@@ -161,6 +221,21 @@ function extractExcerpt(html) {
   return pMatch ? pMatch[1].replace(/<[^>]+>/g, '') : '';
 }
 
+function getPreviousTitlesForTopic(topicKey) {
+  const englishName = getEnglishName(topicKey);
+  if (!fs.existsSync(BLOG_DIR)) return [];
+  const files = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith(`-${englishName}.html`));
+  const titles = [];
+  for (const f of files) {
+    try {
+      const html = fs.readFileSync(path.join(BLOG_DIR, f), 'utf8');
+      const m = html.match(/<h1>(.*?)<\/h1>/);
+      if (m) titles.push(m[1].replace(/<[^>]+>/g, '').trim());
+    } catch (_) {}
+  }
+  return titles;
+}
+
 async function generateBlogPost(topicKey, topicFull) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
@@ -168,8 +243,14 @@ async function generateBlogPost(topicKey, topicFull) {
   }
 
   const tag = getTag(topicKey);
+  const previousTitles = getPreviousTitlesForTopic(topicKey);
+  const dedupeBlock = previousTitles.length > 0
+    ? `\n⚠️ مقالات قبلی منتشر شده درباره همین موضوع:\n${previousTitles.map((t, i) => `${i + 1}. "${t}"`).join('\n')}\n\nمقاله جدید باید:\n- زاویه‌ای کاملاً متفاوت و تازه نسبت به موارد بالا داشته باشد\n- عنوان متفاوتی داشته باشد (نه شبیه و نه کلمات تکراری)\n- مثال‌ها و تمرین‌های متفاوت ارائه دهد\n- یک جنبه جدید از موضوع را پوشش دهد (مثلاً: تمرین عملی خاص، یک سوءتفاهم رایج، یک گروه سنی خاص، یک رویکرد درمانی متفاوت)\n`
+    : '';
+
   const prompt = `تو راحله اوینی‌پور هستی — روان‌شناس فارسی‌زبان مقیم دبی، با قلمی گرم، حرفه‌ای و علمی.
 یک مقاله وبلاگی درباره "${topicFull}" بنویس.
+${dedupeBlock}
 
 لحن و سبک — این مهم‌ترین بخش است:
 - لحن گرم، انسانی و قابل اعتماد، اما حرفه‌ای و علمی — نه شاعرانه
