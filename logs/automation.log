@@ -693,3 +693,18 @@
 [2026-06-29T08:15:38.578Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-06-29T08:18:38.904Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782720905883-fear-liberation.html → 404
 [2026-06-29T08:18:38.904Z] [INFO] ========== Automation Completed Successfully in 294.7s ==========
+[2026-06-30T08:54:10.664Z] [INFO] ========== Daily Automation Started ==========
+[2026-06-30T08:54:10.666Z] [INFO] Selected topic: توکل؛ رها کردن کنترل و اعتماد به زندگی (Topic #5/10)
+[2026-06-30T08:54:10.666Z] [INFO] Generating article for topic: توکل؛ رها کردن کنترل و اعتماد به زندگی
+[2026-06-30T08:55:13.537Z] [INFO] Article created: articles/1782809713537-spirituality.html
+[2026-06-30T08:55:13.537Z] [INFO] Article generated: توکل؛ رها کردن کنترل و اعتماد به زندگی
+[2026-06-30T08:55:13.537Z] [INFO] Generating image via Segmind for topic: توکل و معنویت
+[2026-06-30T08:55:19.845Z] [INFO] Image saved: articles/1782809719124-spirituality.jpg
+[2026-06-30T08:55:19.845Z] [INFO] Updated article with new image: 1782809719124-spirituality.jpg
+[2026-06-30T08:55:19.846Z] [INFO] Updated blog.html with new article card
+[2026-06-30T08:55:19.847Z] [INFO] Updated sitemap.xml
+[2026-06-30T08:55:19.847Z] [INFO] Starting Vercel deployment...
+[2026-06-30T08:55:47.677Z] [INFO] Vercel deployment completed
+[2026-06-30T08:55:47.677Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-06-30T08:58:48.184Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782809713537-spirituality.html → 404
+[2026-06-30T08:58:48.184Z] [INFO] ========== Automation Completed Successfully in 277.5s ==========
