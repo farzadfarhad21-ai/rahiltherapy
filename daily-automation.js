@@ -592,7 +592,8 @@ function updateSitemap(articleInfo) {
   let sitemap = fs.readFileSync(sitemapPath, 'utf8');
 
   const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
-  const newEntry = `  <url><loc>${articleUrl}</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>\n`;
+  const today = new Date().toISOString().slice(0, 10);
+  const newEntry = `  <url><loc>${articleUrl}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n`;
 
   sitemap = sitemap.replace('</urlset>', `${newEntry}</urlset>`);
   fs.writeFileSync(sitemapPath, sitemap, 'utf8');
