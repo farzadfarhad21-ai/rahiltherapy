@@ -723,3 +723,18 @@
 [2026-07-01T08:52:25.643Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-01T08:55:26.068Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782895913810-meditation.html → 404
 [2026-07-01T08:55:26.068Z] [INFO] ========== Automation Completed Successfully in 264.5s ==========
+[2026-07-02T08:57:03.278Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-02T08:57:03.281Z] [INFO] Selected topic: شادی پایدار؛ راز خوشبختی فراتر از لحظه (Topic #17/10)
+[2026-07-02T08:57:03.282Z] [INFO] Generating article for topic: شادی پایدار؛ راز خوشبختی فراتر از لحظه
+[2026-07-02T08:58:07.213Z] [INFO] Article created: articles/1782982687213-lasting-happiness.html
+[2026-07-02T08:58:07.213Z] [INFO] Article generated: شادی پایدار؛ راز خوشبختی فراتر از لحظه
+[2026-07-02T08:58:07.213Z] [INFO] Generating image via Segmind for topic: شادی پایدار
+[2026-07-02T08:58:12.743Z] [INFO] Image saved: articles/1782982692124-lasting-happiness.jpg
+[2026-07-02T08:58:12.743Z] [INFO] Updated article with new image: 1782982692124-lasting-happiness.jpg
+[2026-07-02T08:58:12.745Z] [INFO] Updated blog.html with new article card
+[2026-07-02T08:58:12.746Z] [INFO] Updated sitemap.xml
+[2026-07-02T08:58:12.747Z] [INFO] Starting Vercel deployment...
+[2026-07-02T08:58:41.166Z] [INFO] Vercel deployment completed
+[2026-07-02T08:58:41.167Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-02T09:01:41.509Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782982687213-lasting-happiness.html → 404
+[2026-07-02T09:01:41.510Z] [INFO] ========== Automation Completed Successfully in 278.2s ==========
