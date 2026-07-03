@@ -738,3 +738,18 @@
 [2026-07-02T08:58:41.167Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-02T09:01:41.509Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1782982687213-lasting-happiness.html → 404
 [2026-07-02T09:01:41.510Z] [INFO] ========== Automation Completed Successfully in 278.2s ==========
+[2026-07-03T08:46:33.984Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-03T08:46:33.986Z] [INFO] Selected topic: مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن (Topic #18/10)
+[2026-07-03T08:46:33.987Z] [INFO] Generating article for topic: مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن
+[2026-07-03T08:47:37.505Z] [INFO] Article created: articles/1783068457505-defense-mechanisms.html
+[2026-07-03T08:47:37.506Z] [INFO] Article generated: مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن
+[2026-07-03T08:47:37.506Z] [INFO] Generating image via Segmind for topic: مکانیزم‌های دفاعی
+[2026-07-03T08:47:42.515Z] [INFO] Image saved: articles/1783068461851-defense-mechanisms.jpg
+[2026-07-03T08:47:42.516Z] [INFO] Updated article with new image: 1783068461851-defense-mechanisms.jpg
+[2026-07-03T08:47:42.518Z] [INFO] Updated blog.html with new article card
+[2026-07-03T08:47:42.518Z] [INFO] Updated sitemap.xml
+[2026-07-03T08:47:42.519Z] [INFO] Starting Vercel deployment...
+[2026-07-03T08:48:08.035Z] [INFO] Vercel deployment completed
+[2026-07-03T08:48:08.035Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-03T08:51:08.310Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783068457505-defense-mechanisms.html → 404
+[2026-07-03T08:51:08.310Z] [INFO] ========== Automation Completed Successfully in 274.3s ==========
