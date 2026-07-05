@@ -768,3 +768,18 @@
 [2026-07-04T08:35:15.730Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-04T08:38:15.945Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783154083025-resilience.html → 404
 [2026-07-04T08:38:15.945Z] [INFO] ========== Automation Completed Successfully in 283.4s ==========
+[2026-07-05T08:05:17.684Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-05T08:05:17.686Z] [INFO] Selected topic: قدرت تفکر؛ افکار ما چگونه واقعیت ما را می‌سازند (Topic #20/10)
+[2026-07-05T08:05:17.687Z] [INFO] Generating article for topic: قدرت تفکر؛ افکار ما چگونه واقعیت ما را می‌سازند
+[2026-07-05T08:06:23.103Z] [INFO] Article created: articles/1783238783102-power-of-thought.html
+[2026-07-05T08:06:23.103Z] [INFO] Article generated: قدرت تفکر؛ افکار ما چگونه واقعیت ما را می‌سازند
+[2026-07-05T08:06:23.103Z] [INFO] Generating image via Segmind for topic: قدرت تفکر
+[2026-07-05T08:06:27.811Z] [INFO] Image saved: articles/1783238787073-power-of-thought.jpg
+[2026-07-05T08:06:27.812Z] [INFO] Updated article with new image: 1783238787073-power-of-thought.jpg
+[2026-07-05T08:06:27.814Z] [INFO] Updated blog.html with new article card
+[2026-07-05T08:06:27.814Z] [INFO] Updated sitemap.xml
+[2026-07-05T08:06:27.815Z] [INFO] Starting Vercel deployment...
+[2026-07-05T08:06:58.094Z] [INFO] Vercel deployment completed
+[2026-07-05T08:06:58.094Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-05T08:09:58.383Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783238783102-power-of-thought.html → 404
+[2026-07-05T08:09:58.383Z] [INFO] ========== Automation Completed Successfully in 280.7s ==========
