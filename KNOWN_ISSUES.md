@@ -5,6 +5,34 @@
 
 ---
 
+## 2026-07-09
+
+### [FIX] Split-URL indexing bug — canonical/sitemap mismatch was starving Google ranking signal
+**Symptom:** GSC showed the site indexed (75 pages) but nearly zero search visibility (70 impressions, 2 clicks over 3 months) with almost no query diversity. `Pages.csv` export showed Google tracking the *same* article as two separate URLs (e.g. `depth-erp-ocd` and `depth-erp-ocd.html` both listed with separate impression counts).
+**Root cause:** `vercel.json` has `cleanUrls: true`, which 308-redirects any `.html` path to its clean equivalent. But `sitemap.xml` and 31 of 62 article canonical tags still pointed at the `.html` path, and 12 articles had no canonical tag at all. This split Google's ranking signal across two URLs per page instead of consolidating it on one.
+**Fix:**
+- Added/corrected canonical tags on all 62 articles → point to the clean URL
+- Fixed `services.html` self-referencing canonical (was `/services.html`, now `/services`)
+- Rewrote `sitemap.xml` to list clean URLs everywhere (71 URLs, all verified 200 direct, zero redirects)
+- Fixed every internal nav link site-wide (`about.html`→`/about` etc.) across all core pages
+- Removed dead `google-site-verification.html` (had a literal `PLACEHOLDER_VERIFY_CODE`, unused — real verification is `googlee26f25a40d40c461.html`)
+- Added "روانشناس آنلاین فارسی‌زبان" to homepage/services hero copy — GSC query data showed zero impressions for this core commercial phrase despite it being the main service offered
+**Files changed:** `sitemap.xml`, `services.html`, `index.html`, all 62 `articles/*.html`, nav links across `about/services/booking/blog/faq/contact/dubai/privacy/parents/blog-post.html`
+**Commits:** `371a248`, `ba6486d`
+
+### [FIX] daily-automation.js was reintroducing the same .html canonical bug on every new article
+**Symptom:** The 6 articles auto-published by the daily cron *while the above fix was in progress* had the same `.html` canonical bug — confirming the generator template was the root source, not just historical drift.
+**Fix:** Added `toSlug()` helper in `daily-automation.js`; applied it everywhere a public URL is built (canonical, og:url, JSON-LD `mainEntityOfPage`/breadcrumb, sitemap `<loc>` entry, blog.html card links, Telegram share URL, post-deploy `checkDeployedUrl` target, site nav in the article template). Filesystem paths (`fs.readFileSync`/`writeFileSync`) correctly keep the real `.html` filename — only public URLs were changed.
+**Files changed:** `daily-automation.js`
+**Commit:** `db38e3a`
+**Note:** `blog-generator.js` and `api/generate-blog.js` have the identical bug pattern but are NOT used by the live cron (`.github/workflows/daily-blog.yml` runs `daily-automation.js` only) — left untouched, legacy/unused.
+
+### [SETUP] Google Search Console API access connected
+**What:** OAuth Desktop-app flow set up so Claude can query GSC directly instead of the user exporting CSVs manually. Service account key creation was blocked by an org policy (`iam.disableServiceAccountKeyCreation`) that couldn't be overridden at the project level, so used OAuth instead.
+**Credentials location:** `~/.config/claude-seo/` — `oauth_client_secret.json` (OAuth client), `token.json` (refresh token, auto-renews), `venv/` (Python env with `google-auth-oauthlib` + `google-api-python-client`)
+**Query script:** `~/.config/claude-seo/gsc_query.py` — commands: `sites`, `sitemaps`, `performance [days]`, `pages [days]`. Targets `sc-domain:rahiltherapy.com`.
+**Also has access to:** `sc-domain:khodrodubai.com` (different project, same Google account)
+
 ### [PATTERN] UTM tagging for social shares
 - Telegram URLs: `?utm_source=telegram&utm_medium=social&utm_campaign=daily-blog`
 - Instagram URLs: `?utm_source=instagram&utm_medium=social&utm_campaign=daily-blog`

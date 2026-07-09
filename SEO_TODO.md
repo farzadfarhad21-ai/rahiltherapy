@@ -2,8 +2,10 @@
 
 > Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-06-12 (end of day 2)
-**Status:** 13 batches done — site went from ~62/100 → ~92/100
+**Last updated:** 2026-07-09
+**Status:** 13 batches done — site went from ~62/100 → ~92/100 (technical/on-page). Google indexing/ranking-signal audit done 2026-07-09 (see KNOWN_ISSUES.md for details) — split-URL canonical bug fixed, GSC connected via OAuth. Site was indexed (75 pages) but had near-zero search visibility (70 impressions/3mo, 2 clicks) — technical fix deployed, next lever is backlinks (see BACKLINK_PLAN.md / SEO-BACKLINK-STRATEGY.md).
+
+**Next up:** monitor GSC indexing/performance over next 1-2 weeks to confirm the canonical fix consolidates ranking signal, then execute backlink outreach.
 
 ## 📊 Verified live scores (PageSpeed Insights, Mobile)
 
