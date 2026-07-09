@@ -15,6 +15,12 @@ const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
 
+// Public URLs must never include .html — Vercel's cleanUrls setting 308-redirects
+// .html paths to the clean equivalent, which splits Google's ranking signal
+// between two URLs for the same page. Filesystem paths (fs.readFileSync/writeFileSync)
+// still need the real .html filename — only strip it when building a URL.
+const toSlug = (fname) => fname.replace(/\.html$/, '');
+
 const TOPICS = [
   'تئوری انتخاب',
   'خشم و کنترل خشم',
@@ -375,11 +381,11 @@ ${dedupeBlock}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${seoTitle} — راحله اوینی‌پور</title>
 <meta name="description" content="${excerpt}">
-<link rel="canonical" href="https://rahiltherapy.com/articles/${filename}">
+<link rel="canonical" href="https://rahiltherapy.com/articles/${toSlug(filename)}">
 <meta property="og:title" content="${seoTitle}">
 <meta property="og:description" content="${excerpt}">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://rahiltherapy.com/articles/${filename}">
+<meta property="og:url" content="https://rahiltherapy.com/articles/${toSlug(filename)}">
 <meta property="og:image" content="https://rahiltherapy.com/${getCategoryImage(topicKey)}">
 <meta property="og:locale" content="fa_IR">
 <meta name="twitter:card" content="summary_large_image">
@@ -409,7 +415,7 @@ ${dedupeBlock}
   "dateModified": "${new Date(timestamp).toISOString().split('T')[0]}",
   "inLanguage": "fa",
   "articleSection": ${JSON.stringify(tag)},
-  "mainEntityOfPage": "https://rahiltherapy.com/articles/${filename}"
+  "mainEntityOfPage": "https://rahiltherapy.com/articles/${toSlug(filename)}"
 }
 </script>
 <!-- BreadcrumbList Schema -->
@@ -420,7 +426,7 @@ ${dedupeBlock}
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "خانه", "item": "https://rahiltherapy.com/"},
     {"@type": "ListItem", "position": 2, "name": "بلاگ", "item": "https://rahiltherapy.com/blog"},
-    {"@type": "ListItem", "position": 3, "name": ${JSON.stringify(tag)}, "item": "https://rahiltherapy.com/articles/${filename}"}
+    {"@type": "ListItem", "position": 3, "name": ${JSON.stringify(tag)}, "item": "https://rahiltherapy.com/articles/${toSlug(filename)}"}
   ]
 }
 </script>
@@ -455,15 +461,15 @@ ${dedupeBlock}
 <body>
 <header id="hdr">
   <div class="container nav">
-    <a class="logo" href="/index.html"><span class="mk"></span>راحله اوینی‌پور</a>
+    <a class="logo" href="/"><span class="mk"></span>راحله اوینی‌پور</a>
     <nav class="navlinks">
-      <a href="/services.html">خدمات</a>
-      <a href="/about.html">درباره من</a>
-      <a href="/blog.html" class="active">مقالات</a>
-      <a href="/contact.html">تماس</a>
+      <a href="/services">خدمات</a>
+      <a href="/about">درباره من</a>
+      <a href="/blog" class="active">مقالات</a>
+      <a href="/contact">تماس</a>
     </nav>
     <div class="navcta">
-      <a class="btn btn-fill" href="/booking.html">رزرو جلسه</a>
+      <a class="btn btn-fill" href="/booking">رزرو جلسه</a>
     </div>
   </div>
 </header>
@@ -484,7 +490,7 @@ ${articleHtml}
 <div style="background:linear-gradient(135deg,#F4E9E2,#FBF5F0);border-radius:20px;padding:40px;text-align:center;margin:48px 0;">
   <p style="font-family:'Markazi Text',serif;font-size:28px;color:#3B2E2A;margin-bottom:8px;">آماده‌اید قدم بعدی را بردارید؟</p>
   <p style="color:#806B63;margin-bottom:24px;font-size:15px;">جلسه اول رایگان — از طریق Zoom، WhatsApp یا Google Meet</p>
-  <a href="/booking.html" style="display:block;background:#9C6A60;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">رزرو جلسه رایگان</a>
+  <a href="/booking" style="display:block;background:#9C6A60;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">رزرو جلسه رایگان</a>
   <a href="https://wa.me/989124228995" target="_blank" style="display:block;background:#25D366;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;">واتساپ</a>
 </div>
 </main>
@@ -565,17 +571,18 @@ function updateBlogHtml(articleInfo) {
   const blogPath = path.join(__dirname, 'blog.html');
   let blogContent = fs.readFileSync(blogPath, 'utf8');
 
+  const articleSlug = toSlug(articleInfo.filename);
   const featHtml = `<article class="feat">
-      <a id="feat-img-link" href="/articles/${articleInfo.filename}"><img src="/${articleInfo.imageFilename}" alt="${articleInfo.seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;"></a>
+      <a id="feat-img-link" href="/articles/${articleSlug}"><img src="/${articleInfo.imageFilename}" alt="${articleInfo.seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;"></a>
       <div class="fbody">
         <span class="btag">${articleInfo.tag}</span>
-        <h2><a id="feat-title-link" href="/articles/${articleInfo.filename}" style="color:inherit;text-decoration:none;">${articleInfo.seoTitle}</a></h2>
+        <h2><a id="feat-title-link" href="/articles/${articleSlug}" style="color:inherit;text-decoration:none;">${articleInfo.seoTitle}</a></h2>
         <p>${articleInfo.excerpt}</p>
-        <a class="arrow-link" id="feat-arrow-link" href="/articles/${articleInfo.filename}">ادامهٔ مطلب <i data-lucide="arrow-left"></i></a>
+        <a class="arrow-link" id="feat-arrow-link" href="/articles/${articleSlug}">ادامهٔ مطلب <i data-lucide="arrow-left"></i></a>
       </div>
     </article>`;
 
-  const bcardHtml = `<article class="bcard"><a href="/articles/${articleInfo.filename}"><img src="/${articleInfo.imageFilename}" alt="مقاله روانشناسی" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;"></a><div class="bbody"><span class="btag">${articleInfo.tag}</span><h3>${articleInfo.seoTitle}</h3><div class="meta">${articleInfo.date} · ۵ دقیقه</div><a class="more" href="/articles/${articleInfo.filename}">ادامهٔ مطلب ←</a></div></article>`;
+  const bcardHtml = `<article class="bcard"><a href="/articles/${articleSlug}"><img src="/${articleInfo.imageFilename}" alt="مقاله روانشناسی" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:12px 12px 0 0;"></a><div class="bbody"><span class="btag">${articleInfo.tag}</span><h3>${articleInfo.seoTitle}</h3><div class="meta">${articleInfo.date} · ۵ دقیقه</div><a class="more" href="/articles/${articleSlug}">ادامهٔ مطلب ←</a></div></article>`;
 
   const featuredMatch = blogContent.match(/<!-- FEATURED -->\s*<article class="feat">[\s\S]*?<\/article>\s*<!-- GRID -->/);
   if (featuredMatch) {
@@ -591,7 +598,7 @@ function updateSitemap(articleInfo) {
   const sitemapPath = path.join(__dirname, 'sitemap.xml');
   let sitemap = fs.readFileSync(sitemapPath, 'utf8');
 
-  const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
+  const articleUrl = `${SITE_URL}/articles/${toSlug(articleInfo.filename)}`;
   const today = new Date().toISOString().slice(0, 10);
   const newEntry = `  <url><loc>${articleUrl}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n`;
 
@@ -608,7 +615,7 @@ async function sendTelegramPhoto(articleInfo) {
     throw new Error('TELEGRAM_BOT_TOKEN and TELEGRAM_CHANNEL_ID are required');
   }
 
-  const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
+  const articleUrl = `${SITE_URL}/articles/${toSlug(articleInfo.filename)}`;
   // Keep articleUrl CLEAN for checkDeployedUrl, sitemap, article-info.json
   // Only tag the URL that goes into the Telegram caption
   const shareUrl = withUtm(articleUrl, 'telegram', 'social', 'daily-blog');
@@ -753,7 +760,7 @@ async function runDailyAutomation() {
     updateSitemap(articleInfo);
 
     // Write article info for notify-telegram.js
-    const cleanUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
+    const cleanUrl = `${SITE_URL}/articles/${toSlug(articleInfo.filename)}`;
     const articleData = JSON.stringify({
       filename: articleInfo.filename,
       seoTitle: articleInfo.seoTitle,
@@ -769,7 +776,7 @@ async function runDailyAutomation() {
     deployToVercel();
 
     // Post-deploy URL check (3 min wait — Vercel needs time to propagate)
-    const articleUrl = `${SITE_URL}/articles/${articleInfo.filename}`;
+    const articleUrl = `${SITE_URL}/articles/${toSlug(articleInfo.filename)}`;
     await checkDeployedUrl(articleUrl);
 
     success = true;
