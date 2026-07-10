@@ -798,3 +798,18 @@
 [2026-07-06T08:35:22.887Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-06T08:38:23.324Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783326882263-choice-theory.html → 404
 [2026-07-06T08:38:23.325Z] [INFO] ========== Automation Completed Successfully in 276.3s ==========
+[2026-07-10T08:28:31.078Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-10T08:28:31.081Z] [INFO] Selected topic: نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن (Topic #5/10)
+[2026-07-10T08:28:31.081Z] [INFO] Generating article for topic: نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن
+[2026-07-10T08:29:52.201Z] [INFO] Article created: articles/1783672192201-rumination.html
+[2026-07-10T08:29:52.201Z] [INFO] Article generated: نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن
+[2026-07-10T08:29:52.201Z] [INFO] Generating image via Segmind for topic: نشخوار فکری
+[2026-07-10T08:29:57.850Z] [INFO] Image saved: articles/1783672197456-rumination.jpg
+[2026-07-10T08:29:57.851Z] [INFO] Updated article with new image: 1783672197456-rumination.jpg
+[2026-07-10T08:29:57.853Z] [INFO] Updated blog.html with new article card
+[2026-07-10T08:29:57.853Z] [INFO] Updated sitemap.xml
+[2026-07-10T08:29:57.855Z] [INFO] Starting Vercel deployment...
+[2026-07-10T08:30:29.869Z] [INFO] Vercel deployment completed
+[2026-07-10T08:30:29.869Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-10T08:33:29.976Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783672192201-rumination → 404
+[2026-07-10T08:33:29.976Z] [INFO] ========== Automation Completed Successfully in 298.9s ==========
