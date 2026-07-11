@@ -813,3 +813,18 @@
 [2026-07-10T08:30:29.869Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-10T08:33:29.976Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783672192201-rumination → 404
 [2026-07-10T08:33:29.976Z] [INFO] ========== Automation Completed Successfully in 298.9s ==========
+[2026-07-11T08:02:52.869Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-11T08:02:52.872Z] [INFO] Selected topic: راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی (Topic #6/10)
+[2026-07-11T08:02:52.873Z] [INFO] Generating article for topic: راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی
+[2026-07-11T08:04:10.697Z] [INFO] Article created: articles/1783757050696-self-esteem-boost.html
+[2026-07-11T08:04:10.697Z] [INFO] Article generated: راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی
+[2026-07-11T08:04:10.697Z] [INFO] Generating image via Segmind for topic: راه‌های افزایش عزت نفس
+[2026-07-11T08:04:16.399Z] [INFO] Image saved: articles/1783757055514-self-esteem-boost.jpg
+[2026-07-11T08:04:16.400Z] [INFO] Updated article with new image: 1783757055514-self-esteem-boost.jpg
+[2026-07-11T08:04:16.402Z] [INFO] Updated blog.html with new article card
+[2026-07-11T08:04:16.402Z] [INFO] Updated sitemap.xml
+[2026-07-11T08:04:16.403Z] [INFO] Starting Vercel deployment...
+[2026-07-11T08:04:44.491Z] [INFO] Vercel deployment completed
+[2026-07-11T08:04:44.492Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-11T08:07:44.637Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1783757050696-self-esteem-boost → 404
+[2026-07-11T08:07:44.637Z] [INFO] ========== Automation Completed Successfully in 291.8s ==========
