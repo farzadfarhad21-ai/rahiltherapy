@@ -5,6 +5,14 @@
 
 ---
 
+## ✅ NAP consistency — VERIFIED OK (2026-07-15)
+
+Canonical business phone is **+98 912 422 8995** (`+989124228995`). Confirmed identical on the website AND the Google Business Profile (screenshot verified). Website `https://rahiltherapy.com/` and service area "Dubai - United Arab Emirates" also match.
+
+**Use this exact number + website + service area in EVERY directory submission below** so NAP stays consistent. (An earlier note claiming GBP used a UAE number `050 347 5269` was stale — disregard it.)
+
+---
+
 ## 📋 Submission packet — copy-paste ready
 
 ### Persian business description (200 words)
@@ -90,6 +98,27 @@ Instagram: @ravinipour
 - International directory with very high domain authority (DR ~90)
 - $30/month USD (worth it for one backlink alone)
 - **Why:** Top result on Google for "Farsi-speaking therapist". Massive credibility signal.
+
+---
+
+### Tier 1.5 — NEW high-relevance targets (found 2026-07-15 SERP research)
+
+These already rank on page 1 for "روانشناس ایرانی دبی" / "تراپیست آنلاین ایرانیان" — getting listed = a relevant, in-niche backlink from a page Google already trusts for YOUR exact query.
+
+#### iranianpsychologists.com (HIGHEST PRIORITY — dominant directory)
+- URL: https://iranianpsychologists.com — the #1-ranking directory for "روانشناس ایرانی خارج از کشور / دبی"
+- Look for a "ثبت‌نام روانشناس / افزودن پروفایل" (add therapist) link, or use their contact/WhatsApp to request a listing
+- **Why:** they own the SERP for your exact intent. A backlink + referral traffic from here is the single best in-niche link available.
+
+#### dubaiparsi.com (Dubai Persian community directory)
+- URL: https://dubaiparsi.com — Health/Clinic vitrin section (پزشکی و درمانی)
+- Free/low-cost local Persian business listing, perfect geo + language match
+- **Why:** exact geo-intent (Dubai) + language (Persian) = strong local relevance signal.
+
+#### Guest post on established Persian psych blogs (editorial links)
+- simiaroom.com, agahclinic.com, hamrahcare.com, drmozhganlotfi.com all publish long-form articles and rank well
+- Pitch a diaspora-angle guest article (your USP): e.g. «غم غربت یا افسردگی مهاجرت؟ راهنمای یک روان‌شناس فارسی‌زبان در دبی»
+- **Why:** editorial in-content links from topically-relevant, higher-DR sites are worth far more than directory links.
 
 ---
 

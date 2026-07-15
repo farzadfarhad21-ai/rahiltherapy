@@ -21,96 +21,117 @@ const { execSync } = require('child_process');
 // still need the real .html filename — only strip it when building a URL.
 const toSlug = (fname) => fname.replace(/\.html$/, '');
 
+// Retargeted 2026-07-15 for ranking: kept 10 sound clinical topics, dropped 2
+// pseudoscience (NLP, ضمیر ناخودآگاه — E-E-A-T risk on a licensed-psychologist YMYL
+// site) + 8 generic/saturated self-help. Added 5 diaspora (Raheleh's USP) + 8 specific
+// long-tail. Excludes queries already covered by manual depth-/foundations-/authority-
+// articles (ERP-OCD, thought-record, schema-therapy, online-therapy-diaspora) to avoid
+// keyword cannibalization.
 const TOPICS = [
-  'تئوری انتخاب',
+  // — kept clinical (sound, on-brand) —
   'خشم و کنترل خشم',
-  'کنترل ذهن',
-  'پاکسازی ذهن',
   'نشخوار فکری',
   'راه‌های افزایش عزت نفس',
   'راه‌های افزایش اعتماد به نفس',
   'خود پنداره',
   'خطاهای شناختی',
   'دلبستگی ایمن',
-  'گفتگوی مثبت با خود',
-  'پاکسازی ضمیر ناخودآگاه',
-  'NLP',
   'هوش هیجانی',
-  'شکرگزاری',
-  'مدیتیشن',
-  'شادی پایدار',
   'مکانیزم‌های دفاعی',
   'تاب‌آوری',
-  'قدرت تفکر'
+  // — added: diaspora / migration (USP, competitors are not Dubai-based) —
+  'غم غربت',
+  'بحران هویت در مهاجرت',
+  'شوک فرهنگی',
+  'تنهایی در غربت',
+  'فرزندپروری دوفرهنگی',
+  // — added: specific long-tail (winnable, like the ERP article at position #10) —
+  'فرق CBT و طرحواره‌درمانی',
+  'دلبستگی اجتنابی',
+  'دلبستگی اضطرابی',
+  'اضطراب اجتماعی',
+  'تکنیک صندلی خالی',
+  'ذهن‌آگاهی مبتنی بر شناخت',
+  'کمال‌گرایی',
+  'مرزهای سالم در روابط'
 ];
 
 const TOPIC_FULL = {
-  'تئوری انتخاب': 'تئوری انتخاب گلسر؛ چرا انتخاب‌های ما زندگی‌مان را می‌سازند',
   'خشم و کنترل خشم': 'خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون',
-  'کنترل ذهن': 'کنترل ذهن؛ چگونه ذهن سرکش را آرام کنیم',
-  'پاکسازی ذهن': 'پاکسازی ذهن؛ رهایی از افکار سمی و باورهای محدودکننده',
   'نشخوار فکری': 'نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن',
   'راه‌های افزایش عزت نفس': 'راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی',
   'راه‌های افزایش اعتماد به نفس': 'راه‌های افزایش اعتماد به نفس؛ از باور درونی تا عمل بیرونی',
   'خود پنداره': 'خود پنداره؛ تصویری که از خود داریم چگونه ساخته می‌شود',
   'خطاهای شناختی': 'خطاهای شناختی؛ تله‌های ذهنی که ما را اسیر می‌کنند',
   'دلبستگی ایمن': 'دلبستگی ایمن؛ ریشه‌های روابط سالم و عمیق',
-  'گفتگوی مثبت با خود': 'گفتگوی مثبت با خود؛ صدای درون مهربان را پرورش دهیم',
-  'پاکسازی ضمیر ناخودآگاه': 'پاکسازی ضمیر ناخودآگاه؛ آزاد کردن باورهای کودکی',
-  'NLP': 'NLP؛ برنامه‌ریزی عصبی-کلامی و قدرت بازنویسی ذهن',
   'هوش هیجانی': 'هوش هیجانی؛ کلید موفقیت در روابط و زندگی',
-  'شکرگزاری': 'شکرگزاری؛ تمرینی ساده برای تغییر کیفیت زندگی',
-  'مدیتیشن': 'مدیتیشن؛ سفری به سکوت درون',
-  'شادی پایدار': 'شادی پایدار؛ راز خوشبختی فراتر از لحظه',
   'مکانیزم‌های دفاعی': 'مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن',
   'تاب‌آوری': 'تاب‌آوری؛ هنر برخاستن دوباره از سختی‌ها',
-  'قدرت تفکر': 'قدرت تفکر؛ افکار ما چگونه واقعیت ما را می‌سازند'
+  'غم غربت': 'غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود',
+  'بحران هویت در مهاجرت': 'بحران هویت در مهاجرت؛ وقتی نمی‌دانی به کجا تعلق داری',
+  'شوک فرهنگی': 'شوک فرهنگی؛ چهار مرحله‌ای که هر مهاجری تجربه می‌کند',
+  'تنهایی در غربت': 'تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم',
+  'فرزندپروری دوفرهنگی': 'فرزندپروری دوفرهنگی؛ بزرگ کردن کودک میان دو فرهنگ',
+  'فرق CBT و طرحواره‌درمانی': 'فرق CBT و طرحواره‌درمانی؛ کدام روش برای شما مناسب‌تر است',
+  'دلبستگی اجتنابی': 'دلبستگی اجتنابی؛ چرا از نزدیکی عاطفی فرار می‌کنیم',
+  'دلبستگی اضطرابی': 'دلبستگی اضطرابی؛ ترس از طرد شدن در روابط',
+  'اضطراب اجتماعی': 'اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت',
+  'تکنیک صندلی خالی': 'تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه',
+  'ذهن‌آگاهی مبتنی بر شناخت': 'ذهن‌آگاهی مبتنی بر شناخت (MBCT)؛ پیشگیری از بازگشت افسردگی',
+  'کمال‌گرایی': 'کمال‌گرایی؛ وقتی «به‌اندازه کافی خوب» هرگز کافی نیست',
+  'مرزهای سالم در روابط': 'مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم'
 };
 
 const CATEGORY_IMAGES = {
-  'تئوری انتخاب': 'cat-growth.jpg',
   'خشم و کنترل خشم': 'cat-anxiety.jpg',
-  'کنترل ذهن': 'cat-mindfulness.jpg',
-  'پاکسازی ذهن': 'cat-mindfulness.jpg',
   'نشخوار فکری': 'cat-anxiety.jpg',
   'راه‌های افزایش عزت نفس': 'cat-selfawareness.jpg',
   'راه‌های افزایش اعتماد به نفس': 'cat-selfawareness.jpg',
   'خود پنداره': 'cat-selfawareness.jpg',
   'خطاهای شناختی': 'cat-anxiety.jpg',
   'دلبستگی ایمن': 'cat-relationships.jpg',
-  'گفتگوی مثبت با خود': 'cat-selfawareness.jpg',
-  'پاکسازی ضمیر ناخودآگاه': 'cat-growth.jpg',
-  'NLP': 'cat-growth.jpg',
   'هوش هیجانی': 'cat-relationships.jpg',
-  'شکرگزاری': 'cat-mindfulness.jpg',
-  'مدیتیشن': 'cat-mindfulness.jpg',
-  'شادی پایدار': 'cat-growth.jpg',
   'مکانیزم‌های دفاعی': 'cat-anxiety.jpg',
   'تاب‌آوری': 'cat-growth.jpg',
-  'قدرت تفکر': 'cat-growth.jpg'
+  'غم غربت': 'cat-depression.jpg',
+  'بحران هویت در مهاجرت': 'cat-selfawareness.jpg',
+  'شوک فرهنگی': 'cat-growth.jpg',
+  'تنهایی در غربت': 'cat-depression.jpg',
+  'فرزندپروری دوفرهنگی': 'cat-parenting.jpg',
+  'فرق CBT و طرحواره‌درمانی': 'cat-schema.jpg',
+  'دلبستگی اجتنابی': 'cat-relationships.jpg',
+  'دلبستگی اضطرابی': 'cat-relationships.jpg',
+  'اضطراب اجتماعی': 'cat-anxiety.jpg',
+  'تکنیک صندلی خالی': 'cat-mindfulness.jpg',
+  'ذهن‌آگاهی مبتنی بر شناخت': 'cat-mindfulness.jpg',
+  'کمال‌گرایی': 'cat-selfawareness.jpg',
+  'مرزهای سالم در روابط': 'cat-relationships.jpg'
 };
 
 const IMAGE_PROMPTS = {
-  'تئوری انتخاب': 'Woman at a crossroads path in soft morning light, contemplating a choice, warm cream and rose tones, cinematic wide shot, photorealistic',
   'خشم و کنترل خشم': 'Person taking deep calming breath with closed eyes in quiet room, releasing tension, soft natural window light, cream tones, intimate lifestyle photography',
-  'کنترل ذهن': 'Calm person sitting cross-legged with subtle glow around head, focused mind, soft golden hour light, cream and warm tones, photorealistic portrait',
-  'پاکسازی ذهن': 'Fresh open window with white linen curtains flowing in morning breeze, clearing energy, minimal interior, soft cream and rose tones',
   'نشخوار فکری': 'Person staring out night window with reflective expression, looping thoughts as soft swirling light, warm interior, intimate mood, cinematic',
   'راه‌های افزایش عزت نفس': 'Woman writing positive affirmations in journal at sunny desk, gentle confidence, soft morning light, cream and rose tones, lifestyle',
   'راه‌های افزایش اعتماد به نفس': 'Woman walking confidently down sunlit street with relaxed shoulders, golden hour light, warm cream tones, cinematic photography',
   'خود پنداره': 'Soft layered reflections of woman in gentle mirrors exploring self-image, warm cream and rose tones, artistic conceptual portrait',
   'خطاهای شناختی': 'Tangled threads being slowly untangled by gentle hands on wooden table, symbolizing mental clarity, soft natural light, cream tones',
   'دلبستگی ایمن': 'Mother and adult daughter holding hands in soft afternoon light, deep emotional bond, warm cream and rose tones, intimate portrait',
-  'گفتگوی مثبت با خود': 'Woman writing kind words to self in journal with warm tea, soft morning window light, cream and rose tones, lifestyle photography',
-  'پاکسازی ضمیر ناخودآگاه': 'Person releasing glowing orbs of light into dawn sky, releasing old beliefs, soft purple and cream tones, ethereal cinematic',
-  'NLP': 'Glowing neural pathways being rewritten with soft golden light, abstract brain visualization, warm tones, conceptual art',
   'هوش هیجانی': 'Two people in deep empathetic conversation in warm cafe, genuine emotional connection, soft focus, cream and rose tones, photorealistic',
-  'شکرگزاری': 'Hands holding gratitude journal with morning tea and dried flowers, soft window light, warm cream tones, intimate lifestyle photography',
-  'مدیتیشن': 'Woman meditating cross-legged in serene minimal space with candle and plants, soft morning light, cream and rose tones, peaceful',
-  'شادی پایدار': 'Woman laughing genuinely with friend in sunlit garden, deep authentic joy, warm cream and rose tones, lifestyle photography',
   'مکانیزم‌های دفاعی': 'Person slowly lowering invisible shield revealing vulnerability, soft warm light, cream and amber tones, conceptual portrait',
   'تاب‌آوری': 'Single delicate flower growing through cracked stone in soft morning light, resilience, warm cream and rose tones, photorealistic',
-  'قدرت تفکر': 'Person with eyes closed and subtle warm light emanating from forehead, creative thought, cream and golden tones, conceptual portrait'
+  'غم غربت': 'Person looking out apartment window at unfamiliar city skyline with wistful longing for home, warm cream and amber tones, cinematic, photorealistic',
+  'بحران هویت در مهاجرت': 'Person standing between two overlapping cultural worlds, contemplative, soft double-exposure effect, warm cream and rose tones, conceptual portrait, photorealistic',
+  'شوک فرهنگی': 'Traveler with suitcase in busy foreign street feeling overwhelmed yet hopeful, soft golden hour light, warm cream tones, cinematic photography',
+  'تنهایی در غربت': 'Person sitting alone by window in cozy apartment abroad with warm tea, quiet solitude turning to peace, soft evening light, cream and amber tones, intimate',
+  'فرزندپروری دوفرهنگی': 'Parent and child reading together with books in two languages, warm loving bond, soft natural light, cream and rose tones, lifestyle photography',
+  'فرق CBT و طرحواره‌درمانی': 'Two gentle paths diverging in soft morning light symbolizing therapy choices, calm and clarity, warm cream and rose tones, conceptual, photorealistic',
+  'دلبستگی اجتنابی': 'Two people in a relationship, one gently reaching while the other keeps soft emotional distance, warm light, cream and rose tones, conceptual portrait',
+  'دلبستگی اضطرابی': 'Person anxiously waiting by phone in soft light, longing for reassurance in a relationship, warm cream tones, intimate cinematic portrait',
+  'اضطراب اجتماعی': 'Person taking a calm breath before entering a social gathering, gentle courage, soft warm light, cream and rose tones, photorealistic lifestyle',
+  'تکنیک صندلی خالی': 'Two empty chairs facing each other in a warm therapy room with soft window light, symbolic dialogue, cream and amber tones, calm photorealistic interior',
+  'ذهن‌آگاهی مبتنی بر شناخت': 'Person sitting mindfully aware of thoughts passing like clouds, serene, soft morning light, cream and rose tones, peaceful photorealistic',
+  'کمال‌گرایی': 'Person gently setting down a heavy weight of impossible standards, relief and self-compassion, soft warm light, cream tones, conceptual portrait',
+  'مرزهای سالم در روابط': 'Person calmly and kindly saying no with an open-palm gesture, healthy boundary, warm confident light, cream and rose tones, lifestyle photography'
 };
 
 const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
@@ -154,51 +175,57 @@ function getTodayTopic() {
 
 function getTag(topicKey) {
   const map = {
-    'تئوری انتخاب': 'تئوری انتخاب',
     'خشم و کنترل خشم': 'خشم',
-    'کنترل ذهن': 'کنترل ذهن',
-    'پاکسازی ذهن': 'پاکسازی ذهن',
     'نشخوار فکری': 'نشخوار فکری',
     'راه‌های افزایش عزت نفس': 'عزت نفس',
     'راه‌های افزایش اعتماد به نفس': 'اعتماد به نفس',
     'خود پنداره': 'خود پنداره',
     'خطاهای شناختی': 'خطاهای شناختی',
     'دلبستگی ایمن': 'دلبستگی',
-    'گفتگوی مثبت با خود': 'گفتگوی درونی',
-    'پاکسازی ضمیر ناخودآگاه': 'ناخودآگاه',
-    'NLP': 'NLP',
     'هوش هیجانی': 'هوش هیجانی',
-    'شکرگزاری': 'شکرگزاری',
-    'مدیتیشن': 'مدیتیشن',
-    'شادی پایدار': 'شادی',
     'مکانیزم‌های دفاعی': 'مکانیزم دفاعی',
     'تاب‌آوری': 'تاب‌آوری',
-    'قدرت تفکر': 'تفکر'
+    'غم غربت': 'مهاجرت',
+    'بحران هویت در مهاجرت': 'مهاجرت',
+    'شوک فرهنگی': 'مهاجرت',
+    'تنهایی در غربت': 'مهاجرت',
+    'فرزندپروری دوفرهنگی': 'مهاجرت',
+    'فرق CBT و طرحواره‌درمانی': 'طرحواره',
+    'دلبستگی اجتنابی': 'دلبستگی',
+    'دلبستگی اضطرابی': 'دلبستگی',
+    'اضطراب اجتماعی': 'اضطراب',
+    'تکنیک صندلی خالی': 'روان‌درمانی',
+    'ذهن‌آگاهی مبتنی بر شناخت': 'ذهن‌آگاهی',
+    'کمال‌گرایی': 'کمال‌گرایی',
+    'مرزهای سالم در روابط': 'روابط'
   };
   return map[topicKey] || 'روانشناسی';
 }
 
 const TOPIC_ENGLISH = {
-  'تئوری انتخاب': 'choice-theory',
   'خشم و کنترل خشم': 'anger-management',
-  'کنترل ذهن': 'mind-control',
-  'پاکسازی ذهن': 'mind-cleanse',
   'نشخوار فکری': 'rumination',
   'راه‌های افزایش عزت نفس': 'self-esteem-boost',
   'راه‌های افزایش اعتماد به نفس': 'self-confidence',
   'خود پنداره': 'self-concept',
   'خطاهای شناختی': 'cognitive-distortions',
   'دلبستگی ایمن': 'secure-attachment',
-  'گفتگوی مثبت با خود': 'positive-self-talk',
-  'پاکسازی ضمیر ناخودآگاه': 'subconscious-cleanse',
-  'NLP': 'nlp',
   'هوش هیجانی': 'emotional-intelligence',
-  'شکرگزاری': 'gratitude',
-  'مدیتیشن': 'meditation',
-  'شادی پایدار': 'lasting-happiness',
   'مکانیزم‌های دفاعی': 'defense-mechanisms',
   'تاب‌آوری': 'resilience',
-  'قدرت تفکر': 'power-of-thought'
+  'غم غربت': 'homesickness',
+  'بحران هویت در مهاجرت': 'migration-identity',
+  'شوک فرهنگی': 'culture-shock',
+  'تنهایی در غربت': 'loneliness-abroad',
+  'فرزندپروری دوفرهنگی': 'bicultural-parenting',
+  'فرق CBT و طرحواره‌درمانی': 'cbt-vs-schema',
+  'دلبستگی اجتنابی': 'avoidant-attachment',
+  'دلبستگی اضطرابی': 'anxious-attachment',
+  'اضطراب اجتماعی': 'social-anxiety-cbt',
+  'تکنیک صندلی خالی': 'empty-chair',
+  'ذهن‌آگاهی مبتنی بر شناخت': 'mbct',
+  'کمال‌گرایی': 'perfectionism',
+  'مرزهای سالم در روابط': 'healthy-boundaries'
 };
 
 function getEnglishName(topicKey) {

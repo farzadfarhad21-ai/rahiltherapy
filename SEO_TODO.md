@@ -2,10 +2,37 @@
 
 > Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-07-09
-**Status:** 13 batches done — site went from ~62/100 → ~92/100 (technical/on-page). Google indexing/ranking-signal audit done 2026-07-09 (see KNOWN_ISSUES.md for details) — split-URL canonical bug fixed, GSC connected via OAuth. Site was indexed (75 pages) but had near-zero search visibility (70 impressions/3mo, 2 clicks) — technical fix deployed, next lever is backlinks (see BACKLINK_PLAN.md / SEO-BACKLINK-STRATEGY.md).
+**Last updated:** 2026-07-15
+**Status:** 13 batches done — site went from ~62/100 → ~92/100 (technical/on-page). Google indexing/ranking-signal audit done 2026-07-09 — split-URL canonical bug fixed, GSC connected via OAuth. Site was indexed (75 pages) but had near-zero search visibility. Technical work is DONE and CONFIRMED live (see 2026-07-15 session below). **The bottleneck is now authority/backlinks + content targeting, NOT technical.**
 
-**Next up:** monitor GSC indexing/performance over next 1-2 weeks to confirm the canonical fix consolidates ranking signal, then execute backlink outreach.
+**Next up:** (1) User: execute backlink submissions (BACKLINK_PLAN.md — new targets added). NAP is already consistent (phone +989124228995 matches on site + GBP — verified 2026-07-15 via screenshot; old "050 347 5269" note was stale). (2) Push the retargeted daily-automation.js (done locally, awaiting user review). (3) Re-check GSC ~2026-07-23 for canonical-fix recrawl.
+
+---
+
+## 📅 Session 2026-07-15 — SEO/rankings review
+
+### Verified live (curl + GSC OAuth)
+- ✅ Canonical fix WORKING: `.html` URLs 308-redirect to clean URLs; canonicals all point to clean URLs; sitemap 71 URLs, 0 `.html` leaks. The `.html`/clean duplicates still in 28-day GSC data are PRE-FIX residue — will clear on recrawl.
+- 📉 GSC last 28 days: ~53 impressions total, 2 clicks, only 2 queries with impressions. Google is barely surfacing the site.
+- 🟢 Bright signal: `/articles/depth-erp-ocd` pulled 28 impressions (>half the site total) for `erp مخفف چیست در روانشناسی` at position ~10. Specific informational long-tail is the wedge.
+
+### Keyword/demand research findings (WebSearch, 2026-07-15)
+- **Head terms are saturated** by established Iranian clinic sites (simiaroom, drmozhganlotfi, agahclinic, afraclinic, doctoreto...) with years of DR. A DR-0 solo site cannot win «طرحواره درمانی چیست» / «سبک دلبستگی چیست» / «روانشناسی مهاجرت» head terms soon.
+- **Winning angles for a NEW site:**
+  1. **Ultra-specific long-tail** (technique × condition × specificity) — like the ERP article already ranking. e.g. «ERP در درمان OCD چیست»، «فرق CBT و طرحواره‌درمانی»، «دلبستگی اجتنابی در روابط بزرگسالی».
+  2. **Diaspora/Dubai intersection** (her USP — competitors are NOT Dubai-based): «روان‌شناس فارسی‌زبان دبی»، «غم غربت یا افسردگی مهاجرت» — win these via GBP + local citations, not just content.
+  3. **Interactive self-tests** — high demand + linkable + boosts dwell/booking. Attachment-style (RAAS) and schema tests have strong search volume (farafekr, mantegh, ravanhub, mindtoolbox all rank on quiz pages).
+- **New backlink targets found** (added to BACKLINK_PLAN.md Tier 1.5): iranianpsychologists.com (dominant directory, #1 for the exact intent), dubaiparsi.com (Dubai Persian directory), + guest-post pitches to simiaroom/agahclinic/hamrahcare.
+
+### ✅ Auto-blogger retargeted for ranking (daily-automation.js) — DONE LOCALLY, NOT PUSHED
+Rewrote all 6 topic maps (TOPICS, TOPIC_FULL, TOPIC_ENGLISH, getTag, CATEGORY_IMAGES, IMAGE_PROMPTS). Validated: 23 topics, consistent across all maps, unique slugs, `node --check` clean.
+- **Dropped 2 pseudoscience** (NLP, پاکسازی ضمیر ناخودآگاه — E-E-A-T liability on YMYL therapist site).
+- **Dropped 8 generic/saturated** self-help (پاکسازی ذهن، کنترل ذهن، شکرگزاری، مدیتیشن، شادی پایدار، قدرت تفکر، تئوری انتخاب، گفتگوی مثبت با خود).
+- **Kept 10 sound clinical** topics.
+- **Added 5 diaspora** (غم غربت، بحران هویت مهاجرت، شوک فرهنگی، تنهایی در غربت، فرزندپروری دوفرهنگی) — builds a migration cluster around existing authority-migration-mental-health / foundations-online-therapy-diaspora.
+- **Added 8 specific long-tail** (فرق CBT و طرحواره، دلبستگی اجتنابی/اضطرابی، اضطراب اجتماعی، صندلی خالی، MBCT، کمال‌گرایی، مرزهای سالم).
+- **Deliberately excluded** ERP-OCD, thought-record, schema-therapy, online-therapy-diaspora topics to avoid cannibalizing the manual depth-/foundations-/authority- articles that already rank.
+- ⏳ **NOT committed/pushed** — sits in local working tree for review. Production cron uses deployed git, so nothing changes until pushed. Next 8am cron after push uses the new rotation.
 
 ## 📊 Verified live scores (PageSpeed Insights, Mobile)
 
