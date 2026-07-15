@@ -873,3 +873,18 @@
 [2026-07-14T08:31:16.608Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-14T08:34:16.884Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784017841054-cognitive-distortions → 404
 [2026-07-14T08:34:16.884Z] [INFO] ========== Automation Completed Successfully in 280.2s ==========
+[2026-07-15T08:34:29.155Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-15T08:34:29.157Z] [INFO] Selected topic: اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت (Topic #19/10)
+[2026-07-15T08:34:29.158Z] [INFO] Generating article for topic: اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت
+[2026-07-15T08:35:43.998Z] [INFO] Article created: articles/1784104543998-social-anxiety-cbt.html
+[2026-07-15T08:35:43.999Z] [INFO] Article generated: اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت
+[2026-07-15T08:35:43.999Z] [INFO] Generating image via Segmind for topic: اضطراب اجتماعی
+[2026-07-15T08:35:49.247Z] [INFO] Image saved: articles/1784104548761-social-anxiety-cbt.jpg
+[2026-07-15T08:35:49.248Z] [INFO] Updated article with new image: 1784104548761-social-anxiety-cbt.jpg
+[2026-07-15T08:35:49.250Z] [INFO] Updated blog.html with new article card
+[2026-07-15T08:35:49.250Z] [INFO] Updated sitemap.xml
+[2026-07-15T08:35:49.251Z] [INFO] Starting Vercel deployment...
+[2026-07-15T08:36:15.514Z] [INFO] Vercel deployment completed
+[2026-07-15T08:36:15.514Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-15T08:39:15.759Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784104543998-social-anxiety-cbt → 404
+[2026-07-15T08:39:15.759Z] [INFO] ========== Automation Completed Successfully in 286.6s ==========
