@@ -888,3 +888,18 @@
 [2026-07-15T08:36:15.514Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-15T08:39:15.759Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784104543998-social-anxiety-cbt → 404
 [2026-07-15T08:39:15.759Z] [INFO] ========== Automation Completed Successfully in 286.6s ==========
+[2026-07-16T08:03:41.394Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-16T08:03:41.396Z] [INFO] Selected topic: تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه (Topic #20/10)
+[2026-07-16T08:03:41.397Z] [INFO] Generating article for topic: تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه
+[2026-07-16T08:04:38.068Z] [INFO] Article created: articles/1784189078067-empty-chair.html
+[2026-07-16T08:04:38.068Z] [INFO] Article generated: تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه
+[2026-07-16T08:04:38.068Z] [INFO] Generating image via Segmind for topic: تکنیک صندلی خالی
+[2026-07-16T08:04:49.879Z] [INFO] Image saved: articles/1784189088940-empty-chair.jpg
+[2026-07-16T08:04:49.880Z] [INFO] Updated article with new image: 1784189088940-empty-chair.jpg
+[2026-07-16T08:04:49.882Z] [INFO] Updated blog.html with new article card
+[2026-07-16T08:04:49.882Z] [INFO] Updated sitemap.xml
+[2026-07-16T08:04:49.884Z] [INFO] Starting Vercel deployment...
+[2026-07-16T08:05:20.086Z] [INFO] Vercel deployment completed
+[2026-07-16T08:05:20.087Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-16T08:08:20.432Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784189078067-empty-chair → 404
+[2026-07-16T08:08:20.432Z] [INFO] ========== Automation Completed Successfully in 279.0s ==========
