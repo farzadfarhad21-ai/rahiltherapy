@@ -903,3 +903,18 @@
 [2026-07-16T08:05:20.087Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-16T08:08:20.432Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784189078067-empty-chair → 404
 [2026-07-16T08:08:20.432Z] [INFO] ========== Automation Completed Successfully in 279.0s ==========
+[2026-07-17T08:05:36.860Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-17T08:05:36.863Z] [INFO] Selected topic: ذهن‌آگاهی مبتنی بر شناخت (MBCT)؛ پیشگیری از بازگشت افسردگی (Topic #21/10)
+[2026-07-17T08:05:36.863Z] [INFO] Generating article for topic: ذهن‌آگاهی مبتنی بر شناخت (MBCT)؛ پیشگیری از بازگشت افسردگی
+[2026-07-17T08:06:43.238Z] [INFO] Article created: articles/1784275603238-mbct.html
+[2026-07-17T08:06:43.239Z] [INFO] Article generated: ذهن‌آگاهی مبتنی بر شناخت (MBCT)؛ پیشگیری از بازگشت افسردگی
+[2026-07-17T08:06:43.239Z] [INFO] Generating image via Segmind for topic: ذهن‌آگاهی مبتنی بر شناخت
+[2026-07-17T08:06:48.225Z] [INFO] Image saved: articles/1784275607756-mbct.jpg
+[2026-07-17T08:06:48.226Z] [INFO] Updated article with new image: 1784275607756-mbct.jpg
+[2026-07-17T08:06:48.227Z] [INFO] Updated blog.html with new article card
+[2026-07-17T08:06:48.228Z] [INFO] Updated sitemap.xml
+[2026-07-17T08:06:48.228Z] [INFO] Starting Vercel deployment...
+[2026-07-17T08:07:15.795Z] [INFO] Vercel deployment completed
+[2026-07-17T08:07:15.796Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-17T08:10:16.022Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784275603238-mbct → 404
+[2026-07-17T08:10:16.022Z] [INFO] ========== Automation Completed Successfully in 279.2s ==========
