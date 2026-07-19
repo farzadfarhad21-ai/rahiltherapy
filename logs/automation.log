@@ -933,3 +933,18 @@
 [2026-07-18T08:34:32.708Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-18T08:37:32.767Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784363638871-perfectionism → 404
 [2026-07-18T08:37:32.767Z] [INFO] ========== Automation Completed Successfully in 301.6s ==========
+[2026-07-19T08:25:15.303Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-19T08:25:15.306Z] [INFO] Selected topic: مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم (Topic #23/10)
+[2026-07-19T08:25:15.307Z] [INFO] Generating article for topic: مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم
+[2026-07-19T08:26:39.749Z] [INFO] Article created: articles/1784449599749-healthy-boundaries.html
+[2026-07-19T08:26:39.750Z] [INFO] Article generated: مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم
+[2026-07-19T08:26:39.750Z] [INFO] Generating image via Segmind for topic: مرزهای سالم در روابط
+[2026-07-19T08:26:44.509Z] [INFO] Image saved: articles/1784449604018-healthy-boundaries.jpg
+[2026-07-19T08:26:44.510Z] [INFO] Updated article with new image: 1784449604018-healthy-boundaries.jpg
+[2026-07-19T08:26:44.512Z] [INFO] Updated blog.html with new article card
+[2026-07-19T08:26:44.512Z] [INFO] Updated sitemap.xml
+[2026-07-19T08:26:44.513Z] [INFO] Starting Vercel deployment...
+[2026-07-19T08:27:19.308Z] [INFO] Vercel deployment completed
+[2026-07-19T08:27:19.309Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-19T08:30:19.416Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784449599749-healthy-boundaries → 404
+[2026-07-19T08:30:19.416Z] [INFO] ========== Automation Completed Successfully in 304.1s ==========
