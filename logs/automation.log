@@ -948,3 +948,18 @@
 [2026-07-19T08:27:19.309Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-19T08:30:19.416Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784449599749-healthy-boundaries → 404
 [2026-07-19T08:30:19.416Z] [INFO] ========== Automation Completed Successfully in 304.1s ==========
+[2026-07-20T08:29:08.241Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-20T08:29:08.243Z] [INFO] Selected topic: خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون (Topic #1/10)
+[2026-07-20T08:29:08.244Z] [INFO] Generating article for topic: خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون
+[2026-07-20T08:30:19.704Z] [INFO] Article created: articles/1784536219704-anger-management.html
+[2026-07-20T08:30:19.704Z] [INFO] Article generated: خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون
+[2026-07-20T08:30:19.705Z] [INFO] Generating image via Segmind for topic: خشم و کنترل خشم
+[2026-07-20T08:30:24.566Z] [INFO] Image saved: articles/1784536223900-anger-management.jpg
+[2026-07-20T08:30:24.567Z] [INFO] Updated article with new image: 1784536223900-anger-management.jpg
+[2026-07-20T08:30:24.568Z] [INFO] Updated blog.html with new article card
+[2026-07-20T08:30:24.569Z] [INFO] Updated sitemap.xml
+[2026-07-20T08:30:24.569Z] [INFO] Starting Vercel deployment...
+[2026-07-20T08:30:48.103Z] [INFO] Vercel deployment completed
+[2026-07-20T08:30:48.103Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-20T08:33:48.401Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784536219704-anger-management → 404
+[2026-07-20T08:33:48.402Z] [INFO] ========== Automation Completed Successfully in 280.2s ==========
