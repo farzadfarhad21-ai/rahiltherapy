@@ -1038,3 +1038,18 @@
 [2026-07-25T08:22:31.045Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-25T08:25:31.333Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1784967712859-cognitive-distortions → 404
 [2026-07-25T08:25:31.334Z] [INFO] ========== Automation Completed Successfully in 302.8s ==========
+[2026-07-26T08:10:43.905Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-26T08:10:43.907Z] [INFO] Selected topic: دلبستگی ایمن؛ ریشه‌های روابط سالم و عمیق (Topic #7/10)
+[2026-07-26T08:10:43.908Z] [INFO] Generating article for topic: دلبستگی ایمن؛ ریشه‌های روابط سالم و عمیق
+[2026-07-26T08:11:57.424Z] [INFO] Article created: articles/1785053517424-secure-attachment.html
+[2026-07-26T08:11:57.424Z] [INFO] Article generated: دلبستگی ایمن؛ ریشه‌های روابط سالم و عمیق
+[2026-07-26T08:11:57.425Z] [INFO] Generating image via Segmind for topic: دلبستگی ایمن
+[2026-07-26T08:12:04.395Z] [INFO] Image saved: articles/1785053523774-secure-attachment.jpg
+[2026-07-26T08:12:04.395Z] [INFO] Updated article with new image: 1785053523774-secure-attachment.jpg
+[2026-07-26T08:12:04.397Z] [INFO] Updated blog.html with new article card
+[2026-07-26T08:12:04.398Z] [INFO] Updated sitemap.xml
+[2026-07-26T08:12:04.399Z] [INFO] Starting Vercel deployment...
+[2026-07-26T08:12:37.265Z] [INFO] Vercel deployment completed
+[2026-07-26T08:12:37.266Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-26T08:15:37.338Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785053517424-secure-attachment → 404
+[2026-07-26T08:15:37.338Z] [INFO] ========== Automation Completed Successfully in 293.4s ==========
