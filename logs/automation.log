@@ -1053,3 +1053,18 @@
 [2026-07-26T08:12:37.266Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-26T08:15:37.338Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785053517424-secure-attachment → 404
 [2026-07-26T08:15:37.338Z] [INFO] ========== Automation Completed Successfully in 293.4s ==========
+[2026-07-27T08:31:35.760Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-27T08:31:35.763Z] [INFO] Selected topic: هوش هیجانی؛ کلید موفقیت در روابط و زندگی (Topic #8/10)
+[2026-07-27T08:31:35.763Z] [INFO] Generating article for topic: هوش هیجانی؛ کلید موفقیت در روابط و زندگی
+[2026-07-27T08:32:37.563Z] [INFO] Article created: articles/1785141157563-emotional-intelligence.html
+[2026-07-27T08:32:37.563Z] [INFO] Article generated: هوش هیجانی؛ کلید موفقیت در روابط و زندگی
+[2026-07-27T08:32:37.564Z] [INFO] Generating image via Segmind for topic: هوش هیجانی
+[2026-07-27T08:32:41.952Z] [INFO] Image saved: articles/1785141161276-emotional-intelligence.jpg
+[2026-07-27T08:32:41.952Z] [INFO] Updated article with new image: 1785141161276-emotional-intelligence.jpg
+[2026-07-27T08:32:41.954Z] [INFO] Updated blog.html with new article card
+[2026-07-27T08:32:41.954Z] [INFO] Updated sitemap.xml
+[2026-07-27T08:32:41.955Z] [INFO] Starting Vercel deployment...
+[2026-07-27T08:33:08.679Z] [INFO] Vercel deployment completed
+[2026-07-27T08:33:08.680Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-27T08:36:08.859Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785141157563-emotional-intelligence → 404
+[2026-07-27T08:36:08.860Z] [INFO] ========== Automation Completed Successfully in 273.1s ==========
