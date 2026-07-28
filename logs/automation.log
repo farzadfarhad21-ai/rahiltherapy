@@ -1068,3 +1068,18 @@
 [2026-07-27T08:33:08.680Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-27T08:36:08.859Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785141157563-emotional-intelligence → 404
 [2026-07-27T08:36:08.860Z] [INFO] ========== Automation Completed Successfully in 273.1s ==========
+[2026-07-28T08:06:19.902Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-28T08:06:19.904Z] [INFO] Selected topic: مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن (Topic #9/10)
+[2026-07-28T08:06:19.905Z] [INFO] Generating article for topic: مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن
+[2026-07-28T08:07:35.733Z] [INFO] Article created: articles/1785226055732-defense-mechanisms.html
+[2026-07-28T08:07:35.733Z] [INFO] Article generated: وقتی دفاع‌های روانی از یار به غار می‌شوند
+[2026-07-28T08:07:35.733Z] [INFO] Generating image via Segmind for topic: مکانیزم‌های دفاعی
+[2026-07-28T08:07:41.068Z] [INFO] Image saved: articles/1785226060628-defense-mechanisms.jpg
+[2026-07-28T08:07:41.069Z] [INFO] Updated article with new image: 1785226060628-defense-mechanisms.jpg
+[2026-07-28T08:07:41.070Z] [INFO] Updated blog.html with new article card
+[2026-07-28T08:07:41.071Z] [INFO] Updated sitemap.xml
+[2026-07-28T08:07:41.071Z] [INFO] Starting Vercel deployment...
+[2026-07-28T08:08:08.705Z] [INFO] Vercel deployment completed
+[2026-07-28T08:08:08.705Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-28T08:11:08.886Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785226055732-defense-mechanisms → 404
+[2026-07-28T08:11:08.886Z] [INFO] ========== Automation Completed Successfully in 289.0s ==========
