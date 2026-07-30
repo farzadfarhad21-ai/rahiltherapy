@@ -1098,3 +1098,18 @@
 [2026-07-29T08:07:13.761Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-07-29T08:10:14.197Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785312396460-resilience → 404
 [2026-07-29T08:10:14.197Z] [INFO] ========== Automation Completed Successfully in 279.3s ==========
+[2026-07-30T08:28:40.785Z] [INFO] ========== Daily Automation Started ==========
+[2026-07-30T08:28:40.786Z] [INFO] Selected topic: غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود (Topic #11/10)
+[2026-07-30T08:28:40.786Z] [INFO] Generating article for topic: غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود
+[2026-07-30T08:30:21.565Z] [INFO] Article created: articles/1785400221565-homesickness.html
+[2026-07-30T08:30:21.565Z] [INFO] Article generated: غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود
+[2026-07-30T08:30:21.565Z] [INFO] Generating image via Segmind for topic: غم غربت
+[2026-07-30T08:30:26.115Z] [INFO] Image saved: articles/1785400225424-homesickness.jpg
+[2026-07-30T08:30:26.115Z] [INFO] Updated article with new image: 1785400225424-homesickness.jpg
+[2026-07-30T08:30:26.116Z] [INFO] Updated blog.html with new article card
+[2026-07-30T08:30:26.117Z] [INFO] Updated sitemap.xml
+[2026-07-30T08:30:26.117Z] [INFO] Starting Vercel deployment...
+[2026-07-30T08:30:57.608Z] [INFO] Vercel deployment completed
+[2026-07-30T08:30:57.608Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-07-30T08:33:57.855Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785400221565-homesickness → 404
+[2026-07-30T08:33:57.856Z] [INFO] ========== Automation Completed Successfully in 317.1s ==========
