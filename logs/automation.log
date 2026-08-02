@@ -1143,3 +1143,18 @@
 [2026-08-01T08:52:50.569Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-01T08:55:50.996Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785574338709-culture-shock → 404
 [2026-08-01T08:55:50.996Z] [INFO] ========== Automation Completed Successfully in 302.7s ==========
+[2026-08-02T08:31:24.617Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-02T08:31:24.619Z] [INFO] Selected topic: تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم (Topic #14/10)
+[2026-08-02T08:31:24.620Z] [INFO] Generating article for topic: تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم
+[2026-08-02T08:33:05.143Z] [INFO] Article created: articles/1785659585143-loneliness-abroad.html
+[2026-08-02T08:33:05.143Z] [INFO] Article generated: تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم
+[2026-08-02T08:33:05.143Z] [INFO] Generating image via Segmind for topic: تنهایی در غربت
+[2026-08-02T08:33:10.234Z] [INFO] Image saved: articles/1785659589629-loneliness-abroad.jpg
+[2026-08-02T08:33:10.235Z] [INFO] Updated article with new image: 1785659589629-loneliness-abroad.jpg
+[2026-08-02T08:33:10.236Z] [INFO] Updated blog.html with new article card
+[2026-08-02T08:33:10.237Z] [INFO] Updated sitemap.xml
+[2026-08-02T08:33:10.238Z] [INFO] Starting Vercel deployment...
+[2026-08-02T08:33:37.487Z] [INFO] Vercel deployment completed
+[2026-08-02T08:33:37.488Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-02T08:36:37.709Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785659585143-loneliness-abroad → 404
+[2026-08-02T08:36:37.709Z] [INFO] ========== Automation Completed Successfully in 313.1s ==========
