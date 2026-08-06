@@ -1173,3 +1173,18 @@
 [2026-08-03T08:32:34.391Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-03T08:35:34.575Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1785745921491-bicultural-parenting → 404
 [2026-08-03T08:35:34.576Z] [INFO] ========== Automation Completed Successfully in 279.6s ==========
+[2026-08-06T08:22:01.383Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-06T08:22:01.385Z] [INFO] Selected topic: دلبستگی اضطرابی؛ ترس از طرد شدن در روابط (Topic #18/10)
+[2026-08-06T08:22:01.385Z] [INFO] Generating article for topic: دلبستگی اضطرابی؛ ترس از طرد شدن در روابط
+[2026-08-06T08:23:19.214Z] [INFO] Article created: articles/1786004599214-anxious-attachment.html
+[2026-08-06T08:23:19.214Z] [INFO] Article generated: دلبستگی اضطرابی؛ ترس از طرد شدن در روابط
+[2026-08-06T08:23:19.215Z] [INFO] Generating image via Segmind for topic: دلبستگی اضطرابی
+[2026-08-06T08:23:23.980Z] [INFO] Image saved: articles/1786004603311-anxious-attachment.jpg
+[2026-08-06T08:23:23.980Z] [INFO] Updated article with new image: 1786004603311-anxious-attachment.jpg
+[2026-08-06T08:23:23.981Z] [INFO] Updated blog.html with new article card
+[2026-08-06T08:23:23.982Z] [INFO] Updated sitemap.xml
+[2026-08-06T08:23:23.982Z] [INFO] Starting Vercel deployment...
+[2026-08-06T08:23:51.245Z] [INFO] Vercel deployment completed
+[2026-08-06T08:23:51.245Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-06T08:26:51.560Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786004599214-anxious-attachment → 404
+[2026-08-06T08:26:51.560Z] [INFO] ========== Automation Completed Successfully in 290.2s ==========
