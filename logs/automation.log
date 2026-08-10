@@ -1233,3 +1233,18 @@
 [2026-08-09T08:46:32.602Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-09T08:49:32.710Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786265160094-mbct → 404
 [2026-08-09T08:49:32.711Z] [INFO] ========== Automation Completed Successfully in 292.5s ==========
+[2026-08-10T08:12:02.587Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-10T08:12:02.589Z] [INFO] Selected topic: کمال‌گرایی؛ وقتی «به‌اندازه کافی خوب» هرگز کافی نیست (Topic #22/10)
+[2026-08-10T08:12:02.590Z] [INFO] Generating article for topic: کمال‌گرایی؛ وقتی «به‌اندازه کافی خوب» هرگز کافی نیست
+[2026-08-10T08:13:19.525Z] [INFO] Article created: articles/1786349599524-perfectionism.html
+[2026-08-10T08:13:19.525Z] [INFO] Article generated: چرا کمال‌گرایان از موفقیت‌هایشان لذت نمی‌برند؟
+[2026-08-10T08:13:19.525Z] [INFO] Generating image via Segmind for topic: کمال‌گرایی
+[2026-08-10T08:13:24.488Z] [INFO] Image saved: articles/1786349603792-perfectionism.jpg
+[2026-08-10T08:13:24.489Z] [INFO] Updated article with new image: 1786349603792-perfectionism.jpg
+[2026-08-10T08:13:24.490Z] [INFO] Updated blog.html with new article card
+[2026-08-10T08:13:24.490Z] [INFO] Updated sitemap.xml
+[2026-08-10T08:13:24.491Z] [INFO] Starting Vercel deployment...
+[2026-08-10T08:13:53.524Z] [INFO] Vercel deployment completed
+[2026-08-10T08:13:53.525Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-10T08:16:53.763Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786349599524-perfectionism → 404
+[2026-08-10T08:16:53.764Z] [INFO] ========== Automation Completed Successfully in 291.2s ==========
