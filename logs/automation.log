@@ -1278,3 +1278,18 @@
 [2026-08-12T08:04:59.516Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-12T08:07:59.669Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786521865810-anger-management → 404
 [2026-08-12T08:07:59.669Z] [INFO] ========== Automation Completed Successfully in 292.1s ==========
+[2026-08-13T08:58:46.172Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-13T08:58:46.175Z] [INFO] Selected topic: نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن (Topic #2/10)
+[2026-08-13T08:58:46.176Z] [INFO] Generating article for topic: نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن
+[2026-08-13T08:59:58.661Z] [INFO] Article created: articles/1786611598660-rumination.html
+[2026-08-13T08:59:58.661Z] [INFO] Article generated: وقت‌گیر یا واقعاً مفید؟ تفاوت حل مسئله و نشخوار فکری
+[2026-08-13T08:59:58.661Z] [INFO] Generating image via Segmind for topic: نشخوار فکری
+[2026-08-13T09:00:02.609Z] [INFO] Image saved: articles/1786611602174-rumination.jpg
+[2026-08-13T09:00:02.609Z] [INFO] Updated article with new image: 1786611602174-rumination.jpg
+[2026-08-13T09:00:02.611Z] [INFO] Updated blog.html with new article card
+[2026-08-13T09:00:02.611Z] [INFO] Updated sitemap.xml
+[2026-08-13T09:00:02.612Z] [INFO] Starting Vercel deployment...
+[2026-08-13T09:00:30.924Z] [INFO] Vercel deployment completed
+[2026-08-13T09:00:30.925Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-13T09:03:31.258Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786611598660-rumination → 404
+[2026-08-13T09:03:31.258Z] [INFO] ========== Automation Completed Successfully in 285.1s ==========
