@@ -1293,3 +1293,18 @@
 [2026-08-13T09:00:30.925Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-13T09:03:31.258Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786611598660-rumination → 404
 [2026-08-13T09:03:31.258Z] [INFO] ========== Automation Completed Successfully in 285.1s ==========
+[2026-08-14T08:37:10.011Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-14T08:37:10.014Z] [INFO] Selected topic: راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی (Topic #3/10)
+[2026-08-14T08:37:10.015Z] [INFO] Generating article for topic: راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی
+[2026-08-14T08:38:32.227Z] [INFO] Article created: articles/1786696712227-self-esteem-boost.html
+[2026-08-14T08:38:32.227Z] [INFO] Article generated: وقتی صدای درونی‌تان دشمن شماست: چگونه خودانتقادی را به پذیرش تبدیل کنیم؟
+[2026-08-14T08:38:32.227Z] [INFO] Generating image via Segmind for topic: راه‌های افزایش عزت نفس
+[2026-08-14T08:38:37.120Z] [INFO] Image saved: articles/1786696716234-self-esteem-boost.jpg
+[2026-08-14T08:38:37.120Z] [INFO] Updated article with new image: 1786696716234-self-esteem-boost.jpg
+[2026-08-14T08:38:37.122Z] [INFO] Updated blog.html with new article card
+[2026-08-14T08:38:37.122Z] [INFO] Updated sitemap.xml
+[2026-08-14T08:38:37.123Z] [INFO] Starting Vercel deployment...
+[2026-08-14T08:39:06.093Z] [INFO] Vercel deployment completed
+[2026-08-14T08:39:06.093Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-14T08:42:06.416Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786696712227-self-esteem-boost → 404
+[2026-08-14T08:42:06.417Z] [INFO] ========== Automation Completed Successfully in 296.4s ==========
