@@ -1308,3 +1308,18 @@
 [2026-08-14T08:39:06.093Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-14T08:42:06.416Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786696712227-self-esteem-boost → 404
 [2026-08-14T08:42:06.417Z] [INFO] ========== Automation Completed Successfully in 296.4s ==========
+[2026-08-15T08:41:07.693Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-15T08:41:07.695Z] [INFO] Selected topic: راه‌های افزایش اعتماد به نفس؛ از باور درونی تا عمل بیرونی (Topic #4/10)
+[2026-08-15T08:41:07.695Z] [INFO] Generating article for topic: راه‌های افزایش اعتماد به نفس؛ از باور درونی تا عمل بیرونی
+[2026-08-15T08:42:26.280Z] [INFO] Article created: articles/1786783346279-self-confidence.html
+[2026-08-15T08:42:26.280Z] [INFO] Article generated: وقتی «تلاش برای کامل بودن» اعتماد به نفس را می‌دزدد
+[2026-08-15T08:42:26.280Z] [INFO] Generating image via Segmind for topic: راه‌های افزایش اعتماد به نفس
+[2026-08-15T08:42:31.280Z] [INFO] Image saved: articles/1786783350604-self-confidence.jpg
+[2026-08-15T08:42:31.281Z] [INFO] Updated article with new image: 1786783350604-self-confidence.jpg
+[2026-08-15T08:42:31.282Z] [INFO] Updated blog.html with new article card
+[2026-08-15T08:42:31.282Z] [INFO] Updated sitemap.xml
+[2026-08-15T08:42:31.283Z] [INFO] Starting Vercel deployment...
+[2026-08-15T08:42:59.475Z] [INFO] Vercel deployment completed
+[2026-08-15T08:42:59.475Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-15T08:45:59.749Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786783346279-self-confidence → 404
+[2026-08-15T08:45:59.749Z] [INFO] ========== Automation Completed Successfully in 292.1s ==========
