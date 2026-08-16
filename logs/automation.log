@@ -1323,3 +1323,18 @@
 [2026-08-15T08:42:59.475Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-15T08:45:59.749Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786783346279-self-confidence → 404
 [2026-08-15T08:45:59.749Z] [INFO] ========== Automation Completed Successfully in 292.1s ==========
+[2026-08-16T08:40:14.875Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-16T08:40:14.877Z] [INFO] Selected topic: خود پنداره؛ تصویری که از خود داریم چگونه ساخته می‌شود (Topic #5/10)
+[2026-08-16T08:40:14.878Z] [INFO] Generating article for topic: خود پنداره؛ تصویری که از خود داریم چگونه ساخته می‌شود
+[2026-08-16T08:41:40.374Z] [INFO] Article created: articles/1786869700374-self-concept.html
+[2026-08-16T08:41:40.374Z] [INFO] Article generated: چرا گاهی خودمان را دست کم می‌گیریم؟ — نقش گفتگوی درونی در شکل‌گیری خودپنداره
+[2026-08-16T08:41:40.374Z] [INFO] Generating image via Segmind for topic: خود پنداره
+[2026-08-16T08:41:45.336Z] [INFO] Image saved: articles/1786869704691-self-concept.jpg
+[2026-08-16T08:41:45.337Z] [INFO] Updated article with new image: 1786869704691-self-concept.jpg
+[2026-08-16T08:41:45.338Z] [INFO] Updated blog.html with new article card
+[2026-08-16T08:41:45.338Z] [INFO] Updated sitemap.xml
+[2026-08-16T08:41:45.339Z] [INFO] Starting Vercel deployment...
+[2026-08-16T08:42:12.029Z] [INFO] Vercel deployment completed
+[2026-08-16T08:42:12.029Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-16T08:45:12.324Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786869700374-self-concept → 404
+[2026-08-16T08:45:12.324Z] [INFO] ========== Automation Completed Successfully in 297.4s ==========
