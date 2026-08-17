@@ -1338,3 +1338,18 @@
 [2026-08-16T08:42:12.029Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-16T08:45:12.324Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786869700374-self-concept → 404
 [2026-08-16T08:45:12.324Z] [INFO] ========== Automation Completed Successfully in 297.4s ==========
+[2026-08-17T08:51:00.894Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-17T08:51:00.896Z] [INFO] Selected topic: خطاهای شناختی؛ تله‌های ذهنی که ما را اسیر می‌کنند (Topic #6/10)
+[2026-08-17T08:51:00.897Z] [INFO] Generating article for topic: خطاهای شناختی؛ تله‌های ذهنی که ما را اسیر می‌کنند
+[2026-08-17T08:52:25.594Z] [INFO] Article created: articles/1786956745593-cognitive-distortions.html
+[2026-08-17T08:52:25.594Z] [INFO] Article generated: وقتی ذهنمان با ما بازی می‌کند: چگونه سوگیری‌های شناختی تصمیم‌هایمان را خراب می‌کنند
+[2026-08-17T08:52:25.594Z] [INFO] Generating image via Segmind for topic: خطاهای شناختی
+[2026-08-17T08:52:31.632Z] [INFO] Image saved: articles/1786956750490-cognitive-distortions.jpg
+[2026-08-17T08:52:31.633Z] [INFO] Updated article with new image: 1786956750490-cognitive-distortions.jpg
+[2026-08-17T08:52:31.634Z] [INFO] Updated blog.html with new article card
+[2026-08-17T08:52:31.634Z] [INFO] Updated sitemap.xml
+[2026-08-17T08:52:31.635Z] [INFO] Starting Vercel deployment...
+[2026-08-17T08:53:00.923Z] [INFO] Vercel deployment completed
+[2026-08-17T08:53:00.923Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-17T08:56:01.158Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1786956745593-cognitive-distortions → 404
+[2026-08-17T08:56:01.158Z] [INFO] ========== Automation Completed Successfully in 300.3s ==========
