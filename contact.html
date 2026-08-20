@@ -276,7 +276,7 @@
     <div class="shead" style="margin-bottom:36px;"><span class="kicker">پیام مستقیم</span><h2>برایم بنویسید</h2></div>
     <div class="contactgrid">
       <div class="formcard">
-        <div class="okmsg" id="okmsg"><i data-lucide="check-circle-2"></i> پیام شما ارسال شد. به‌زودی پاسخ می‌دهم.</div>
+        <div class="okmsg" id="okmsg"><i data-lucide="check-circle-2"></i> در حال باز کردن واتساپ… اگر واتساپ باز نشد، <a id="wa-fallback" href="https://wa.me/989124228995" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;">اینجا بزنید تا پیام‌تان ارسال شود</a>.</div>
         <form id="cform">
           <div class="field"><label>نام</label><input class="input" type="text" placeholder="نام شما" required></div>
           <div class="field"><label>ایمیل یا واتساپ</label><input class="input" type="text" placeholder="راه تماس شما" required></div>
@@ -361,9 +361,23 @@
     const msg = form.querySelector('textarea').value;
     const text = `📩 پیام از فرم تماس\n\n👤 نام: ${name}\n📱 راه تماس: ${contact}\n\n💬 پیام:\n${msg}`;
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/989124228995?text=${encoded}`, '_blank');
-    document.getElementById('okmsg').classList.add('show');
-    form.reset();
+    const waUrl = `https://wa.me/989124228995?text=${encoded}`;
+
+    // See booking.html for the reasoning: window.open() is unreliable on mobile and
+    // in in-app browsers, and the success message fired regardless — so a blocked
+    // popup told the visitor their message was sent when nothing had been sent.
+    // Show a real tap-target first, then attempt the handoff. Do not reset the form:
+    // if the jump fails, the visitor still has their text and a working link.
+    const ok = document.getElementById('okmsg');
+    document.getElementById('wa-fallback').href = waUrl;
+    ok.classList.add('show');
+    ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'contact_message', { method: 'whatsapp' });
+    }
+
+    window.location.href = waUrl;
   });
 </script>
 

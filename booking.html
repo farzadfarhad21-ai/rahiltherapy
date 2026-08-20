@@ -401,7 +401,7 @@
     <div class="booklayout">
       <!-- FORM -->
       <div class="formcard">
-        <div class="okmsg" id="okmsg"><i data-lucide="check-circle-2"></i> درخواست شما با موفقیت ثبت شد. به‌زودی با شما تماس می‌گیرم.</div>
+        <div class="okmsg" id="okmsg"><i data-lucide="check-circle-2"></i> در حال باز کردن واتساپ… اگر واتساپ باز نشد، <a id="wa-fallback" href="https://wa.me/989124228995" target="_blank" rel="noopener" style="color:inherit;font-weight:700;text-decoration:underline;">اینجا بزنید تا پیام‌تان ارسال شود</a>.</div>
         <form id="bookform">
           <div class="tworow">
             <div class="field"><label>نام و نام خانوادگی</label><input class="input" type="text" placeholder="نام شما" required></div>
@@ -585,16 +585,25 @@
     const days = [...form.querySelectorAll('.checkpill.selected')].map(b => b.dataset.slot).join(', ') || 'نامشخص';
     const msg = `📋 درخواست مشاوره\n\n👤 نام: ${name}\n📧 ایمیل: ${email}\n📱 واتساپ: ${whatsapp}\n🌍 کشور: ${country}\n\n📌 موضوع: ${concern}\n💬 روش جلسه: ${session}\n📅 زمان‌های مناسب: ${days}\n\n📝 توضیحات: ${notes || 'ندارد'}`;
     const encoded = encodeURIComponent(msg);
-    window.open(`https://wa.me/989124228995?text=${encoded}`, '_blank');
+    const waUrl = `https://wa.me/989124228995?text=${encoded}`;
+
+    // WhatsApp is the ONLY transport for this form — nothing is stored server-side.
+    // window.open() used to be the handoff, but it is unreliable on mobile and is
+    // routinely swallowed by the in-app browsers this site's traffic arrives through
+    // (Instagram, Telegram). The success message showed regardless, so a blocked
+    // popup told the visitor their request was sent when it had gone nowhere.
+    // Now: give them a real tap-target FIRST, then attempt the handoff. A click on a
+    // genuine <a href> is never blocked, so the lead survives even if the jump fails.
     const ok = document.getElementById('okmsg');
+    document.getElementById('wa-fallback').href = waUrl;
     ok.classList.add('show');
-    form.reset();
-    document.querySelectorAll('.checkpill').forEach(p => {
-      p.classList.remove('selected');
-      p.style.background = '';
-      p.style.color = '';
-      p.style.borderColor = '';
-    });
+    ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'booking_request', { method: 'whatsapp', concern: concern });
+    }
+
+    window.location.href = waUrl;
   });
 </script>
 
