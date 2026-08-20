@@ -45,11 +45,22 @@
 **Files changed:** 54 articles, `blog.html`, `index.html`, `parents.html`, `llms.txt`
 **Commit:** `9dfd51b`
 
-### [BLOCKED] Search Console OAuth token expired
+### [RESOLVED] Search Console OAuth token expired — app now published, no more 7-day clock
 **Symptom:** `gsc_query.py` fails with `RefreshError: invalid_grant: Bad Request`.
 **Cause:** The refresh token is no longer valid (OAuth clients in "Testing" publishing status expire refresh tokens after 7 days; last successful use was 2026-07-15).
 **Fix:** Needs an interactive browser re-auth — run `~/.config/claude-seo/gsc_auth.py` and complete the Google consent screen. Claude cannot do this. To stop it recurring, set the OAuth consent screen to "In production" in Google Cloud Console.
-**Impact:** No live GSC data since 2026-07-15. All numbers in the 2026-08-20 audit come from the CSV export ending 7 July plus live crawling.
+**Resolved 2026-08-20.** Re-authorised, and the OAuth app was moved from "Testing" to "In production" so refresh tokens stop expiring after 7 days.
+
+**Where the publish control lives now:** Google renamed this area to **Google Auth Platform**. The publish button is on the **Audience** page, not the old "OAuth consent screen" page. It stays greyed out until the **Branding** page has the App domain fields filled in — for this project: home page `https://rahiltherapy.com`, privacy policy `https://rahiltherapy.com/privacy`, authorised domain `rahiltherapy.com` (accepted because the domain is already verified in Search Console under the same account). Do NOT upload an app logo — that triggers a verification requirement. Do NOT use "Make internal" — it needs a Workspace org and this is a personal gmail account.
+
+**Three traps when re-running the auth flow:**
+1. `gsc_auth.py` run through a non-TTY pipe buffers its stdout, so the "Please visit this URL" line never appears and no browser opens — it just hangs. Run it with `python -u` and `open_browser=False`, then read the URL from the output.
+2. Killing a hung flow with `pkill -f gsc_auth.py` does not match a `python -c` inline variant. Free the port by PID instead: `lsof -nP -iTCP:<port> -sTCP:LISTEN -t | xargs kill -9`. A stale listener makes the next attempt die with "address already in use".
+3. `accounts.google.com` returns a **500** for a few minutes right after the publishing status changes. It is not a config error — wait and retry.
+
+**After publishing,** the consent screen shows "Google hasn't verified this app" → Advanced → "Go to claude SEO (unsafe)". Expected, and harmless: verification only matters for apps with many external users; this one has a single user.
+
+**A superseded token backup is at** `~/.config/claude-seo/token.json.bak-20260820` — it is a live credential and can be deleted once you are happy the new one is working.
 
 ---
 
