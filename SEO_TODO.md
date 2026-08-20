@@ -5,7 +5,7 @@
 **Last updated:** 2026-08-20
 **Status:** Technical layer is DONE and verified live — stop spending time there. The 2026-08-20 audit found the daily automation had quietly become a duplicate-content factory (33 near-duplicate articles) with an empty meta description on 47% of posts and every auto-post stamped May 2025. All fixed in `9dfd51b`. **The bottleneck is, and has been since June, that zero off-site presence exists.** The BACKLINK_PLAN tracking table is still empty after two months.
 
-**Next up:** (1) **Push `fix/blog-automation-hardening` to production.** (2) Work the TIER A free directory list in BACKLINK_PLAN.md — every field is paste-ready, Farzad just needs to click. (3) Re-auth Search Console (`~/.config/claude-seo/gsc_auth.py`) — the token is dead, so there is no live data.
+**Next up:** (1) **Push `fix/blog-automation-hardening` to production.** (2) Work the TIER A free directory list in BACKLINK_PLAN.md — every field is paste-ready, Farzad just needs to click. (3) ~~Re-auth Search Console~~ ✅ done 2026-08-20 — baseline recorded below; **re-measure ~2026-09-17**. Set the OAuth consent screen to "In production" or the token expires again in 7 days.
 
 ---
 
@@ -85,6 +85,62 @@ Rewrote all 6 topic maps (TOPICS, TOPIC_FULL, TOPIC_ENGLISH, getTag, CATEGORY_IM
 ### Also do next session
 - 🗓️ **GSC recrawl check — DUE 2026-07-23** (~2 weeks after the 2026-07-09 canonical fix). Run `~/.config/claude-seo/gsc_query.py pages 28` and check: (a) have the `.html` duplicate URLs dropped out of the index? (b) are the NEW retargeted blog topics (homesickness, migration-identity, etc.) starting to pick up impressions? Compare against the ~53 impressions/28d baseline recorded 2026-07-15.
 - Draft the iranianpsychologists.com outreach message.
+
+---
+
+## 📉 BASELINE — recorded 2026-08-20, right after the fixes landed
+
+> Search Console re-authorised 2026-08-20. This is the "before" for measuring the
+> 20 Aug fixes and the directory work. **Re-run and compare ~2026-09-17.**
+
+| Window | Clicks | Impressions | Pages with data | Queries shown |
+|---|---|---|---|---|
+| Last 28 days | 4 | 101 | 20 | 1 |
+| Last 90 days | 7 | 200 | 30 | — |
+| *(28d baseline recorded 2026-07-15)* | *2* | *~53* | — | *2* |
+
+**Impressions roughly doubled between mid-July and now** (53 → 101 per 28 days), off a
+tiny base, before any of today's fixes could take effect.
+
+### The query dimension is nearly empty — and that is informative
+GSC reports **101 impressions across 20 pages but only 1 query**. That gap is Google's
+anonymisation threshold: queries too rare to be privacy-safe are withheld. Practically
+every impression this site earns comes from a near-unique long-tail query. That is
+strong confirmation of the July thesis — **specific long-tail is the wedge, head terms
+are not winnable.**
+
+### Where the visibility actually comes from (90 days)
+
+| Source | Impressions | Share | Clicks | URLs with data |
+|---|---|---|---|---|
+| **Hand-written** (`depth-`, `foundations-`, `elderly-`, `authority-`) | 134 | **67%** | 5 | 14 |
+| **Auto-generated daily blog** (timestamp-prefixed) | 11 | 6% | **0** | 9 |
+| Core pages (home, /dubai, /about…) | 55 | 28% | 2 | — |
+
+**~12 hand-written articles out-earn ~63 auto-generated ones by 12×, and the auto blog
+has produced zero clicks in 90 days** despite being ~84% of the content. Per article the
+hand-written set is roughly 65× more productive. The auto articles are newer on average,
+which is a fair caveat — but the June-era ones are the same age as the `depth-` articles
+and still sit at 1–2 impressions each, so age does not explain it.
+
+`depth-erp-ocd` alone is 83 impressions — **42% of the entire site's visibility from one
+hand-written article** at position 7.5.
+
+### What that implies
+1. **Backlinks stay priority #1.** Nothing here changes that.
+2. **Priority #2 is more hand-written `depth-` articles, not more auto-generated posts.**
+   One `depth-erp-ocd` is worth the entire auto blog to date. Target ultra-specific
+   clinical long-tail the way that article does.
+3. The daily automation is now a *refresh* engine — it deepens one of 23 existing pages
+   per day with required citations. That is worth keeping as page-improvement, but do not
+   expect new traffic from it, and do not go back to publishing new posts daily.
+
+### Still-visible pre-fix residue (should clear on recrawl)
+`depth-erp-ocd.html` (2i) and `depth-first-session-guide.html` (2i) are still indexed as
+separate `.html` URLs. Five consolidated duplicates also carried 1–2 impressions each; the
+308 redirects pass that to their keepers, so nothing is lost — but expect a short dip
+while Google reprocesses.
+
 
 ## 📊 Verified live scores (PageSpeed Insights, Mobile)
 
