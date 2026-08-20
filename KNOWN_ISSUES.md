@@ -30,12 +30,13 @@
 **Commit:** `9dfd51b`
 **Rule:** Never let the model author a date, a URL, or any field that must agree with another field. Compute it and substitute.
 
-### [FIX] Fake licence number removed sitewide
-**Symptom:** Placeholder `۲۸۴۶۳` — flagged as fake on 12 June — was still in the footer of all 83 pages, the About credentials box, and the Person JSON-LD (`identifier` + `hasCredential.identifier`).
-**Fix:** Removed from all three places. The About box keeps the honest membership claim and now reads «شماره پروانه در جلسه اول در اختیار شما قرار می‌گیرد». The `hasCredential` entry stays (holding a licence is a true claim); only the fabricated number is gone.
-**Files changed:** 83 files, `about.html`
-**Commit:** `9dfd51b`
-**TODO:** restore the real number when Raheleh provides it.
+### [RESOLVED] Licence number ۲۸۴۶۳ — CONFIRMED REAL, do not remove again
+**History:** commit `301f495` (12 Jun) replaced the literal `TODO_LICENSE_NUMBER` with `۲۸۴۶۳` and described it in its own message as a placeholder that was "clearly fake". On that basis it was stripped from all 83 footers, the About box and the Person schema in `9dfd51b` (20 Aug).
+**Correction:** Farzad confirmed on 2026-08-20 that **۲۸۴۶۳ is Raheleh's genuine سازمان نظام روانشناسی registration number.** The June commit message was wrong about it, or the real number was substituted without the note being updated.
+**Fix:** restored to all 83 footers, the About credentials box (with the «قابل استعلام» line), the Person JSON-LD `identifier`, `hasCredential.identifier`, and the `daily-automation.js` article template so new posts inherit it.
+**Files changed:** 83 files, `about.html`, `daily-automation.js`
+**Commit:** `9dfd51b` (removal), see below (restoration)
+**⚠️ RULE:** this number is verified. Do **not** treat it as a placeholder again, whatever the June commit message or old SEO_TODO entries say.
 
 ### [FIX] og:url and mainEntityOfPage still carried .html — missed by the July canonical fix
 **Symptom:** The 2026-07-09 fix corrected `<link rel="canonical">` on all articles but left 25 `og:url` and 43 `"mainEntityOfPage"` values pointing at `.html` paths, plus 128 internal links in blog.html/index.html/parents.html/llms.txt.

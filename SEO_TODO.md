@@ -22,7 +22,7 @@
 | Rotation republished every topic every 23 days | 33 duplicate articles, all in sitemap | ✅ fixed + consolidated |
 | `extractExcerpt()` regex never matched | 51 articles with empty description | ✅ fixed + backfilled |
 | Model authored the visible date | every auto-post stamped May 2025 | ✅ fixed + 72 corrected |
-| Fake licence `۲۸۴۶۳` | 83 files | ✅ removed — needs the real number |
+| Licence `۲۸۴۶۳` | 83 files | ✅ **confirmed real by Farzad 20 Aug** — restored, do not remove again |
 | `.html` in og:url / mainEntityOfPage | 270 URLs | ✅ cleaned |
 | Zero backlinks executed | 2 months | ❌ **still open — this is the whole problem** |
 | GSC OAuth token dead | since ~7 Jul | ❌ needs Farzad, 2 min in a browser |
@@ -234,11 +234,11 @@ Add fallback to `daily-automation.js`: if Segmind output looks bad, fall back to
 
 ## ⚠️ MANUAL TODO (USER MUST PROVIDE)
 
-### 🔴 LICENSE NUMBER — placeholder `۲۸۴۶۳` is FAKE
+### ✅ LICENSE NUMBER — `۲۸۴۶۳` CONFIRMED REAL (2026-08-20)
 
-The current displayed number `۲۸۴۶۳` (Persian numerals) is a **placeholder pattern** — it's NOT a real license number. It just looks plausible (5-digit, format consistent with سازمان نظام روانشناسی membership numbers) so the site doesn't look obviously broken to visitors.
+`۲۸۴۶۳` was introduced in `301f495` as a placeholder and that commit called it fake. **Farzad confirmed on 2026-08-20 that it is Raheleh's genuine registration number.** It was briefly removed in `9dfd51b` on that basis and has been restored.
 
-**This is YMYL content. A fake credential is a serious trust violation.** Replace with your real number before the site gains real traffic.
+**Do not remove it again.** Ignore the older "FAKE" wording in the batch-7 notes below — it is superseded.
 
 It currently appears in:
 - `about.html` — visible credentials box (large, prominent)
@@ -381,7 +381,7 @@ Verify nothing left: `grep -rc "۲۸۴۶۳" --include="*.html" --include="*.js"`
 ## 🟡 STILL TO DO (prioritized)
 
 ### 🔴 Critical
-- [ ] **Fill in real license number** (see top of file)
+- [x] ~~Fill in real license number~~ → `۲۸۴۶۳` confirmed real 2026-08-20
 
 ### 🟠 High
 - [x] ~~Rewrite/noindex top 5 AI-batch articles~~ → noindexed 24 duplicates in batch 4
