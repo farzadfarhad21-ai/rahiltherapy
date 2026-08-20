@@ -2,10 +2,36 @@
 
 > Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-07-15
-**Status:** 13 batches done — site went from ~62/100 → ~92/100 (technical/on-page). Google indexing/ranking-signal audit done 2026-07-09 — split-URL canonical bug fixed, GSC connected via OAuth. Site was indexed (75 pages) but had near-zero search visibility. Technical work is DONE and CONFIRMED live (see 2026-07-15 session below). **The bottleneck is now authority/backlinks + content targeting, NOT technical.**
+**Last updated:** 2026-08-20
+**Status:** Technical layer is DONE and verified live — stop spending time there. The 2026-08-20 audit found the daily automation had quietly become a duplicate-content factory (33 near-duplicate articles) with an empty meta description on 47% of posts and every auto-post stamped May 2025. All fixed in `9dfd51b`. **The bottleneck is, and has been since June, that zero off-site presence exists.** The BACKLINK_PLAN tracking table is still empty after two months.
 
-**Next up:** (1) User: execute backlink submissions (BACKLINK_PLAN.md — new targets added). NAP is already consistent (phone +989124228995 matches on site + GBP — verified 2026-07-15 via screenshot; old "050 347 5269" note was stale). (2) Push the retargeted daily-automation.js (done locally, awaiting user review). (3) Re-check GSC ~2026-07-23 for canonical-fix recrawl.
+**Next up:** (1) **Push `fix/blog-automation-hardening` to production.** (2) Work the TIER A free directory list in BACKLINK_PLAN.md — every field is paste-ready, Farzad just needs to click. (3) Re-auth Search Console (`~/.config/claude-seo/gsc_auth.py`) — the token is dead, so there is no live data.
+
+---
+
+## 📅 Session 2026-08-20 — full audit + automation repair
+
+### The result, measured
+- GSC export 2 Jun – 7 Jul: **2 clicks, 70 impressions, 3 queries** in three months. 62/70 impressions from Iran, 49/70 mobile. `depth-erp-ocd` alone produced 41.
+- Live check: a Persian search for her own name returns competitors, not her. An exact-domain search for `rahiltherapy.com` does not return the site. **No listing, profile, mention or citation exists anywhere on the open web.**
+- Technical layer verified genuinely fine: canonicals clean, zero `.html` in the sitemap, all core pages 200 with correct self-canonicals, no stray noindex, 181 JSON-LD blocks valid, robots.txt welcomes GPTBot/ClaudeBot/PerplexityBot/OAI-SearchBot, llms.txt present.
+
+### What was broken (see KNOWN_ISSUES.md 2026-08-20 for root causes)
+| Problem | Scale | Status |
+|---|---|---|
+| Rotation republished every topic every 23 days | 33 duplicate articles, all in sitemap | ✅ fixed + consolidated |
+| `extractExcerpt()` regex never matched | 51 articles with empty description | ✅ fixed + backfilled |
+| Model authored the visible date | every auto-post stamped May 2025 | ✅ fixed + 72 corrected |
+| Fake licence `۲۸۴۶۳` | 83 files | ✅ removed — needs the real number |
+| `.html` in og:url / mainEntityOfPage | 270 URLs | ✅ cleaned |
+| Zero backlinks executed | 2 months | ❌ **still open — this is the whole problem** |
+| GSC OAuth token dead | since ~7 Jul | ❌ needs Farzad, 2 min in a browser |
+
+### On ChatGPT / AI citation
+The plumbing is right and the odds are still zero. LLMs cite entities they can corroborate across independent sources; there are none. ChatGPT search reads the Bing index and **Bing Places was never set up**. `llms.txt` was necessary but cannot work alone. Off-site presence fixes Google and AI citation together — it is the same job.
+
+### Content quality still open
+Only 17 of 109 articles cited a source; the rest are uncited AI-written YMYL advice with no author bio block and no reviewer. The refresh mode now asks for citations on every pass, so this improves as the rotation comes round — but the older un-refreshed posts stay uncited until then.
 
 ---
 

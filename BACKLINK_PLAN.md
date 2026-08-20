@@ -13,6 +13,183 @@ Canonical business phone is **+98 912 422 8995** (`+989124228995`). Confirmed id
 
 ---
 
+# 🎯 READY-TO-SUBMIT PACKET — 2026-08-20
+
+> Every field below is paste-ready. Farzad opens the URL and creates the account
+> (Claude cannot create accounts or accept terms); the values here go straight in.
+> **Log the result in the tracking table at the bottom after each one.**
+
+## Canonical NAP — use these EXACT strings everywhere
+
+| Field | Value |
+|---|---|
+| Business name | `Raheleh Avinipour — Rahil Therapy` |
+| Persian name | `راحله اوینی‌پور` |
+| Phone | `+989124228995` |
+| Website | `https://rahiltherapy.com` |
+| Email | `ravinipour@gmail.com` |
+| Instagram | `@ravinipour` |
+| Service area | `Dubai — United Arab Emirates` |
+| Business model | Service Area Business (no public street address) |
+| Primary category | `Psychologist` |
+| Secondary categories | `Mental Health Service`, `Counselor` |
+| Hours | `09:00–21:00` (evening slots matter for working diaspora clients) |
+| Languages | `Persian (Farsi)`, `English` |
+
+**Do not vary the phone format.** NAP consistency is the whole point — one directory
+writing `+971…` or `0912…` undoes the signal.
+
+## Short fields (most directories ask for these)
+
+**Tagline (EN, 90 chars)**
+```
+Farsi-speaking psychologist in Dubai. CBT & Schema Therapy. First session free.
+```
+
+**Tagline (FA)**
+```
+روان‌شناس فارسی‌زبان مقیم دبی — جلسه اول رایگان
+```
+
+**Short bio, 50 words (EN)**
+```
+Raheleh Avinipour is a Persian-speaking psychologist based in Dubai, specialising in
+Cognitive Behavioral Therapy and Schema Therapy. She works online with Iranian clients
+worldwide on anxiety, depression, OCD, self-esteem, relationships, and the identity and
+belonging questions that come with migration. First consultation is free.
+```
+
+**Specialties list (tick-box fields)**
+```
+Anxiety · Depression · OCD · ADHD · Self-esteem · Relationships · Trauma ·
+Inner child work · Attachment · Immigration & cultural adjustment
+```
+
+**Modalities**
+```
+Cognitive Behavioral Therapy (CBT) · Schema Therapy · Mindfulness-Based Cognitive
+Therapy (MBCT) · Attachment-based therapy
+```
+
+**Session formats**
+```
+Online video (Zoom, Google Meet, WhatsApp) · In-person in Dubai
+```
+
+The 200-word Persian and English descriptions in the section above are still current —
+use those wherever a long description is asked for.
+
+---
+
+## Order of play — free first, then one paid
+
+Costs verified 2026-08-20. Do all of tier A before spending anything.
+
+### TIER A — free, do these first (≈2 hours total)
+
+| # | Target | URL | Cost | Why this one |
+|---|---|---|---|---|
+| A1 | **Bing Places** | bingplaces.com | Free | Feeds the Bing index, which is what ChatGPT search and Copilot read. Highest-leverage 10 minutes available. |
+| A2 | **Google Business Profile** | business.google.com | Free | Created 13 Jun, verification never confirmed. Biggest single local ranking factor. |
+| A3 | **TherapyRoute** | therapyroute.com/choose-your-plan → *Basic Listing* | Free | Genuinely free tier, no card required, and it already ranks page 1 for therapists in Dubai. |
+| A4 | **Apple Maps Business Connect** | mapsconnect.apple.com | Free | Dubai is iPhone-heavy; verification is faster than Google's. |
+| A5 | **dubaiparsi.com** | Health/Clinic section (پزشکی و درمانی) | Free | Exact geo + language match. |
+| A6 | **iranianpsychologists.com** | contact form / WhatsApp | Free | Ranks #1 for the exact intent. Outreach message drafted below. |
+
+### TIER B — paid, pick ONE to start
+
+| Target | Cost | Verdict |
+|---|---|---|
+| **Psychology Today** | ~$30/mo | **Start here.** DR ~90, ranks #1 for "Farsi-speaking therapist". Best single paid link available. |
+| GoodTherapy | $30.95–49.95/mo | Good directory, but overlaps Psychology Today. Add only if PT is working. |
+| TherapyTribe | $29.95/mo | Same. Free website perk is irrelevant — she has a site. |
+
+> ⚠️ Correction to the 2026-08-20 audit: GoodTherapy and TherapyTribe are **not** free
+> (~$30/mo each) and Edarabia is editorial rather than self-serve. Only TherapyRoute
+> among the newly-found directories has a free tier.
+
+### TIER C — editorial, needs a pitch not a form
+
+- **Edarabia** — runs curated "best therapists in Dubai" roundups. Email their editorial
+  team asking to be considered; not a self-serve listing.
+- **Guest posts** — simiaroom.com, agahclinic.com, hamrahcare.com. Pitch the diaspora
+  angle, which none of them cover. Draft below.
+
+---
+
+## Draft — iranianpsychologists.com listing request
+
+> Send via their contact form or WhatsApp. Persian.
+
+```
+سلام و وقت بخیر،
+
+من راحله اوینی‌پور هستم، روان‌شناس عمومی فارسی‌زبان مقیم دبی، با بیش از ۱۵ سال تجربه
+بالینی و تمرکز بر درمان شناختی-رفتاری (CBT) و طرحواره‌درمانی.
+
+بخش زیادی از مراجعان من ایرانیان مقیم امارات و کشورهای دیگر هستند — به‌ویژه در زمینه
+چالش‌های روان‌شناختی مهاجرت: غم غربت، بحران هویت، و احساس تعلق.
+
+خوشحال می‌شوم اگر امکان ثبت پروفایل من در مجموعه شما وجود داشته باشد. اطلاعات:
+
+نام: راحله اوینی‌پور
+تخصص: روان‌شناس عمومی — CBT و طرحواره‌درمانی
+محل: دبی، امارات (جلسات آنلاین برای سراسر جهان)
+وب‌سایت: https://rahiltherapy.com
+تماس: +989124228995
+ایمیل: ravinipour@gmail.com
+
+در صورت نیاز به مدارک یا اطلاعات بیشتر در خدمت هستم.
+
+با احترام،
+راحله اوینی‌پور
+```
+
+## Draft — guest-post pitch to Persian psychology sites
+
+> Send to simiaroom / agahclinic / hamrahcare editorial contact.
+
+```
+سلام،
+
+مقالات سایت شما را دنبال می‌کنم و کیفیت‌شان برایم قابل احترام است.
+
+پیشنهادی دارم: من روان‌شناس فارسی‌زبان مقیم دبی هستم و بخش عمده کارم با ایرانیان
+خارج از کشور است — موضوعی که در سایت شما کمتر پوشش داده شده.
+
+پیشنهاد مقاله مهمان:
+«غم غربت یا افسردگی مهاجرت؟ تفاوت‌ها را یک روان‌شناس فارسی‌زبان توضیح می‌دهد»
+
+حدود ۱۲۰۰ کلمه، اختصاصی برای سایت شما، با ارجاع به منابع علمی (DSM-5، مطالعات
+سلامت روان مهاجران) و مثال‌های بالینی واقعی (بدون اطلاعات هویتی).
+
+اگر موضوع دیگری ترجیح می‌دهید هم خوشحال می‌شوم بشنوم.
+
+راحله اوینی‌پور
+https://rahiltherapy.com
+```
+
+---
+
+## Tracking table — FILL THIS IN
+
+| # | Directory | Submitted | Status | Backlink live? | Notes |
+|---|---|---|---|---|---|
+| A1 | Bing Places | | | | |
+| A2 | Google Business Profile | | | | created 13 Jun, verify status |
+| A3 | TherapyRoute (free) | | | | |
+| A4 | Apple Maps | | | | |
+| A5 | dubaiparsi.com | | | | |
+| A6 | iranianpsychologists.com | | | | outreach drafted above |
+| B1 | Psychology Today | | | | ~$30/mo |
+| C1 | Edarabia (editorial) | | | | |
+| C2 | Guest post #1 | | | | |
+
+Check what has actually landed: https://ahrefs.com/backlink-checker (free, weekly)
+
+
+---
+
 ## 📋 Submission packet — copy-paste ready
 
 ### Persian business description (200 words)

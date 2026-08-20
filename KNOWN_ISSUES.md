@@ -5,6 +5,53 @@
 
 ---
 
+## 2026-08-20
+
+### [FIX] Topic rotation republished every topic every 23 days — 33 duplicate articles
+**Symptom:** 109 articles covering only 76 topics. Nine topics had three copies each. Every duplicate was in the sitemap and submitted to Google.
+**Root cause:** `getTodayTopic()` picks with `Math.floor(Date.now()/86400000) % TOPICS.length`. With 23 topics the cycle repeats every 23 days and each pass published a NEW article. Two full cycles had completed; the third had started. The `dedupeBlock` prompt varied the *title* but still produced a rival page for the same query.
+**Fix:** Added `findTopicArticle()` + `refreshBlogPost()`. When a topic already has a live indexable article the run now deepens that article in place, bumps `dateModified`, updates the sitemap `<lastmod>` instead of adding a row, and updates the existing blog.html card instead of adding a second one. A refresh that comes back >10% shorter than the original is rejected.
+**Also:** consolidated the existing 33 — kept the longest article per topic, 308-redirected the rest via `vercel.json`, removed from sitemap + blog.html.
+**Files changed:** `daily-automation.js`, `vercel.json`, `sitemap.xml`, `blog.html`, 33 articles deleted
+**Commit:** `9dfd51b`
+
+### [FIX] extractExcerpt() silently returned '' — 51 articles shipped an empty meta description
+**Symptom:** `<meta name="description" content="">` plus empty `og:description`, `twitter:description` and Article-schema `"description"` on 47% of the blog. Google wrote its own snippets; shared links had no preview text.
+**Root cause:** `/<p[^>]*>(.{50,150})<\/p>/` requires a paragraph whose ENTIRE content is 50–150 characters. The model writes 400–600. Nothing ever matched, so the function returned `''` and nothing checked it. Broken since early June.
+**Fix:** The prompt now emits an explicit `<!--DESCRIPTION:...-->` line. `extractExcerpt(rawContent, articleHtml)` prefers it, falls back to the opening paragraph truncated at a word boundary, and generation **throws** if both fail — an empty description can no longer ship silently. Backfilled 26 surviving articles.
+**Files changed:** `daily-automation.js`, 26 articles
+**Commit:** `9dfd51b`
+
+### [FIX] Every auto-published article was stamped 15 May 2025
+**Symptom:** Visible date said `۱۵ مه ۲۰۲۵` while the schema said today. 64 of 96 articles had a visible/schema date mismatch. Persian rendering flipped between Gregorian and Jalali at random.
+**Root cause:** The prompt template contained `<time datetime="[تاریخ ISO YYYY-MM-DD]">[تاریخ فارسی]</time>` — the model filled it in, and it hallucinated its own idea of "today" every run. The schema date was computed correctly in JS, so the two never agreed.
+**Fix:** Removed the date from the prompt entirely (model now writes the literal `__META__`). `renderDateTag()` / `buildMetaLine()` / `normalizeMetaLine()` build the meta line in code from the timestamp, and `normalizeMetaLine()` overwrites whatever the model produced. On a refresh it also renders `بروزرسانی: <date>`. Corrected 72 existing articles from their schema `datePublished`.
+**Files changed:** `daily-automation.js`, 72 articles
+**Commit:** `9dfd51b`
+**Rule:** Never let the model author a date, a URL, or any field that must agree with another field. Compute it and substitute.
+
+### [FIX] Fake licence number removed sitewide
+**Symptom:** Placeholder `۲۸۴۶۳` — flagged as fake on 12 June — was still in the footer of all 83 pages, the About credentials box, and the Person JSON-LD (`identifier` + `hasCredential.identifier`).
+**Fix:** Removed from all three places. The About box keeps the honest membership claim and now reads «شماره پروانه در جلسه اول در اختیار شما قرار می‌گیرد». The `hasCredential` entry stays (holding a licence is a true claim); only the fabricated number is gone.
+**Files changed:** 83 files, `about.html`
+**Commit:** `9dfd51b`
+**TODO:** restore the real number when Raheleh provides it.
+
+### [FIX] og:url and mainEntityOfPage still carried .html — missed by the July canonical fix
+**Symptom:** The 2026-07-09 fix corrected `<link rel="canonical">` on all articles but left 25 `og:url` and 43 `"mainEntityOfPage"` values pointing at `.html` paths, plus 128 internal links in blog.html/index.html/parents.html/llms.txt.
+**Root cause:** The July pass targeted canonical tags specifically rather than every URL-bearing field.
+**Fix:** Site-wide `/articles/{slug}.html` → `/articles/{slug}`. 270 URLs across 54 article files plus the 128 internal links. Zero `.html` article URLs remain anywhere.
+**Files changed:** 54 articles, `blog.html`, `index.html`, `parents.html`, `llms.txt`
+**Commit:** `9dfd51b`
+
+### [BLOCKED] Search Console OAuth token expired
+**Symptom:** `gsc_query.py` fails with `RefreshError: invalid_grant: Bad Request`.
+**Cause:** The refresh token is no longer valid (OAuth clients in "Testing" publishing status expire refresh tokens after 7 days; last successful use was 2026-07-15).
+**Fix:** Needs an interactive browser re-auth — run `~/.config/claude-seo/gsc_auth.py` and complete the Google consent screen. Claude cannot do this. To stop it recurring, set the OAuth consent screen to "In production" in Google Cloud Console.
+**Impact:** No live GSC data since 2026-07-15. All numbers in the 2026-08-20 audit come from the CSV export ending 7 July plus live crawling.
+
+---
+
 ## 2026-07-09
 
 ### [FIX] Split-URL indexing bug — canonical/sitemap mismatch was starving Google ranking signal
