@@ -1,45 +1,265 @@
 {
-  "crons": [{ "path": "/api/trigger-daily", "schedule": "0 8 * * *" }],
+  "crons": [
+    {
+      "path": "/api/trigger-daily",
+      "schedule": "0 8 * * *"
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/services", "destination": "/services.html" },
-    { "source": "/booking", "destination": "/booking.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/faq", "destination": "/faq.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/dubai", "destination": "/dubai.html" },
-    { "source": "/parents", "destination": "/parents.html" },
-    { "source": "/privacy", "destination": "/privacy.html" }
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html"
+    },
+    {
+      "source": "/booking",
+      "destination": "/booking.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/faq",
+      "destination": "/faq.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/dubai",
+      "destination": "/dubai.html"
+    },
+    {
+      "source": "/parents",
+      "destination": "/parents.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(jpg|jpeg|png|webp|avif|gif|svg|ico)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(css|js)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(woff|woff2|ttf|otf)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/articles/1782634150181-inner-child",
+      "destination": "/articles/1781772867258-inner-child",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1780920267106-inner-child",
+      "destination": "/articles/1781772867258-inner-child",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1782720905883-fear-liberation",
+      "destination": "/articles/1781868452108-fear-liberation",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1780992314436-fear-liberation",
+      "destination": "/articles/1781868452108-fear-liberation",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1782809713537-spirituality",
+      "destination": "/articles/1781943754927-spirituality",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1781080732519-spirituality",
+      "destination": "/articles/1781943754927-spirituality",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1781168126048-meaning-life",
+      "destination": "/articles/1782030384086-meaning-life",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1781354619679-self-worth",
+      "destination": "/articles/1782204464347-self-worth",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1781427104123-human-connection",
+      "destination": "/articles/1782289807467-human-connection",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1781513534003-peace-impermanence",
+      "destination": "/articles/1782377401644-peace-impermanence",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1782463368530-solitude",
+      "destination": "/articles/1781597202288-solitude",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1782548477193-self-love",
+      "destination": "/articles/1781685570453-self-love",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1785226055732-defense-mechanisms",
+      "destination": "/articles/1787216128331-defense-mechanisms",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1783068457505-defense-mechanisms",
+      "destination": "/articles/1787216128331-defense-mechanisms",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1783154083025-resilience",
+      "destination": "/articles/1785312396460-resilience",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1784622182042-rumination",
+      "destination": "/articles/1783672192201-rumination",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786611598660-rumination",
+      "destination": "/articles/1783672192201-rumination",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1784710586526-self-esteem-boost",
+      "destination": "/articles/1783757050696-self-esteem-boost",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786696712227-self-esteem-boost",
+      "destination": "/articles/1783757050696-self-esteem-boost",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1783845016076-self-confidence",
+      "destination": "/articles/1784794658702-self-confidence",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786783346279-self-confidence",
+      "destination": "/articles/1784794658702-self-confidence",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1784883265290-self-concept",
+      "destination": "/articles/1786869700374-self-concept",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1783932345497-self-concept",
+      "destination": "/articles/1786869700374-self-concept",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1784017841054-cognitive-distortions",
+      "destination": "/articles/1786956745593-cognitive-distortions",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1784967712859-cognitive-distortions",
+      "destination": "/articles/1786956745593-cognitive-distortions",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786089874411-social-anxiety-cbt",
+      "destination": "/articles/1784104543998-social-anxiety-cbt",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786177006790-empty-chair",
+      "destination": "/articles/1784189078067-empty-chair",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786265160094-mbct",
+      "destination": "/articles/1784275603238-mbct",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786349599524-perfectionism",
+      "destination": "/articles/1784363638871-perfectionism",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1784449599749-healthy-boundaries",
+      "destination": "/articles/1786437302102-healthy-boundaries",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1786521865810-anger-management",
+      "destination": "/articles/1784536219704-anger-management",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1785053517424-secure-attachment",
+      "destination": "/articles/1787041533324-secure-attachment",
+      "permanent": true
+    },
+    {
+      "source": "/articles/1787127327416-emotional-intelligence",
+      "destination": "/articles/1785141157563-emotional-intelligence",
+      "permanent": true
     }
   ]
 }

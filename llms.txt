@@ -36,14 +36,14 @@ Raheleh integrates evidence-based modalities — primarily **Cognitive Behaviora
 
 ## Notable foundation articles
 
-- [Anxiety: comprehensive guide](https://rahiltherapy.com/articles/foundations-anxiety-guide.html): Symptoms, DSM-5 criteria, CBT treatment, recovery path.
-- [Depression: understanding and recovery](https://rahiltherapy.com/articles/foundations-depression-guide.html): Early signs, types, evidence-based treatment.
-- [Schema Therapy explained](https://rahiltherapy.com/articles/foundations-schema-therapy.html): Origins, 18 schemas, modes, treatment process.
-- [Online therapy for diaspora](https://rahiltherapy.com/articles/foundations-online-therapy-diaspora.html): Why online therapy works for Iranians abroad.
-- [Schema Therapy case study](https://rahiltherapy.com/articles/depth-schema-case-study.html): Real (anonymized) client story — abandonment schema, Imagery Rescripting, Chair Work, 5-month outcome.
-- [CBT Thought Records](https://rahiltherapy.com/articles/depth-cbt-thought-record.html): How to use thought records to break negative cognitive patterns.
-- [ERP for OCD](https://rahiltherapy.com/articles/depth-erp-ocd.html): Exposure and Response Prevention explained.
-- [Migration and mental health](https://rahiltherapy.com/articles/authority-migration-mental-health.html): Psychological challenges of Iranians abroad.
+- [Anxiety: comprehensive guide](https://rahiltherapy.com/articles/foundations-anxiety-guide): Symptoms, DSM-5 criteria, CBT treatment, recovery path.
+- [Depression: understanding and recovery](https://rahiltherapy.com/articles/foundations-depression-guide): Early signs, types, evidence-based treatment.
+- [Schema Therapy explained](https://rahiltherapy.com/articles/foundations-schema-therapy): Origins, 18 schemas, modes, treatment process.
+- [Online therapy for diaspora](https://rahiltherapy.com/articles/foundations-online-therapy-diaspora): Why online therapy works for Iranians abroad.
+- [Schema Therapy case study](https://rahiltherapy.com/articles/depth-schema-case-study): Real (anonymized) client story — abandonment schema, Imagery Rescripting, Chair Work, 5-month outcome.
+- [CBT Thought Records](https://rahiltherapy.com/articles/depth-cbt-thought-record): How to use thought records to break negative cognitive patterns.
+- [ERP for OCD](https://rahiltherapy.com/articles/depth-erp-ocd): Exposure and Response Prevention explained.
+- [Migration and mental health](https://rahiltherapy.com/articles/authority-migration-mental-health): Psychological challenges of Iranians abroad.
 
 ## Optional
 

@@ -32,7 +32,33 @@ Rewrote all 6 topic maps (TOPICS, TOPIC_FULL, TOPIC_ENGLISH, getTag, CATEGORY_IM
 - **Added 5 diaspora** (غم غربت، بحران هویت مهاجرت، شوک فرهنگی، تنهایی در غربت، فرزندپروری دوفرهنگی) — builds a migration cluster around existing authority-migration-mental-health / foundations-online-therapy-diaspora.
 - **Added 8 specific long-tail** (فرق CBT و طرحواره، دلبستگی اجتنابی/اضطرابی، اضطراب اجتماعی، صندلی خالی، MBCT، کمال‌گرایی، مرزهای سالم).
 - **Deliberately excluded** ERP-OCD, thought-record, schema-therapy, online-therapy-diaspora topics to avoid cannibalizing the manual depth-/foundations-/authority- articles that already rank.
-- ⏳ **NOT committed/pushed** — sits in local working tree for review. Production cron uses deployed git, so nothing changes until pushed. Next 8am cron after push uses the new rotation.
+- ✅ **PUSHED to main 2026-07-15** (commit `aee8401`). Auto-deploys to Vercel; next 8am cron uses the new rotation.
+
+---
+
+## 🚀 NEXT SESSION — START HERE (say: **"continue rahiltherapy backlinks"**)
+
+> Goal: do the directory registrations TOGETHER. Farzad clicks/creates the accounts (Claude can't create accounts); Claude supplies paste-ready text for every field and logs each result in BACKLINK_PLAN.md.
+
+### Info to have open (all in BACKLINK_PLAN.md submission packet)
+- **Phone:** +98 912 422 8995 (`+989124228995`) — use this EXACT number everywhere (NAP consistency)
+- **Website:** https://rahiltherapy.com
+- **Service area:** Dubai – United Arab Emirates
+- **Email:** ravinipour@gmail.com · **Instagram:** @ravinipour
+- **Descriptions (Persian + English):** copy-paste ready in BACKLINK_PLAN.md
+- **Category:** Psychologist / Mental Health Service
+
+### Do in this order (easiest → highest-value)
+1. **Bing Places** — bingplaces.com (5-min warmup, feeds Microsoft Copilot)
+2. **Apple Maps Business Connect** — mapsconnect.apple.com (iPhone-heavy Dubai)
+3. **dubaiparsi.com** — Health/Clinic (پزشکی و درمانی) section — exact geo+language match
+4. **iranianpsychologists.com** — the #1-ranking directory for the exact intent. Claude to DRAFT the outreach/listing-request message (Farzad still needs to send it / fill their form)
+5. **Persian directories** — ravanshenasan.ir, doctoreto.com, nobat.ir (free listings)
+6. Log every submission (date + status) in the tracking table in BACKLINK_PLAN.md
+
+### Also do next session
+- 🗓️ **GSC recrawl check — DUE 2026-07-23** (~2 weeks after the 2026-07-09 canonical fix). Run `~/.config/claude-seo/gsc_query.py pages 28` and check: (a) have the `.html` duplicate URLs dropped out of the index? (b) are the NEW retargeted blog topics (homesickness, migration-identity, etc.) starting to pick up impressions? Compare against the ~53 impressions/28d baseline recorded 2026-07-15.
+- Draft the iranianpsychologists.com outreach message.
 
 ## 📊 Verified live scores (PageSpeed Insights, Mobile)
 

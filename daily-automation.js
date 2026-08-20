@@ -249,9 +249,87 @@ function slugify(text) {
     .substring(0, 50);
 }
 
-function extractExcerpt(html) {
-  const pMatch = html.match(/<p[^>]*>(.{50,150})<\/p>/);
-  return pMatch ? pMatch[1].replace(/<[^>]+>/g, '') : '';
+// The model is asked for an explicit <!--DESCRIPTION:...--> line. If it forgets,
+// fall back to the opening paragraph trimmed to a word boundary. Never returns ''
+// for a real article — an empty meta description shipped silently for two months.
+function extractExcerpt(rawContent, articleHtml) {
+  const tagged = rawContent && rawContent.match(/<!--\s*DESCRIPTION:([\s\S]*?)-->/);
+  if (tagged) {
+    const d = tagged[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    if (d.length >= 60) return truncateAtWord(d, 160);
+  }
+  const pMatch = articleHtml.match(/<p[^>]*>([\s\S]*?)<\/p>/);
+  if (!pMatch) return '';
+  const text = pMatch[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  return truncateAtWord(text, 160);
+}
+
+function truncateAtWord(text, max) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[،,;:\-\s]+$/, '') + '…';
+}
+
+// Meta descriptions live inside HTML attributes — a stray quote breaks the tag.
+function attr(text) {
+  return String(text).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function toFaDate(ts) {
+  return new Date(ts).toLocaleDateString('fa-IR', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
+function toIsoDate(ts) {
+  return new Date(ts).toISOString().split('T')[0];
+}
+
+// The visible date used to be written by the model from a prompt placeholder, so
+// every post was stamped with the model's idea of "today" (May 2025) while the
+// schema said otherwise. It is computed here now and never asked for.
+function renderDateTag(ts) {
+  return `<time datetime="${toIsoDate(ts)}">${toFaDate(ts)}</time>`;
+}
+
+function buildMetaLine(tag, publishedTs, modifiedTs, readMinutes) {
+  const parts = [tag, renderDateTag(publishedTs)];
+  if (modifiedTs && toIsoDate(modifiedTs) !== toIsoDate(publishedTs)) {
+    parts.push(`بروزرسانی: ${renderDateTag(modifiedTs)}`);
+  }
+  parts.push(`مدت زمان: ${readMinutes}`);
+  return `<div class="meta">${parts.join(' · ')}</div>`;
+}
+
+function readMinutesOf(articleHtml) {
+  const words = articleHtml.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
+  const n = Math.max(3, Math.round(words / 200));
+  return `${n.toLocaleString('fa-IR')} دقیقه`;
+}
+
+// Replace whatever meta line the model produced with an authoritative one.
+function normalizeMetaLine(articleHtml, tag, publishedTs, modifiedTs) {
+  const line = buildMetaLine(tag, publishedTs, modifiedTs, readMinutesOf(articleHtml));
+  if (/<div class="meta">[\s\S]*?<\/div>/.test(articleHtml)) {
+    return articleHtml.replace(/<div class="meta">[\s\S]*?<\/div>/, line);
+  }
+  return articleHtml.replace(/(<h1>[\s\S]*?<\/h1>)/, `$1\n${line}`);
+}
+
+// The one live, indexable article for a topic. After consolidation there is
+// exactly one; if the folder ever drifts, prefer the longest.
+function findTopicArticle(topicKey) {
+  const englishName = getEnglishName(topicKey);
+  if (!fs.existsSync(BLOG_DIR)) return null;
+  const candidates = fs.readdirSync(BLOG_DIR)
+    .filter(f => /^\d+-/.test(f) && f.endsWith(`-${englishName}.html`))
+    .map(f => {
+      const html = fs.readFileSync(path.join(BLOG_DIR, f), 'utf8');
+      return { file: f, html, noindex: /name="robots"[^>]*noindex/.test(html) };
+    })
+    .filter(c => !c.noindex);
+  if (candidates.length === 0) return null;
+  candidates.sort((a, b) => b.html.length - a.html.length);
+  return candidates[0].file;
 }
 
 function getPreviousTitlesForTopic(topicKey) {
@@ -307,9 +385,10 @@ ${dedupeBlock}
 
 ساختار خروجی (فقط HTML، بدون توضیح):
 
+<!--DESCRIPTION:[توضیح متای صفحه — یک جمله کامل و جذاب فارسی، بین ۱۲۰ تا ۱۵۵ کاراکتر، بدون نقل‌قول، که موضوع مقاله را دقیق توصیف کند]-->
 <article class="blog-article">
 <h1>[عنوان]</h1>
-<div class="meta">[برچسب] · <time datetime="[تاریخ ISO YYYY-MM-DD]">[تاریخ فارسی]</time> · [مدت زمان: X دقیقه]</div>
+<div class="meta">__META__</div>
 <p>[مقدمه — با تصویر یا سؤال یا لحظه شروع کن]</p>
 <h3>[عنوان بخش ۱]</h3>
 <p>[محتوا]</p>
@@ -327,7 +406,9 @@ ${dedupeBlock}
 <p>[جمع‌بندی گرم + دعوت ملایم]</p>
 </article>
 
-مهم: فقط و فقط HTML برگردان، بدون هیچ متن اضافی.`;
+مهم: فقط و فقط HTML برگردان، بدون هیچ متن اضافی.
+مهم: خط <!--DESCRIPTION:...--> اجباری است و باید قبل از <article> بیاید.
+مهم: <div class="meta"> را دقیقاً به‌صورت __META__ بنویس — تاریخ را خودت ننویس.`;
 
   log(`Generating article for topic: ${topicFull}`);
 
@@ -388,16 +469,18 @@ ${dedupeBlock}
   const articleMatch = rawContent.match(/<article class="blog-article">[\s\S]*?<\/article>/);
   if (!articleMatch) throw new Error('Failed to parse generated article');
 
-  const articleHtml = articleMatch[0];
+  const timestamp = Date.now();
+  let articleHtml = articleMatch[0];
   const titleMatch = articleHtml.match(/<h1>(.*?)<\/h1>/);
   const seoTitle = titleMatch ? titleMatch[1] : topicFull;
-  const date = getPersianDate();
-  const excerpt = extractExcerpt(articleHtml);
+  const date = toFaDate(timestamp);
+  const excerpt = extractExcerpt(rawContent, articleHtml);
+  if (!excerpt) throw new Error('Could not derive a meta description — refusing to publish an article with an empty description');
+  articleHtml = normalizeMetaLine(articleHtml, tag, timestamp, null);
   const categoryImage = getCategoryImage(topicKey);
   const imagePrompt = IMAGE_PROMPTS[topicKey] || 'Peaceful therapy room with warm light and plants, soft cream tones, calming atmosphere';
   const articleImage = `https://image.pollinations.ai/prompt/${encodeURIComponent(imagePrompt)}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
 
-  const timestamp = Date.now();
   const filename = `${timestamp}-${getEnglishName(topicKey)}.html`;
   const filepath = path.join(BLOG_DIR, filename);
 
@@ -406,18 +489,18 @@ ${dedupeBlock}
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${seoTitle} — راحله اوینی‌پور</title>
-<meta name="description" content="${excerpt}">
+<title>${attr(seoTitle)} — راحله اوینی‌پور</title>
+<meta name="description" content="${attr(excerpt)}">
 <link rel="canonical" href="https://rahiltherapy.com/articles/${toSlug(filename)}">
-<meta property="og:title" content="${seoTitle}">
-<meta property="og:description" content="${excerpt}">
+<meta property="og:title" content="${attr(seoTitle)}">
+<meta property="og:description" content="${attr(excerpt)}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://rahiltherapy.com/articles/${toSlug(filename)}">
 <meta property="og:image" content="https://rahiltherapy.com/${getCategoryImage(topicKey)}">
 <meta property="og:locale" content="fa_IR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="${seoTitle}">
-<meta name="twitter:description" content="${excerpt}">
+<meta name="twitter:title" content="${attr(seoTitle)}">
+<meta name="twitter:description" content="${attr(excerpt)}">
 
 <!-- Article Schema -->
 <script type="application/ld+json">
@@ -438,8 +521,8 @@ ${dedupeBlock}
     "name": "راحله اوینی‌پور — رهیل تراپی",
     "logo": {"@type": "ImageObject", "url": "https://rahiltherapy.com/profile.jpg"}
   },
-  "datePublished": "${new Date(timestamp).toISOString().split('T')[0]}",
-  "dateModified": "${new Date(timestamp).toISOString().split('T')[0]}",
+  "datePublished": "${toIsoDate(timestamp)}",
+  "dateModified": "${toIsoDate(timestamp)}",
   "inLanguage": "fa",
   "articleSection": ${JSON.stringify(tag)},
   "mainEntityOfPage": "https://rahiltherapy.com/articles/${toSlug(filename)}"
@@ -453,7 +536,7 @@ ${dedupeBlock}
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "خانه", "item": "https://rahiltherapy.com/"},
     {"@type": "ListItem", "position": 2, "name": "بلاگ", "item": "https://rahiltherapy.com/blog"},
-    {"@type": "ListItem", "position": 3, "name": ${JSON.stringify(tag)}, "item": "https://rahiltherapy.com/articles/${toSlug(filename)}"}
+    {"@type": "ListItem", "position": 3, "name": ${JSON.stringify(seoTitle)}, "item": "https://rahiltherapy.com/articles/${toSlug(filename)}"}
   ]
 }
 </script>
@@ -522,7 +605,7 @@ ${articleHtml}
 </div>
 </main>
 
-<footer class="footer"><div class="container"><div class="fbar">© ۲۰۲۶ راحله اوینی‌پور — تمامی حقوق محفوظ است. | شماره پروانه روانشناسی: <span style="font-family:monospace;letter-spacing:1px;opacity:.9;">۲۸۴۶۳</span> | <a href="/privacy" style="color:#fff;text-decoration:underline;">حریم خصوصی</a></div></div></footer>
+<footer class="footer"><div class="container"><div class="fbar">© ۲۰۲۶ راحله اوینی‌پور — تمامی حقوق محفوظ است. | <a href="/privacy" style="color:#fff;text-decoration:underline;">حریم خصوصی</a></div></div></footer>
 <script>lucide.createIcons();</script>
 </body>
 </html>`;
@@ -530,7 +613,144 @@ ${articleHtml}
   fs.writeFileSync(filepath, fullArticle, 'utf8');
   log(`Article created: articles/${filename}`);
 
-  return { filename, seoTitle, tag, excerpt, date, topicKey };
+  return { filename, seoTitle, tag, excerpt, date, topicKey, mode: 'new' };
+}
+
+/**
+ * Deepen the article that already covers this topic instead of publishing a rival to it.
+ *
+ * The rotation is `dayIndex % TOPICS.length`, so every topic comes round again every
+ * 23 days. Publishing each time produced 33 near-duplicate articles competing with each
+ * other for the same query — Google consolidates or demotes those, and none of them win.
+ * Refreshing keeps one strong URL per topic that gets better over time, and a genuine
+ * dateModified bump is a freshness signal a duplicate never was.
+ */
+async function refreshBlogPost(topicKey, topicFull, filename) {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error('ANTHROPIC_API_KEY environment variable is required');
+
+  const filepath = path.join(BLOG_DIR, filename);
+  const existing = fs.readFileSync(filepath, 'utf8');
+  const currentMatch = existing.match(/<article class="blog-article">[\s\S]*?<\/article>/);
+  if (!currentMatch) throw new Error(`No article body found in ${filename}`);
+  const currentHtml = currentMatch[0];
+
+  const tag = getTag(topicKey);
+  const publishedIso = (existing.match(/"datePublished":\s*"([^"]+)"/) || [, toIsoDate(Date.now())])[1];
+  const publishedTs = new Date(publishedIso).getTime();
+  const modifiedTs = Date.now();
+
+  const prompt = `تو راحله اوینی‌پور هستی — روان‌شناس فارسی‌زبان مقیم دبی، با قلمی گرم، حرفه‌ای و علمی.
+
+این مقاله قبلاً در سایت منتشر شده است. وظیفه تو **بازنویسی و عمیق‌تر کردن** آن است — نه نوشتن یک مقاله جدید و نه تکرار همان متن.
+
+مقاله فعلی:
+${currentHtml}
+
+قوانین بازنویسی:
+- همان موضوع ("${topicFull}") را حفظ کن — این صفحه نباید موضوعش عوض شود
+- عنوان (h1) را فقط در صورتی تغییر بده که واقعاً بهتر و دقیق‌تر شود؛ در غیر این صورت همان را نگه دار
+- بخش‌های خوب موجود را نگه دار و **عمیق‌تر** کن
+- حداقل یک بخش (h3) کاملاً تازه اضافه کن که در نسخه قبلی نبود
+- مثال‌های بالینی تازه‌تر و مشخص‌تر بیاور
+- اگر مرجع علمی مرتبط داری (DSM-5, APA, WHO, بک، یانگ، بولبی) اشاره کن
+- طول نهایی: ۹۰۰ تا ۱۲۰۰ کلمه (باید از نسخه قبلی بلندتر و کامل‌تر باشد)
+
+لحن و سبک:
+- گرم، انسانی و قابل اعتماد، اما حرفه‌ای و علمی — نه شاعرانه
+- ❌ شعر، بیت، استعاره ادبی، یا ارجاع به حافظ/مولانا/سعدی ممنوع
+- ✅ تکیه بر مفاهیم اثبات‌شده (CBT، طرحواره‌درمانی، دلبستگی)
+
+ساختار خروجی (فقط HTML، بدون توضیح):
+
+<!--DESCRIPTION:[توضیح متای صفحه — یک جمله کامل و جذاب فارسی، بین ۱۲۰ تا ۱۵۵ کاراکتر، بدون نقل‌قول]-->
+<article class="blog-article">
+<h1>[عنوان]</h1>
+<div class="meta">__META__</div>
+<p>[مقدمه]</p>
+<h3>[عنوان بخش]</h3>
+<p>[محتوا]</p>
+... (۴ تا ۵ بخش)
+<h3>یک قدم کوچک</h3>
+<ul>
+<li>[تمرین ۱]</li>
+<li>[تمرین ۲]</li>
+<li>[تمرین ۳]</li>
+</ul>
+<h3>در پایان</h3>
+<p>[جمع‌بندی گرم + دعوت ملایم به رزرو جلسه]</p>
+</article>
+
+مهم: فقط و فقط HTML برگردان، بدون هیچ متن اضافی.
+مهم: خط <!--DESCRIPTION:...--> اجباری است.
+مهم: <div class="meta"> را دقیقاً به‌صورت __META__ بنویس — تاریخ را خودت ننویس.`;
+
+  log(`Refreshing existing article for topic: ${topicFull} (${filename})`);
+
+  const provider = process.env.GENERATION_PROVIDER || 'ruflo';
+  const baseUrl = provider === 'anthropic'
+    ? 'https://api.anthropic.com'
+    : (process.env.ANTHROPIC_BASE_URL || 'https://api.minimax.io/anthropic');
+
+  const response = await fetch(`${baseUrl}/v1/messages`, {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-5',
+      max_tokens: 10000,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
+
+  if (!response.ok) throw new Error(`API Error ${response.status}: ${await response.text()}`);
+
+  const data = await response.json();
+  const textBlock = (data.content || []).find(c => c.type === 'text');
+  const rawContent = textBlock ? textBlock.text : JSON.stringify((data.content || [])[0] || {});
+
+  const articleMatch = rawContent.match(/<article class="blog-article">[\s\S]*?<\/article>/);
+  if (!articleMatch) throw new Error('Failed to parse refreshed article');
+
+  let articleHtml = articleMatch[0];
+
+  // Never let a refresh shrink the page — that would be a downgrade, not an update.
+  const words = h => h.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
+  if (words(articleHtml) < words(currentHtml) * 0.9) {
+    throw new Error(`Refresh produced a shorter article (${words(articleHtml)}w vs ${words(currentHtml)}w) — keeping the existing version`);
+  }
+
+  const seoTitle = (articleHtml.match(/<h1>(.*?)<\/h1>/) || [, topicFull])[1];
+  const excerpt = extractExcerpt(rawContent, articleHtml);
+  if (!excerpt) throw new Error('Could not derive a meta description for the refresh');
+
+  articleHtml = normalizeMetaLine(articleHtml, tag, publishedTs, modifiedTs);
+
+  // Swap the body and re-sync every field that mirrors it.
+  let updated = existing.replace(currentMatch[0], articleHtml);
+  updated = updated
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${attr(seoTitle)} — راحله اوینی‌پور</title>`)
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${attr(excerpt)}">`)
+    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${attr(seoTitle)}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${attr(excerpt)}">`)
+    .replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${attr(seoTitle)}">`)
+    .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${attr(excerpt)}">`)
+    .replace(/"headline":\s*"(?:[^"\\]|\\.)*"/, `"headline": ${JSON.stringify(seoTitle)}`)
+    .replace(/"description":\s*"(?:[^"\\]|\\.)*"/, `"description": ${JSON.stringify(excerpt)}`)
+    .replace(/"dateModified":\s*"[^"]*"/, `"dateModified": "${toIsoDate(modifiedTs)}"`);
+
+  fs.writeFileSync(filepath, updated, 'utf8');
+  log(`Article refreshed: articles/${filename} (${words(currentHtml)}w → ${words(articleHtml)}w)`);
+
+  return {
+    filename, seoTitle, tag, excerpt,
+    date: toFaDate(publishedTs),
+    topicKey,
+    mode: 'refresh'
+  };
 }
 
 async function generateImage(topicKey, seoTitle) {
@@ -581,6 +801,17 @@ async function generateImage(topicKey, seoTitle) {
   return imageFilename;
 }
 
+// The hero image already on a published article, so a refresh can keep it.
+function currentArticleImage(filename) {
+  try {
+    const html = fs.readFileSync(path.join(BLOG_DIR, filename), 'utf8');
+    const m = html.match(/<img src="\.\.\/([^"]+)"[^>]*style="width:100%;height:/);
+    return m ? m[1] : null;
+  } catch (_) {
+    return null;
+  }
+}
+
 function updateArticleImage(filename, imageFilename) {
   const filepath = path.join(BLOG_DIR, filename);
   let content = fs.readFileSync(filepath, 'utf8');
@@ -599,6 +830,26 @@ function updateBlogHtml(articleInfo) {
   let blogContent = fs.readFileSync(blogPath, 'utf8');
 
   const articleSlug = toSlug(articleInfo.filename);
+
+  // On a refresh the card already exists — update it in place and promote the
+  // article to the featured slot rather than adding a second card for one URL.
+  if (articleInfo.mode === 'refresh') {
+    const cardRe = new RegExp(`<article class="bcard">(?:(?!</article>)[\\s\\S])*?/articles/${articleSlug}(?:(?!</article>)[\\s\\S])*?</article>`);
+    const card = blogContent.match(cardRe);
+    if (card) {
+      const newCard = card[0]
+        .replace(/<h3>[\s\S]*?<\/h3>/, `<h3>${articleInfo.seoTitle}</h3>`)
+        .replace(/<span class="btag">[\s\S]*?<\/span>/, `<span class="btag">${articleInfo.tag}</span>`);
+      blogContent = blogContent.replace(card[0], newCard);
+    }
+    blogContent = blogContent
+      .replace(/(<a id="feat-img-link" href=")[^"]*(")/, `$1/articles/${articleSlug}$2`)
+      .replace(/(<a id="feat-title-link" href=")[^"]*(")/, `$1/articles/${articleSlug}$2`)
+      .replace(/(<a class="arrow-link" id="feat-arrow-link" href=")[^"]*(")/, `$1/articles/${articleSlug}$2`);
+    fs.writeFileSync(blogPath, blogContent, 'utf8');
+    log('Updated blog.html (refreshed card + featured slot)');
+    return;
+  }
   const featHtml = `<article class="feat">
       <a id="feat-img-link" href="/articles/${articleSlug}"><img src="/${articleInfo.imageFilename}" alt="${articleInfo.seoTitle}" style="width:100%;height:340px;object-fit:cover;object-position:center center;border-radius:16px;display:block;"></a>
       <div class="fbody">
@@ -627,8 +878,18 @@ function updateSitemap(articleInfo) {
 
   const articleUrl = `${SITE_URL}/articles/${toSlug(articleInfo.filename)}`;
   const today = new Date().toISOString().slice(0, 10);
-  const newEntry = `  <url><loc>${articleUrl}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n`;
 
+  // A refreshed article is already listed — bump its lastmod instead of adding a
+  // second entry for the same URL.
+  const existing = new RegExp(`<url><loc>${articleUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</loc><lastmod>[^<]*</lastmod>`);
+  if (existing.test(sitemap)) {
+    sitemap = sitemap.replace(existing, `<url><loc>${articleUrl}</loc><lastmod>${today}</lastmod>`);
+    fs.writeFileSync(sitemapPath, sitemap, 'utf8');
+    log('Updated sitemap.xml (lastmod bumped)');
+    return;
+  }
+
+  const newEntry = `  <url><loc>${articleUrl}</loc><lastmod>${today}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>\n`;
   sitemap = sitemap.replace('</urlset>', `${newEntry}</urlset>`);
   fs.writeFileSync(sitemapPath, sitemap, 'utf8');
   log('Updated sitemap.xml');
@@ -769,18 +1030,32 @@ async function runDailyAutomation() {
 
   try {
     const { key: topicKey, full: topicFull } = getTodayTopic();
-    log(`Selected topic: ${topicFull} (Topic #${TOPICS.indexOf(topicKey) + 1}/10)`);
+    log(`Selected topic: ${topicFull} (Topic #${TOPICS.indexOf(topicKey) + 1}/${TOPICS.length})`);
 
-    articleInfo = await generateBlogPost(topicKey, topicFull);
-    log(`Article generated: ${articleInfo.seoTitle}`);
+    // The rotation revisits every topic every TOPICS.length days. Second time round
+    // we deepen the page that already ranks for it instead of publishing a rival.
+    const existingArticle = findTopicArticle(topicKey);
+    if (existingArticle) {
+      articleInfo = await refreshBlogPost(topicKey, topicFull, existingArticle);
+      log(`Article refreshed: ${articleInfo.seoTitle}`);
+    } else {
+      articleInfo = await generateBlogPost(topicKey, topicFull);
+      log(`Article generated: ${articleInfo.seoTitle}`);
+    }
 
-    try {
-      const imageFilename = await generateImage(topicKey, articleInfo.seoTitle);
-      articleInfo.imageFilename = imageFilename;
-      updateArticleImage(articleInfo.filename, imageFilename);
-    } catch (imageError) {
-      log(`Image generation failed, using fallback: ${imageError.message}`, 'WARN');
-      articleInfo.imageFilename = getCategoryImage(topicKey);
+    if (articleInfo.mode === 'refresh') {
+      // Keep the existing hero image — a refreshed page should not churn its OG image.
+      articleInfo.imageFilename = (articleInfo.filename && currentArticleImage(articleInfo.filename))
+        || getCategoryImage(topicKey);
+    } else {
+      try {
+        const imageFilename = await generateImage(topicKey, articleInfo.seoTitle);
+        articleInfo.imageFilename = imageFilename;
+        updateArticleImage(articleInfo.filename, imageFilename);
+      } catch (imageError) {
+        log(`Image generation failed, using fallback: ${imageError.message}`, 'WARN');
+        articleInfo.imageFilename = getCategoryImage(topicKey);
+      }
     }
 
     updateBlogHtml(articleInfo);
