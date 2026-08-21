@@ -1398,3 +1398,15 @@
 [2026-08-20T08:56:03.472Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-20T08:59:03.644Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1787216128331-defense-mechanisms → 404
 [2026-08-20T08:59:03.644Z] [INFO] ========== Automation Completed Successfully in 293.9s ==========
+[2026-08-21T08:24:26.726Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-21T08:24:26.729Z] [INFO] Selected topic: تاب‌آوری؛ هنر برخاستن دوباره از سختی‌ها (Topic #10/23)
+[2026-08-21T08:24:26.730Z] [INFO] Refreshing existing article for topic: تاب‌آوری؛ هنر برخاستن دوباره از سختی‌ها (1785312396460-resilience.html)
+[2026-08-21T08:26:01.338Z] [INFO] Article refreshed: articles/1785312396460-resilience.html (682w → 1267w)
+[2026-08-21T08:26:01.339Z] [INFO] Article refreshed: چرا بعضی‌ها بعد از شکست می‌شکنند و بعضی‌ها می‌سازند؟
+[2026-08-21T08:26:01.341Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-21T08:26:01.342Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-21T08:26:01.342Z] [INFO] Starting Vercel deployment...
+[2026-08-21T08:26:31.636Z] [INFO] Vercel deployment completed
+[2026-08-21T08:26:31.637Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-21T08:29:32.045Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785312396460-resilience → 200
+[2026-08-21T08:29:32.045Z] [INFO] ========== Automation Completed Successfully in 305.3s ==========
