@@ -1410,3 +1410,15 @@
 [2026-08-21T08:26:31.637Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-21T08:29:32.045Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785312396460-resilience → 200
 [2026-08-21T08:29:32.045Z] [INFO] ========== Automation Completed Successfully in 305.3s ==========
+[2026-08-22T08:36:29.140Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-22T08:36:29.143Z] [INFO] Selected topic: غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود (Topic #11/23)
+[2026-08-22T08:36:29.144Z] [INFO] Refreshing existing article for topic: غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود (1785400221565-homesickness.html)
+[2026-08-22T08:39:25.303Z] [INFO] Article refreshed: articles/1785400221565-homesickness.html (822w → 1606w)
+[2026-08-22T08:39:25.304Z] [INFO] Article refreshed: غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود
+[2026-08-22T08:39:25.306Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-22T08:39:25.306Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-22T08:39:25.307Z] [INFO] Starting Vercel deployment...
+[2026-08-22T08:39:53.918Z] [INFO] Vercel deployment completed
+[2026-08-22T08:39:53.919Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-22T08:42:54.125Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785400221565-homesickness → 200
+[2026-08-22T08:42:54.125Z] [INFO] ========== Automation Completed Successfully in 385.0s ==========
