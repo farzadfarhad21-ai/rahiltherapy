@@ -1422,3 +1422,15 @@
 [2026-08-22T08:39:53.919Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-22T08:42:54.125Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785400221565-homesickness → 200
 [2026-08-22T08:42:54.125Z] [INFO] ========== Automation Completed Successfully in 385.0s ==========
+[2026-08-23T08:52:17.081Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-23T08:52:17.084Z] [INFO] Selected topic: بحران هویت در مهاجرت؛ وقتی نمی‌دانی به کجا تعلق داری (Topic #12/23)
+[2026-08-23T08:52:17.085Z] [INFO] Refreshing existing article for topic: بحران هویت در مهاجرت؛ وقتی نمی‌دانی به کجا تعلق داری (1785485537977-migration-identity.html)
+[2026-08-23T08:54:59.509Z] [INFO] Article refreshed: articles/1785485537977-migration-identity.html (742w → 1451w)
+[2026-08-23T08:54:59.509Z] [INFO] Article refreshed: بحران هویت در مهاجرت؛ وقتی نمی‌دانی به کجا تعلق داری
+[2026-08-23T08:54:59.511Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-23T08:54:59.512Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-23T08:54:59.513Z] [INFO] Starting Vercel deployment...
+[2026-08-23T08:55:30.148Z] [INFO] Vercel deployment completed
+[2026-08-23T08:55:30.149Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-23T08:58:30.447Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785485537977-migration-identity → 200
+[2026-08-23T08:58:30.447Z] [INFO] ========== Automation Completed Successfully in 373.4s ==========
