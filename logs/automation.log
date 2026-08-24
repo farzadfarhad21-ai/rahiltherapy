@@ -1434,3 +1434,15 @@
 [2026-08-23T08:55:30.149Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-23T08:58:30.447Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785485537977-migration-identity → 200
 [2026-08-23T08:58:30.447Z] [INFO] ========== Automation Completed Successfully in 373.4s ==========
+[2026-08-24T08:12:44.673Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-24T08:12:44.675Z] [INFO] Selected topic: شوک فرهنگی؛ چهار مرحله‌ای که هر مهاجری تجربه می‌کند (Topic #13/23)
+[2026-08-24T08:12:44.676Z] [INFO] Refreshing existing article for topic: شوک فرهنگی؛ چهار مرحله‌ای که هر مهاجری تجربه می‌کند (1785574338709-culture-shock.html)
+[2026-08-24T08:15:36.970Z] [INFO] Article refreshed: articles/1785574338709-culture-shock.html (836w → 1640w)
+[2026-08-24T08:15:36.970Z] [INFO] Article refreshed: شوک فرهنگی؛ چهار مرحله‌ای که هر مهاجری تجربه می‌کند
+[2026-08-24T08:15:36.972Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-24T08:15:36.973Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-24T08:15:36.974Z] [INFO] Starting Vercel deployment...
+[2026-08-24T08:16:05.854Z] [INFO] Vercel deployment completed
+[2026-08-24T08:16:05.855Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-24T08:19:06.245Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785574338709-culture-shock → 200
+[2026-08-24T08:19:06.245Z] [INFO] ========== Automation Completed Successfully in 381.6s ==========
