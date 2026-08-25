@@ -1446,3 +1446,15 @@
 [2026-08-24T08:16:05.855Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-24T08:19:06.245Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785574338709-culture-shock → 200
 [2026-08-24T08:19:06.245Z] [INFO] ========== Automation Completed Successfully in 381.6s ==========
+[2026-08-25T08:35:49.788Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-25T08:35:49.791Z] [INFO] Selected topic: تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم (Topic #14/23)
+[2026-08-25T08:35:49.792Z] [INFO] Refreshing existing article for topic: تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم (1785659585143-loneliness-abroad.html)
+[2026-08-25T08:38:29.033Z] [INFO] Article refreshed: articles/1785659585143-loneliness-abroad.html (923w → 1493w)
+[2026-08-25T08:38:29.033Z] [INFO] Article refreshed: تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم
+[2026-08-25T08:38:29.035Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-25T08:38:29.036Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-25T08:38:29.037Z] [INFO] Starting Vercel deployment...
+[2026-08-25T08:38:57.184Z] [INFO] Vercel deployment completed
+[2026-08-25T08:38:57.185Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-25T08:41:57.481Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785659585143-loneliness-abroad → 200
+[2026-08-25T08:41:57.482Z] [INFO] ========== Automation Completed Successfully in 367.7s ==========
