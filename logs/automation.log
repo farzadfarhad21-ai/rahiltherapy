@@ -1458,3 +1458,15 @@
 [2026-08-25T08:38:57.185Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-25T08:41:57.481Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785659585143-loneliness-abroad → 200
 [2026-08-25T08:41:57.482Z] [INFO] ========== Automation Completed Successfully in 367.7s ==========
+[2026-08-26T08:34:24.362Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-26T08:34:24.365Z] [INFO] Selected topic: فرزندپروری دوفرهنگی؛ بزرگ کردن کودک میان دو فرهنگ (Topic #15/23)
+[2026-08-26T08:34:24.366Z] [INFO] Refreshing existing article for topic: فرزندپروری دوفرهنگی؛ بزرگ کردن کودک میان دو فرهنگ (1785745921491-bicultural-parenting.html)
+[2026-08-26T08:36:15.941Z] [INFO] Article refreshed: articles/1785745921491-bicultural-parenting.html (843w → 1586w)
+[2026-08-26T08:36:15.941Z] [INFO] Article refreshed: فرزندپروری دوفرهنگی؛ بزرگ کردن کودک میان دو فرهنگ
+[2026-08-26T08:36:15.943Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-26T08:36:15.944Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-26T08:36:15.945Z] [INFO] Starting Vercel deployment...
+[2026-08-26T08:36:44.259Z] [INFO] Vercel deployment completed
+[2026-08-26T08:36:44.259Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-26T08:39:44.437Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785745921491-bicultural-parenting → 200
+[2026-08-26T08:39:44.437Z] [INFO] ========== Automation Completed Successfully in 320.1s ==========
