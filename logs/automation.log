@@ -1470,3 +1470,18 @@
 [2026-08-26T08:36:44.259Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-26T08:39:44.437Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785745921491-bicultural-parenting → 200
 [2026-08-26T08:39:44.437Z] [INFO] ========== Automation Completed Successfully in 320.1s ==========
+[2026-08-27T08:28:30.875Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-27T08:28:30.877Z] [INFO] Selected topic: فرق CBT و طرحواره‌درمانی؛ کدام روش برای شما مناسب‌تر است (Topic #16/23)
+[2026-08-27T08:28:30.878Z] [INFO] Generating article for topic: فرق CBT و طرحواره‌درمانی؛ کدام روش برای شما مناسب‌تر است
+[2026-08-27T08:29:29.821Z] [INFO] Article created: articles/1787819369802-cbt-vs-schema.html
+[2026-08-27T08:29:29.821Z] [INFO] Article generated: فرق CBT و طرحواره‌درمانی؛ کدام روش برای شما مناسب‌تر است
+[2026-08-27T08:29:29.821Z] [INFO] Generating image via Segmind for topic: فرق CBT و طرحواره‌درمانی
+[2026-08-27T08:29:34.993Z] [INFO] Image saved: articles/1787819374157-cbt-vs-schema.jpg
+[2026-08-27T08:29:34.994Z] [INFO] Updated article with new image: 1787819374157-cbt-vs-schema.jpg
+[2026-08-27T08:29:34.996Z] [INFO] Updated blog.html with new article card
+[2026-08-27T08:29:34.996Z] [INFO] Updated sitemap.xml
+[2026-08-27T08:29:34.997Z] [INFO] Starting Vercel deployment...
+[2026-08-27T08:30:06.056Z] [INFO] Vercel deployment completed
+[2026-08-27T08:30:06.056Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-27T08:33:06.341Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1787819369802-cbt-vs-schema → 404
+[2026-08-27T08:33:06.342Z] [INFO] ========== Automation Completed Successfully in 275.5s ==========
