@@ -1485,3 +1485,18 @@
 [2026-08-27T08:30:06.056Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-27T08:33:06.341Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1787819369802-cbt-vs-schema → 404
 [2026-08-27T08:33:06.342Z] [INFO] ========== Automation Completed Successfully in 275.5s ==========
+[2026-08-28T08:30:28.990Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-28T08:30:28.993Z] [INFO] Selected topic: دلبستگی اجتنابی؛ چرا از نزدیکی عاطفی فرار می‌کنیم (Topic #17/23)
+[2026-08-28T08:30:28.994Z] [INFO] Generating article for topic: دلبستگی اجتنابی؛ چرا از نزدیکی عاطفی فرار می‌کنیم
+[2026-08-28T08:31:26.109Z] [INFO] Article created: articles/1787905886091-avoidant-attachment.html
+[2026-08-28T08:31:26.109Z] [INFO] Article generated: دلبستگی اجتنابی؛ چرا از نزدیکی عاطفی فرار می‌کنیم
+[2026-08-28T08:31:26.110Z] [INFO] Generating image via Segmind for topic: دلبستگی اجتنابی
+[2026-08-28T08:31:31.286Z] [INFO] Image saved: articles/1787905890672-avoidant-attachment.jpg
+[2026-08-28T08:31:31.287Z] [INFO] Updated article with new image: 1787905890672-avoidant-attachment.jpg
+[2026-08-28T08:31:31.289Z] [INFO] Updated blog.html with new article card
+[2026-08-28T08:31:31.289Z] [INFO] Updated sitemap.xml
+[2026-08-28T08:31:31.290Z] [INFO] Starting Vercel deployment...
+[2026-08-28T08:32:00.141Z] [INFO] Vercel deployment completed
+[2026-08-28T08:32:00.141Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-28T08:35:00.363Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1787905886091-avoidant-attachment → 404
+[2026-08-28T08:35:00.363Z] [INFO] ========== Automation Completed Successfully in 271.4s ==========
