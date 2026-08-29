@@ -1500,3 +1500,15 @@
 [2026-08-28T08:32:00.141Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-28T08:35:00.363Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1787905886091-avoidant-attachment → 404
 [2026-08-28T08:35:00.363Z] [INFO] ========== Automation Completed Successfully in 271.4s ==========
+[2026-08-29T08:09:20.342Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-29T08:09:20.345Z] [INFO] Selected topic: دلبستگی اضطرابی؛ ترس از طرد شدن در روابط (Topic #18/23)
+[2026-08-29T08:09:20.346Z] [INFO] Refreshing existing article for topic: دلبستگی اضطرابی؛ ترس از طرد شدن در روابط (1786004599214-anxious-attachment.html)
+[2026-08-29T08:11:07.554Z] [INFO] Article refreshed: articles/1786004599214-anxious-attachment.html (749w → 1521w)
+[2026-08-29T08:11:07.555Z] [INFO] Article refreshed: دلبستگی اضطرابی؛ ترس از طرد شدن در روابط
+[2026-08-29T08:11:07.556Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-29T08:11:07.557Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-29T08:11:07.558Z] [INFO] Starting Vercel deployment...
+[2026-08-29T08:11:36.302Z] [INFO] Vercel deployment completed
+[2026-08-29T08:11:36.302Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-29T08:14:36.727Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1786004599214-anxious-attachment → 200
+[2026-08-29T08:14:36.728Z] [INFO] ========== Automation Completed Successfully in 316.4s ==========
