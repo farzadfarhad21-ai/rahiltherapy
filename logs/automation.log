@@ -1512,3 +1512,15 @@
 [2026-08-29T08:11:36.302Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-29T08:14:36.727Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1786004599214-anxious-attachment → 200
 [2026-08-29T08:14:36.728Z] [INFO] ========== Automation Completed Successfully in 316.4s ==========
+[2026-08-30T08:16:17.578Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-30T08:16:17.580Z] [INFO] Selected topic: اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت (Topic #19/23)
+[2026-08-30T08:16:17.581Z] [INFO] Refreshing existing article for topic: اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت (1784104543998-social-anxiety-cbt.html)
+[2026-08-30T08:19:12.944Z] [INFO] Article refreshed: articles/1784104543998-social-anxiety-cbt.html (878w → 1634w)
+[2026-08-30T08:19:12.945Z] [INFO] Article refreshed: اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت
+[2026-08-30T08:19:12.947Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-30T08:19:12.947Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-30T08:19:12.948Z] [INFO] Starting Vercel deployment...
+[2026-08-30T08:19:41.886Z] [INFO] Vercel deployment completed
+[2026-08-30T08:19:41.886Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-30T08:22:42.163Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1784104543998-social-anxiety-cbt → 200
+[2026-08-30T08:22:42.163Z] [INFO] ========== Automation Completed Successfully in 384.6s ==========
