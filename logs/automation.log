@@ -1524,3 +1524,15 @@
 [2026-08-30T08:19:41.886Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-08-30T08:22:42.163Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1784104543998-social-anxiety-cbt → 200
 [2026-08-30T08:22:42.163Z] [INFO] ========== Automation Completed Successfully in 384.6s ==========
+[2026-08-31T08:50:46.852Z] [INFO] ========== Daily Automation Started ==========
+[2026-08-31T08:50:46.855Z] [INFO] Selected topic: تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه (Topic #20/23)
+[2026-08-31T08:50:46.856Z] [INFO] Refreshing existing article for topic: تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه (1784189078067-empty-chair.html)
+[2026-08-31T08:53:23.436Z] [INFO] Article refreshed: articles/1784189078067-empty-chair.html (748w → 1572w)
+[2026-08-31T08:53:23.437Z] [INFO] Article refreshed: تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه
+[2026-08-31T08:53:23.439Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-08-31T08:53:23.439Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-08-31T08:53:23.440Z] [INFO] Starting Vercel deployment...
+[2026-08-31T08:53:57.538Z] [INFO] Vercel deployment completed
+[2026-08-31T08:53:57.539Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-08-31T08:56:57.902Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1784189078067-empty-chair → 200
+[2026-08-31T08:56:57.902Z] [INFO] ========== Automation Completed Successfully in 371.0s ==========
