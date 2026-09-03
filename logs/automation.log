@@ -1560,3 +1560,15 @@
 [2026-09-02T08:39:35.052Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-02T08:42:35.233Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1784363638871-perfectionism → 200
 [2026-09-02T08:42:35.234Z] [INFO] ========== Automation Completed Successfully in 368.7s ==========
+[2026-09-03T08:16:43.860Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-03T08:16:43.863Z] [INFO] Selected topic: مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم (Topic #23/23)
+[2026-09-03T08:16:43.864Z] [INFO] Refreshing existing article for topic: مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم (1786437302102-healthy-boundaries.html)
+[2026-09-03T08:19:18.943Z] [INFO] Article refreshed: articles/1786437302102-healthy-boundaries.html (869w → 1465w)
+[2026-09-03T08:19:18.944Z] [INFO] Article refreshed: احساس گناه بعد از «نه» گفتن؛ چرا مرزگذاری ما را ناراحت می‌کند؟
+[2026-09-03T08:19:18.946Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-03T08:19:18.947Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-03T08:19:18.948Z] [INFO] Starting Vercel deployment...
+[2026-09-03T08:19:59.913Z] [INFO] Vercel deployment completed
+[2026-09-03T08:19:59.914Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-03T08:23:00.200Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1786437302102-healthy-boundaries → 200
+[2026-09-03T08:23:00.201Z] [INFO] ========== Automation Completed Successfully in 376.3s ==========
