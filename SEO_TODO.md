@@ -2,7 +2,7 @@
 
 > Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-08-20
+**Last updated:** 2026-09-04
 **Status:** Technical layer is DONE and verified live — stop spending time there. The 2026-08-20 audit found the daily automation had quietly become a duplicate-content factory (33 near-duplicate articles) with an empty meta description on 47% of posts and every auto-post stamped May 2025. All fixed in `9dfd51b`. **The bottleneck is, and has been since June, that zero off-site presence exists.** The BACKLINK_PLAN tracking table is still empty after two months.
 
 **Next up:** (1) **Push `fix/blog-automation-hardening` to production.** (2) Work the TIER A free directory list in BACKLINK_PLAN.md — every field is paste-ready, Farzad just needs to click. (3) ~~Re-auth Search Console~~ ✅ done 2026-08-20 — baseline recorded below; **re-measure ~2026-09-17**. Set the OAuth consent screen to "In production" or the token expires again in 7 days.
@@ -87,6 +87,42 @@ Rewrote all 6 topic maps (TOPICS, TOPIC_FULL, TOPIC_ENGLISH, getTag, CATEGORY_IM
 - Draft the iranianpsychologists.com outreach message.
 
 ---
+
+---
+
+## 📅 Session 2026-09-04 — verification + OCD cluster
+
+### The 20 Aug fixes worked. Measured, not assumed.
+15 days of the refresh engine running unattended:
+- **2 new articles, 13 refreshes, 0 duplicates.** Under the old code this would have been 15 new articles and ~13 duplicates. Article count 76 → 78.
+- The 13 refreshed articles went **10,553 → 19,948 words (+89%)** — every one nearly doubled.
+- **All 13 now carry a sources block** (the citation requirement is holding), and spot-checks confirm the references are real: Segal/Williams/Teasdale, Kuyken, Piet & Hougaard, Bowlby, Beck, Young. No fabrication.
+- 0 empty descriptions, 0 visible/schema date drift across the refreshed set.
+- The post-deploy 404 check now **passes** — it was failing on 19 and 20 Aug.
+
+### GSC: clicks up 2.5×
+| Window | Clicks | Impressions | Pages | CTR |
+|---|---|---|---|---|
+| 28d to 20 Aug (baseline) | 4 | 101 | 20 | 4.0% |
+| 28d to 2 Sep | **10** | 87 | 16 | **11.5%** |
+
+Impressions dipped slightly and pages fell 20 → 16, both expected: consolidation removed 33 URLs and Google is still reprocessing. **Clicks went up while impressions went down**, which is the description and date fixes landing — Google now shows a real snippet instead of scraping one, and nothing is stamped May 2025 any more. Positions improved too: depth-erp-ocd 7.0 → 5.4, homepage 5.3 → 3.1.
+
+### Built: the OCD cluster
+Three hand-written articles around `depth-erp-ocd`, the strongest page on the site:
+`depth-ocd-types`, `depth-pure-o`, `depth-ocd-religious`. All four interlink. The hub previously linked to three unrelated generic anxiety posts, wasting the site's best internal link source.
+
+Rationale: hand-written articles are ~65× more productive per article than generated ones. `depth-ocd-religious` in particular targets a query set (scrupulosity / وسواس مذهبی) that is common in this audience and barely served in Persian.
+
+**Caveat worth tracking:** the three are 810–1041 words against the hub's 1734 and the refreshed autos' ~1500. If they under-perform by mid-October, lengthening them is the first thing to try.
+
+### Also fixed
+416 internal nav/CTA `.html` links across 54 legacy files (needless 308 hops the July and August passes never covered — the generator itself was already clean), and two footer links to `/terms` and `/editorial-policy`, pages that have never existed and returned 404.
+
+### Next
+1. **Still the bottleneck: off-site presence.** Nothing has been submitted. Map products (Google/Bing/Apple) are parked because they require an address; the four that don't are TherapyRoute (free), Psychology Today (~$30/mo), iranianpsychologists.com and dubaiparsi.com. Walkthrough written.
+2. Re-measure GSC ~2026-10-02 against the table above.
+3. If the cluster works, repeat the pattern on `depth-cbt-thought-record` (2nd strongest page, 3 clicks / 14 impressions at position 7.5).
 
 ## 📉 BASELINE — recorded 2026-08-20, right after the fixes landed
 
