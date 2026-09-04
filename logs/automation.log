@@ -1572,3 +1572,15 @@
 [2026-09-03T08:19:59.914Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-03T08:23:00.200Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1786437302102-healthy-boundaries → 200
 [2026-09-03T08:23:00.201Z] [INFO] ========== Automation Completed Successfully in 376.3s ==========
+[2026-09-04T08:17:59.264Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-04T08:17:59.267Z] [INFO] Selected topic: خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون (Topic #1/23)
+[2026-09-04T08:17:59.268Z] [INFO] Refreshing existing article for topic: خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون (1784536219704-anger-management.html)
+[2026-09-04T08:20:01.658Z] [INFO] Article refreshed: articles/1784536219704-anger-management.html (821w → 1577w)
+[2026-09-04T08:20:01.659Z] [INFO] Article refreshed: خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون
+[2026-09-04T08:20:01.660Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-04T08:20:01.661Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-04T08:20:01.662Z] [INFO] Starting Vercel deployment...
+[2026-09-04T08:24:55.055Z] [INFO] Vercel deployment completed
+[2026-09-04T08:24:55.055Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-04T08:27:55.361Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1784536219704-anger-management → 200
+[2026-09-04T08:27:55.362Z] [INFO] ========== Automation Completed Successfully in 596.1s ==========
