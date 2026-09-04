@@ -21,117 +21,109 @@ const { execSync } = require('child_process');
 // still need the real .html filename — only strip it when building a URL.
 const toSlug = (fname) => fname.replace(/\.html$/, '');
 
-// Retargeted 2026-07-15 for ranking: kept 10 sound clinical topics, dropped 2
-// pseudoscience (NLP, ضمیر ناخودآگاه — E-E-A-T risk on a licensed-psychologist YMYL
-// site) + 8 generic/saturated self-help. Added 5 diaspora (Raheleh's USP) + 8 specific
-// long-tail. Excludes queries already covered by manual depth-/foundations-/authority-
-// articles (ERP-OCD, thought-record, schema-therapy, online-therapy-diaspora) to avoid
-// keyword cannibalization.
+// Rotation updated 2026-09-04 at Farzad's request.
+//
+// وسواس is deliberately NOT in this list. It is the only topic already covered by a
+// hand-written cluster (depth-erp-ocd + depth-ocd-types + depth-pure-o +
+// depth-ocd-religious), and depth-erp-ocd is the single best-performing page on the
+// site. findTopicArticle() only matches `{timestamp}-{slug}.html`, so an "ocd" entry
+// here would CREATE a rival page rather than refresh the cluster. Add it only if you
+// also teach findTopicArticle() to target depth-erp-ocd.html.
+//
+// NLP and ضمیر ناخودآگاه are framed as evidence reviews, not endorsements. Both were
+// dropped in July as E-E-A-T liabilities on a licensed psychologist's YMYL site;
+// covering them critically keeps the search traffic without staking her credibility
+// on methods that lack support.
+//
+// Two pairs share an English slug on purpose, so they deepen ONE page instead of
+// competing: هوش هیجانی + افزایش هوش هیجانی -> emotional-intelligence, and
+// مدیریت احساسات + تنظیم و مدیریت هیجان -> emotion-regulation.
 const TOPICS = [
-  // — kept clinical (sound, on-brand) —
-  'خشم و کنترل خشم',
-  'نشخوار فکری',
-  'راه‌های افزایش عزت نفس',
-  'راه‌های افزایش اعتماد به نفس',
-  'خود پنداره',
-  'خطاهای شناختی',
-  'دلبستگی ایمن',
+  'افسردگی',
+  'اضطراب',
+  'مقابله با تنبلی',
+  'دروغ',
+  'شکرگزاری',
+  'برنامه‌ریزی عصبی کلامی (NLP)',
+  'اختلال شخصیت خودشیفته',
   'هوش هیجانی',
-  'مکانیزم‌های دفاعی',
+  'افزایش هوش هیجانی',
+  'مدیریت خشم از دیدگاه تئوری انتخاب',
+  'ضمیر ناخودآگاه',
+  'قدرت تفکر',
   'تاب‌آوری',
-  // — added: diaspora / migration (USP, competitors are not Dubai-based) —
-  'غم غربت',
-  'بحران هویت در مهاجرت',
-  'شوک فرهنگی',
-  'تنهایی در غربت',
-  'فرزندپروری دوفرهنگی',
-  // — added: specific long-tail (winnable, like the ERP article at position #10) —
-  'فرق CBT و طرحواره‌درمانی',
-  'دلبستگی اجتنابی',
-  'دلبستگی اضطرابی',
-  'اضطراب اجتماعی',
-  'تکنیک صندلی خالی',
-  'ذهن‌آگاهی مبتنی بر شناخت',
-  'کمال‌گرایی',
-  'مرزهای سالم در روابط'
+  'دسته‌بندی احساسات',
+  'مدیریت احساسات',
+  'تنظیم و مدیریت هیجان',
+  'تفکیک و مدیریت استرس',
+  'مدیریت زمان',
+  'تمرکز و دوری از عجله'
 ];
 
 const TOPIC_FULL = {
-  'خشم و کنترل خشم': 'خشم و کنترل خشم؛ راه‌های علمی برای آرام کردن آتش درون',
-  'نشخوار فکری': 'نشخوار فکری؛ چرخه افکار تکراری و راه خروج از آن',
-  'راه‌های افزایش عزت نفس': 'راه‌های افزایش عزت نفس؛ تمرین‌های روزانه برای ارزشمندی واقعی',
-  'راه‌های افزایش اعتماد به نفس': 'راه‌های افزایش اعتماد به نفس؛ از باور درونی تا عمل بیرونی',
-  'خود پنداره': 'خود پنداره؛ تصویری که از خود داریم چگونه ساخته می‌شود',
-  'خطاهای شناختی': 'خطاهای شناختی؛ تله‌های ذهنی که ما را اسیر می‌کنند',
-  'دلبستگی ایمن': 'دلبستگی ایمن؛ ریشه‌های روابط سالم و عمیق',
-  'هوش هیجانی': 'هوش هیجانی؛ کلید موفقیت در روابط و زندگی',
-  'مکانیزم‌های دفاعی': 'مکانیزم‌های دفاعی روان؛ سپرهای ناخودآگاه ذهن',
-  'تاب‌آوری': 'تاب‌آوری؛ هنر برخاستن دوباره از سختی‌ها',
-  'غم غربت': 'غم غربت؛ چرا دلتنگی وطن گاهی به افسردگی تبدیل می‌شود',
-  'بحران هویت در مهاجرت': 'بحران هویت در مهاجرت؛ وقتی نمی‌دانی به کجا تعلق داری',
-  'شوک فرهنگی': 'شوک فرهنگی؛ چهار مرحله‌ای که هر مهاجری تجربه می‌کند',
-  'تنهایی در غربت': 'تنهایی در غربت؛ چگونه در کشوری تازه دوباره احساس تعلق کنیم',
-  'فرزندپروری دوفرهنگی': 'فرزندپروری دوفرهنگی؛ بزرگ کردن کودک میان دو فرهنگ',
-  'فرق CBT و طرحواره‌درمانی': 'فرق CBT و طرحواره‌درمانی؛ کدام روش برای شما مناسب‌تر است',
-  'دلبستگی اجتنابی': 'دلبستگی اجتنابی؛ چرا از نزدیکی عاطفی فرار می‌کنیم',
-  'دلبستگی اضطرابی': 'دلبستگی اضطرابی؛ ترس از طرد شدن در روابط',
-  'اضطراب اجتماعی': 'اضطراب اجتماعی و درمان شناختی-رفتاری؛ رهایی از ترس قضاوت',
-  'تکنیک صندلی خالی': 'تکنیک صندلی خالی؛ گفت‌وگو با خویشتن برای التیام زخم‌های کهنه',
-  'ذهن‌آگاهی مبتنی بر شناخت': 'ذهن‌آگاهی مبتنی بر شناخت (MBCT)؛ پیشگیری از بازگشت افسردگی',
-  'کمال‌گرایی': 'کمال‌گرایی؛ وقتی «به‌اندازه کافی خوب» هرگز کافی نیست',
-  'مرزهای سالم در روابط': 'مرزهای سالم در روابط؛ چگونه «نه» گفتن را یاد بگیریم'
+  'افسردگی': 'افسردگی؛ نشانه‌ها، ریشه‌ها و مسیر درمان مبتنی بر شواهد',
+  'اضطراب': 'اضطراب؛ چرا بدن زنگ خطر می‌زند و چگونه آرامش کنیم',
+  'مقابله با تنبلی': 'مقابله با تنبلی و اهمال‌کاری؛ چرا شروع کردن سخت‌تر از انجام دادن است',
+  'دروغ': 'روان‌شناسی دروغ؛ چرا دروغ می‌گوییم و چه چیزی پشت آن پنهان است',
+  'شکرگزاری': 'شکرگزاری؛ آنچه پژوهش‌ها واقعاً درباره تأثیر آن بر خلق نشان می‌دهند',
+  'برنامه‌ریزی عصبی کلامی (NLP)': 'برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند',
+  'اختلال شخصیت خودشیفته': 'اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته',
+  'هوش هیجانی': 'هوش هیجانی؛ چهار مهارتی که کیفیت روابط را تعیین می‌کند',
+  'افزایش هوش هیجانی': 'افزایش هوش هیجانی؛ تمرین‌های عملی برای رشد مهارت‌های هیجانی',
+  'مدیریت خشم از دیدگاه تئوری انتخاب': 'مدیریت خشم از دیدگاه تئوری انتخاب؛ خشم به‌عنوان یک انتخاب رفتاری',
+  'ضمیر ناخودآگاه': 'ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید',
+  'قدرت تفکر': 'قدرت تفکر؛ چگونه افکار بر هیجان و رفتار اثر می‌گذارند',
+  'تاب‌آوری': 'تاب‌آوری؛ چه چیزی باعث می‌شود بعضی افراد پس از بحران بازسازی کنند',
+  'دسته‌بندی احساسات': 'دسته‌بندی احساسات؛ چرا نام‌گذاری دقیق هیجان‌ها آن‌ها را قابل‌مدیریت می‌کند',
+  'مدیریت احساسات': 'مدیریت احساسات؛ از سرکوب و انفجار تا پاسخ سنجیده',
+  'تنظیم و مدیریت هیجان': 'تنظیم هیجان؛ راهبردهای مؤثر و راهبردهایی که نتیجه معکوس می‌دهند',
+  'تفکیک و مدیریت استرس': 'مدیریت استرس؛ تفکیک آنچه در کنترل ماست از آنچه نیست',
+  'مدیریت زمان': 'مدیریت زمان؛ چرا برنامه‌ریزی بدون مرزگذاری شکست می‌خورد',
+  'تمرکز و دوری از عجله': 'تمرکز؛ چگونه ذهن پرشتاب را به کار عمیق بازگردانیم'
 };
 
 const CATEGORY_IMAGES = {
-  'خشم و کنترل خشم': 'cat-anxiety.jpg',
-  'نشخوار فکری': 'cat-anxiety.jpg',
-  'راه‌های افزایش عزت نفس': 'cat-selfawareness.jpg',
-  'راه‌های افزایش اعتماد به نفس': 'cat-selfawareness.jpg',
-  'خود پنداره': 'cat-selfawareness.jpg',
-  'خطاهای شناختی': 'cat-anxiety.jpg',
-  'دلبستگی ایمن': 'cat-relationships.jpg',
+  'افسردگی': 'cat-depression.jpg',
+  'اضطراب': 'cat-anxiety.jpg',
+  'مقابله با تنبلی': 'cat-growth.jpg',
+  'دروغ': 'cat-relationships.jpg',
+  'شکرگزاری': 'cat-mindfulness.jpg',
+  'برنامه‌ریزی عصبی کلامی (NLP)': 'cat-selfawareness.jpg',
+  'اختلال شخصیت خودشیفته': 'cat-relationships.jpg',
   'هوش هیجانی': 'cat-relationships.jpg',
-  'مکانیزم‌های دفاعی': 'cat-anxiety.jpg',
+  'افزایش هوش هیجانی': 'cat-relationships.jpg',
+  'مدیریت خشم از دیدگاه تئوری انتخاب': 'cat-anxiety.jpg',
+  'ضمیر ناخودآگاه': 'cat-selfawareness.jpg',
+  'قدرت تفکر': 'cat-selfawareness.jpg',
   'تاب‌آوری': 'cat-growth.jpg',
-  'غم غربت': 'cat-depression.jpg',
-  'بحران هویت در مهاجرت': 'cat-selfawareness.jpg',
-  'شوک فرهنگی': 'cat-growth.jpg',
-  'تنهایی در غربت': 'cat-depression.jpg',
-  'فرزندپروری دوفرهنگی': 'cat-parenting.jpg',
-  'فرق CBT و طرحواره‌درمانی': 'cat-schema.jpg',
-  'دلبستگی اجتنابی': 'cat-relationships.jpg',
-  'دلبستگی اضطرابی': 'cat-relationships.jpg',
-  'اضطراب اجتماعی': 'cat-anxiety.jpg',
-  'تکنیک صندلی خالی': 'cat-mindfulness.jpg',
-  'ذهن‌آگاهی مبتنی بر شناخت': 'cat-mindfulness.jpg',
-  'کمال‌گرایی': 'cat-selfawareness.jpg',
-  'مرزهای سالم در روابط': 'cat-relationships.jpg'
+  'دسته‌بندی احساسات': 'cat-selfawareness.jpg',
+  'مدیریت احساسات': 'cat-mindfulness.jpg',
+  'تنظیم و مدیریت هیجان': 'cat-mindfulness.jpg',
+  'تفکیک و مدیریت استرس': 'cat-anxiety.jpg',
+  'مدیریت زمان': 'cat-growth.jpg',
+  'تمرکز و دوری از عجله': 'cat-mindfulness.jpg'
 };
 
 const IMAGE_PROMPTS = {
-  'خشم و کنترل خشم': 'Person taking deep calming breath with closed eyes in quiet room, releasing tension, soft natural window light, cream tones, intimate lifestyle photography',
-  'نشخوار فکری': 'Person staring out night window with reflective expression, looping thoughts as soft swirling light, warm interior, intimate mood, cinematic',
-  'راه‌های افزایش عزت نفس': 'Woman writing positive affirmations in journal at sunny desk, gentle confidence, soft morning light, cream and rose tones, lifestyle',
-  'راه‌های افزایش اعتماد به نفس': 'Woman walking confidently down sunlit street with relaxed shoulders, golden hour light, warm cream tones, cinematic photography',
-  'خود پنداره': 'Soft layered reflections of woman in gentle mirrors exploring self-image, warm cream and rose tones, artistic conceptual portrait',
-  'خطاهای شناختی': 'Tangled threads being slowly untangled by gentle hands on wooden table, symbolizing mental clarity, soft natural light, cream tones',
-  'دلبستگی ایمن': 'Mother and adult daughter holding hands in soft afternoon light, deep emotional bond, warm cream and rose tones, intimate portrait',
-  'هوش هیجانی': 'Two people in deep empathetic conversation in warm cafe, genuine emotional connection, soft focus, cream and rose tones, photorealistic',
-  'مکانیزم‌های دفاعی': 'Person slowly lowering invisible shield revealing vulnerability, soft warm light, cream and amber tones, conceptual portrait',
-  'تاب‌آوری': 'Single delicate flower growing through cracked stone in soft morning light, resilience, warm cream and rose tones, photorealistic',
-  'غم غربت': 'Person looking out apartment window at unfamiliar city skyline with wistful longing for home, warm cream and amber tones, cinematic, photorealistic',
-  'بحران هویت در مهاجرت': 'Person standing between two overlapping cultural worlds, contemplative, soft double-exposure effect, warm cream and rose tones, conceptual portrait, photorealistic',
-  'شوک فرهنگی': 'Traveler with suitcase in busy foreign street feeling overwhelmed yet hopeful, soft golden hour light, warm cream tones, cinematic photography',
-  'تنهایی در غربت': 'Person sitting alone by window in cozy apartment abroad with warm tea, quiet solitude turning to peace, soft evening light, cream and amber tones, intimate',
-  'فرزندپروری دوفرهنگی': 'Parent and child reading together with books in two languages, warm loving bond, soft natural light, cream and rose tones, lifestyle photography',
-  'فرق CBT و طرحواره‌درمانی': 'Two gentle paths diverging in soft morning light symbolizing therapy choices, calm and clarity, warm cream and rose tones, conceptual, photorealistic',
-  'دلبستگی اجتنابی': 'Two people in a relationship, one gently reaching while the other keeps soft emotional distance, warm light, cream and rose tones, conceptual portrait',
-  'دلبستگی اضطرابی': 'Person anxiously waiting by phone in soft light, longing for reassurance in a relationship, warm cream tones, intimate cinematic portrait',
-  'اضطراب اجتماعی': 'Person taking a calm breath before entering a social gathering, gentle courage, soft warm light, cream and rose tones, photorealistic lifestyle',
-  'تکنیک صندلی خالی': 'Two empty chairs facing each other in a warm therapy room with soft window light, symbolic dialogue, cream and amber tones, calm photorealistic interior',
-  'ذهن‌آگاهی مبتنی بر شناخت': 'Person sitting mindfully aware of thoughts passing like clouds, serene, soft morning light, cream and rose tones, peaceful photorealistic',
-  'کمال‌گرایی': 'Person gently setting down a heavy weight of impossible standards, relief and self-compassion, soft warm light, cream tones, conceptual portrait',
-  'مرزهای سالم در روابط': 'Person calmly and kindly saying no with an open-palm gesture, healthy boundary, warm confident light, cream and rose tones, lifestyle photography'
+  'افسردگی': 'Person sitting by a rain-streaked window in soft grey light, quiet heaviness, muted cream and slate tones, intimate documentary photography',
+  'اضطراب': 'Person with hand on chest taking a slow deliberate breath, calm focus, soft window light, warm cream tones, intimate lifestyle photography',
+  'مقابله با تنبلی': 'Desk with a single open notebook and morning light, one small task begun, warm cream tones, calm minimal lifestyle photography',
+  'دروغ': 'Two people in conversation with a subtle gap between them, honest tension, soft afternoon light, cream and rose tones, cinematic portrait',
+  'شکرگزاری': 'Hands writing in a gratitude journal at a sunlit table with tea, quiet warmth, cream and amber tones, lifestyle photography',
+  'برنامه‌ریزی عصبی کلامی (NLP)': 'Open research journals and reading glasses on a wooden desk under warm lamp light, careful study, cream tones, editorial still life',
+  'اختلال شخصیت خودشیفته': 'Fragmented reflection of a person across several mirror panels, conceptual portrait, warm cream and rose tones, photorealistic',
+  'هوش هیجانی': 'Two people in warm empathetic conversation in a sunlit cafe, genuine attunement, cream and rose tones, photorealistic',
+  'افزایش هوش هیجانی': 'Person listening attentively with open posture in a warm room, practising presence, soft light, cream tones, intimate photography',
+  'مدیریت خشم از دیدگاه تئوری انتخاب': 'Person pausing at a crossroads path in soft morning light, deliberate choice, warm cream tones, conceptual photorealistic',
+  'ضمیر ناخودآگاه': 'Soft layered light beneath still water surface, depth and clarity, muted cream and blue tones, abstract conceptual photography',
+  'قدرت تفکر': 'Person in quiet reflection by a window with soft daylight on their face, clear thought, cream tones, intimate portrait',
+  'تاب‌آوری': 'A single resilient plant growing through a crack in stone in morning light, warm cream and green tones, photorealistic',
+  'دسته‌بندی احساسات': 'Hand-written emotion words arranged on cards across a warm wooden table, soft daylight, cream tones, editorial flat lay',
+  'مدیریت احساسات': 'Person seated calmly with eyes closed in a quiet warm room, steady composure, soft window light, cream tones, intimate photography',
+  'تنظیم و مدیریت هیجان': 'Calm hands resting on a warm ceramic mug, grounded stillness, soft morning light, cream and amber tones, lifestyle photography',
+  'تفکیک و مدیریت استرس': 'Person sorting papers into two clear piles at a calm desk, deliberate order, warm daylight, cream tones, lifestyle photography',
+  'مدیریت زمان': 'Simple weekly planner open beside a cup of tea in morning light, calm structure, cream tones, minimal lifestyle photography',
+  'تمرکز و دوری از عجله': 'Single lit workspace with one open book and everything else in soft shadow, deep focus, warm cream tones, cinematic photography'
 };
 
 const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
@@ -175,57 +167,49 @@ function getTodayTopic() {
 
 function getTag(topicKey) {
   const map = {
-    'خشم و کنترل خشم': 'خشم',
-    'نشخوار فکری': 'نشخوار فکری',
-    'راه‌های افزایش عزت نفس': 'عزت نفس',
-    'راه‌های افزایش اعتماد به نفس': 'اعتماد به نفس',
-    'خود پنداره': 'خود پنداره',
-    'خطاهای شناختی': 'خطاهای شناختی',
-    'دلبستگی ایمن': 'دلبستگی',
+    'افسردگی': 'افسردگی',
+    'اضطراب': 'اضطراب',
+    'مقابله با تنبلی': 'انگیزه',
+    'دروغ': 'روابط',
+    'شکرگزاری': 'ذهن‌آگاهی',
+    'برنامه‌ریزی عصبی کلامی (NLP)': 'روان‌شناسی علمی',
+    'اختلال شخصیت خودشیفته': 'شخصیت',
     'هوش هیجانی': 'هوش هیجانی',
-    'مکانیزم‌های دفاعی': 'مکانیزم دفاعی',
+    'افزایش هوش هیجانی': 'هوش هیجانی',
+    'مدیریت خشم از دیدگاه تئوری انتخاب': 'خشم',
+    'ضمیر ناخودآگاه': 'روان‌شناسی علمی',
+    'قدرت تفکر': 'شناخت',
     'تاب‌آوری': 'تاب‌آوری',
-    'غم غربت': 'مهاجرت',
-    'بحران هویت در مهاجرت': 'مهاجرت',
-    'شوک فرهنگی': 'مهاجرت',
-    'تنهایی در غربت': 'مهاجرت',
-    'فرزندپروری دوفرهنگی': 'مهاجرت',
-    'فرق CBT و طرحواره‌درمانی': 'طرحواره',
-    'دلبستگی اجتنابی': 'دلبستگی',
-    'دلبستگی اضطرابی': 'دلبستگی',
-    'اضطراب اجتماعی': 'اضطراب',
-    'تکنیک صندلی خالی': 'روان‌درمانی',
-    'ذهن‌آگاهی مبتنی بر شناخت': 'ذهن‌آگاهی',
-    'کمال‌گرایی': 'کمال‌گرایی',
-    'مرزهای سالم در روابط': 'روابط'
+    'دسته‌بندی احساسات': 'هیجان',
+    'مدیریت احساسات': 'هیجان',
+    'تنظیم و مدیریت هیجان': 'هیجان',
+    'تفکیک و مدیریت استرس': 'استرس',
+    'مدیریت زمان': 'بهره‌وری',
+    'تمرکز و دوری از عجله': 'تمرکز'
   };
   return map[topicKey] || 'روانشناسی';
 }
 
 const TOPIC_ENGLISH = {
-  'خشم و کنترل خشم': 'anger-management',
-  'نشخوار فکری': 'rumination',
-  'راه‌های افزایش عزت نفس': 'self-esteem-boost',
-  'راه‌های افزایش اعتماد به نفس': 'self-confidence',
-  'خود پنداره': 'self-concept',
-  'خطاهای شناختی': 'cognitive-distortions',
-  'دلبستگی ایمن': 'secure-attachment',
+  'افسردگی': 'depression',
+  'اضطراب': 'anxiety',
+  'مقابله با تنبلی': 'procrastination',
+  'دروغ': 'lying',
+  'شکرگزاری': 'gratitude',
+  'برنامه‌ریزی عصبی کلامی (NLP)': 'nlp',
+  'اختلال شخصیت خودشیفته': 'narcissism',
   'هوش هیجانی': 'emotional-intelligence',
-  'مکانیزم‌های دفاعی': 'defense-mechanisms',
+  'افزایش هوش هیجانی': 'emotional-intelligence',
+  'مدیریت خشم از دیدگاه تئوری انتخاب': 'choice-theory',
+  'ضمیر ناخودآگاه': 'subconscious',
+  'قدرت تفکر': 'power-of-thought',
   'تاب‌آوری': 'resilience',
-  'غم غربت': 'homesickness',
-  'بحران هویت در مهاجرت': 'migration-identity',
-  'شوک فرهنگی': 'culture-shock',
-  'تنهایی در غربت': 'loneliness-abroad',
-  'فرزندپروری دوفرهنگی': 'bicultural-parenting',
-  'فرق CBT و طرحواره‌درمانی': 'cbt-vs-schema',
-  'دلبستگی اجتنابی': 'avoidant-attachment',
-  'دلبستگی اضطرابی': 'anxious-attachment',
-  'اضطراب اجتماعی': 'social-anxiety-cbt',
-  'تکنیک صندلی خالی': 'empty-chair',
-  'ذهن‌آگاهی مبتنی بر شناخت': 'mbct',
-  'کمال‌گرایی': 'perfectionism',
-  'مرزهای سالم در روابط': 'healthy-boundaries'
+  'دسته‌بندی احساسات': 'emotion-vocabulary',
+  'مدیریت احساسات': 'emotion-regulation',
+  'تنظیم و مدیریت هیجان': 'emotion-regulation',
+  'تفکیک و مدیریت استرس': 'stress-management',
+  'مدیریت زمان': 'time-management',
+  'تمرکز و دوری از عجله': 'focus'
 };
 
 function getEnglishName(topicKey) {
@@ -640,6 +624,21 @@ async function refreshBlogPost(topicKey, topicFull, filename) {
   const publishedTs = new Date(publishedIso).getTime();
   const modifiedTs = Date.now();
 
+  // The refresh target has to scale with what is already there. A fixed
+  // "900-1200 words" instruction combined with the >=90% length guard below means
+  // any article that has already grown past ~1330 words can never pass its own next
+  // refresh — the model is told to write shorter than the guard will accept, so the
+  // run throws and the whole day fails. Articles reached 1267-1676 words on the first
+  // cycle, so several were already over that line.
+  const countWords = h => h.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
+  const currentWords = countWords(currentHtml);
+  const AT_CEILING = currentWords >= 1800;   // long enough; improve instead of inflate
+  const targetMin = AT_CEILING ? currentWords : Math.max(1100, currentWords + 150);
+  const targetMax = AT_CEILING ? currentWords + 150 : targetMin + 350;
+  const lengthRule = AT_CEILING
+    ? `- این مقاله به طول مطلوب رسیده است. طول را تقریباً حفظ کن (${targetMin} تا ${targetMax} کلمه) و به‌جای افزودن حجم، دقت بالینی، کیفیت مثال‌ها و انسجام متن را بهتر کن`
+    : `- طول نهایی: ${targetMin} تا ${targetMax} کلمه (باید از نسخه قبلی کامل‌تر باشد)`;
+
   const prompt = `تو راحله اوینی‌پور هستی — روان‌شناس فارسی‌زبان مقیم دبی، با قلمی گرم، حرفه‌ای و علمی.
 
 این مقاله قبلاً در سایت منتشر شده است. وظیفه تو **بازنویسی و عمیق‌تر کردن** آن است — نه نوشتن یک مقاله جدید و نه تکرار همان متن.
@@ -653,7 +652,7 @@ ${currentHtml}
 - بخش‌های خوب موجود را نگه دار و **عمیق‌تر** کن
 - حداقل یک بخش (h3) کاملاً تازه اضافه کن که در نسخه قبلی نبود
 - مثال‌های بالینی تازه‌تر و مشخص‌تر بیاور
-- طول نهایی: ۹۰۰ تا ۱۲۰۰ کلمه (باید از نسخه قبلی بلندتر و کامل‌تر باشد)
+${lengthRule}
 
 اجباری — استناد علمی (این سایت YMYL است و بدون منبع اعتبار ندارد):
 - حداقل دو ارجاع درون‌متنی به منابع واقعی و قابل راستی‌آزمایی بیاور
@@ -723,10 +722,13 @@ ${currentHtml}
 
   let articleHtml = articleMatch[0];
 
-  // Never let a refresh shrink the page — that would be a downgrade, not an update.
-  const words = h => h.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).length;
-  if (words(articleHtml) < words(currentHtml) * 0.9) {
-    throw new Error(`Refresh produced a shorter article (${words(articleHtml)}w vs ${words(currentHtml)}w) — keeping the existing version`);
+  // Never let a refresh meaningfully shrink the page — that is a downgrade, not an
+  // update. At the ceiling the target is "same length, better content", so allow a
+  // little more slack there than during the growth phase.
+  const words = countWords;
+  const floor = AT_CEILING ? 0.95 : 0.9;
+  if (words(articleHtml) < currentWords * floor) {
+    throw new Error(`Refresh produced a shorter article (${words(articleHtml)}w vs ${currentWords}w, floor ${Math.round(currentWords * floor)}w) — keeping the existing version`);
   }
 
   const seoTitle = (articleHtml.match(/<h1>(.*?)<\/h1>/) || [, topicFull])[1];
