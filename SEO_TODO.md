@@ -119,6 +119,19 @@ Rationale: hand-written articles are ~65× more productive per article than gene
 ### Also fixed
 416 internal nav/CTA `.html` links across 54 legacy files (needless 308 hops the July and August passes never covered — the generator itself was already clean), and two footer links to `/terms` and `/editorial-policy`, pages that have never existed and returned 404.
 
+### Rotation replaced 2026-09-04 (19 topics)
+افسردگی · اضطراب · مقابله با تنبلی · دروغ · شکرگزاری · NLP · اختلال شخصیت خودشیفته · هوش هیجانی · افزایش هوش هیجانی · مدیریت خشم (تئوری انتخاب) · ضمیر ناخودآگاه · قدرت تفکر · تاب‌آوری · دسته‌بندی احساسات · مدیریت احساسات · تنظیم هیجان · مدیریت استرس · مدیریت زمان · تمرکز
+
+Three decisions worth remembering:
+- **وسواس deliberately excluded.** It is the only requested topic with a hand-written cluster, and `depth-erp-ocd` is the site's best page (position 5.4). `findTopicArticle()` matches only `{timestamp}-{slug}.html`, so an `ocd` entry would create a rival instead of refreshing the cluster. To include it, teach `findTopicArticle()` to target `depth-erp-ocd.html` first — and think hard about whether you want the generator rewriting the strongest hand-written page on the site.
+- **NLP and ضمیر ناخودآگاه are framed as evidence reviews**, not endorsements. They were dropped in July as E-E-A-T liabilities; this keeps the search demand without endorsing unsupported methods.
+- **Two slug pairs are shared on purpose** so they deepen one page rather than compete: هوش هیجانی + افزایش هوش هیجانی → `emotional-intelligence`, مدیریت احساسات + تنظیم و مدیریت هیجان → `emotion-regulation`.
+
+First cycle: 12 new articles, 7 refreshes. Every cycle after: 19 refreshes, 0 new.
+
+### 🐛 Fixed a bug the 20-Aug change introduced
+The refresh prompt hardcoded «۹۰۰ تا ۱۲۰۰ کلمه» while the guard rejects anything below 90% of the current length. The first cycle pushed articles to 1267–1676 words, so the next refresh of `anger-management` (1577w) or `mbct` (1676w) would have been asked for ~1200 words and then thrown for being too short — failing the whole daily run. The target is now `max(1100, current+150)` with a +350 band, a ceiling at 1800 words where the instruction becomes "improve, don't lengthen", and a 95% floor there. Verified none of the 81 articles on disk can fail its own guard.
+
 ### Next
 1. **Still the bottleneck: off-site presence.** Nothing has been submitted. Map products (Google/Bing/Apple) are parked because they require an address; the four that don't are TherapyRoute (free), Psychology Today (~$30/mo), iranianpsychologists.com and dubaiparsi.com. Walkthrough written.
 2. Re-measure GSC ~2026-10-02 against the table above.
