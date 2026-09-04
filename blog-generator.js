@@ -241,15 +241,15 @@ async function generateBlogPost(topic) {
 <body>
 <header id="hdr">
   <div class="container nav">
-    <a class="logo" href="/index.html"><span class="mk"></span>راحله اوینی‌پور</a>
+    <a class="logo" href="/"><span class="mk"></span>راحله اوینی‌پور</a>
     <nav class="navlinks">
-      <a href="/services.html">خدمات</a>
-      <a href="/about.html">درباره من</a>
-      <a href="/blog.html" class="active">مقالات</a>
-      <a href="/contact.html">تماس</a>
+      <a href="/services">خدمات</a>
+      <a href="/about">درباره من</a>
+      <a href="/blog" class="active">مقالات</a>
+      <a href="/contact">تماس</a>
     </nav>
     <div class="navcta">
-      <a class="btn btn-fill" href="/booking.html">رزرو جلسه</a>
+      <a class="btn btn-fill" href="/booking">رزرو جلسه</a>
     </div>
   </div>
 </header>
@@ -260,7 +260,7 @@ ${articleHtml}
 <div style="background:linear-gradient(135deg,#F4E9E2,#FBF5F0);border-radius:20px;padding:40px;text-align:center;margin:48px 0;">
   <p style="font-family:'Markazi Text',serif;font-size:28px;color:#3B2E2A;margin-bottom:8px;">آماده‌اید قدم بعدی را بردارید؟</p>
   <p style="color:#806B63;margin-bottom:24px;font-size:15px;">جلسه اول رایگان — از طریق Zoom، WhatsApp یا Google Meet</p>
-  <a href="/booking.html" style="display:block;background:#9C6A60;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">رزرو جلسه رایگان</a>
+  <a href="/booking" style="display:block;background:#9C6A60;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">رزرو جلسه رایگان</a>
   <a href="https://wa.me/989124228995" target="_blank" style="display:block;background:#25D366;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;">واتساپ</a>
 </div>
 </main>
