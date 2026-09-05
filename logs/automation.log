@@ -1584,3 +1584,18 @@
 [2026-09-04T08:24:55.055Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-04T08:27:55.361Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1784536219704-anger-management → 200
 [2026-09-04T08:27:55.362Z] [INFO] ========== Automation Completed Successfully in 596.1s ==========
+[2026-09-05T08:16:40.490Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-05T08:16:40.493Z] [INFO] Selected topic: ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید (Topic #11/19)
+[2026-09-05T08:16:40.494Z] [INFO] Generating article for topic: ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید
+[2026-09-05T08:17:42.641Z] [INFO] Article created: articles/1788596262622-subconscious.html
+[2026-09-05T08:17:42.641Z] [INFO] Article generated: ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید
+[2026-09-05T08:17:42.641Z] [INFO] Generating image via Segmind for topic: ضمیر ناخودآگاه
+[2026-09-05T08:17:47.687Z] [INFO] Image saved: articles/1788596267194-subconscious.jpg
+[2026-09-05T08:17:47.688Z] [INFO] Updated article with new image: 1788596267194-subconscious.jpg
+[2026-09-05T08:17:47.690Z] [INFO] Updated blog.html with new article card
+[2026-09-05T08:17:47.690Z] [INFO] Updated sitemap.xml
+[2026-09-05T08:17:47.691Z] [INFO] Starting Vercel deployment...
+[2026-09-05T08:18:16.449Z] [INFO] Vercel deployment completed
+[2026-09-05T08:18:16.449Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-05T08:21:16.851Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1788596262622-subconscious → 404
+[2026-09-05T08:21:16.852Z] [INFO] ========== Automation Completed Successfully in 276.4s ==========
