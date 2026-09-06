@@ -1599,3 +1599,15 @@
 [2026-09-05T08:18:16.449Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-05T08:21:16.851Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1788596262622-subconscious → 404
 [2026-09-05T08:21:16.852Z] [INFO] ========== Automation Completed Successfully in 276.4s ==========
+[2026-09-06T08:16:41.206Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-06T08:16:41.209Z] [INFO] Selected topic: قدرت تفکر؛ چگونه افکار بر هیجان و رفتار اثر می‌گذارند (Topic #12/19)
+[2026-09-06T08:16:41.210Z] [INFO] Refreshing existing article for topic: قدرت تفکر؛ چگونه افکار بر هیجان و رفتار اثر می‌گذارند (1783238783102-power-of-thought.html)
+[2026-09-06T08:18:43.834Z] [INFO] Article refreshed: articles/1783238783102-power-of-thought.html (780w → 1600w)
+[2026-09-06T08:18:43.835Z] [INFO] Article refreshed: قدرت تفکر؛ افکار ما چگونه واقعیت ما را می‌سازند
+[2026-09-06T08:18:43.837Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-06T08:18:43.837Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-06T08:18:43.838Z] [INFO] Starting Vercel deployment...
+[2026-09-06T08:19:14.847Z] [INFO] Vercel deployment completed
+[2026-09-06T08:19:14.848Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-06T08:22:15.228Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1783238783102-power-of-thought → 200
+[2026-09-06T08:22:15.229Z] [INFO] ========== Automation Completed Successfully in 334.0s ==========
