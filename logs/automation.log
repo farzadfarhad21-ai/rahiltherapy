@@ -1638,3 +1638,18 @@
 [2026-09-08T08:18:18.673Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-08T08:21:19.099Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1788855461654-emotion-vocabulary → 404
 [2026-09-08T08:21:19.100Z] [INFO] ========== Automation Completed Successfully in 276.9s ==========
+[2026-09-09T08:16:42.140Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-09T08:16:42.143Z] [INFO] Selected topic: مدیریت احساسات؛ از سرکوب و انفجار تا پاسخ سنجیده (Topic #15/19)
+[2026-09-09T08:16:42.144Z] [INFO] Generating article for topic: مدیریت احساسات؛ از سرکوب و انفجار تا پاسخ سنجیده
+[2026-09-09T08:17:42.835Z] [INFO] Article created: articles/1788941862817-emotion-regulation.html
+[2026-09-09T08:17:42.836Z] [INFO] Article generated: مدیریت احساسات؛ از سرکوب و انفجار تا پاسخ سنجیده
+[2026-09-09T08:17:42.836Z] [INFO] Generating image via Segmind for topic: مدیریت احساسات
+[2026-09-09T08:17:46.531Z] [INFO] Image saved: articles/1788941866079-emotion-regulation.jpg
+[2026-09-09T08:17:46.531Z] [INFO] Updated article with new image: 1788941866079-emotion-regulation.jpg
+[2026-09-09T08:17:46.533Z] [INFO] Updated blog.html with new article card
+[2026-09-09T08:17:46.533Z] [INFO] Updated sitemap.xml
+[2026-09-09T08:17:46.534Z] [INFO] Starting Vercel deployment...
+[2026-09-09T08:18:16.082Z] [INFO] Vercel deployment completed
+[2026-09-09T08:18:16.082Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-09T08:21:16.404Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1788941862817-emotion-regulation → 404
+[2026-09-09T08:21:16.405Z] [INFO] ========== Automation Completed Successfully in 274.3s ==========
