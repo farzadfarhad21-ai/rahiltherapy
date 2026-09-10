@@ -1653,3 +1653,15 @@
 [2026-09-09T08:18:16.082Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-09T08:21:16.404Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1788941862817-emotion-regulation → 404
 [2026-09-09T08:21:16.405Z] [INFO] ========== Automation Completed Successfully in 274.3s ==========
+[2026-09-10T08:16:41.676Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-10T08:16:41.679Z] [INFO] Selected topic: تنظیم هیجان؛ راهبردهای مؤثر و راهبردهایی که نتیجه معکوس می‌دهند (Topic #16/19)
+[2026-09-10T08:16:41.680Z] [INFO] Refreshing existing article for topic: تنظیم هیجان؛ راهبردهای مؤثر و راهبردهایی که نتیجه معکوس می‌دهند (1788941862817-emotion-regulation.html)
+[2026-09-10T08:18:24.203Z] [INFO] Article refreshed: articles/1788941862817-emotion-regulation.html (687w → 1459w)
+[2026-09-10T08:18:24.204Z] [INFO] Article refreshed: مدیریت احساسات؛ از سرکوب و انفجار تا پاسخ سنجیده
+[2026-09-10T08:18:24.205Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-10T08:18:24.205Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-10T08:18:24.206Z] [INFO] Starting Vercel deployment...
+[2026-09-10T08:18:51.246Z] [INFO] Vercel deployment completed
+[2026-09-10T08:18:51.247Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-10T08:21:51.429Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1788941862817-emotion-regulation → 200
+[2026-09-10T08:21:51.429Z] [INFO] ========== Automation Completed Successfully in 309.8s ==========
