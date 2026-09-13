@@ -1695,3 +1695,18 @@
 [2026-09-12T08:18:15.029Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-12T08:21:15.159Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789201063211-time-management → 404
 [2026-09-12T08:21:15.159Z] [INFO] ========== Automation Completed Successfully in 275.5s ==========
+[2026-09-13T08:16:42.680Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-13T08:16:42.683Z] [INFO] Selected topic: تمرکز؛ چگونه ذهن پرشتاب را به کار عمیق بازگردانیم (Topic #19/19)
+[2026-09-13T08:16:42.684Z] [INFO] Generating article for topic: تمرکز؛ چگونه ذهن پرشتاب را به کار عمیق بازگردانیم
+[2026-09-13T08:17:52.776Z] [INFO] Article created: articles/1789287472757-focus.html
+[2026-09-13T08:17:52.776Z] [INFO] Article generated: تمرکز؛ چگونه ذهن پرشتاب را به کار عمیق بازگردانیم
+[2026-09-13T08:17:52.777Z] [INFO] Generating image via Segmind for topic: تمرکز و دوری از عجله
+[2026-09-13T08:17:57.828Z] [INFO] Image saved: articles/1789287477172-focus.jpg
+[2026-09-13T08:17:57.828Z] [INFO] Updated article with new image: 1789287477172-focus.jpg
+[2026-09-13T08:17:57.830Z] [INFO] Updated blog.html with new article card
+[2026-09-13T08:17:57.831Z] [INFO] Updated sitemap.xml
+[2026-09-13T08:17:57.831Z] [INFO] Starting Vercel deployment...
+[2026-09-13T08:18:26.983Z] [INFO] Vercel deployment completed
+[2026-09-13T08:18:26.983Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-13T08:21:27.221Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789287472757-focus → 404
+[2026-09-13T08:21:27.221Z] [INFO] ========== Automation Completed Successfully in 284.5s ==========
