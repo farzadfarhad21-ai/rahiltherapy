@@ -1722,3 +1722,15 @@
 [2026-09-14T08:18:45.082Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-14T08:21:45.414Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1780844473104-depression → 200
 [2026-09-14T08:21:45.414Z] [INFO] ========== Automation Completed Successfully in 304.0s ==========
+[2026-09-15T08:16:40.053Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-15T08:16:40.056Z] [INFO] Selected topic: اضطراب؛ چرا بدن زنگ خطر می‌زند و چگونه آرامش کنیم (Topic #2/19)
+[2026-09-15T08:16:40.057Z] [INFO] Refreshing existing article for topic: اضطراب؛ چرا بدن زنگ خطر می‌زند و چگونه آرامش کنیم (1780736020076-anxiety.html)
+[2026-09-15T08:18:34.352Z] [INFO] Article refreshed: articles/1780736020076-anxiety.html (681w → 1490w)
+[2026-09-15T08:18:34.352Z] [INFO] Article refreshed: اضطراب و راه‌های کنترل آن؛ راهنمای عملی آرامش
+[2026-09-15T08:18:34.355Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-15T08:18:34.355Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-15T08:18:34.356Z] [INFO] Starting Vercel deployment...
+[2026-09-15T08:19:06.086Z] [INFO] Vercel deployment completed
+[2026-09-15T08:19:06.087Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-15T08:22:06.273Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1780736020076-anxiety → 200
+[2026-09-15T08:22:06.273Z] [INFO] ========== Automation Completed Successfully in 326.2s ==========
