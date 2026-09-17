@@ -1749,3 +1749,18 @@
 [2026-09-16T08:18:18.728Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-16T08:21:18.936Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789546664189-procrastination → 404
 [2026-09-16T08:21:18.936Z] [INFO] ========== Automation Completed Successfully in 278.8s ==========
+[2026-09-17T08:16:42.185Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-17T08:16:42.187Z] [INFO] Selected topic: روان‌شناسی دروغ؛ چرا دروغ می‌گوییم و چه چیزی پشت آن پنهان است (Topic #4/19)
+[2026-09-17T08:16:42.188Z] [INFO] Generating article for topic: روان‌شناسی دروغ؛ چرا دروغ می‌گوییم و چه چیزی پشت آن پنهان است
+[2026-09-17T08:17:45.983Z] [INFO] Article created: articles/1789633065968-lying.html
+[2026-09-17T08:17:45.984Z] [INFO] Article generated: روان‌شناسی دروغ؛ چرا دروغ می‌گوییم و چه چیزی پشت آن پنهان است
+[2026-09-17T08:17:45.984Z] [INFO] Generating image via Segmind for topic: دروغ
+[2026-09-17T08:17:51.282Z] [INFO] Image saved: articles/1789633070575-lying.jpg
+[2026-09-17T08:17:51.283Z] [INFO] Updated article with new image: 1789633070575-lying.jpg
+[2026-09-17T08:17:51.284Z] [INFO] Updated blog.html with new article card
+[2026-09-17T08:17:51.285Z] [INFO] Updated sitemap.xml
+[2026-09-17T08:17:51.285Z] [INFO] Starting Vercel deployment...
+[2026-09-17T08:18:22.858Z] [INFO] Vercel deployment completed
+[2026-09-17T08:18:22.859Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-17T08:21:23.105Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789633065968-lying → 404
+[2026-09-17T08:21:23.105Z] [INFO] ========== Automation Completed Successfully in 280.9s ==========
