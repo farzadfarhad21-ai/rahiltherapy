@@ -1779,3 +1779,18 @@
 [2026-09-18T08:18:31.712Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-18T08:21:31.910Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789719476330-gratitude → 404
 [2026-09-18T08:21:31.911Z] [INFO] ========== Automation Completed Successfully in 289.6s ==========
+[2026-09-19T08:16:40.938Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-19T08:16:40.940Z] [INFO] Selected topic: برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند (Topic #6/19)
+[2026-09-19T08:16:40.941Z] [INFO] Generating article for topic: برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند
+[2026-09-19T08:17:49.251Z] [INFO] Article created: articles/1789805869233-nlp.html
+[2026-09-19T08:17:49.251Z] [INFO] Article generated: برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند
+[2026-09-19T08:17:49.251Z] [INFO] Generating image via Segmind for topic: برنامه‌ریزی عصبی کلامی (NLP)
+[2026-09-19T08:17:53.662Z] [INFO] Image saved: articles/1789805873052-nlp.jpg
+[2026-09-19T08:17:53.663Z] [INFO] Updated article with new image: 1789805873052-nlp.jpg
+[2026-09-19T08:17:53.665Z] [INFO] Updated blog.html with new article card
+[2026-09-19T08:17:53.665Z] [INFO] Updated sitemap.xml
+[2026-09-19T08:17:53.666Z] [INFO] Starting Vercel deployment...
+[2026-09-19T08:18:27.150Z] [INFO] Vercel deployment completed
+[2026-09-19T08:18:27.151Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-19T08:21:27.376Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789805869233-nlp → 404
+[2026-09-19T08:21:27.377Z] [INFO] ========== Automation Completed Successfully in 286.4s ==========
