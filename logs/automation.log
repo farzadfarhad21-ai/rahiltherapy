@@ -1794,3 +1794,18 @@
 [2026-09-19T08:18:27.151Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-19T08:21:27.376Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789805869233-nlp → 404
 [2026-09-19T08:21:27.377Z] [INFO] ========== Automation Completed Successfully in 286.4s ==========
+[2026-09-20T08:16:41.735Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-20T08:16:41.738Z] [INFO] Selected topic: اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته (Topic #7/19)
+[2026-09-20T08:16:41.739Z] [INFO] Generating article for topic: اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته
+[2026-09-20T08:18:04.568Z] [INFO] Article created: articles/1789892284543-narcissism.html
+[2026-09-20T08:18:04.568Z] [INFO] Article generated: اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته
+[2026-09-20T08:18:04.568Z] [INFO] Generating image via Segmind for topic: اختلال شخصیت خودشیفته
+[2026-09-20T08:18:08.957Z] [INFO] Image saved: articles/1789892288233-narcissism.jpg
+[2026-09-20T08:18:08.958Z] [INFO] Updated article with new image: 1789892288233-narcissism.jpg
+[2026-09-20T08:18:08.960Z] [INFO] Updated blog.html with new article card
+[2026-09-20T08:18:08.960Z] [INFO] Updated sitemap.xml
+[2026-09-20T08:18:08.961Z] [INFO] Starting Vercel deployment...
+[2026-09-20T08:18:41.906Z] [INFO] Vercel deployment completed
+[2026-09-20T08:18:41.907Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-20T08:21:42.331Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789892284543-narcissism → 404
+[2026-09-20T08:21:42.331Z] [INFO] ========== Automation Completed Successfully in 300.6s ==========
