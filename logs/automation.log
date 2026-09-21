@@ -1809,3 +1809,15 @@
 [2026-09-20T08:18:41.907Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-20T08:21:42.331Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1789892284543-narcissism → 404
 [2026-09-20T08:21:42.331Z] [INFO] ========== Automation Completed Successfully in 300.6s ==========
+[2026-09-21T08:16:42.606Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-21T08:16:42.608Z] [INFO] Selected topic: هوش هیجانی؛ چهار مهارتی که کیفیت روابط را تعیین می‌کند (Topic #8/19)
+[2026-09-21T08:16:42.610Z] [INFO] Refreshing existing article for topic: هوش هیجانی؛ چهار مهارتی که کیفیت روابط را تعیین می‌کند (1785141157563-emotional-intelligence.html)
+[2026-09-21T08:18:32.211Z] [INFO] Article refreshed: articles/1785141157563-emotional-intelligence.html (707w → 1440w)
+[2026-09-21T08:18:32.211Z] [INFO] Article refreshed: هوش هیجانی؛ کلید موفقیت در روابط و زندگی
+[2026-09-21T08:18:32.215Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-21T08:18:32.215Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-21T08:18:32.216Z] [INFO] Starting Vercel deployment...
+[2026-09-21T08:19:04.150Z] [INFO] Vercel deployment completed
+[2026-09-21T08:19:04.150Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-21T08:22:04.529Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785141157563-emotional-intelligence → 200
+[2026-09-21T08:22:04.529Z] [INFO] ========== Automation Completed Successfully in 321.9s ==========
