@@ -1821,3 +1821,15 @@
 [2026-09-21T08:19:04.150Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-21T08:22:04.529Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785141157563-emotional-intelligence → 200
 [2026-09-21T08:22:04.529Z] [INFO] ========== Automation Completed Successfully in 321.9s ==========
+[2026-09-23T08:16:42.818Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-23T08:16:42.821Z] [INFO] Selected topic: مدیریت خشم از دیدگاه تئوری انتخاب؛ خشم به‌عنوان یک انتخاب رفتاری (Topic #10/19)
+[2026-09-23T08:16:42.822Z] [INFO] Refreshing existing article for topic: مدیریت خشم از دیدگاه تئوری انتخاب؛ خشم به‌عنوان یک انتخاب رفتاری (1783326882263-choice-theory.html)
+[2026-09-23T08:18:28.391Z] [INFO] Article refreshed: articles/1783326882263-choice-theory.html (703w → 1558w)
+[2026-09-23T08:18:28.391Z] [INFO] Article refreshed: تئوری انتخاب گلسر؛ چرا انتخاب‌های ما زندگی‌مان را می‌سازند
+[2026-09-23T08:18:28.394Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-23T08:18:28.394Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-23T08:18:28.395Z] [INFO] Starting Vercel deployment...
+[2026-09-23T08:19:01.300Z] [INFO] Vercel deployment completed
+[2026-09-23T08:19:01.300Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-23T08:22:01.798Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1783326882263-choice-theory → 200
+[2026-09-23T08:22:01.798Z] [INFO] ========== Automation Completed Successfully in 319.0s ==========
