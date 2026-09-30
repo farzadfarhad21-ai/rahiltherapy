@@ -1869,3 +1869,15 @@
 [2026-09-27T08:20:02.210Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-09-27T08:23:02.565Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1788855461654-emotion-vocabulary → 200
 [2026-09-27T08:23:02.565Z] [INFO] ========== Automation Completed Successfully in 379.7s ==========
+[2026-09-30T08:16:41.665Z] [INFO] ========== Daily Automation Started ==========
+[2026-09-30T08:16:41.668Z] [INFO] Selected topic: مدیریت استرس؛ تفکیک آنچه در کنترل ماست از آنچه نیست (Topic #17/19)
+[2026-09-30T08:16:41.669Z] [INFO] Refreshing existing article for topic: مدیریت استرس؛ تفکیک آنچه در کنترل ماست از آنچه نیست (1789114682415-stress-management.html)
+[2026-09-30T08:19:31.906Z] [INFO] Article refreshed: articles/1789114682415-stress-management.html (743w → 1638w)
+[2026-09-30T08:19:31.907Z] [INFO] Article refreshed: مدیریت استرس؛ تفکیک آنچه در کنترل ماست از آنچه نیست
+[2026-09-30T08:19:31.910Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-09-30T08:19:31.911Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-09-30T08:19:31.912Z] [INFO] Starting Vercel deployment...
+[2026-09-30T08:20:02.739Z] [INFO] Vercel deployment completed
+[2026-09-30T08:20:02.739Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-09-30T08:23:02.993Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789114682415-stress-management → 200
+[2026-09-30T08:23:02.993Z] [INFO] ========== Automation Completed Successfully in 381.3s ==========
