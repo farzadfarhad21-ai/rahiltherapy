@@ -1905,3 +1905,15 @@
 [2026-10-02T08:19:13.234Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-02T08:22:13.557Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789287472757-focus → 200
 [2026-10-02T08:22:13.558Z] [INFO] ========== Automation Completed Successfully in 332.1s ==========
+[2026-10-03T08:16:42.075Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-03T08:16:42.077Z] [INFO] Selected topic: افسردگی؛ نشانه‌ها، ریشه‌ها و مسیر درمان مبتنی بر شواهد (Topic #1/19)
+[2026-10-03T08:16:42.079Z] [INFO] Refreshing existing article for topic: افسردگی؛ نشانه‌ها، ریشه‌ها و مسیر درمان مبتنی بر شواهد (1780844473104-depression.html)
+[2026-10-03T08:21:09.509Z] [INFO] Article refreshed: articles/1780844473104-depression.html (1465w → 2540w)
+[2026-10-03T08:21:09.509Z] [INFO] Article refreshed: افسردگی و نشانه‌های اولیه: راهنمای تشخیص به‌موقع
+[2026-10-03T08:21:09.512Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-10-03T08:21:09.512Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-10-03T08:21:09.513Z] [INFO] Starting Vercel deployment...
+[2026-10-03T08:21:43.179Z] [INFO] Vercel deployment completed
+[2026-10-03T08:21:43.179Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-03T08:24:43.537Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1780844473104-depression → 200
+[2026-10-03T08:24:43.537Z] [INFO] ========== Automation Completed Successfully in 481.5s ==========
