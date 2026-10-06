@@ -9,6 +9,27 @@
 
 ---
 
+## 📅 Session 2026-10-06 — free session copy, ChatGPT/Bing, tech cleanup
+
+### GSC, 28 days to 4 Oct (vs previous 28)
+| Window | Clicks | Impressions | CTR | Avg pos |
+|---|---|---|---|---|
+| 10 Aug – 6 Sep | 11 | 67 | 16.4% | 6.9 |
+| **7 Sep – 4 Oct** | **21** | **94** | **22.3%** | 8.7 |
+Clicks doubled. Almost all of it is **branded / navigational**: `/` 13 clicks, `/about` 7, `/contact` 2 — people who already know her name. Consistent with Farzad's report that clients now arrive via ChatGPT: they hear the name there, then search it. Articles brought 2 clicks. The week of 21 Sep alone had 11 clicks. 74/94 impressions from Iran, 14 from UAE.
+**Google last downloaded the sitemap on 2026-07-09** (71 submitted, 0 reported indexed) — it has ignored ~25 newer URLs for 3 months. Resubmit in GSC (token is read-only, Claude can't).
+
+### Off-site check (2026-10-06)
+A web search for «راحله اوینی‌پور», «rahiltherapy.com» or "Persian speaking psychologist Dubai" does **not** return the site. Results are TherapyRoute, Simiaroom, Psychology Today, thrive.ae — exactly the directories ChatGPT reads. Still zero listings. Two Instagram accounts exist (@rahiltherapy on the site, @ravinipour in BACKLINK_PLAN) — must pick one for NAP consistency.
+
+### Done
+- Free first session: **30–45 min**, described everywhere (hear the need → agree topics/path → one short practical technique as a preview → client decides). Fixed /dubai, which said 20 min. Schema `eligibleDuration` 30–45.
+- IndexNow (see KNOWN_ISSUES), llms.txt "Quick facts" block (fees, durations, booking, who it's for).
+- Removed fake 5★/50-review `aggregateRating`; 19 articles' head tags moved into `<head>`; duplicate heads fixed; 55 `.html` URLs cleaned.
+- Daily refresh: tolerant parse + one retry + diagnostics (5/15 runs were failing).
+
+---
+
 ## 📅 Session 2026-08-20 — full audit + automation repair
 
 ### The result, measured

@@ -129,6 +129,9 @@ const IMAGE_PROMPTS = {
 const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
 const BLOG_DIR = path.join(__dirname, 'articles');
 const SITE_URL = 'https://rahiltherapy.com';
+// IndexNow key — public by design; the matching file is served at /{key}.txt.
+// Bing (and through it ChatGPT search / Copilot) re-crawls submitted URLs within minutes.
+const INDEXNOW_KEY = '6f6e45892632d3f5504a1c212a3ef37f';
 
 /**
  * Append UTM tracking params to a URL.
@@ -583,7 +586,7 @@ ${articleHtml}
 </div>
 <div style="background:linear-gradient(135deg,#F4E9E2,#FBF5F0);border-radius:20px;padding:40px;text-align:center;margin:48px 0;">
   <p style="font-family:'Markazi Text',serif;font-size:28px;color:#3B2E2A;margin-bottom:8px;">آماده‌اید قدم بعدی را بردارید؟</p>
-  <p style="color:#806B63;margin-bottom:24px;font-size:15px;">جلسه اول رایگان — از طریق Zoom، WhatsApp یا Google Meet</p>
+  <p style="color:#806B63;margin-bottom:24px;font-size:15px;">جلسه اول رایگان (۳۰ تا ۴۵ دقیقه) — از طریق Zoom، WhatsApp یا Google Meet</p>
   <a href="/booking" style="display:block;background:#9C6A60;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">رزرو جلسه رایگان</a>
   <a href="https://wa.me/989124228995" target="_blank" style="display:block;background:#25D366;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;">واتساپ</a>
 </div>
@@ -697,30 +700,42 @@ ${lengthRule}
     ? 'https://api.anthropic.com'
     : (process.env.ANTHROPIC_BASE_URL || 'https://api.minimax.io/anthropic');
 
-  const response = await fetch(`${baseUrl}/v1/messages`, {
-    method: 'POST',
-    headers: {
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-5',
-      max_tokens: 10000,
-      messages: [{ role: 'user', content: prompt }]
-    })
-  });
+  // 5 of 15 runs in Sep–Oct died on "Failed to parse refreshed article". Accept extra
+  // attributes on the <article> tag, retry once, and log why so the next failure is
+  // diagnosable instead of silent.
+  let rawContent = '';
+  let articleMatch = null;
+  for (let attempt = 1; attempt <= 2 && !articleMatch; attempt++) {
+    const response = await fetch(`${baseUrl}/v1/messages`, {
+      method: 'POST',
+      headers: {
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 10000,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
 
-  if (!response.ok) throw new Error(`API Error ${response.status}: ${await response.text()}`);
+    if (!response.ok) throw new Error(`API Error ${response.status}: ${await response.text()}`);
 
-  const data = await response.json();
-  const textBlock = (data.content || []).find(c => c.type === 'text');
-  const rawContent = textBlock ? textBlock.text : JSON.stringify((data.content || [])[0] || {});
+    const data = await response.json();
+    const textBlock = (data.content || []).find(c => c.type === 'text');
+    rawContent = textBlock ? textBlock.text : JSON.stringify((data.content || [])[0] || {});
 
-  const articleMatch = rawContent.match(/<article class="blog-article">[\s\S]*?<\/article>/);
+    articleMatch = rawContent.match(/<article class="blog-article"[^>]*>[\s\S]*?<\/article>/);
+    if (!articleMatch) {
+      log(`Refresh attempt ${attempt} unparseable: stop_reason=${data.stop_reason}, ` +
+        `output_tokens=${data.usage && data.usage.output_tokens}, has <article=${rawContent.includes('<article')}, ` +
+        `has </article>=${rawContent.includes('</article>')}, starts: ${JSON.stringify(rawContent.slice(0, 160))}`, 'WARN');
+    }
+  }
   if (!articleMatch) throw new Error('Failed to parse refreshed article');
 
-  let articleHtml = articleMatch[0];
+  let articleHtml = articleMatch[0].replace(/^<article[^>]*>/, '<article class="blog-article">');
 
   // Never let a refresh meaningfully shrink the page — that is a downgrade, not an
   // update. At the ceiling the target is "same length, better content", so allow a
@@ -1017,6 +1032,25 @@ async function checkDeployedUrl(articleUrl) {
   }
 }
 
+async function pingIndexNow(urls) {
+  try {
+    const response = await fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        host: new URL(SITE_URL).host,
+        key: INDEXNOW_KEY,
+        keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
+        urlList: urls
+      })
+    });
+    log(`IndexNow: submitted ${urls.length} URL(s) → ${response.status}`);
+  } catch (err) {
+    // Never fail the run over a ping.
+    log(`IndexNow ping failed: ${err.message}`, 'WARN');
+  }
+}
+
 function deployToVercel() {
   log('Starting Vercel deployment...');
 
@@ -1087,7 +1121,9 @@ async function runDailyAutomation() {
 
     // Post-deploy URL check (3 min wait — Vercel needs time to propagate)
     const articleUrl = `${SITE_URL}/articles/${toSlug(articleInfo.filename)}`;
-    await checkDeployedUrl(articleUrl);
+    if (await checkDeployedUrl(articleUrl)) {
+      await pingIndexNow([articleUrl, `${SITE_URL}/blog`]);
+    }
 
     success = true;
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);

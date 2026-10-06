@@ -7,6 +7,20 @@
 
 ## 2026-10-06
 
+### [FIX] Daily refresh failed 5 of 15 runs — "Failed to parse refreshed article"
+**Symptom:** Runs on 22, 26, 28, 29 Sep and 4 Oct exited 1; those topics were skipped for a whole cycle.
+**Root cause:** Not confirmed — the raw model output was never logged. Either the model added attributes to `<article class="blog-article">` (exact-match regex) or the reply was truncated at `max_tokens: 10000` before `</article>`.
+**Fix:** `refreshBlogPost()` now accepts extra attributes on the tag (and normalises it), retries once, and logs `stop_reason`, `output_tokens` and the opening of the reply on every unparseable attempt. **If it fails again, read that WARN line** — if it says `stop_reason=max_tokens`, raise the limit (watch Node fetch's 300s headers timeout; switch to streaming if needed).
+**Files changed:** `daily-automation.js`
+
+### [FIX] Stray head tags after the footer in 19 articles; duplicate head on /booking; fake rating
+**Symptom:** 19 older articles carried their description/canonical/OG block after `</footer>` (in `<body>`, where Google ignores a canonical); in 18 of them that was the ONLY canonical. `authority-schema-modes` and `depth-schema-case-study` had two conflicting descriptions. `booking.html` had two descriptions, two canonicals and `og:url` on `.html`. `booking.html` JSON-LD claimed `aggregateRating` 5★ from 50 reviews with no reviews behind it (self-serving/unsupported review markup → manual-action risk on a YMYL site).
+**Fix:** Moved each block into `<head>`, dropped the duplicates, removed the rating, cleaned 55 remaining `/x.html` URLs in JSON-LD/OG. Every page now has exactly one canonical + one description in `<head>`.
+**Files changed:** `booking.html`, 19 articles, core pages, `llms.txt`
+
+### [ADD] IndexNow
+Key file `/6f6e45892632d3f5504a1c212a3ef37f.txt` (public by design). `daily-automation.js` pings `api.indexnow.org` with the article + `/blog` after the post-deploy check passes. Bing's index feeds ChatGPT search and Copilot, so this is the fastest route for updates to reach them.
+
 ### [FIX] Licence number ۲۸۴۶۳ was wrong — removed everywhere
 **Symptom:** The site displayed `۲۸۴۶۳` as Raheleh's سازمان نظام روانشناسی licence number.
 **Root cause:** The number is not hers. It entered as a placeholder in `301f495` (June) and was later marked "confirmed real" on 2026-08-20; Farzad corrected that on 2026-10-06.
