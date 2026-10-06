@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-10-06
+
+### [FIX] Licence number ۲۸۴۶۳ was wrong — removed everywhere
+**Symptom:** The site displayed `۲۸۴۶۳` as Raheleh's سازمان نظام روانشناسی licence number.
+**Root cause:** The number is not hers. It entered as a placeholder in `301f495` (June) and was later marked "confirmed real" on 2026-08-20; Farzad corrected that on 2026-10-06.
+**Fix:** Removed the footer licence segment from 99 files (all core pages, all articles, `daily-automation.js` template), the number and «قابل استعلام» line from the About credentials box, and both `identifier` fields from the About Person JSON-LD. The credential itself (license from the Iran Psychology Organization) is kept. Nothing is shown in place of the number.
+**⚠️ RULE:** Do not restore `۲۸۴۶۳`. The 2026-08-20 "CONFIRMED REAL" entry below is superseded. Re-add a number only when the human supplies the real one — see SEO_TODO.md "MANUAL TODO" for the exact spots.
+
+---
+
 ## 2026-08-20
 
 ### [FIX] Topic rotation republished every topic every 23 days — 33 duplicate articles
@@ -30,7 +40,7 @@
 **Commit:** `9dfd51b`
 **Rule:** Never let the model author a date, a URL, or any field that must agree with another field. Compute it and substitute.
 
-### [RESOLVED] Licence number ۲۸۴۶۳ — CONFIRMED REAL, do not remove again
+### [SUPERSEDED 2026-10-06 — number was wrong, removed] Licence number ۲۸۴۶۳
 **History:** commit `301f495` (12 Jun) replaced the literal `TODO_LICENSE_NUMBER` with `۲۸۴۶۳` and described it in its own message as a placeholder that was "clearly fake". On that basis it was stripped from all 83 footers, the About box and the Person schema in `9dfd51b` (20 Aug).
 **Correction:** Farzad confirmed on 2026-08-20 that **۲۸۴۶۳ is Raheleh's genuine سازمان نظام روانشناسی registration number.** The June commit message was wrong about it, or the real number was substituted without the note being updated.
 **Fix:** restored to all 83 footers, the About credentials box (with the «قابل استعلام» line), the Person JSON-LD `identifier`, `hasCredential.identifier`, and the `daily-automation.js` article template so new posts inherit it.

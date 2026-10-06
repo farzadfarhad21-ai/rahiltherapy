@@ -22,7 +22,7 @@
 | Rotation republished every topic every 23 days | 33 duplicate articles, all in sitemap | ✅ fixed + consolidated |
 | `extractExcerpt()` regex never matched | 51 articles with empty description | ✅ fixed + backfilled |
 | Model authored the visible date | every auto-post stamped May 2025 | ✅ fixed + 72 corrected |
-| Licence `۲۸۴۶۳` | 83 files | ✅ **confirmed real by Farzad 20 Aug** — restored, do not remove again |
+| Licence `۲۸۴۶۳` | 83 files | ⚠️ restored 20 Aug, then **removed 2026-10-06 — number was wrong** (see MANUAL TODO) |
 | `.html` in og:url / mainEntityOfPage | 270 URLs | ✅ cleaned |
 | Zero backlinks executed | 2 months | ❌ **still open — this is the whole problem** |
 | GSC OAuth token dead | since ~7 Jul | ❌ needs Farzad, 2 min in a browser |
@@ -339,27 +339,18 @@ Add fallback to `daily-automation.js`: if Segmind output looks bad, fall back to
 
 ## ⚠️ MANUAL TODO (USER MUST PROVIDE)
 
-### ✅ LICENSE NUMBER — `۲۸۴۶۳` CONFIRMED REAL (2026-08-20)
+### ❌ LICENSE NUMBER — REMOVED 2026-10-06 (`۲۸۴۶۳` was WRONG)
 
-`۲۸۴۶۳` was introduced in `301f495` as a placeholder and that commit called it fake. **Farzad confirmed on 2026-08-20 that it is Raheleh's genuine registration number.** It was briefly removed in `9dfd51b` on that basis and has been restored.
+Farzad confirmed on 2026-10-06 that `۲۸۴۶۳` is **not** Raheleh's number. It has been removed
+everywhere and nothing is shown in its place. **Do not restore `۲۸۴۶۳`.** This supersedes the
+2026-08-20 "confirmed real" note and every older mention below.
 
-**Do not remove it again.** Ignore the older "FAKE" wording in the batch-7 notes below — it is superseded.
-
-It currently appears in:
-- `about.html` — visible credentials box (large, prominent)
-- `about.html` — Person JSON-LD schema (`identifier` + `hasCredential.identifier`)
-- Footer of every page: `index.html`, `about.html`, `services.html`, `booking.html`, `blog.html`, `faq.html`, `contact.html`, `dubai.html`, `blog-post.html`
-- `daily-automation.js` — generator template (so new posts inherit it)
-
-**When you get home:** run this command to replace all at once:
-```bash
-cd /Users/farzaden/Downloads/ruflow-project/raheleh_project
-# Use Persian numerals if your real number is in Persian, or English digits if needed
-grep -rl "۲۸۴۶۳" --include="*.html" --include="*.js" | xargs sed -i '' 's|۲۸۴۶۳|YOUR_REAL_NUMBER|g'
-git add -A && git commit -m "feat: add real license number" && git push
-```
-
-Verify nothing left: `grep -rc "۲۸۴۶۳" --include="*.html" --include="*.js"`
+**To add the correct number later**, put it back in these places:
+- Footer of every page + `daily-automation.js` template (line with `fbar`): after
+  `تمامی حقوق محفوظ است.` add ` | شماره پروانه روانشناسی: <span style="font-family:monospace;letter-spacing:1px;opacity:.9;">NUMBER</span>`
+- `about.html` credentials box: a `شماره پروانه: NUMBER` line under «عضو سازمان نظام روانشناسی…»
+  (optionally the «قابل استعلام در سامانه رسمی سازمان نظام روانشناسی» line again)
+- `about.html` Person JSON-LD: `identifier` PropertyValue + `hasCredential[0].identifier`
 
 ---
 
@@ -486,7 +477,7 @@ Verify nothing left: `grep -rc "۲۸۴۶۳" --include="*.html" --include="*.js"`
 ## 🟡 STILL TO DO (prioritized)
 
 ### 🔴 Critical
-- [x] ~~Fill in real license number~~ → `۲۸۴۶۳` confirmed real 2026-08-20
+- [ ] Fill in real license number — `۲۸۴۶۳` was wrong, removed 2026-10-06
 
 ### 🟠 High
 - [x] ~~Rewrite/noindex top 5 AI-batch articles~~ → noindexed 24 duplicates in batch 4
