@@ -3,6 +3,22 @@
 > This file is a living memory. Every bug we hit gets documented here with the fix applied.
 > Add new entries at the top (newest first).
 
+## 2026-10-07
+
+### [FIX] Telegram reposted refreshed articles as new, with their original dates
+**Symptom:** the channel kept receiving the same topics, each stamped with a date weeks in the past. Today's example: a refresh of `1789719476330-gratitude` posted as a new article dated ۲۷ شهریور when the day was ۱۵ مهر.
+**Root cause:** two things compounding. (1) All 17 distinct pages now exist, so the rotation only ever refreshes — there are no new articles left to announce. (2) `refreshBlogPost()` returned `date: toFaDate(publishedTs)`, the ORIGINAL publish date, and `notify-telegram.js` had no way to tell a refresh from a new post, so it published it as new with the stale date.
+**Fix:** `date` is now today on a refresh, with the original kept as `publishedDate`; `.article-info.json` carries `mode` and the before/after word counts; refreshes are **not** posted to Telegram unless `TELEGRAM_POST_REFRESHES=true`, and when they are, they go out labelled «بازنویسی و تکمیل شد» with today's date, the original date, and the growth.
+**Files changed:** `daily-automation.js`, `notify-telegram.js`
+**Note:** the blog will not produce a genuinely new article again until topics are added to `TOPICS`. Any topic without a matching `{timestamp}-{slug}.html` is created on its turn.
+
+### [FIX] Truncated output was killing ~1 run in 4
+**Symptom:** "Failed to parse refreshed article" on 22, 26, 28, 29 Sep and 4 Oct.
+**Root cause:** a refresh must re-emit the whole article plus its growth. Persian is ~2.5 chars/token and the biggest rotation pages are ~15k chars, so `power-of-thought` and `depression` each need ~7,500 output tokens against a 10,000 cap — and every cycle makes them longer. At the cap the document stops mid-sentence, leaving no closing `</article>`, so the regex finds nothing. The retry added on 6 Oct could not help: the second attempt truncates identically.
+**Fix:** `MAX_OUTPUT_TOKENS = 20000` on both paths; both diagnostics now say explicitly when `stop_reason === 'max_tokens'`.
+**Also:** the create path still had the strict regex, no retry and no diagnostic. It now matches the refresh path — which matters, because every newly added topic goes through it.
+**Files changed:** `daily-automation.js`
+
 ---
 
 ## 2026-10-06
