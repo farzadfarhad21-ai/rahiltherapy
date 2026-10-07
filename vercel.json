@@ -41,6 +41,10 @@
       "destination": "/dubai.html"
     },
     {
+      "source": "/emptiness",
+      "destination": "/emptiness.html"
+    },
+    {
       "source": "/parents",
       "destination": "/parents.html"
     },
