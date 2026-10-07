@@ -1,88 +1,103 @@
-# Brief for an AI agent with browser access — directory listings for rahiltherapy.com
+# Brief: get rahiltherapy.com found, and get Raheleh clients
 
-**Paste this whole file as your first message to ChatGPT (Agent mode), Claude in Chrome, or any assistant that can control a browser.**
-Last verified against the live website: 7 October 2026.
-
----
-
-## 1. Who you are and what you are doing
-
-You are helping list a psychotherapy practice in a set of online directories and platforms. The practice is already live at **https://rahiltherapy.com** but has **no inbound links from anywhere on the internet**, which is why it does not appear in Google or ChatGPT results. Your job is to fix that by creating accurate profiles on the targets listed in section 5b.
-
-The practitioner is **Raheleh Avinipour (راحله اوینی‌پور)**, a Persian-speaking psychologist based in Dubai. The account holder you are working with is **Farzad**, her son, who manages the website.
-
-Work through the targets **in the order set out in section 5b**. Do one completely before starting the next.
+**Paste this entire file as your first message to ChatGPT in Agent mode, or any AI assistant that can control a browser.**
+Every fact here was verified against the live website on 7 October 2026.
 
 ---
 
-## 2. Hard rules — read these before you touch anything
+## 1. The situation, so you understand what you are actually doing
 
-These are not suggestions. Breaking any of them causes real harm.
+**Raheleh Avinipour (راحله اوینی‌پور)** is a Persian-speaking psychologist in Dubai. Her website, **https://rahiltherapy.com**, is finished and working — good content, clean technical setup, 90+ articles.
 
-1. **Never invent a licence or registration number.** Several of these forms ask for one. **The correct number does not exist yet** — the previously displayed one was wrong and has been removed from the website; a replacement has been requested and is expected around **27 October 2026**.
+It gets almost no visitors. In the last 90 days: **7 clicks from Google.**
 
-   If a field demands a licence number: **do not guess, do not use a placeholder, do not copy a number from anywhere.** A fabricated credential on a therapy listing is fraud and gets listings permanently banned. Instead, follow the rule in section 5a below — some listings can be completed without it, and the rest simply wait until the number arrives.
+The reason is not the website. It is this:
 
-2. **Never enter payment card details.** One site (Psychology Today) costs money. Fill in everything else, then **stop at the payment screen and hand control back to Farzad**.
+> **No other website on the internet links to hers.**
 
-3. **Never accept Terms of Service, consent boxes, or privacy agreements on Farzad's behalf.** Stop and ask him to click those himself.
+Google decides how much to trust a website largely by who links to it. A site nobody links to looks, to Google, like a site nobody has vouched for — so it stays buried no matter how good it is. The same logic reaches ChatGPT and other AI assistants: they describe a practitioner by drawing on what independent sources say about them. For Raheleh there are no independent sources, so there is nothing for them to repeat.
 
-4. **Never create an account password yourself or use one you find stored in the browser.** Ask Farzad to create accounts and sign in. You take over once he is logged in.
+**Your job is to create those sources.** Every listing you complete does two things at once:
 
-5. **Never invent any fact about Raheleh.** Everything you need is in section 3. If a form asks for something not listed there — years in practice at a specific clinic, a registration body number, a university graduation year, insurance accepted — **leave it blank and tell Farzad**. Do not fill gaps with plausible-sounding information.
+1. **A link back to her website**, which raises Google's trust in the whole site — including all the Persian pages, not just the page that was linked.
+2. **A place her clients can actually find her**, on sites they already visit.
 
-6. **The phone number must be typed exactly as `+989124228995` every single time.** Do not reformat it, do not add spaces, do not convert it to a local UAE format. Search engines match a business across websites by comparing name, phone and website — one listing with a different format reads as a different business and the whole exercise is wasted.
+Some targets are strong on the first, some on the second. Section 5 says which is which, and the order is set accordingly.
 
-7. **Do not enter a street address.** Raheleh works online and from Dubai without a public clinic address. If a form requires an address to continue, **stop and ask Farzad** — do not invent one. Look first for an option worded like "I serve clients at their location", "service area business", or "hide my address".
-
-8. **If anything is unclear, stop and ask.** A missing listing is recoverable. A wrong one is not.
+You are working with **Farzad**, her son, who manages the website. He creates accounts and signs in; you do the rest.
 
 ---
 
-## 3. The information you need
+## 2. Hard rules — read before touching anything
 
-### Identity
+Not suggestions. Each one prevents real damage.
+
+1. **Never invent a licence or registration number.** The number previously on her website was wrong and has been removed. A corrected one has been requested and is expected around **27 October 2026**. If a form demands one: do not guess, do not use a placeholder, do not copy one from anywhere. A fabricated credential on a therapy listing is fraud, and it gets listings permanently banned. Section 4 says what to do instead.
+
+2. **Never enter payment card details.** Fill everything else, then stop at the payment screen and hand back to Farzad.
+
+3. **Never accept Terms of Service, consent boxes or privacy agreements on his behalf.** Stop and ask him to click them.
+
+4. **Never create a password, and never use one stored in the browser.** Farzad creates accounts and signs in. You take over after.
+
+5. **Never invent any fact about Raheleh.** Everything available to you is in section 3. If a form asks for something not there — a registration number, a graduation year, insurance accepted, a clinic address, years at a named employer — **leave it blank and tell Farzad.** Do not fill a gap with something that sounds plausible. This is the rule most likely to be broken and the most damaging when it is.
+
+6. **The phone number is always exactly `+989124228995`.** Never reformatted, no spaces, never converted to a local UAE format. Search engines connect a business across websites by matching name, phone and website. One listing with a different format reads as a different business and the work is wasted.
+
+7. **Never enter a street address.** She works online and from Dubai with no public clinic address. Look for "I serve clients at their location", "service area business", or "hide my address". If a form will not continue without an address, stop and ask Farzad. **Entering a home address publishes it.**
+
+8. **Link to the right page.** Where a form offers more than one URL field, use the specific page from section 3, not just the homepage. A "book appointment" field should get the booking page.
+
+9. **When unclear, stop and ask.** A missing listing can be fixed next week. A wrong one is hard to undo.
+
+---
+
+## 3. Everything you need to know about her
+
+### Identity and contact
 
 | Field | Value |
 |---|---|
-| Full name | Raheleh Avinipour |
+| Name | Raheleh Avinipour |
 | Name in Persian | راحله اوینی‌پور |
 | Practice name | Rahil Therapy |
-| Professional title | Psychologist (General Psychology) |
+| Title | Psychologist (General Psychology) |
 | Website | https://rahiltherapy.com |
 | Phone / WhatsApp | `+989124228995` |
 | Email | ravinipour@gmail.com |
 | Instagram | https://www.instagram.com/rahiltherapy |
-| Telegram channel | https://t.me/raheleh21 |
+| Telegram | https://t.me/raheleh21 |
 
-### Location and availability
+### Practice details
 
 | Field | Value |
 |---|---|
 | Based in | Dubai, United Arab Emirates |
-| Street address | **None — do not enter one.** Choose "service area" / "online only" |
-| Serves | Dubai in person; online worldwide |
-| Session format | Video (Zoom, Google Meet, WhatsApp); in person in Dubai |
+| Street address | **None. Do not enter one.** |
+| Serves | In person in Dubai; online worldwide |
+| Formats | Video (Zoom, Google Meet, WhatsApp) and in person |
 | Session length | 45–60 minutes |
-| First session | Free, 30–45 minutes |
+| First session | **Free**, 30–45 minutes, no obligation |
 | Hours | 09:00–21:00 |
-| Languages | Persian (Farsi) — primary; English |
+| Languages | **Persian (Farsi)** — primary; English |
 
-### Who she works with — state this clearly on every listing
+### Who she works with — put this on every listing
 
-**Raheleh works with women clients only.** This is a professional choice, not an omission. If a directory has a "clients served" or "I work with" field, select women / adult women. If there is a free-text field, include a sentence saying so. Wording to use:
+**Women clients only.** This is a professional choice, not a gap. Where a form has a "clients served" field, select women / adult women. Where there is free text, include it.
 
 > Sessions are for women clients only.
 
-### Specialisms (tick these where offered)
+It is also one of her strongest advantages. Many Persian-speaking women specifically want a woman therapist, and almost nobody competes for that in Dubai. Never present it as a limitation.
+
+### Specialisms
 
 Anxiety · Depression · OCD · ADHD · Self-esteem · Relationships · Trauma · Grief · Life transitions · Immigration and cultural adjustment · Existential concerns and loss of meaning
 
-### Therapeutic approaches
+### Approaches
 
 Cognitive Behavioral Therapy (CBT) · Schema Therapy · Mindfulness-Based Cognitive Therapy (MBCT) · Attachment-based therapy · Existential therapy
 
-### Qualifications — state ONLY these
+### Qualifications — state only these
 
 - M.Sc. in General Psychology (clinical specialisation)
 - Certified in Cognitive Behavioral Therapy
@@ -90,25 +105,115 @@ Cognitive Behavioral Therapy (CBT) · Schema Therapy · Mindfulness-Based Cognit
 - Member of the Iranian Psychology and Counselling Organisation (سازمان نظام روانشناسی و مشاوره)
 - 15+ years of clinical experience
 
-**There is no registration number available yet.** The one previously shown on the website was incorrect and has been removed. A replacement has been requested and is expected around **27 October 2026**. Until then, see section 5a.
+**No registration number is available.** See section 4.
+
+### Pages to link to
+
+| Page | When to use it |
+|---|---|
+| https://rahiltherapy.com | Main website field — the default |
+| https://rahiltherapy.com/booking | "Book an appointment" field |
+| https://rahiltherapy.com/about | "About the therapist" |
+| https://rahiltherapy.com/dubai | Dubai or local listings |
+| https://rahiltherapy.com/emptiness | Emptiness, meaning, high-achieving clients |
+| https://rahiltherapy.com/services | Services offered |
 
 ---
 
-## 4. Descriptions to paste
+## 4. The licence number — read this before starting
 
-### Short — one line (for taglines, under ~90 characters)
+The number that used to appear on her site was **wrong**. It has been removed. A correct one has been requested and should arrive around **27 October 2026**.
+
+| Target | Needs a number? | Do now? |
+|---|---|---|
+| iranianpsychologists.com | Possibly, human-reviewed | **Yes** — if asked, say it is being reissued |
+| dubaiparsi.com | Usually not | **Yes** |
+| TherapyRoute | Usually optional on the free tier | **Yes** — pause if mandatory |
+| Psychology Today | **Yes, mandatory and verified** | **No — wait until it arrives** |
+
+Psychology Today verifies every therapist's credentials. Attempting it without a number, or with a wrong one, can block the practice from ever listing there. **Do not start it.**
+
+If a free site blocks on the number: stop that listing, mark it "waiting for licence number", move on. **Never enter a fake number to get past a validation field.** Leave it blank, or say plainly in a free-text field that the registration number is being reissued.
+
+---
+
+## 5. The work, in order
+
+### Tier 1 — do these now. Persian sites, her actual clients.
+
+#### 1. iranianpsychologists.com — free
+
+Ranks first for the exact search her clients make. The single most valuable free listing available.
+
+1. Look for **ثبت‌نام روانشناس** or **افزودن پروفایل** (register / add profile).
+2. If a form exists, fill it from section 3 using the **Persian description** in section 6.
+3. If not, use their contact form or WhatsApp and send the **listing request message** in section 6.
+4. Website field: `https://rahiltherapy.com`
+
+#### 2. dubaiparsi.com — free
+
+Exact city and exact language. Small site, near-perfect relevance.
+
+1. Find the health section — **پزشکی و درمانی**.
+2. Look for **ثبت کسب‌وکار** (add business).
+3. Use the Persian name **راحله اوینی‌پور** and the Persian description.
+4. If there is no form, send the listing request message via their contact page.
+
+### Tier 2 — do next. English site, mostly for Google's trust.
+
+#### 3. TherapyRoute — free
+
+Already ranks page one for therapists in Dubai. The link is the main prize, but it also catches English-searching diaspora.
+
+1. Go to https://www.therapyroute.com/choose-your-plan and pick **Basic Listing** (free). Ignore the paid upsell.
+2. Ask Farzad to create the account and sign in.
+3. Fill from section 3 using the **long English description**.
+4. Country **United Arab Emirates**, city **Dubai**.
+5. **Make sure Persian / Farsi is selected under languages.** This single field is what puts her in front of the right people.
+6. Clients served: **women**.
+
+### Tier 3 — ask Farzad before doing these at all.
+
+#### 4. persiantherapist.com and 5. hamrahcare.com
+
+Both serve Persian speakers abroad and both recruit therapists rather than taking signups, so both need a message.
+
+**But they are marketplaces.** They find the client, take a share of the fee, and the client belongs to the platform rather than to Raheleh. That is steady referral income at a lower margin, and it can work against building her own practice and reputation.
+
+**This is a business decision, not an SEO one. Ask Farzad before contacting either.** If he agrees, send the **platform application message** in section 6.
+
+### Tier 4 — blocked until late October.
+
+#### 6. Psychology Today — about $30/month
+
+The strongest single listing in existence for her: it ranks **first** for "Farsi-speaking therapist", and it sends its own referral traffic rather than only a link.
+
+**Do not start until the licence number arrives (~27 October).** When it is time:
+1. Farzad creates the account and signs in.
+2. Fill from section 3 with the long English description.
+3. Location **Dubai, UAE**, and also tick **online / teletherapy** so she appears in both.
+4. **Persian / Farsi must be selected** under languages.
+5. Clients served: **women**.
+6. Stop at credential verification and at the payment screen — both are Farzad's.
+7. Ask him to upload a photo of Raheleh. Profiles with a real photo get noticeably more enquiries.
+
+---
+
+## 6. Text to paste
+
+### One-line tagline
 
 ```
 Farsi-speaking psychologist in Dubai. CBT & Schema Therapy. Women clients only. First session free.
 ```
 
-### Medium — about 50 words
+### Short English — about 50 words
 
 ```
 Raheleh Avinipour is a Persian-speaking psychologist based in Dubai, specialising in Cognitive Behavioral Therapy and Schema Therapy. She works online with Iranian women worldwide on anxiety, depression, OCD, self-esteem, relationships, and the identity and belonging questions that come with migration. Sessions are for women clients only. The first consultation is free.
 ```
 
-### Long — about 180 words
+### Long English — about 180 words
 
 ```
 Raheleh Avinipour is a Persian-speaking psychologist based in Dubai, United Arab Emirates, with more than 15 years of clinical experience. She holds an M.Sc. in General Psychology and is certified in Cognitive Behavioral Therapy and Schema Therapy.
@@ -117,15 +222,15 @@ She works with women clients only. Sessions are conducted entirely in Farsi, onl
 
 Her practice focuses on anxiety, depression, OCD, self-esteem, relationship difficulties, and the particular psychological weight carried by women who have emigrated — identity, belonging, homesickness, and the guilt of distance from family. She also works with clients who are outwardly successful but describe a persistent sense of emptiness or loss of meaning.
 
-Raheleh's approach combines evidence-based methods with cultural understanding of what Persian-speaking women actually face, rather than applying frameworks developed for a different context.
+Raheleh combines evidence-based methods with a real understanding of what Persian-speaking women face, rather than applying frameworks built for a different context.
 
-The first consultation is free and lasts 30 to 45 minutes, with no obligation to continue.
+The first consultation is free, lasts 30 to 45 minutes, and carries no obligation to continue.
 
 Website: https://rahiltherapy.com
-Contact: WhatsApp +989124228995 · ravinipour@gmail.com
+Contact: WhatsApp +989124228995 and ravinipour@gmail.com
 ```
 
-### Persian description — use on Persian-language sites
+### Persian description — for Persian sites
 
 ```
 راحله اوینی‌پور، روان‌شناس فارسی‌زبان مقیم دبی، با بیش از ۱۵ سال تجربه بالینی. تخصص: درمان شناختی-رفتاری (CBT) و طرحواره‌درمانی.
@@ -141,122 +246,7 @@ Contact: WhatsApp +989124228995 · ravinipour@gmail.com
 ایمیل: ravinipour@gmail.com
 ```
 
-### Pages you can link to if a form allows more than one URL
-
-| Page | Use it for |
-|---|---|
-| https://rahiltherapy.com | Main website field |
-| https://rahiltherapy.com/booking | "Book an appointment" field |
-| https://rahiltherapy.com/about | "About the therapist" |
-| https://rahiltherapy.com/dubai | Dubai / local listings |
-| https://rahiltherapy.com/emptiness | Existential emptiness, meaning, high-achieving clients |
-| https://rahiltherapy.com/services | Services offered |
-
----
-
-## 5b. Why these sites, and which ones actually matter
-
-Fair question if you are wondering why English-language sites are on a list for a Persian-speaking practice. The targets do two different jobs and should not be judged the same way.
-
-**Persian platforms — bring actual clients.** Their users are Iranians abroad looking for a Farsi-speaking therapist. That is exactly Raheleh's client. Most have no signup form; they vet and invite practitioners, so these need a message rather than a form fill.
-
-**English directories — bring links, plus some clients.** The link itself is what raises the whole website in Google, including its Persian pages, and that is the main reason they are here. They also catch the real audience that searches in English — longer-settled diaspora and second generation typing "Farsi speaking therapist Dubai". Psychology Today ranks first for exactly that phrase.
-
-Revised order of value:
-
-| # | Target | Language | Type | Why |
-|---|---|---|---|---|
-| 1 | iranianpsychologists.com | Persian | Listing | Ranks first for the exact search her clients make. Free. |
-| 2 | persiantherapist.com | Persian | Vetted platform | Paying clients, Persian speakers abroad, sessions €27–40. Apply by message. |
-| 3 | hamrahcare.com | Persian | Vetted platform | Built for Iranians abroad; recruits counsellors directly. Apply by message. |
-| 4 | dubaiparsi.com | Persian | Listing | Exact city + language match. Free. |
-| 5 | TherapyRoute | English | Listing | Free, already ranks page one for Dubai therapists. Link value. |
-| 6 | Psychology Today | English | Listing | Ranks #1 for "Farsi-speaking therapist". **Needs the licence number — wait.** |
-
-**Do 1 and 4 first** (free, self-service, right audience). **Then 2 and 3** (messages, highest client value). **Then 5.** **Leave 6 until the licence number arrives.**
-
-### A decision for Farzad, not for you
-
-Items 2 and 3 are marketplaces: they find the client, take a share of the fee, and the client belongs to the platform rather than to Raheleh. That is steady referral work but lower margin and less control, and it may conflict with building her own practice. **Do not apply to these without asking Farzad first.** Items 1, 4, 5 and 6 are plain listings that point at her own website, with no such trade-off.
-
----
-
-## 5c. The two Persian platforms — message to send
-
-Only after Farzad confirms he wants to join platforms (see above). Find their contact form, WhatsApp or Telegram and send:
-
-```
-سلام و وقت بخیر،
-
-من راحله اوینی‌پور هستم، روان‌شناس فارسی‌زبان مقیم دبی، با بیش از ۱۵ سال تجربه بالینی. تخصص من درمان شناختی-رفتاری (CBT) و طرحواره‌درمانی است و جلساتم فقط برای مراجعان خانم برگزار می‌شود.
-
-تمرکز اصلی کارم روی زنان ایرانی خارج از کشور است — به‌ویژه چالش‌های روان‌شناختی مهاجرت: غم غربت، بحران هویت، احساس گناه نسبت به خانواده، و احساس پوچی در کنار موفقیت ظاهری.
-
-مایل هستم بدانم آیا امکان همکاری با مجموعه شما به‌عنوان روان‌درمانگر وجود دارد؟ در صورت تمایل، رزومه و مدارک را ارسال می‌کنم.
-
-وب‌سایت: https://rahiltherapy.com
-تماس: +۹۸۹۱۲۴۲۲۸۹۹۵
-ایمیل: ravinipour@gmail.com
-
-با احترام،
-راحله اوینی‌پور
-```
-
-Report who you contacted, by which channel, and on what date.
-
----
-
-## 5a. What to do about the missing licence number
-
-This determines the order of work, so read it before section 5.
-
-| Directory | Needs a licence number? | What to do now |
-|---|---|---|
-| TherapyRoute | Asks for qualifications; a number is usually optional on the free tier | **Proceed.** Fill everything else. If the number is mandatory, pause this one. |
-| iranianpsychologists.com | Likely asks, but it is a human-reviewed listing | **Proceed.** Send the message; if they ask for a number, reply that it is being reissued and will follow. |
-| dubaiparsi.com | Usually a simple business listing | **Proceed.** |
-| Psychology Today | **Yes — mandatory.** It verifies every therapist | **Do not start this one yet.** It cannot be completed without the number. Wait until it arrives. |
-
-So: **do the three free listings now. Leave Psychology Today until the licence number arrives (around 27 October).**
-
-If any of the three free sites turns out to require the number before it will save, stop that listing, record it as "waiting for licence number", and move on to the next.
-
-**Never tell a directory a number is coming in order to get past a validation field by entering a fake one.** Either leave it blank, or say plainly in a free-text field or message that the registration number is being reissued and will be supplied.
-
----
-
-## 5. Step-by-step for each target
-
-### TherapyRoute — free, English
-
-**URL:** https://www.therapyroute.com/choose-your-plan
-**Cost:** Free ("Basic Listing"). No card required.
-**Why:** free, and it already ranks on page one of Google for therapists in Dubai. Mainly here for the link.
-
-Steps:
-1. Open the URL and choose **Basic Listing** — the free tier. Ignore the paid "Pro" upsell.
-2. Ask Farzad to create the account and sign in. Wait for him.
-3. Fill the profile using section 3 and the **long description** from section 4.
-4. Country: **United Arab Emirates**. City: **Dubai**.
-5. Tick the specialisms and approaches listed in section 3.
-6. Languages: make sure **Persian / Farsi** is selected. This is the single most important field on the whole listing — it is what puts her in front of people searching for a Farsi-speaking therapist.
-7. Clients served: **women / adult women** if such a field exists.
-8. Website field: `https://rahiltherapy.com`
-9. If it asks for a registration number → **stop, ask Farzad** (rule 1).
-10. Save. Report the live profile URL.
-
----
-
-### iranianpsychologists.com — free, Persian — DO THIS FIRST
-
-**URL:** https://iranianpsychologists.com
-**Cost:** Free.
-**Why:** it ranks first for the exact search Raheleh's clients make.
-
-Steps:
-1. Look for a "register as a psychologist" link — in Persian this is usually **ثبت‌نام روانشناس** or **افزودن پروفایل**.
-2. **If a signup form exists:** fill it with section 3 and the **Persian description**.
-3. **If there is no signup form:** find their contact page or WhatsApp, and send the message below. Do not alter it other than as noted.
+### Listing request message — Tier 1 sites with no signup form
 
 ```
 سلام و وقت بخیر،
@@ -280,73 +270,58 @@ Steps:
 راحله اوینی‌پور
 ```
 
-4. Report whether you submitted a form or sent a message, and the date.
-
----
-
-### dubaiparsi.com — free, Persian
-
-**URL:** https://dubaiparsi.com
-**Cost:** Free or low cost.
-
-Steps:
-1. Find the health / medical section — in Persian, **پزشکی و درمانی**.
-2. Look for an "add your business" link — **ثبت کسب‌وکار** or similar.
-3. Use the **Persian description** and the Persian name **راحله اوینی‌پور**.
-4. If there is no self-service form, use their contact page and send the same Persian message as in ②.
-5. Report what you did.
-
----
-
-### Psychology Today — paid, English — LAST, needs the licence number
-
-**URL:** https://www.psychologytoday.com — look for "For Professionals" or a therapist signup link.
-**Cost:** around **$30 per month**. A card is required.
-**Why last:** it is the strongest single listing available — it ranks first for "Farsi-speaking therapist" and sends its own referral traffic, not just a link. But it costs money **and it requires a licence number that does not exist yet** (section 5a).
-
-> **Do not start this listing before the licence number arrives, expected around 27 October 2026.** Psychology Today verifies credentials and a failed or falsified verification can block the practice from ever listing there.
-
-Steps:
-1. Ask Farzad to create the account and sign in.
-2. Fill the profile with section 3 and the **long description**.
-3. Location: **Dubai, United Arab Emirates**. Also tick **online / teletherapy** so she appears in both kinds of search.
-4. Languages: **Persian / Farsi must be selected.**
-5. Clients served: **women**.
-6. Specialisms and approaches: section 3.
-7. **Verification:** Psychology Today verifies that listed therapists are licensed and will ask for credentials. **You cannot complete this step.** When you reach it, stop and hand control to Farzad with a clear note about exactly what is being asked for.
-8. **Payment:** stop before the card screen. Hand control to Farzad.
-9. Ask Farzad to upload a photo of Raheleh — profiles with a real photo get noticeably more contacts. You cannot choose or upload this; ask him.
-
----
-
-## 6. When you are finished
-
-Report back in exactly this format, one row per directory:
+### Platform application message — Tier 3 only, after Farzad agrees
 
 ```
-| Target                 | Status                    | Profile URL | Notes |
-|------------------------|---------------------------|-------------|-------|
-| iranianpsychologists   | submitted / messaged      |             |       |
-| dubaiparsi             | submitted / messaged      |             |       |
-| TherapyRoute           | live / pending / blocked  |             |       |
-| persiantherapist.com   | ASK FARZAD FIRST          |             | marketplace — see 5b |
-| hamrahcare.com         | ASK FARZAD FIRST          |             | marketplace — see 5b |
-| Psychology Today       | WAITING FOR LICENCE NO.   |             | start after ~27 Oct |
+سلام و وقت بخیر،
+
+من راحله اوینی‌پور هستم، روان‌شناس فارسی‌زبان مقیم دبی، با بیش از ۱۵ سال تجربه بالینی. تخصص من درمان شناختی-رفتاری (CBT) و طرحواره‌درمانی است و جلساتم فقط برای مراجعان خانم برگزار می‌شود.
+
+تمرکز اصلی کارم روی زنان ایرانی خارج از کشور است — به‌ویژه چالش‌های روان‌شناختی مهاجرت: غم غربت، بحران هویت، احساس گناه نسبت به خانواده، و احساس پوچی در کنار موفقیت ظاهری.
+
+مایل هستم بدانم آیا امکان همکاری با مجموعه شما به‌عنوان روان‌درمانگر وجود دارد؟ در صورت تمایل، رزومه و مدارک را ارسال می‌کنم.
+
+وب‌سایت: https://rahiltherapy.com
+تماس: +۹۸۹۱۲۴۲۲۸۹۹۵
+ایمیل: ravinipour@gmail.com
+
+با احترام،
+راحله اوینی‌پور
 ```
 
-For anything marked **blocked**, say exactly which field stopped you and what you need from Farzad.
+---
+
+## 7. Report back in this format
+
+```
+| Target                 | Status                   | Profile URL | Notes   |
+|------------------------|--------------------------|-------------|---------|
+| iranianpsychologists   |                          |             |         |
+| dubaiparsi             |                          |             |         |
+| TherapyRoute           |                          |             |         |
+| persiantherapist.com   | ASKED FARZAD? yes/no     |             |         |
+| hamrahcare.com         | ASKED FARZAD? yes/no     |             |         |
+| Psychology Today       | WAITING — licence number |             | ~27 Oct |
+```
+
+Status values: `live` / `submitted, awaiting review` / `messaged` / `blocked` / `not started`
+
+For anything **blocked**, say exactly which field stopped you and what you need from Farzad.
+
+Also list separately: **anything a form asked for that was not in this brief.** That tells Farzad what to prepare next time.
 
 ---
 
-## 7. Things to expect
+## 8. What to expect, and what not to do
 
-- **Nothing appears in Google for two to six weeks.** Listings must be indexed before they count. Do not resubmit anything because it "didn't work".
-- **Some sites will push hard for a street address.** Rule 7 applies: find the service-area option, or stop and ask.
-- **Ignore any offer to "submit to 500 directories".** Those build spam links that actively damage a health website.
-- **If a site rejects the listing**, record the exact reason given. Do not retry with altered details to get around a rejection.
+- **Nothing shows up in Google for two to six weeks.** Listings have to be indexed before they count. Do not resubmit because it "didn't work".
+- **Some sites will insist on a street address.** Rule 7. Find the service-area option or stop and ask.
+- **Ignore anything offering to "submit to 500 directories".** Those build spam links that actively damage a health website. Four good listings beat four hundred bad ones.
+- **If a listing is rejected, record the exact reason.** Do not retry with altered details to get around it.
+- **Do not write or post reviews, testimonials or comments anywhere.** Fake reviews on a health practice breach every platform's terms and are genuinely harmful.
 
 ---
 
-## 8. One-line summary for the agent
+## 9. The one-paragraph version
 
-> List Raheleh Avinipour — a Farsi-speaking, women-only psychologist in Dubai — on iranianpsychologists.com and dubaiparsi.com first, then TherapyRoute, using only the information in this brief. **Leave Psychology Today until her licence number arrives (~27 October 2026); it cannot be verified without it.** Never invent a licence number, never enter payment details, never accept terms on her behalf. Phone is always `+989124228995`. When in doubt, stop and ask.
+> Raheleh Avinipour's website is finished but no site links to it, so Google does not trust it and nobody finds her. Create real listings that link back. Do **iranianpsychologists.com** and **dubaiparsi.com** first — Persian, her actual clients. Then **TherapyRoute** — English, free, mainly for the link. **Ask Farzad before touching persiantherapist.com or hamrahcare.com**, which are marketplaces that take a cut and own the client. **Do not start Psychology Today** until her licence number arrives around 27 October. Phone is always `+989124228995`. Never invent a licence number, never enter payment details, never accept terms for her, never enter an address, and never fill a blank field with something that merely sounds right. When in doubt, stop and ask.
