@@ -2,7 +2,7 @@
 
 > Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-09-04
+**Last updated:** 2026-10-07
 **Status:** Technical layer is DONE and verified live — stop spending time there. The 2026-08-20 audit found the daily automation had quietly become a duplicate-content factory (33 near-duplicate articles) with an empty meta description on 47% of posts and every auto-post stamped May 2025. All fixed in `9dfd51b`. **The bottleneck is, and has been since June, that zero off-site presence exists.** The BACKLINK_PLAN tracking table is still empty after two months.
 
 **Next up:** (1) **Push `fix/blog-automation-hardening` to production.** (2) Work the TIER A free directory list in BACKLINK_PLAN.md — every field is paste-ready, Farzad just needs to click. (3) ~~Re-auth Search Console~~ ✅ done 2026-08-20 — baseline recorded below; **re-measure ~2026-09-17**. Set the OAuth consent screen to "In production" or the token expires again in 7 days.
@@ -149,6 +149,20 @@ Three decisions worth remembering:
 - **Two slug pairs are shared on purpose** so they deepen one page rather than compete: هوش هیجانی + افزایش هوش هیجانی → `emotional-intelligence`, مدیریت احساسات + تنظیم و مدیریت هیجان → `emotion-regulation`.
 
 First cycle: 12 new articles, 7 refreshes. Every cycle after: 19 refreshes, 0 new.
+
+### Rotation expanded to 40 topics — 2026-10-07
+Kept the 19 and added 21, so the blog produces new articles again instead of refreshing only.
+
+**From Farzad's second list, only four were not already covered:** باورهای ذهنی, درمان افسردگی با CBT, درمان اضطراب با CBT, سبک‌های دلبستگی. The rest were already served — تنظیم/مدیریت هیجانات + دسته‌بندی احساسات by `emotion-regulation`/`emotion-vocabulary`, طرحواره‌ها + درمان طرحواره by three schema articles, دلبستگی/اضطرابی/ناایمن by the three attachment articles, خودآگاهی + ذهن‌آگاهی by their own pages. **درمان وسواس با CBT was deliberately left out** — ERP *is* the CBT treatment for OCD, so it would compete with `depth-erp-ocd`, the best-ranking page on the site.
+
+**The other 17 target genuine gaps,** chosen on the principle the data supports: narrow beats broad on a site this size.
+- No page at all: panic attacks, insomnia, grief, trauma/PTSD, burnout, health anxiety, test anxiety
+- Specific where the site is generic: infidelity, emotional divorce, codependency, jealousy, shame vs guilt, assertiveness
+- **Diaspora — the real differentiator:** guilt toward parents left in Iran, long-distance relationships, visa uncertainty, finding a Farsi-speaking therapist abroad. No Iranian clinic site writes these, and they describe the client's actual inner life rather than a diagnosis.
+
+**Watch item:** adding topics shifts the modulo and reshuffles the whole schedule. It pushed `nlp` (631w) and `narcissism` (753w) — the two thinnest pages — from this week out to 8–9 November, so TOPICS was reordered to bring them back to the next two runs. Remember this whenever topics are added.
+
+40 topics → 38 distinct pages. First cycle 21 new + 19 refreshes; then ~9 revisits per page per year.
 
 ### 🐛 Fixed a bug the 20-Aug change introduced
 The refresh prompt hardcoded «۹۰۰ تا ۱۲۰۰ کلمه» while the guard rejects anything below 90% of the current length. The first cycle pushed articles to 1267–1676 words, so the next refresh of `anger-management` (1577w) or `mbct` (1676w) would have been asked for ~1200 words and then thrown for being too short — failing the whole daily run. The target is now `max(1100, current+150)` with a +350 band, a ceiling at 1800 words where the instruction becomes "improve, don't lengthen", and a 95% floor there. Verified none of the 81 articles on disk can fail its own guard.
