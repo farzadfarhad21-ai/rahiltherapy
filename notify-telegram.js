@@ -69,7 +69,19 @@ const TOPIC_EMOJI = {
 async function main() {
   const info = readArticleInfo();
   // articleUrl = clean (for polling), shareUrl = UTM-tagged (for Telegram caption)
-  const { filename, seoTitle, tag, date, imageFilename, articleUrl, shareUrl } = info;
+  const { filename, seoTitle, tag, date, imageFilename, articleUrl, shareUrl,
+          mode = 'new', publishedDate, wordsBefore, wordsAfter } = info;
+
+  const isRefresh = mode === 'refresh';
+
+  // Once every topic has an article the rotation only refreshes, so without this the
+  // channel receives the same handful of posts over and over, each stamped with its
+  // original publish date — which reads as broken. Refreshes are now either skipped
+  // or clearly announced as updates. Set TELEGRAM_POST_REFRESHES=true to share them.
+  if (isRefresh && process.env.TELEGRAM_POST_REFRESHES !== 'true') {
+    console.log(`Refresh of ${filename} — not posting to Telegram (set TELEGRAM_POST_REFRESHES=true to share updates).`);
+    return;
+  }
 
   const live = await pollUntilLive(articleUrl);
   if (!live) process.exit(1);
@@ -85,14 +97,23 @@ async function main() {
 
   // Use UTM-tagged shareUrl in the caption (plain URL, no markdown)
   const captionUrl = shareUrl || articleUrl;
-  const caption = `${emoji} <b>${safeTitle}</b>
+  const grew = wordsBefore && wordsAfter && wordsAfter > wordsBefore;
+  const header = isRefresh
+    ? `♻️ <b>بازنویسی و تکمیل شد</b>\n\n${emoji} <b>${safeTitle}</b>`
+    : `${emoji} <b>${safeTitle}</b>`;
+  const footerNote = isRefresh
+    ? `\n📝 این مقاله امروز بازنویسی و کامل‌تر شد${grew ? ` (${wordsBefore} → ${wordsAfter} کلمه)` : ''}` +
+      (publishedDate && publishedDate !== date ? `\n🗓️ انتشار اولیه: ${publishedDate}` : '')
+    : '';
+
+  const caption = `${header}
 
 ${safeSummary}
 
 🔗 ادامهٔ مطلب: ${captionUrl}
 
 ━━━━━━━━━━━━━━━
-📅 ${date}
+📅 ${date}${footerNote}
 🏷️ #${tag}
 💡 روانشناس عمومی | راحله اوینی‌پور`;
 

@@ -770,7 +770,13 @@ ${lengthRule}
 
   return {
     filename, seoTitle, tag, excerpt,
-    date: toFaDate(publishedTs),
+    // `date` is what gets shown to readers in the Telegram caption, so on a refresh
+    // it must be TODAY — not the original publish date. Sending the old date made
+    // every refresh look like a stale repost of an article from weeks ago.
+    date: toFaDate(modifiedTs),
+    publishedDate: toFaDate(publishedTs),
+    wordsBefore: currentWords,
+    wordsAfter: words(articleHtml),
     topicKey,
     mode: 'refresh'
   };
@@ -1110,6 +1116,10 @@ async function runDailyAutomation() {
       seoTitle: articleInfo.seoTitle,
       tag: articleInfo.tag,
       date: articleInfo.date,
+      mode: articleInfo.mode || 'new',
+      publishedDate: articleInfo.publishedDate || articleInfo.date,
+      wordsBefore: articleInfo.wordsBefore || null,
+      wordsAfter: articleInfo.wordsAfter || null,
       imageFilename: articleInfo.imageFilename,
       articleUrl: cleanUrl,
       shareUrl: withUtm(cleanUrl, 'telegram', 'social', 'daily-blog')
