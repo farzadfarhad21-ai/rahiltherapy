@@ -3,6 +3,20 @@
 > This file is a living memory. Every bug we hit gets documented here with the fix applied.
 > Add new entries at the top (newest first).
 
+## 2026-10-07 (b)
+
+### [PENDING] Licence number — reissue requested, expected ~27 October 2026
+**State:** the number previously displayed on the site was **wrong** and was removed site-wide by Farzad on 6 Oct (commit `86dc0bf`). A correct number has been requested from سازمان نظام روانشناسی and is expected around **2026-10-27**.
+**Rules until it arrives:**
+- Do **not** display any licence number on the site. The About page correctly claims membership of the organisation without a number.
+- Do **not** supply a number to any directory. If a form requires one, that listing waits.
+- **Psychology Today cannot be started** — it verifies credentials and a failed verification can block the practice permanently.
+- TherapyRoute, iranianpsychologists.com and dubaiparsi.com can proceed without it.
+**When it arrives:** add it to the About credentials box, the Person JSON-LD (`identifier` + `hasCredential.identifier`), the sitewide footer, and the `daily-automation.js` article template — the same four places it previously lived. Then start the Psychology Today listing.
+**See also:** `AGENT_BRIEF_DIRECTORY_LISTINGS.md`, which carries the same rule for any AI agent doing the submissions.
+
+---
+
 ## 2026-10-07
 
 ### [FIX] Telegram reposted refreshed articles as new, with their original dates
