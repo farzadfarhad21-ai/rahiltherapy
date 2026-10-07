@@ -129,6 +129,13 @@ const IMAGE_PROMPTS = {
 const LOG_FILE = path.join(__dirname, 'logs', 'automation.log');
 const BLOG_DIR = path.join(__dirname, 'articles');
 const SITE_URL = 'https://rahiltherapy.com';
+
+// A refresh has to re-emit the whole article plus its growth. Persian is token-heavy
+// (~2.5 chars/token), and the rotation's biggest pages are now ~15k chars, so a refresh
+// needs ~7.5k output tokens and climbing. The old 10000 cap was close enough that long
+// articles got truncated mid-document — the output then has no closing </article> and
+// the parse fails. That is what killed 5 runs between 22 Sep and 4 Oct.
+const MAX_OUTPUT_TOKENS = 20000;
 // IndexNow key — public by design; the matching file is served at /{key}.txt.
 // Bing (and through it ChatGPT search / Copilot) re-crawls submitted URLs within minutes.
 const INDEXNOW_KEY = '6f6e45892632d3f5504a1c212a3ef37f';
@@ -404,6 +411,12 @@ ${dedupeBlock}
     ? 'https://api.anthropic.com'
     : (process.env.ANTHROPIC_BASE_URL || 'https://api.minimax.io/anthropic');
 
+  // Same hardening the refresh path already has: tolerate extra attributes on the
+  // <article> tag, retry once, and log WHY on failure. The create path matters again
+  // now — any topic added to TOPICS without an existing article comes through here.
+  let rawContent;
+  let articleMatch = null;
+  for (let attempt = 1; attempt <= 2 && !articleMatch; attempt++) {
   const response = await fetch(`${baseUrl}/v1/messages`, {
     method: 'POST',
     headers: {
@@ -413,7 +426,7 @@ ${dedupeBlock}
     },
     body: JSON.stringify({
       model: 'claude-sonnet-4-5',
-      max_tokens: 10000,
+      max_tokens: MAX_OUTPUT_TOKENS,
       messages: [{ role: 'user', content: prompt }]
     })
   });
@@ -427,7 +440,6 @@ ${dedupeBlock}
   console.log('API Response content types:', data.content?.map(c => c.type));
   console.log('First block keys:', Object.keys(data.content?.[0] || {}));
 
-  let rawContent;
   if (data.content && data.content.length > 0) {
     const textBlock = data.content.find(c => c.type === 'text');
     if (textBlock) {
@@ -453,11 +465,20 @@ ${dedupeBlock}
   } else {
     throw new Error('No content in API response');
   }
-  const articleMatch = rawContent.match(/<article class="blog-article">[\s\S]*?<\/article>/);
+
+    articleMatch = rawContent.match(/<article class="blog-article"[^>]*>[\s\S]*?<\/article>/);
+    if (!articleMatch) {
+      const truncated = data.stop_reason === 'max_tokens';
+      log(`Generate attempt ${attempt} unparseable: stop_reason=${data.stop_reason}` +
+        `${truncated ? ' (TRUNCATED — raise MAX_OUTPUT_TOKENS)' : ''}, ` +
+        `output_tokens=${data.usage && data.usage.output_tokens}, has <article=${rawContent.includes('<article')}, ` +
+        `has </article>=${rawContent.includes('</article>')}, starts: ${JSON.stringify(rawContent.slice(0, 160))}`, 'WARN');
+    }
+  }
   if (!articleMatch) throw new Error('Failed to parse generated article');
 
   const timestamp = Date.now();
-  let articleHtml = articleMatch[0];
+  let articleHtml = articleMatch[0].replace(/^<article[^>]*>/, '<article class="blog-article">');
   const titleMatch = articleHtml.match(/<h1>(.*?)<\/h1>/);
   const seoTitle = titleMatch ? titleMatch[1] : topicFull;
   const date = toFaDate(timestamp);
@@ -715,7 +736,7 @@ ${lengthRule}
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-5',
-        max_tokens: 10000,
+        max_tokens: MAX_OUTPUT_TOKENS,
         messages: [{ role: 'user', content: prompt }]
       })
     });
@@ -728,7 +749,9 @@ ${lengthRule}
 
     articleMatch = rawContent.match(/<article class="blog-article"[^>]*>[\s\S]*?<\/article>/);
     if (!articleMatch) {
-      log(`Refresh attempt ${attempt} unparseable: stop_reason=${data.stop_reason}, ` +
+      const truncated = data.stop_reason === 'max_tokens';
+      log(`Refresh attempt ${attempt} unparseable: stop_reason=${data.stop_reason}` +
+        `${truncated ? ' (TRUNCATED — raise MAX_OUTPUT_TOKENS)' : ''}, ` +
         `output_tokens=${data.usage && data.usage.output_tokens}, has <article=${rawContent.includes('<article')}, ` +
         `has </article>=${rawContent.includes('</article>')}, starts: ${JSON.stringify(rawContent.slice(0, 160))}`, 'WARN');
     }
