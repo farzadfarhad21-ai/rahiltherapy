@@ -1954,3 +1954,16 @@
 [2026-10-07T08:22:50.951Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789719476330-gratitude → 200
 [2026-10-07T08:22:51.542Z] [INFO] IndexNow: submitted 2 URL(s) → 200
 [2026-10-07T08:22:51.543Z] [INFO] ========== Automation Completed Successfully in 370.7s ==========
+[2026-10-08T08:16:41.915Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-08T08:16:41.916Z] [INFO] Selected topic: برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند (Topic #8/49)
+[2026-10-08T08:16:41.917Z] [INFO] Refreshing existing article for topic: برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند (1789805869233-nlp.html)
+[2026-10-08T08:19:21.562Z] [INFO] Article refreshed: articles/1789805869233-nlp.html (631w → 1499w)
+[2026-10-08T08:19:21.562Z] [INFO] Article refreshed: برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند
+[2026-10-08T08:19:21.564Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-10-08T08:19:21.565Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-10-08T08:19:21.566Z] [INFO] Starting Vercel deployment...
+[2026-10-08T08:19:54.542Z] [INFO] Vercel deployment completed
+[2026-10-08T08:19:54.542Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-08T08:22:54.852Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789805869233-nlp → 200
+[2026-10-08T08:22:55.921Z] [INFO] IndexNow: submitted 2 URL(s) → 200
+[2026-10-08T08:22:55.922Z] [INFO] ========== Automation Completed Successfully in 374.0s ==========
