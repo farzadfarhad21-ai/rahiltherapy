@@ -1967,3 +1967,16 @@
 [2026-10-08T08:22:54.852Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789805869233-nlp → 200
 [2026-10-08T08:22:55.921Z] [INFO] IndexNow: submitted 2 URL(s) → 200
 [2026-10-08T08:22:55.922Z] [INFO] ========== Automation Completed Successfully in 374.0s ==========
+[2026-10-09T08:16:40.395Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-09T08:16:40.398Z] [INFO] Selected topic: اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته (Topic #9/49)
+[2026-10-09T08:16:40.399Z] [INFO] Refreshing existing article for topic: اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته (1789892284543-narcissism.html)
+[2026-10-09T08:19:38.771Z] [INFO] Article refreshed: articles/1789892284543-narcissism.html (753w → 1607w)
+[2026-10-09T08:19:38.772Z] [INFO] Article refreshed: اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته
+[2026-10-09T08:19:38.775Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-10-09T08:19:38.775Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-10-09T08:19:38.776Z] [INFO] Starting Vercel deployment...
+[2026-10-09T08:20:06.638Z] [INFO] Vercel deployment completed
+[2026-10-09T08:20:06.639Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-09T08:23:06.730Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789892284543-narcissism → 200
+[2026-10-09T08:23:07.582Z] [INFO] IndexNow: submitted 2 URL(s) → 200
+[2026-10-09T08:23:07.582Z] [INFO] ========== Automation Completed Successfully in 387.2s ==========
