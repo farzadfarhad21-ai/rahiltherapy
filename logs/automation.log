@@ -1980,3 +1980,18 @@
 [2026-10-09T08:23:06.730Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789892284543-narcissism → 200
 [2026-10-09T08:23:07.582Z] [INFO] IndexNow: submitted 2 URL(s) → 200
 [2026-10-09T08:23:07.582Z] [INFO] ========== Automation Completed Successfully in 387.2s ==========
+[2026-10-10T08:16:42.120Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-10T08:16:42.123Z] [INFO] Selected topic: احساس پوچی؛ وقتی زندگی پر است اما درون خالی (Topic #10/49)
+[2026-10-10T08:16:42.124Z] [INFO] Generating article for topic: احساس پوچی؛ وقتی زندگی پر است اما درون خالی
+[2026-10-10T08:17:49.180Z] [INFO] Article created: articles/1791620269155-emptiness-feeling.html
+[2026-10-10T08:17:49.180Z] [INFO] Article generated: احساس پوچی؛ وقتی زندگی پر است اما درون خالی
+[2026-10-10T08:17:49.180Z] [INFO] Generating image via Segmind for topic: احساس پوچی
+[2026-10-10T08:17:54.146Z] [INFO] Image saved: articles/1791620273656-emptiness-feeling.jpg
+[2026-10-10T08:17:54.147Z] [INFO] Updated article with new image: 1791620273656-emptiness-feeling.jpg
+[2026-10-10T08:17:54.149Z] [INFO] Updated blog.html with new article card
+[2026-10-10T08:17:54.149Z] [INFO] Updated sitemap.xml
+[2026-10-10T08:17:54.150Z] [INFO] Starting Vercel deployment...
+[2026-10-10T08:18:25.588Z] [INFO] Vercel deployment completed
+[2026-10-10T08:18:25.588Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-10T08:21:25.930Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791620269155-emptiness-feeling → 404
+[2026-10-10T08:21:25.930Z] [INFO] ========== Automation Completed Successfully in 283.8s ==========
