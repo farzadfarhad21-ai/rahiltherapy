@@ -1995,3 +1995,18 @@
 [2026-10-10T08:18:25.588Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-10T08:21:25.930Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791620269155-emptiness-feeling → 404
 [2026-10-10T08:21:25.930Z] [INFO] ========== Automation Completed Successfully in 283.8s ==========
+[2026-10-11T08:16:41.953Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-11T08:16:41.955Z] [INFO] Selected topic: افسردگی پس از موفقیت؛ چرا رسیدن به هدف حال ما را خوب نکرد (Topic #11/49)
+[2026-10-11T08:16:41.956Z] [INFO] Generating article for topic: افسردگی پس از موفقیت؛ چرا رسیدن به هدف حال ما را خوب نکرد
+[2026-10-11T08:18:12.549Z] [INFO] Article created: articles/1791706692534-success-depression.html
+[2026-10-11T08:18:12.549Z] [INFO] Article generated: افسردگی پس از موفقیت؛ چرا رسیدن به هدف حال ما را خوب نکرد
+[2026-10-11T08:18:12.550Z] [INFO] Generating image via Segmind for topic: افسردگی بعد از موفقیت
+[2026-10-11T08:18:17.809Z] [INFO] Image saved: articles/1791706697117-success-depression.jpg
+[2026-10-11T08:18:17.810Z] [INFO] Updated article with new image: 1791706697117-success-depression.jpg
+[2026-10-11T08:18:17.811Z] [INFO] Updated blog.html with new article card
+[2026-10-11T08:18:17.812Z] [INFO] Updated sitemap.xml
+[2026-10-11T08:18:17.813Z] [INFO] Starting Vercel deployment...
+[2026-10-11T08:18:57.169Z] [INFO] Vercel deployment completed
+[2026-10-11T08:18:57.169Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-11T08:21:57.505Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791706692534-success-depression → 404
+[2026-10-11T08:21:57.506Z] [INFO] ========== Automation Completed Successfully in 315.6s ==========
