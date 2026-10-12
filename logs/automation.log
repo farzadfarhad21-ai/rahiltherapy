@@ -2010,3 +2010,18 @@
 [2026-10-11T08:18:57.169Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-11T08:21:57.505Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791706692534-success-depression → 404
 [2026-10-11T08:21:57.506Z] [INFO] ========== Automation Completed Successfully in 315.6s ==========
+[2026-10-12T08:16:42.850Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-12T08:16:42.852Z] [INFO] Selected topic: افسردگی وجودی؛ تفاوت آن با افسردگی بالینی و مسیر درمان (Topic #12/49)
+[2026-10-12T08:16:42.853Z] [INFO] Generating article for topic: افسردگی وجودی؛ تفاوت آن با افسردگی بالینی و مسیر درمان
+[2026-10-12T08:17:49.612Z] [INFO] Article created: articles/1791793069592-existential-depression.html
+[2026-10-12T08:17:49.612Z] [INFO] Article generated: افسردگی وجودی؛ تفاوت آن با افسردگی بالینی و مسیر درمان
+[2026-10-12T08:17:49.612Z] [INFO] Generating image via Segmind for topic: افسردگی وجودی
+[2026-10-12T08:17:56.310Z] [INFO] Image saved: articles/1791793075866-existential-depression.jpg
+[2026-10-12T08:17:56.311Z] [INFO] Updated article with new image: 1791793075866-existential-depression.jpg
+[2026-10-12T08:17:56.312Z] [INFO] Updated blog.html with new article card
+[2026-10-12T08:17:56.313Z] [INFO] Updated sitemap.xml
+[2026-10-12T08:17:56.314Z] [INFO] Starting Vercel deployment...
+[2026-10-12T08:18:29.643Z] [INFO] Vercel deployment completed
+[2026-10-12T08:18:29.643Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-12T08:21:29.853Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791793069592-existential-depression → 404
+[2026-10-12T08:21:29.854Z] [INFO] ========== Automation Completed Successfully in 287.0s ==========
