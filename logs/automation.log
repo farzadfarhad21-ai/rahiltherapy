@@ -2025,3 +2025,18 @@
 [2026-10-12T08:18:29.643Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-12T08:21:29.853Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791793069592-existential-depression → 404
 [2026-10-12T08:21:29.854Z] [INFO] ========== Automation Completed Successfully in 287.0s ==========
+[2026-10-13T08:16:41.008Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-13T08:16:41.009Z] [INFO] Selected topic: بی‌لذتی؛ وقتی توانایی لذت بردن از بین می‌رود و چگونه بازمی‌گردد (Topic #13/49)
+[2026-10-13T08:16:41.010Z] [INFO] Generating article for topic: بی‌لذتی؛ وقتی توانایی لذت بردن از بین می‌رود و چگونه بازمی‌گردد
+[2026-10-13T08:18:14.060Z] [INFO] Article created: articles/1791879494049-anhedonia.html
+[2026-10-13T08:18:14.060Z] [INFO] Article generated: بی‌لذتی؛ وقتی توانایی لذت بردن از بین می‌رود و چگونه بازمی‌گردد
+[2026-10-13T08:18:14.060Z] [INFO] Generating image via Segmind for topic: بی‌لذتی (آنهدونیا)
+[2026-10-13T08:18:19.058Z] [INFO] Image saved: articles/1791879498123-anhedonia.jpg
+[2026-10-13T08:18:19.059Z] [INFO] Updated article with new image: 1791879498123-anhedonia.jpg
+[2026-10-13T08:18:19.060Z] [INFO] Updated blog.html with new article card
+[2026-10-13T08:18:19.060Z] [INFO] Updated sitemap.xml
+[2026-10-13T08:18:19.061Z] [INFO] Starting Vercel deployment...
+[2026-10-13T08:18:47.897Z] [INFO] Vercel deployment completed
+[2026-10-13T08:18:47.897Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-13T08:21:48.347Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791879494049-anhedonia → 404
+[2026-10-13T08:21:48.347Z] [INFO] ========== Automation Completed Successfully in 307.3s ==========
