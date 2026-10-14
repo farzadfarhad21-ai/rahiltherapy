@@ -2040,3 +2040,18 @@
 [2026-10-13T08:18:47.897Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-13T08:21:48.347Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791879494049-anhedonia → 404
 [2026-10-13T08:21:48.347Z] [INFO] ========== Automation Completed Successfully in 307.3s ==========
+[2026-10-14T08:16:44.265Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-14T08:16:44.267Z] [INFO] Selected topic: بحران میانسالی؛ بازنگری در زندگی یا فروپاشی معنا (Topic #14/49)
+[2026-10-14T08:16:44.267Z] [INFO] Generating article for topic: بحران میانسالی؛ بازنگری در زندگی یا فروپاشی معنا
+[2026-10-14T08:18:07.398Z] [INFO] Article created: articles/1791965887386-midlife-crisis.html
+[2026-10-14T08:18:07.398Z] [INFO] Article generated: بحران میانسالی؛ بازنگری در زندگی یا فروپاشی معنا
+[2026-10-14T08:18:07.398Z] [INFO] Generating image via Segmind for topic: بحران میانسالی
+[2026-10-14T08:18:11.830Z] [INFO] Image saved: articles/1791965891375-midlife-crisis.jpg
+[2026-10-14T08:18:11.830Z] [INFO] Updated article with new image: 1791965891375-midlife-crisis.jpg
+[2026-10-14T08:18:11.831Z] [INFO] Updated blog.html with new article card
+[2026-10-14T08:18:11.832Z] [INFO] Updated sitemap.xml
+[2026-10-14T08:18:11.832Z] [INFO] Starting Vercel deployment...
+[2026-10-14T08:18:43.670Z] [INFO] Vercel deployment completed
+[2026-10-14T08:18:43.670Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-14T08:21:44.018Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1791965887386-midlife-crisis → 404
+[2026-10-14T08:21:44.019Z] [INFO] ========== Automation Completed Successfully in 299.8s ==========
