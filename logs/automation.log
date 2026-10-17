@@ -2085,3 +2085,18 @@
 [2026-10-16T08:18:36.949Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-16T08:21:37.350Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1792138680534-imposter-syndrome → 404
 [2026-10-16T08:21:37.351Z] [INFO] ========== Automation Completed Successfully in 296.5s ==========
+[2026-10-17T08:16:40.161Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-17T08:16:40.164Z] [INFO] Selected topic: زنان موفق و فشار نقش‌های هم‌زمان؛ وقتی همه‌چیز باید عالی باشد (Topic #17/49)
+[2026-10-17T08:16:40.165Z] [INFO] Generating article for topic: زنان موفق و فشار نقش‌های هم‌زمان؛ وقتی همه‌چیز باید عالی باشد
+[2026-10-17T08:17:57.697Z] [INFO] Article created: articles/1792225077678-successful-women-pressure.html
+[2026-10-17T08:17:57.697Z] [INFO] Article generated: زنان موفق و فشار نقش‌های هم‌زمان؛ وقتی همه‌چیز باید عالی باشد
+[2026-10-17T08:17:57.697Z] [INFO] Generating image via Segmind for topic: فشار نقش‌ها بر زنان موفق
+[2026-10-17T08:18:02.431Z] [INFO] Image saved: articles/1792225081680-successful-women-pressure.jpg
+[2026-10-17T08:18:02.432Z] [INFO] Updated article with new image: 1792225081680-successful-women-pressure.jpg
+[2026-10-17T08:18:02.433Z] [INFO] Updated blog.html with new article card
+[2026-10-17T08:18:02.434Z] [INFO] Updated sitemap.xml
+[2026-10-17T08:18:02.435Z] [INFO] Starting Vercel deployment...
+[2026-10-17T08:18:30.247Z] [INFO] Vercel deployment completed
+[2026-10-17T08:18:30.247Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-17T08:21:30.399Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1792225077678-successful-women-pressure → 404
+[2026-10-17T08:21:30.399Z] [INFO] ========== Automation Completed Successfully in 290.2s ==========
