@@ -2100,3 +2100,18 @@
 [2026-10-17T08:18:30.247Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-17T08:21:30.399Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1792225077678-successful-women-pressure → 404
 [2026-10-17T08:21:30.399Z] [INFO] ========== Automation Completed Successfully in 290.2s ==========
+[2026-10-18T08:16:40.354Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-18T08:16:40.357Z] [INFO] Selected topic: مقایسه در شبکه‌های اجتماعی؛ چرا زندگی دیگران بهتر به نظر می‌رسد (Topic #18/49)
+[2026-10-18T08:16:40.359Z] [INFO] Generating article for topic: مقایسه در شبکه‌های اجتماعی؛ چرا زندگی دیگران بهتر به نظر می‌رسد
+[2026-10-18T08:18:08.762Z] [INFO] Article created: articles/1792311488744-social-comparison.html
+[2026-10-18T08:18:08.762Z] [INFO] Article generated: مقایسه در شبکه‌های اجتماعی؛ چرا زندگی دیگران بهتر به نظر می‌رسد
+[2026-10-18T08:18:08.762Z] [INFO] Generating image via Segmind for topic: مقایسه خود در شبکه‌های اجتماعی
+[2026-10-18T08:18:13.304Z] [INFO] Image saved: articles/1792311492892-social-comparison.jpg
+[2026-10-18T08:18:13.304Z] [INFO] Updated article with new image: 1792311492892-social-comparison.jpg
+[2026-10-18T08:18:13.306Z] [INFO] Updated blog.html with new article card
+[2026-10-18T08:18:13.307Z] [INFO] Updated sitemap.xml
+[2026-10-18T08:18:13.307Z] [INFO] Starting Vercel deployment...
+[2026-10-18T08:18:40.943Z] [INFO] Vercel deployment completed
+[2026-10-18T08:18:40.943Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-18T08:21:41.156Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1792311488744-social-comparison → 404
+[2026-10-18T08:21:41.156Z] [INFO] ========== Automation Completed Successfully in 300.8s ==========
