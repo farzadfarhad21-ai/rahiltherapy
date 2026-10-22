@@ -605,7 +605,7 @@ ${dedupeBlock}
       'content-type': 'application/json'
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-5',
+      model: 'claude-sonnet-5-5',
       max_tokens: MAX_OUTPUT_TOKENS,
       messages: [{ role: 'user', content: prompt }]
     })
@@ -915,7 +915,7 @@ ${lengthRule}
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-5',
+        model: 'claude-sonnet-5-5',
         max_tokens: MAX_OUTPUT_TOKENS,
         messages: [{ role: 'user', content: prompt }]
       })

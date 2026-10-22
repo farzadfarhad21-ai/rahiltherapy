@@ -111,7 +111,7 @@ async function generateBlogPost(topic) {
 
   // Log generation attempt
   const logPath = path.join(__dirname, 'logs', 'generations.log');
-  const logEntry = `[${new Date().toISOString()}] TOPIC=${topic} PROVIDER=${provider} MODEL=${process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-5'}\n`;
+  const logEntry = `[${new Date().toISOString()}] TOPIC=${topic} PROVIDER=${provider} MODEL=${process.env.ANTHROPIC_MODEL || 'claude-sonnet-5-5'}\n`;
   try {
     fs.appendFileSync(logPath, logEntry, 'utf8');
   } catch (_) {}
@@ -164,7 +164,7 @@ async function generateBlogPost(topic) {
         'content-type': 'application/json'
       },
       body: JSON.stringify({
-        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-5',
+        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5-5',
         max_tokens: 10000,
         ...(process.env.ANTHROPIC_MODEL ? { thinking: { type: 'enabled', budget_tokens: 2000 } } : {}),
         messages: [{ role: 'user', content: prompt }]
