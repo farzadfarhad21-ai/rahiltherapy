@@ -2128,3 +2128,16 @@
 [2026-10-19T08:23:38.704Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785141157563-emotional-intelligence → 200
 [2026-10-19T08:23:39.897Z] [INFO] IndexNow: submitted 2 URL(s) → 200
 [2026-10-19T08:23:39.898Z] [INFO] ========== Automation Completed Successfully in 419.8s ==========
+[2026-10-22T13:47:55.745Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-22T13:47:55.747Z] [INFO] Selected topic: ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید (Topic #22/49)
+[2026-10-22T13:47:55.748Z] [INFO] Refreshing existing article for topic: ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید (1788596262622-subconscious.html)
+[2026-10-22T13:49:09.164Z] [INFO] Article refreshed: articles/1788596262622-subconscious.html (1470w → 1832w)
+[2026-10-22T13:49:09.165Z] [INFO] Article refreshed: ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید
+[2026-10-22T13:49:09.167Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-10-22T13:49:09.167Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-10-22T13:49:09.168Z] [INFO] Starting Vercel deployment...
+[2026-10-22T13:49:38.666Z] [INFO] Vercel deployment completed
+[2026-10-22T13:49:38.666Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-22T13:52:38.983Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1788596262622-subconscious → 200
+[2026-10-22T13:52:39.750Z] [INFO] IndexNow: submitted 2 URL(s) → 200
+[2026-10-22T13:52:39.750Z] [INFO] ========== Automation Completed Successfully in 284.0s ==========
