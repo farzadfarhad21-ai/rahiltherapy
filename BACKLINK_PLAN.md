@@ -7,7 +7,7 @@
 
 ## ✅ NAP consistency — VERIFIED OK (2026-07-15)
 
-Canonical business phone is **+98 912 422 8995** (`+989124228995`). Confirmed identical on the website AND the Google Business Profile (screenshot verified). Website `https://rahiltherapy.com/` and service area "Dubai - United Arab Emirates" also match.
+Canonical business phone is **+971 50 347 5269** (`+971503475269`). Confirmed identical on the website AND the Google Business Profile (screenshot verified). Website `https://rahiltherapy.com/` and service area "Dubai - United Arab Emirates" also match.
 
 **Use this exact number + website + service area in EVERY directory submission below** so NAP stays consistent. (An earlier note claiming GBP used a UAE number `050 347 5269` was stale — disregard it.)
 
@@ -25,10 +25,10 @@ Canonical business phone is **+98 912 422 8995** (`+989124228995`). Confirmed id
 |---|---|
 | Business name | `Raheleh Avinipour — Rahil Therapy` |
 | Persian name | `راحله اوینی‌پور` |
-| Phone | `+989124228995` |
+| Phone | `+971503475269` |
 | Website | `https://rahiltherapy.com` |
 | Email | `ravinipour@gmail.com` |
-| Instagram | `@ravinipour` |
+| Instagram | `@rahiltherapy` |
 | Service area | `Dubai — United Arab Emirates` |
 | Business model | Service Area Business (no public street address) |
 | Primary category | `Psychologist` |
@@ -136,7 +136,7 @@ Costs verified 2026-08-20. Do all of tier A before spending anything.
 تخصص: روان‌شناس عمومی — CBT و طرحواره‌درمانی
 محل: دبی، امارات (جلسات آنلاین برای سراسر جهان)
 وب‌سایت: https://rahiltherapy.com
-تماس: +989124228995
+تماس: +971503475269
 ایمیل: ravinipour@gmail.com
 
 در صورت نیاز به مدارک یا اطلاعات بیشتر در خدمت هستم.
@@ -204,9 +204,9 @@ Check what has actually landed: https://ahrefs.com/backlink-checker (free, weekl
 جلسه اول رایگان است. مشاوره به ایرانیان در ایران، امارات، اروپا، آمریکای شمالی و استرالیا ارائه می‌شود.
 
 وب‌سایت: https://rahiltherapy.com
-تماس: واتساپ +989124228995
+تماس: واتساپ +971503475269
 ایمیل: ravinipour@gmail.com
-اینستاگرام: @ravinipour
+اینستاگرام: @rahiltherapy
 ```
 
 ### English business description (200 words)
@@ -223,9 +223,9 @@ Education: M.Sc. in General Psychology with clinical specialization, advanced ce
 She serves clients in Iran, UAE, Europe, North America, Australia and worldwide.
 
 Website: https://rahiltherapy.com
-WhatsApp: +989124228995
+WhatsApp: +971503475269
 Email: ravinipour@gmail.com
-Instagram: @ravinipour
+Instagram: @rahiltherapy
 ```
 
 ### Categories / tags to use

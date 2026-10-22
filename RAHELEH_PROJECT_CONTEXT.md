@@ -71,7 +71,7 @@ raheleh_project/
 ```
 
 ## Key Credentials & IDs
-- **WhatsApp:** +989124228995
+- **WhatsApp:** +971503475269
 - **Telegram:** @raheleh21
 - **Email:** ravinipour@gmail.com
 - **Google Analytics:** G-8TSXZKEW9N
@@ -117,7 +117,7 @@ Fonts: Markazi Text (headings) + Vazirmatn (body), both from Google Fonts
 
 ## Booking Form
 - Form in booking.html submits to WhatsApp via window.open()
-- Format: https://wa.me/989124228995?text=ENCODED_MESSAGE
+- Format: https://wa.me/971503475269?text=ENCODED_MESSAGE
 - Includes: name, email, whatsapp, country, concern, session format, days, notes
 - Success message shown after submit in Persian
 

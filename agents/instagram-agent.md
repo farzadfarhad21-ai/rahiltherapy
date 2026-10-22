@@ -30,7 +30,7 @@ Every caption must follow this format:
 [Value line 4 - optional]
 
 📞 رزرو جلسه رایگان:
-واتساپ: 989124228995
+واتساپ: 971503475269
 
 #hashtag1 #hashtag2 ... #hashtag15
 ```
@@ -67,7 +67,7 @@ topic: [topic name]
 یادتان باشد: اضطراب درمان‌پذیر است. و شما لایق آرامش هستید.
 
 📞 جلسه اول رایگان | واتساپ:
-989124228995
+971503475269
 
 #اضطراب #سلامت_روان #روانشناسی #آرامش_ذهن #خودشناسی #Anxiety #MentalHealth #روانشناس #selfcare #mindfulness #心理 #خودمراقبتی # OCD #therapy
 ```

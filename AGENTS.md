@@ -27,6 +27,7 @@ learned the hard way, and the rules for working here. Written 2026-09-15.
 | `api/trigger-daily.js` | Vercel cron endpoint → dispatches the GitHub Action |
 | `.github/workflows/daily-blog.yml` | Runs `daily-automation.js`, commits, pushes |
 | `notify-telegram.js` | Telegram post after deploy |
+| `scripts/author-box.js` | "About the author" block + author `@id`; run `node scripts/author-box.js` to (re)apply to every article |
 | `blog-generator.js`, `api/generate-blog.js` | **LEGACY, unused** — do not edit or copy their patterns |
 | `vercel.json` | cleanUrls, rewrites, security + cache headers, 308 redirects for merged duplicates |
 | `sitemap.xml` `robots.txt` `llms.txt` | Crawl + AI-citation layer |
@@ -91,7 +92,7 @@ Secrets live in GitHub/Vercel (never in the repo): `ANTHROPIC_API_KEY`,
 - Refresh-instead-of-duplicate: one URL per topic, deepened over time.
 
 **Off-site:** NAP (name/phone/website) fixed and identical everywhere —
-see `BACKLINK_PLAN.md`. Canonical phone `+989124228995`.
+see `BACKLINK_PLAN.md`. Canonical phone `+971503475269`.
 
 ## 5. What the data taught us (measured in Google Search Console)
 

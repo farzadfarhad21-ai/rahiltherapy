@@ -14,6 +14,7 @@ const path = require('path');
 
 const fs = require('fs');
 const { execSync } = require('child_process');
+const { AUTHOR_BOX_HTML, applyAuthorBox } = require('./scripts/author-box');
 
 // Public URLs must never include .html — Vercel's cleanUrls setting 308-redirects
 // .html paths to the clean equivalent, which splits Google's ranking signal
@@ -42,11 +43,11 @@ const TOPICS = [
   'افسردگی',
   'اضطراب',
   'مقابله با تنبلی',
-  'دروغ',
-  'شکرگزاری',
+  'وسواس وارسی',
+  'وسواس رابطه (ROCD)',
   'مدیریت احساسات',
   'تنظیم و مدیریت هیجان',
-  'برنامه‌ریزی عصبی کلامی (NLP)',
+  'افکار مزاحم',
   'اختلال شخصیت خودشیفته',
   'احساس پوچی',
   'افسردگی بعد از موفقیت',
@@ -61,7 +62,7 @@ const TOPICS = [
   'افزایش هوش هیجانی',
   'مدیریت خشم از دیدگاه تئوری انتخاب',
   'ضمیر ناخودآگاه',
-  'قدرت تفکر',
+  'وسواس آلودگی و شستشو',
   'تاب‌آوری',
   'دسته‌بندی احساسات',
   'تفکیک و مدیریت استرس',
@@ -94,18 +95,18 @@ const TOPIC_FULL = {
   'افسردگی': 'افسردگی؛ نشانه‌ها، ریشه‌ها و مسیر درمان مبتنی بر شواهد',
   'اضطراب': 'اضطراب؛ چرا بدن زنگ خطر می‌زند و چگونه آرامش کنیم',
   'مقابله با تنبلی': 'مقابله با تنبلی و اهمال‌کاری؛ چرا شروع کردن سخت‌تر از انجام دادن است',
-  'دروغ': 'روان‌شناسی دروغ؛ چرا دروغ می‌گوییم و چه چیزی پشت آن پنهان است',
-  'شکرگزاری': 'شکرگزاری؛ آنچه پژوهش‌ها واقعاً درباره تأثیر آن بر خلق نشان می‌دهند',
+  'وسواس وارسی': 'وسواس وارسی؛ وقتی چک کردن در، گاز و قفل تمام نمی‌شود',
+  'وسواس رابطه (ROCD)': 'وسواس رابطه (ROCD)؛ وقتی شک به عشق و شریک زندگی رها نمی‌کند',
   'مدیریت احساسات': 'مدیریت احساسات؛ از سرکوب و انفجار تا پاسخ سنجیده',
   'تنظیم و مدیریت هیجان': 'تنظیم هیجان؛ راهبردهای مؤثر و راهبردهایی که نتیجه معکوس می‌دهند',
   'هوش هیجانی': 'هوش هیجانی؛ چهار مهارتی که کیفیت روابط را تعیین می‌کند',
   'افزایش هوش هیجانی': 'افزایش هوش هیجانی؛ تمرین‌های عملی برای رشد مهارت‌های هیجانی',
   'مدیریت خشم از دیدگاه تئوری انتخاب': 'مدیریت خشم از دیدگاه تئوری انتخاب؛ خشم به‌عنوان یک انتخاب رفتاری',
   'ضمیر ناخودآگاه': 'ضمیر ناخودآگاه؛ آنچه روان‌شناسی علمی می‌گوید و آنچه نمی‌گوید',
-  'قدرت تفکر': 'قدرت تفکر؛ چگونه افکار بر هیجان و رفتار اثر می‌گذارند',
+  'وسواس آلودگی و شستشو': 'وسواس آلودگی و شستشو؛ چرا شستن آرام نمی‌کند و درمان با ERP چگونه است',
   'تاب‌آوری': 'تاب‌آوری؛ چه چیزی باعث می‌شود بعضی افراد پس از بحران بازسازی کنند',
   'دسته‌بندی احساسات': 'دسته‌بندی احساسات؛ چرا نام‌گذاری دقیق هیجان‌ها آن‌ها را قابل‌مدیریت می‌کند',
-  'برنامه‌ریزی عصبی کلامی (NLP)': 'برنامه‌ریزی عصبی-کلامی (NLP)؛ ادعاها، شواهد پژوهشی و آنچه واقعاً کار می‌کند',
+  'افکار مزاحم': 'افکار مزاحم ناخواسته؛ چرا فکر ترسناک به معنای خواستن آن نیست',
   'اختلال شخصیت خودشیفته': 'اختلال شخصیت خودشیفته؛ نشانه‌ها، ریشه‌ها و زندگی در کنار فرد خودشیفته',
   'تفکیک و مدیریت استرس': 'مدیریت استرس؛ تفکیک آنچه در کنترل ماست از آنچه نیست',
   'مدیریت زمان': 'مدیریت زمان؛ چرا برنامه‌ریزی بدون مرزگذاری شکست می‌خورد',
@@ -146,18 +147,18 @@ const CATEGORY_IMAGES = {
   'افسردگی': 'cat-depression.jpg',
   'اضطراب': 'cat-anxiety.jpg',
   'مقابله با تنبلی': 'cat-growth.jpg',
-  'دروغ': 'cat-relationships.jpg',
-  'شکرگزاری': 'cat-mindfulness.jpg',
+  'وسواس وارسی': 'cat-ocd.jpg',
+  'وسواس رابطه (ROCD)': 'cat-ocd.jpg',
   'مدیریت احساسات': 'cat-mindfulness.jpg',
   'تنظیم و مدیریت هیجان': 'cat-mindfulness.jpg',
   'هوش هیجانی': 'cat-relationships.jpg',
   'افزایش هوش هیجانی': 'cat-relationships.jpg',
   'مدیریت خشم از دیدگاه تئوری انتخاب': 'cat-anxiety.jpg',
   'ضمیر ناخودآگاه': 'cat-selfawareness.jpg',
-  'قدرت تفکر': 'cat-selfawareness.jpg',
+  'وسواس آلودگی و شستشو': 'cat-ocd.jpg',
   'تاب‌آوری': 'cat-growth.jpg',
   'دسته‌بندی احساسات': 'cat-selfawareness.jpg',
-  'برنامه‌ریزی عصبی کلامی (NLP)': 'cat-selfawareness.jpg',
+  'افکار مزاحم': 'cat-ocd.jpg',
   'اختلال شخصیت خودشیفته': 'cat-relationships.jpg',
   'تفکیک و مدیریت استرس': 'cat-anxiety.jpg',
   'مدیریت زمان': 'cat-growth.jpg',
@@ -198,18 +199,18 @@ const IMAGE_PROMPTS = {
   'افسردگی': 'Person sitting by a rain-streaked window in soft grey light, quiet heaviness, muted cream and slate tones, intimate documentary photography',
   'اضطراب': 'Person with hand on chest taking a slow deliberate breath, calm focus, soft window light, warm cream tones, intimate lifestyle photography',
   'مقابله با تنبلی': 'Desk with a single open notebook and morning light, one small task begun, warm cream tones, calm minimal lifestyle photography',
-  'دروغ': 'Two people in conversation with a subtle gap between them, honest tension, soft afternoon light, cream and rose tones, cinematic portrait',
-  'شکرگزاری': 'Hands writing in a gratitude journal at a sunlit table with tea, quiet warmth, cream and amber tones, lifestyle photography',
+  'وسواس وارسی': 'Hand resting on a front door lock in calm morning light, quiet hesitation, cream and rose tones, cinematic close-up',
+  'وسواس رابطه (ROCD)': 'Couple sitting apart on a sofa in soft evening light, one lost in thought, gentle tension, cream and rose tones, cinematic portrait',
   'مدیریت احساسات': 'Person seated calmly with eyes closed in a quiet warm room, steady composure, soft window light, cream tones, intimate photography',
   'تنظیم و مدیریت هیجان': 'Calm hands resting on a warm ceramic mug, grounded stillness, soft morning light, cream and amber tones, lifestyle photography',
   'هوش هیجانی': 'Two people in warm empathetic conversation in a sunlit cafe, genuine attunement, cream and rose tones, photorealistic',
   'افزایش هوش هیجانی': 'Person listening attentively with open posture in a warm room, practising presence, soft light, cream tones, intimate photography',
   'مدیریت خشم از دیدگاه تئوری انتخاب': 'Person pausing at a crossroads path in soft morning light, deliberate choice, warm cream tones, conceptual photorealistic',
   'ضمیر ناخودآگاه': 'Soft layered light beneath still water surface, depth and clarity, muted cream and blue tones, abstract conceptual photography',
-  'قدرت تفکر': 'Person in quiet reflection by a window with soft daylight on their face, clear thought, cream tones, intimate portrait',
+  'وسواس آلودگی و شستشو': 'Clean bathroom sink with soft daylight and a folded towel, calm and orderly, cream tones, minimal editorial still life',
   'تاب‌آوری': 'A single resilient plant growing through a crack in stone in morning light, warm cream and green tones, photorealistic',
   'دسته‌بندی احساسات': 'Hand-written emotion words arranged on cards across a warm wooden table, soft daylight, cream tones, editorial flat lay',
-  'برنامه‌ریزی عصبی کلامی (NLP)': 'Open research journals and reading glasses on a wooden desk under warm lamp light, careful study, cream tones, editorial still life',
+  'افکار مزاحم': 'Woman by a rainy window with a calm expression, thoughts drifting like clouds, soft grey and cream tones, cinematic portrait',
   'اختلال شخصیت خودشیفته': 'Fragmented reflection of a person across several mirror panels, conceptual portrait, warm cream and rose tones, photorealistic',
   'تفکیک و مدیریت استرس': 'Person sorting papers into two clear piles at a calm desk, deliberate order, warm daylight, cream tones, lifestyle photography',
   'مدیریت زمان': 'Simple weekly planner open beside a cup of tea in morning light, calm structure, cream tones, minimal lifestyle photography',
@@ -300,18 +301,18 @@ function getTag(topicKey) {
     'افسردگی': 'افسردگی',
     'اضطراب': 'اضطراب',
     'مقابله با تنبلی': 'انگیزه',
-    'دروغ': 'روابط',
-    'شکرگزاری': 'ذهن‌آگاهی',
+    'وسواس وارسی': 'OCD',
+    'وسواس رابطه (ROCD)': 'OCD',
     'مدیریت احساسات': 'هیجان',
     'تنظیم و مدیریت هیجان': 'هیجان',
     'هوش هیجانی': 'هوش هیجانی',
     'افزایش هوش هیجانی': 'هوش هیجانی',
     'مدیریت خشم از دیدگاه تئوری انتخاب': 'خشم',
     'ضمیر ناخودآگاه': 'روان‌شناسی علمی',
-    'قدرت تفکر': 'شناخت',
+    'وسواس آلودگی و شستشو': 'OCD',
     'تاب‌آوری': 'تاب‌آوری',
     'دسته‌بندی احساسات': 'هیجان',
-    'برنامه‌ریزی عصبی کلامی (NLP)': 'روان‌شناسی علمی',
+    'افکار مزاحم': 'OCD',
     'اختلال شخصیت خودشیفته': 'شخصیت',
     'تفکیک و مدیریت استرس': 'استرس',
     'مدیریت زمان': 'بهره‌وری',
@@ -354,18 +355,18 @@ const TOPIC_ENGLISH = {
   'افسردگی': 'depression',
   'اضطراب': 'anxiety',
   'مقابله با تنبلی': 'procrastination',
-  'دروغ': 'lying',
-  'شکرگزاری': 'gratitude',
+  'وسواس وارسی': 'checking-ocd',
+  'وسواس رابطه (ROCD)': 'relationship-ocd',
   'مدیریت احساسات': 'emotion-regulation',
   'تنظیم و مدیریت هیجان': 'emotion-regulation',
   'هوش هیجانی': 'emotional-intelligence',
   'افزایش هوش هیجانی': 'emotional-intelligence',
   'مدیریت خشم از دیدگاه تئوری انتخاب': 'choice-theory',
   'ضمیر ناخودآگاه': 'subconscious',
-  'قدرت تفکر': 'power-of-thought',
+  'وسواس آلودگی و شستشو': 'contamination-ocd',
   'تاب‌آوری': 'resilience',
   'دسته‌بندی احساسات': 'emotion-vocabulary',
-  'برنامه‌ریزی عصبی کلامی (NLP)': 'nlp',
+  'افکار مزاحم': 'intrusive-thoughts',
   'اختلال شخصیت خودشیفته': 'narcissism',
   'تفکیک و مدیریت استرس': 'stress-management',
   'مدیریت زمان': 'time-management',
@@ -546,10 +547,12 @@ ${dedupeBlock}
 - ✅ مثال‌های واقعی و کاربردی از زندگی روزمره بزن
 - ✅ سؤال‌هایی بپرس که خواننده را به تأمل علمی درباره خودش ببرد
 - ✅ احساس بده که یک روان‌شناس متخصص با تجربه دارد توضیح می‌دهد، نه یک شاعر
-- اگر مرجع علمی مرتبط داری (DSM-5, APA, WHO, محققان مشهور)، اشاره کن
-
+- حداقل دو ارجاع درون‌متنی به منابع واقعی و قابل راستی‌آزمایی بیاور (DSM-5-TR، APA، NICE، WHO یا پژوهش‌های شناخته‌شده)
+- ❌ هرگز منبع، مطالعه، آمار یا نام پژوهشگر جعلی نساز — فقط منابعی که واقعاً وجود دارند
+- روی یک پرسش مشخص تمرکز کن و دقیق و عمیق جواب بده؛ کلی‌گویی دربارهٔ کل روانشناسی نکن
+${tag === 'OCD' ? '- یک بار به‌طور طبیعی در متن به راهنمای کامل وسواس لینک بده: <a href="/ocd">راهنمای کامل وسواس فکری-عملی</a>\n' : ''}
 قوانین ساختاری:
-- ۷۰۰ تا ۹۰۰ کلمه
+- ۹۰۰ تا ۱۲۰۰ کلمه
 - ۱ عنوان جذاب و کاربردی (نه شاعرانه، نه آکادمیک خشک)
 - مقدمه‌ای که خواننده را با یک مثال واقعی یا سؤال عملی درگیر کند
 - ۳ تا ۴ بخش با عنوان‌های روشن و واضح (h3)
@@ -578,6 +581,7 @@ ${dedupeBlock}
 </ul>
 <h3>در پایان</h3>
 <p>[جمع‌بندی گرم + دعوت ملایم]</p>
+<div class="sources"><h3>منابع و مراجع</h3><ul><li>[منبع واقعی ۱]</li><li>[منبع واقعی ۲]</li></ul></div>
 </article>
 
 مهم: فقط و فقط HTML برگردان، بدون هیچ متن اضافی.
@@ -700,6 +704,7 @@ ${dedupeBlock}
   "image": "https://rahiltherapy.com/${getCategoryImage(topicKey)}",
   "author": {
     "@type": "Person",
+    "@id": "https://rahiltherapy.com/about#therapist",
     "name": "راحله اوینی‌پور",
     "jobTitle": "روانشناس عمومی",
     "url": "https://rahiltherapy.com/about"
@@ -775,6 +780,7 @@ ${dedupeBlock}
 <main class="article-wrap">
 <img src="${articleImage}" alt="${seoTitle}" style="width:100%;height:320px;object-fit:cover;object-position:center;border-radius:20px;margin-bottom:40px;" onerror="this.src='../${categoryImage}'">
 ${articleHtml}
+${AUTHOR_BOX_HTML}
 <!-- Internal links: services + booking -->
 <div style="background:#FBF5F0;border:1px solid #E8D0C7;border-radius:16px;padding:24px 28px;margin:32px 0;">
   <p style="font-family:'Markazi Text',serif;font-size:20px;color:#3B2E2A;margin:0 0 12px;">می‌خواهید بیشتر بدانید یا قدم بعدی را بردارید؟</p>
@@ -789,7 +795,7 @@ ${articleHtml}
   <p style="font-family:'Markazi Text',serif;font-size:28px;color:#3B2E2A;margin-bottom:8px;">آماده‌اید قدم بعدی را بردارید؟</p>
   <p style="color:#806B63;margin-bottom:24px;font-size:15px;">جلسه اول رایگان (۳۰ تا ۴۵ دقیقه) — از طریق Zoom، WhatsApp یا Google Meet</p>
   <a href="/booking" style="display:block;background:#9C6A60;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;margin-bottom:10px;">رزرو جلسه رایگان</a>
-  <a href="https://wa.me/989124228995" target="_blank" style="display:block;background:#25D366;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;">واتساپ</a>
+  <a href="https://wa.me/971503475269" target="_blank" style="display:block;background:#25D366;color:#fff;padding:12px 24px;border-radius:30px;text-decoration:none;font-size:14px;font-weight:600;text-align:center;">واتساپ</a>
 </div>
 </main>
 
@@ -967,6 +973,8 @@ ${lengthRule}
     .replace(/"headline":\s*"(?:[^"\\]|\\.)*"/, `"headline": ${JSON.stringify(seoTitle)}`)
     .replace(/"description":\s*"(?:[^"\\]|\\.)*"/, `"description": ${JSON.stringify(excerpt)}`)
     .replace(/"dateModified":\s*"[^"]*"/, `"dateModified": "${toIsoDate(modifiedTs)}"`);
+
+  updated = applyAuthorBox(updated);
 
   fs.writeFileSync(filepath, updated, 'utf8');
   log(`Article refreshed: articles/${filename} (${words(currentHtml)}w → ${words(articleHtml)}w)`);

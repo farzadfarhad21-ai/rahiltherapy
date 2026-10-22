@@ -45,6 +45,14 @@
       "destination": "/emptiness.html"
     },
     {
+      "source": "/ocd",
+      "destination": "/ocd.html"
+    },
+    {
+      "source": "/attachment-test",
+      "destination": "/attachment-test.html"
+    },
+    {
       "source": "/parents",
       "destination": "/parents.html"
     },

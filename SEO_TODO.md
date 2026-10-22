@@ -2,10 +2,34 @@
 
 > Live tracker of SEO + performance fixes. Update after every batch.
 
-**Last updated:** 2026-10-07
+**Last updated:** 2026-10-22
 **Status:** Technical layer is DONE and verified live — stop spending time there. The 2026-08-20 audit found the daily automation had quietly become a duplicate-content factory (33 near-duplicate articles) with an empty meta description on 47% of posts and every auto-post stamped May 2025. All fixed in `9dfd51b`. **The bottleneck is, and has been since June, that zero off-site presence exists.** The BACKLINK_PLAN tracking table is still empty after two months.
 
 **Next up:** (1) **Push `fix/blog-automation-hardening` to production.** (2) Work the TIER A free directory list in BACKLINK_PLAN.md — every field is paste-ready, Farzad just needs to click. (3) ~~Re-auth Search Console~~ ✅ done 2026-08-20 — baseline recorded below; **re-measure ~2026-09-17**. Set the OAuth consent screen to "In production" or the token expires again in 7 days.
+
+---
+
+## 📅 Session 2026-10-22 — on-site growth pass
+
+### GSC, 28 days to 19 Oct (vs previous 28)
+| Window | Clicks | Impressions | CTR | Avg pos |
+|---|---|---|---|---|
+| 25 Aug – 21 Sep | 13 | 73 | 17.8% | 8.2 |
+| **22 Sep – 19 Oct** | **23** | **119** | **19.3%** | 8.1 |
+Sitemap resubmitted by Farzad 2026-10-22 — Google read 104 URLs immediately (was stuck at 71 since 9 Jul).
+
+### Done
+- **Phone → `+971503475269`** site-wide (WhatsApp links, schema `telephone`, llms.txt, generator, docs). Farzad set the same number on GBP. Instagram standardised to **@rahiltherapy**.
+- **Author box on all 100 articles** (`scripts/author-box.js`): photo, credentials, women-only note, YMYL disclaimer; Article `author` now carries `@id` → `/about#therapist`. Sits after `</article>` so daily refreshes keep it; generator template + refresh both apply it.
+- **Titles/meta rewritten** on the low-CTR pages: /dubai (66 impr / 2 clicks), /contact, depth-erp-ocd, depth-cbt-thought-record, depth-pure-o, depth-ocd-religious, depth-first-session-guide. Shorter, query first. Body text untouched.
+- **New `/ocd` hub** (MedicalWebPage + FAQ + sources) linking the 5 OCD articles + thought-record; cluster nav block added to each; linked from services + all footers.
+- **New `/attachment-test`**: 12-item self-reflection test (anxiety/avoidance model), client-side only, nothing stored; GA event `attachment_test_complete`. Linked from the 3 attachment articles + all footers.
+- **Daily blog**: swapped NLP / دروغ / شکرگزاری / قدرت تفکر (same indices — no rotation shift) for وسواس وارسی، وسواس رابطه (ROCD)، وسواس آلودگی، افکار مزاحم. New-article prompt now requires a real sources block, 900–1200 words, and OCD posts link `/ocd`.
+
+### Next
+- Re-measure CTR on the retitled pages ~2026-11-19.
+- The old NLP article (`1789805869233-nlp`) still exists — decide whether to noindex/redirect it (pseudoscience on a YMYL site).
+- GBP video verification in progress (Farzad, 2026-10-22) — after approval, set up "Ask for reviews" link.
 
 ---
 
@@ -88,7 +112,7 @@ Rewrote all 6 topic maps (TOPICS, TOPIC_FULL, TOPIC_ENGLISH, getTag, CATEGORY_IM
 > Goal: do the directory registrations TOGETHER. Farzad clicks/creates the accounts (Claude can't create accounts); Claude supplies paste-ready text for every field and logs each result in BACKLINK_PLAN.md.
 
 ### Info to have open (all in BACKLINK_PLAN.md submission packet)
-- **Phone:** +98 912 422 8995 (`+989124228995`) — use this EXACT number everywhere (NAP consistency)
+- **Phone:** +971 50 347 5269 (`+971503475269`) — use this EXACT number everywhere (NAP consistency)
 - **Website:** https://rahiltherapy.com
 - **Service area:** Dubai – United Arab Emirates
 - **Email:** ravinipour@gmail.com · **Instagram:** @ravinipour

@@ -46,5 +46,5 @@ Use existing article structure with:
 ## CTA (Call to Action) to include in every piece
 ```
 برای رزرو جلسه رایگان اول، همین الان از طریق واتساپ با من تماس بگیرید.
-WhatsApp: +989124228995
+WhatsApp: +971503475269
 ```

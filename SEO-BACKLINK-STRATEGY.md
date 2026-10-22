@@ -191,7 +191,7 @@ Citations are web mentions of the business **Name, Address, Phone (NAP)**. For D
 ```
 Name:    راحله اوینی‌پور | Raheleh Evinipour
 Phone:   +971-XX-XXX-XXXX (Dubai primary)
-         +98 912 422 8995 (WhatsApp secondary)
+         +971 50 347 5269 (WhatsApp secondary)
 Address: [Dubai clinic address]
          Dubai, United Arab Emirates
 ```
@@ -245,9 +245,9 @@ Social profiles serve three purposes: (1) citation + NAP, (2) referral traffic, 
 
 | # | Platform | URL | Purpose | Status | Action |
 |---|----------|-----|---------|--------|--------|
-| 1 | **Instagram** | https://www.instagram.com/ravinipour | Primary Persian content channel | Likely exists | Verify handle matches site. Add link in bio to rahiltherapy.com. Use Persian bio. Post 3x/week. |
+| 1 | **Instagram** | https://www.instagram.com/rahiltherapy | Primary Persian content channel | Likely exists | Verify handle matches site. Add link in bio to rahiltherapy.com. Use Persian bio. Post 3x/week. |
 | 2 | **Telegram** | https://t.me/raheleh21 | Persian-language community | Likely exists | Channel + group. Daily short posts. Link in site header/footer. |
-| 3 | **WhatsApp Business** | wa.me/989124228995 | Booking | Likely exists | Use WhatsApp Business API for auto-replies, catalog, business hours. |
+| 3 | **WhatsApp Business** | wa.me/971503475269 | Booking | Likely exists | Use WhatsApp Business API for auto-replies, catalog, business hours. |
 | 4 | **LinkedIn** | https://www.linkedin.com | E-E-A-T signal | Not yet | Create personal profile for Raheleh (clinical psychologist, Dubai). Add credentials, publications, current role at rahiltherapy.com. **Critical for international E-E-A-T.** |
 | 5 | **Twitter/X** | https://twitter.com | Persian diaspora engagement | Not yet | Create @ravinipour or @rahiltherapy. Persian-language tweets. |
 | 6 | **Facebook Page** | https://www.facebook.com | Persian diaspora + reviews | Not yet | Create "Raheleh Evinipour روانشناس" page. Persian + English. Link to site. |

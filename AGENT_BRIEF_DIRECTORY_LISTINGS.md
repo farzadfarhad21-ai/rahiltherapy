@@ -42,7 +42,7 @@ Not suggestions. Each one prevents real damage.
 
 5. **Never invent any fact about Raheleh.** Everything available to you is in section 3. If a form asks for something not there — a registration number, a graduation year, insurance accepted, a clinic address, years at a named employer — **leave it blank and tell Farzad.** Do not fill a gap with something that sounds plausible. This is the rule most likely to be broken and the most damaging when it is.
 
-6. **The phone number is always exactly `+989124228995`.** Never reformatted, no spaces, never converted to a local UAE format. Search engines connect a business across websites by matching name, phone and website. One listing with a different format reads as a different business and the work is wasted.
+6. **The phone number is always exactly `+971503475269`.** Never reformatted, no spaces, never converted to a local UAE format. Search engines connect a business across websites by matching name, phone and website. One listing with a different format reads as a different business and the work is wasted.
 
 7. **Never enter a street address.** She works online and from Dubai with no public clinic address. Look for "I serve clients at their location", "service area business", or "hide my address". If a form will not continue without an address, stop and ask Farzad. **Entering a home address publishes it.**
 
@@ -63,7 +63,7 @@ Not suggestions. Each one prevents real damage.
 | Practice name | Rahil Therapy |
 | Title | Psychologist (General Psychology) |
 | Website | https://rahiltherapy.com |
-| Phone / WhatsApp | `+989124228995` |
+| Phone / WhatsApp | `+971503475269` |
 | Email | ravinipour@gmail.com |
 | Instagram | https://www.instagram.com/rahiltherapy |
 | Telegram | https://t.me/raheleh21 |
@@ -227,7 +227,7 @@ Raheleh combines evidence-based methods with a real understanding of what Persia
 The first consultation is free, lasts 30 to 45 minutes, and carries no obligation to continue.
 
 Website: https://rahiltherapy.com
-Contact: WhatsApp +989124228995 and ravinipour@gmail.com
+Contact: WhatsApp +971503475269 and ravinipour@gmail.com
 ```
 
 ### Persian description — for Persian sites
@@ -242,7 +242,7 @@ Contact: WhatsApp +989124228995 and ravinipour@gmail.com
 جلسات به زبان فارسی، آنلاین برای سراسر جهان و حضوری در دبی برگزار می‌شود. جلسه اول رایگان است.
 
 وب‌سایت: https://rahiltherapy.com
-تماس: واتساپ +۹۸۹۱۲۴۲۲۸۹۹۵
+تماس: واتساپ +۹۷۱۵۰۳۴۷۵۲۶۹
 ایمیل: ravinipour@gmail.com
 ```
 
@@ -261,7 +261,7 @@ Contact: WhatsApp +989124228995 and ravinipour@gmail.com
 تخصص: روان‌شناس عمومی — CBT و طرحواره‌درمانی
 محل: دبی، امارات (جلسات آنلاین برای سراسر جهان)
 وب‌سایت: https://rahiltherapy.com
-تماس: +۹۸۹۱۲۴۲۲۸۹۹۵
+تماس: +۹۷۱۵۰۳۴۷۵۲۶۹
 ایمیل: ravinipour@gmail.com
 
 در صورت نیاز به مدارک یا اطلاعات بیشتر در خدمت هستم.
@@ -282,7 +282,7 @@ Contact: WhatsApp +989124228995 and ravinipour@gmail.com
 مایل هستم بدانم آیا امکان همکاری با مجموعه شما به‌عنوان روان‌درمانگر وجود دارد؟ در صورت تمایل، رزومه و مدارک را ارسال می‌کنم.
 
 وب‌سایت: https://rahiltherapy.com
-تماس: +۹۸۹۱۲۴۲۲۸۹۹۵
+تماس: +۹۷۱۵۰۳۴۷۵۲۶۹
 ایمیل: ravinipour@gmail.com
 
 با احترام،
@@ -324,4 +324,4 @@ Also list separately: **anything a form asked for that was not in this brief.** 
 
 ## 9. The one-paragraph version
 
-> Raheleh Avinipour's website is finished but no site links to it, so Google does not trust it and nobody finds her. Create real listings that link back. Do **iranianpsychologists.com** and **dubaiparsi.com** first — Persian, her actual clients. Then **TherapyRoute** — English, free, mainly for the link. **Ask Farzad before touching persiantherapist.com or hamrahcare.com**, which are marketplaces that take a cut and own the client. **Do not start Psychology Today** until her licence number arrives around 27 October. Phone is always `+989124228995`. Never invent a licence number, never enter payment details, never accept terms for her, never enter an address, and never fill a blank field with something that merely sounds right. When in doubt, stop and ask.
+> Raheleh Avinipour's website is finished but no site links to it, so Google does not trust it and nobody finds her. Create real listings that link back. Do **iranianpsychologists.com** and **dubaiparsi.com** first — Persian, her actual clients. Then **TherapyRoute** — English, free, mainly for the link. **Ask Farzad before touching persiantherapist.com or hamrahcare.com**, which are marketplaces that take a cut and own the client. **Do not start Psychology Today** until her licence number arrives around 27 October. Phone is always `+971503475269`. Never invent a licence number, never enter payment details, never accept terms for her, never enter an address, and never fill a blank field with something that merely sounds right. When in doubt, stop and ask.

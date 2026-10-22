@@ -11,7 +11,7 @@ Bring real paying clients to the website by coordinating a team of specialist ag
 - **Audience:** Persian speakers worldwide (Iran, UAE, Europe, North America)
 - **Services:** Online therapy sessions in Persian — anxiety, depression, OCD, ADHD, schema therapy, CBT, relationships, self-esteem, parenting
 - **Pricing:** $50/session international, $25/session from Iran, first session FREE
-- **Booking:** WhatsApp +989124228995, Telegram @raheleh21
+- **Booking:** WhatsApp +971503475269, Telegram @raheleh21
 - **Language:** All content must be in Persian (Farsi), RTL
 
 ## Your Team
