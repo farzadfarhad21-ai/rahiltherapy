@@ -2156,3 +2156,16 @@
 [2026-10-23T08:18:09.787Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-23T08:21:10.024Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1792743455157-contamination-ocd → 404
 [2026-10-23T08:21:10.024Z] [INFO] ========== Automation Completed Successfully in 267.0s ==========
+[2026-10-24T08:16:40.457Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-24T08:16:40.459Z] [INFO] Selected topic: تاب‌آوری؛ چه چیزی باعث می‌شود بعضی افراد پس از بحران بازسازی کنند (Topic #24/49)
+[2026-10-24T08:16:40.461Z] [INFO] Refreshing existing article for topic: تاب‌آوری؛ چه چیزی باعث می‌شود بعضی افراد پس از بحران بازسازی کنند (1785312396460-resilience.html)
+[2026-10-24T08:18:25.843Z] [INFO] Article refreshed: articles/1785312396460-resilience.html (2150w → 2346w)
+[2026-10-24T08:18:25.843Z] [INFO] Article refreshed: چرا بعضی‌ها بعد از شکست می‌شکنند و بعضی‌ها می‌سازند؟
+[2026-10-24T08:18:25.845Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-10-24T08:18:25.846Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-10-24T08:18:25.847Z] [INFO] Starting Vercel deployment...
+[2026-10-24T08:18:53.776Z] [INFO] Vercel deployment completed
+[2026-10-24T08:18:53.777Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-24T08:21:53.919Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785312396460-resilience → 200
+[2026-10-24T08:21:54.363Z] [INFO] IndexNow: submitted 2 URL(s) → 200
+[2026-10-24T08:21:54.364Z] [INFO] ========== Automation Completed Successfully in 313.9s ==========
