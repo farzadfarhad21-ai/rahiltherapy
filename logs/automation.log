@@ -2169,3 +2169,16 @@
 [2026-10-24T08:21:53.919Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1785312396460-resilience → 200
 [2026-10-24T08:21:54.363Z] [INFO] IndexNow: submitted 2 URL(s) → 200
 [2026-10-24T08:21:54.364Z] [INFO] ========== Automation Completed Successfully in 313.9s ==========
+[2026-10-25T08:16:40.893Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-25T08:16:40.896Z] [INFO] Selected topic: دسته‌بندی احساسات؛ چرا نام‌گذاری دقیق هیجان‌ها آن‌ها را قابل‌مدیریت می‌کند (Topic #25/49)
+[2026-10-25T08:16:40.897Z] [INFO] Refreshing existing article for topic: دسته‌بندی احساسات؛ چرا نام‌گذاری دقیق هیجان‌ها آن‌ها را قابل‌مدیریت می‌کند (1788855461654-emotion-vocabulary.html)
+[2026-10-25T08:17:58.836Z] [INFO] Article refreshed: articles/1788855461654-emotion-vocabulary.html (1584w → 2126w)
+[2026-10-25T08:17:58.838Z] [INFO] Article refreshed: دسته‌بندی احساسات؛ چرا نام‌گذاری دقیق هیجان‌ها آن‌ها را قابل‌مدیریت می‌کند
+[2026-10-25T08:17:58.840Z] [INFO] Updated blog.html (refreshed card + featured slot)
+[2026-10-25T08:17:58.841Z] [INFO] Updated sitemap.xml (lastmod bumped)
+[2026-10-25T08:17:58.842Z] [INFO] Starting Vercel deployment...
+[2026-10-25T08:18:24.561Z] [INFO] Vercel deployment completed
+[2026-10-25T08:18:24.561Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-25T08:21:24.851Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1788855461654-emotion-vocabulary → 200
+[2026-10-25T08:21:25.919Z] [INFO] IndexNow: submitted 2 URL(s) → 200
+[2026-10-25T08:21:25.919Z] [INFO] ========== Automation Completed Successfully in 285.0s ==========
