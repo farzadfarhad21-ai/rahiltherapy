@@ -179,9 +179,9 @@ https://rahiltherapy.com
 | A2 | Google Business Profile | | | | created 13 Jun, verify status |
 | A3 | TherapyRoute (free) | | | | |
 | A4 | Apple Maps | | | | |
-| A5 | dubaiparsi.com | | | | |
+| A5 | dubaiparsi.com | 2026-10-26 | ⏳ listing created (پزشکی › کلینیک درمانی › روانشناس); needs 19 AED base fee + approval | pending | phone 0503475269, WhatsApp 971503475269, site/IG/Telegram filled |
 | — | Bing Webmaster Tools | 2026-10-26 | ✅ verified (GSC import) | n/a | sitemap read OK, 108 URLs |
-| A6 | iranianpsychologists.com | | | | outreach drafted above |
+| A6 | iranianpsychologists.com | 2026-10-26 | ⏳ submitted, awaiting site approval (404 when logged out) | pending | slug came out `raheleh-evinipour` (typo) — fix English name to Avinipour |
 | B1 | Psychology Today | | | | ~$30/mo |
 | C1 | Edarabia (editorial) | | | | |
 | C2 | Guest post #1 | | | | |
