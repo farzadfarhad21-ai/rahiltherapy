@@ -26,6 +26,12 @@ Sitemap resubmitted by Farzad 2026-10-22 — Google read 104 URLs immediately (w
 - **New `/attachment-test`**: 12-item self-reflection test (anxiety/avoidance model), client-side only, nothing stored; GA event `attachment_test_complete`. Linked from the 3 attachment articles + all footers.
 - **Daily blog**: swapped NLP / دروغ / شکرگزاری / قدرت تفکر (same indices — no rotation shift) for وسواس وارسی، وسواس رابطه (ROCD)، وسواس آلودگی، افکار مزاحم. New-article prompt now requires a real sources block, 900–1200 words, and OCD posts link `/ocd`.
 
+### Added 2026-10-26
+- **`/en` English page** (ProfilePage + FAQPage) for English/AI queries ("Persian-speaking female psychologist Dubai"); hreflang en↔fa with homepage.
+- **Bing Webmaster Tools** set up by Farzad via GSC import (all 4 sites). rahiltherapy sitemap: Success, 108 URLs. Check **AI Performance (BETA)** there in ~2 weeks for Copilot/Bing AI citations.
+- GA4 read access added (property 539775236). 10 booking attempts 12–25 Oct; **6 of 10 came from chatgpt.com**.
+- Removed noindexed `article-5` from the OCD cluster; its in-text links now point to `/ocd`.
+
 ### Next
 - Re-measure CTR on the retitled pages ~2026-11-19.
 - The old NLP article (`1789805869233-nlp`) still exists — decide whether to noindex/redirect it (pseudoscience on a YMYL site).
