@@ -31,6 +31,7 @@
 
 ## Key pages
 
+- [English page](https://rahiltherapy.com/en): English summary — Persian-speaking female psychologist in Dubai, credentials, services, fees, booking, FAQ.
 - [Homepage](https://rahiltherapy.com/): Overview of services, free consultation booking, therapist intro.
 - [About](https://rahiltherapy.com/about): Therapist biography, credentials, training, therapeutic approach.
 - [Services](https://rahiltherapy.com/services): Anxiety, depression, OCD, ADHD, schema therapy, couples, family, self-esteem.

@@ -53,6 +53,10 @@
       "destination": "/attachment-test.html"
     },
     {
+      "source": "/en",
+      "destination": "/en.html"
+    },
+    {
       "source": "/parents",
       "destination": "/parents.html"
     },
