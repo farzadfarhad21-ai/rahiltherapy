@@ -57,6 +57,10 @@
       "destination": "/en.html"
     },
     {
+      "source": "/online-therapy",
+      "destination": "/online-therapy.html"
+    },
+    {
       "source": "/parents",
       "destination": "/parents.html"
     },

@@ -26,6 +26,13 @@ Sitemap resubmitted by Farzad 2026-10-22 — Google read 104 URLs immediately (w
 - **New `/attachment-test`**: 12-item self-reflection test (anxiety/avoidance model), client-side only, nothing stored; GA event `attachment_test_complete`. Linked from the 3 attachment articles + all footers.
 - **Daily blog**: swapped NLP / دروغ / شکرگزاری / قدرت تفکر (same indices — no rotation shift) for وسواس وارسی، وسواس رابطه (ROCD)، وسواس آلودگی، افکار مزاحم. New-article prompt now requires a real sources block, 900–1200 words, and OCD posts link `/ocd`.
 
+### Added 2026-10-27 — money pages
+Data: since June, 44 of 64 bookings came from chatgpt.com, 3 from Google; 47 started on the homepage. Commercial SERPs ("روانشناس فارسی زبان دبی", "Persian speaking therapist Dubai") have one competitor (thrive.ae, sessions in English).
+- Homepage: title/meta/H1 now "روانشناس فارسی‌زبان ویژه بانوان در دبی و آنلاین"; 5-question client FAQ + FAQPage schema.
+- /dubai: H1 "روانشناس ایرانی و فارسی‌زبان در دبی — ویژه بانوان"; 2 new money FAQs; FAQPage schema (8 Qs) from the visible FAQ.
+- /en: 2 more FAQs (Iranian female therapist Dubai; online Farsi therapy abroad).
+- New **/online-therapy** (Service + FAQPage) for "روانشناس آنلاین فارسی‌زبان خارج از کشور"; linked from homepage FAQ, all footers, /en and 8 migration articles.
+
 ### Added 2026-10-26
 - **`/en` English page** (ProfilePage + FAQPage) for English/AI queries ("Persian-speaking female psychologist Dubai"); hreflang en↔fa with homepage.
 - **Bing Webmaster Tools** set up by Farzad via GSC import (all 4 sites). rahiltherapy sitemap: Success, 108 URLs. Check **AI Performance (BETA)** there in ~2 weeks for Copilot/Bing AI citations.
