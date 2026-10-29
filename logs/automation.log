@@ -2221,3 +2221,18 @@
 [2026-10-28T08:21:49.890Z] [INFO] Post-deploy check PASSED: https://rahiltherapy.com/articles/1789287472757-focus → 200
 [2026-10-28T08:21:51.020Z] [INFO] IndexNow: submitted 2 URL(s) → 200
 [2026-10-28T08:21:51.020Z] [INFO] ========== Automation Completed Successfully in 307.3s ==========
+[2026-10-29T08:16:41.531Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-29T08:16:41.532Z] [INFO] Selected topic: حمله پانیک؛ چرا بدن فکر می‌کند در خطر مرگ است و چگونه آرام می‌شود (Topic #29/49)
+[2026-10-29T08:16:41.533Z] [INFO] Generating article for topic: حمله پانیک؛ چرا بدن فکر می‌کند در خطر مرگ است و چگونه آرام می‌شود
+[2026-10-29T08:17:21.800Z] [INFO] Article created: articles/1793261841789-panic-attacks.html
+[2026-10-29T08:17:21.800Z] [INFO] Article generated: حمله پانیک: چرا بدنم فکر می‌کند دارم می‌میرم و چطور آرام می‌شود؟
+[2026-10-29T08:17:21.800Z] [INFO] Generating image via Segmind for topic: حمله پانیک
+[2026-10-29T08:17:27.676Z] [INFO] Image saved: articles/1793261846983-panic-attacks.jpg
+[2026-10-29T08:17:27.676Z] [INFO] Updated article with new image: 1793261846983-panic-attacks.jpg
+[2026-10-29T08:17:27.677Z] [INFO] Updated blog.html with new article card
+[2026-10-29T08:17:27.678Z] [INFO] Updated sitemap.xml
+[2026-10-29T08:17:27.679Z] [INFO] Starting Vercel deployment...
+[2026-10-29T08:17:56.243Z] [INFO] Vercel deployment completed
+[2026-10-29T08:17:56.244Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-29T08:20:56.494Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1793261841789-panic-attacks → 404
+[2026-10-29T08:20:56.495Z] [INFO] ========== Automation Completed Successfully in 255.0s ==========
