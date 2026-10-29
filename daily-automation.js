@@ -1238,7 +1238,7 @@ async function checkDeployedUrl(articleUrl) {
       log(`Post-deploy check PASSED: ${articleUrl} → ${response.status}`);
       return true;
     } else {
-      log(`Post-deploy check FAILED: ${articleUrl} → ${response.status}`, 'ERROR');
+      log(`Post-deploy check: ${articleUrl} → ${response.status} (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)`, 'WARN');
       // Silent — log only, no Telegram spam
       return false;
     }

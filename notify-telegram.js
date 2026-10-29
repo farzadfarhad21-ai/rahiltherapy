@@ -19,6 +19,30 @@ function readArticleInfo() {
   return JSON.parse(fs.readFileSync(ARTICLE_INFO_PATH, 'utf8'));
 }
 
+// Same key as daily-automation.js (public by design; served at /{key}.txt).
+const INDEXNOW_KEY = '6f6e45892632d3f5504a1c212a3ef37f';
+
+// New articles only go live with the git-push deploy that runs after
+// daily-automation.js, so its own post-deploy check sees a 404 and skips
+// IndexNow. This step already waits until the page is live, so ping here.
+async function pingIndexNow(urls) {
+  try {
+    const res = await fetch('https://api.indexnow.org/indexnow', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify({
+        host: 'rahiltherapy.com',
+        key: INDEXNOW_KEY,
+        keyLocation: `https://rahiltherapy.com/${INDEXNOW_KEY}.txt`,
+        urlList: urls
+      })
+    });
+    console.log(`IndexNow: submitted ${urls.length} URL(s) → ${res.status}`);
+  } catch (err) {
+    console.warn(`IndexNow ping failed: ${err.message}`);
+  }
+}
+
 async function pollUntilLive(url) {
   console.log(`Polling ${url}`);
   for (let i = 1; i <= MAX_ATTEMPTS; i++) {
@@ -85,6 +109,7 @@ async function main() {
 
   const live = await pollUntilLive(articleUrl);
   if (!live) process.exit(1);
+  await pingIndexNow([articleUrl, 'https://rahiltherapy.com/blog']);
 
   const localArticlePath = path.join(__dirname, 'articles', filename);
   const articleHtml = fs.readFileSync(localArticlePath, 'utf8');
