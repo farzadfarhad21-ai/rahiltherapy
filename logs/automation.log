@@ -2236,3 +2236,18 @@
 [2026-10-29T08:17:56.244Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-29T08:20:56.494Z] [ERROR] Post-deploy check FAILED: https://rahiltherapy.com/articles/1793261841789-panic-attacks → 404
 [2026-10-29T08:20:56.495Z] [INFO] ========== Automation Completed Successfully in 255.0s ==========
+[2026-10-30T08:16:40.188Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-30T08:16:40.191Z] [INFO] Selected topic: بی‌خوابی؛ چرخه ذهن بیدار و راهکارهای مبتنی بر شواهد برای خواب بهتر (Topic #30/49)
+[2026-10-30T08:16:40.192Z] [INFO] Generating article for topic: بی‌خوابی؛ چرخه ذهن بیدار و راهکارهای مبتنی بر شواهد برای خواب بهتر
+[2026-10-30T08:17:21.528Z] [INFO] Article created: articles/1793348241510-insomnia.html
+[2026-10-30T08:17:21.528Z] [INFO] Article generated: بی‌خوابی و چرخه ذهن بیدار: چرا هرچه بیشتر تلاش می‌کنید، کمتر خوابتان می‌برد؟
+[2026-10-30T08:17:21.529Z] [INFO] Generating image via Segmind for topic: بی‌خوابی و بهداشت خواب
+[2026-10-30T08:17:26.330Z] [INFO] Image saved: articles/1793348245922-insomnia.jpg
+[2026-10-30T08:17:26.331Z] [INFO] Updated article with new image: 1793348245922-insomnia.jpg
+[2026-10-30T08:17:26.332Z] [INFO] Updated blog.html with new article card
+[2026-10-30T08:17:26.333Z] [INFO] Updated sitemap.xml
+[2026-10-30T08:17:26.334Z] [INFO] Starting Vercel deployment...
+[2026-10-30T08:17:54.239Z] [INFO] Vercel deployment completed
+[2026-10-30T08:17:54.240Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-30T08:20:54.365Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793348241510-insomnia → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-10-30T08:20:54.365Z] [INFO] ========== Automation Completed Successfully in 254.2s ==========
