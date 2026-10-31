@@ -2251,3 +2251,18 @@
 [2026-10-30T08:17:54.240Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-30T08:20:54.365Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793348241510-insomnia → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-10-30T08:20:54.365Z] [INFO] ========== Automation Completed Successfully in 254.2s ==========
+[2026-10-31T08:16:40.539Z] [INFO] ========== Daily Automation Started ==========
+[2026-10-31T08:16:40.541Z] [INFO] Selected topic: سوگ و سوگواری؛ مسیر طبیعی اندوه و زمانی که به کمک نیاز است (Topic #31/49)
+[2026-10-31T08:16:40.542Z] [INFO] Generating article for topic: سوگ و سوگواری؛ مسیر طبیعی اندوه و زمانی که به کمک نیاز است
+[2026-10-31T08:17:32.307Z] [INFO] Article created: articles/1793434652291-grief.html
+[2026-10-31T08:17:32.307Z] [INFO] Article generated: سوگ تا کجا طبیعی است؟ نشانه‌هایی که می‌گویند وقت کمک گرفتن رسیده
+[2026-10-31T08:17:32.307Z] [INFO] Generating image via Segmind for topic: سوگ و سوگواری
+[2026-10-31T08:17:38.256Z] [INFO] Image saved: articles/1793434657508-grief.jpg
+[2026-10-31T08:17:38.256Z] [INFO] Updated article with new image: 1793434657508-grief.jpg
+[2026-10-31T08:17:38.258Z] [INFO] Updated blog.html with new article card
+[2026-10-31T08:17:38.258Z] [INFO] Updated sitemap.xml
+[2026-10-31T08:17:38.259Z] [INFO] Starting Vercel deployment...
+[2026-10-31T08:18:02.078Z] [INFO] Vercel deployment completed
+[2026-10-31T08:18:02.079Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-10-31T08:21:02.299Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793434652291-grief → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-10-31T08:21:02.299Z] [INFO] ========== Automation Completed Successfully in 261.8s ==========
