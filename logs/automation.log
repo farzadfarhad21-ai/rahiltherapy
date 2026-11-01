@@ -2266,3 +2266,18 @@
 [2026-10-31T08:18:02.079Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-10-31T08:21:02.299Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793434652291-grief → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-10-31T08:21:02.299Z] [INFO] ========== Automation Completed Successfully in 261.8s ==========
+[2026-11-01T08:16:39.575Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-01T08:16:39.577Z] [INFO] Selected topic: تروما و اختلال استرس پس از سانحه؛ وقتی گذشته در بدن باقی می‌ماند (Topic #32/49)
+[2026-11-01T08:16:39.578Z] [INFO] Generating article for topic: تروما و اختلال استرس پس از سانحه؛ وقتی گذشته در بدن باقی می‌ماند
+[2026-11-01T08:17:25.135Z] [INFO] Article created: articles/1793521045124-trauma-ptsd.html
+[2026-11-01T08:17:25.135Z] [INFO] Article generated: تروما و PTSD: چرا بدنِ شما هنوز فکر می‌کند خطر تمام نشده است؟
+[2026-11-01T08:17:25.135Z] [INFO] Generating image via Segmind for topic: تروما و PTSD
+[2026-11-01T08:17:50.837Z] [INFO] Image saved: articles/1793521070161-trauma-ptsd.jpg
+[2026-11-01T08:17:50.838Z] [INFO] Updated article with new image: 1793521070161-trauma-ptsd.jpg
+[2026-11-01T08:17:50.838Z] [INFO] Updated blog.html with new article card
+[2026-11-01T08:17:50.839Z] [INFO] Updated sitemap.xml
+[2026-11-01T08:17:50.840Z] [INFO] Starting Vercel deployment...
+[2026-11-01T08:18:16.285Z] [INFO] Vercel deployment completed
+[2026-11-01T08:18:16.286Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-01T08:21:16.483Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793521045124-trauma-ptsd → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-01T08:21:16.484Z] [INFO] ========== Automation Completed Successfully in 276.9s ==========
