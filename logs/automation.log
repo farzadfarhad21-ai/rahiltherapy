@@ -2281,3 +2281,18 @@
 [2026-11-01T08:18:16.286Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-01T08:21:16.483Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793521045124-trauma-ptsd → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-01T08:21:16.484Z] [INFO] ========== Automation Completed Successfully in 276.9s ==========
+[2026-11-02T08:16:44.029Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-02T08:16:44.031Z] [INFO] Selected topic: فرسودگی شغلی؛ تفاوت آن با خستگی و مسیر بازیابی (Topic #33/49)
+[2026-11-02T08:16:44.032Z] [INFO] Generating article for topic: فرسودگی شغلی؛ تفاوت آن با خستگی و مسیر بازیابی
+[2026-11-02T08:17:21.183Z] [INFO] Article created: articles/1793607441169-burnout.html
+[2026-11-02T08:17:21.184Z] [INFO] Article generated: فرسودگی شغلی یا فقط خستگی؟ چطور تفاوتشان را بفهمیم و بازیابی را شروع کنیم
+[2026-11-02T08:17:21.184Z] [INFO] Generating image via Segmind for topic: فرسودگی شغلی
+[2026-11-02T08:17:25.748Z] [INFO] Image saved: articles/1793607445053-burnout.jpg
+[2026-11-02T08:17:25.749Z] [INFO] Updated article with new image: 1793607445053-burnout.jpg
+[2026-11-02T08:17:25.750Z] [INFO] Updated blog.html with new article card
+[2026-11-02T08:17:25.751Z] [INFO] Updated sitemap.xml
+[2026-11-02T08:17:25.751Z] [INFO] Starting Vercel deployment...
+[2026-11-02T08:17:54.020Z] [INFO] Vercel deployment completed
+[2026-11-02T08:17:54.021Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-02T08:20:54.219Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793607441169-burnout → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-02T08:20:54.219Z] [INFO] ========== Automation Completed Successfully in 250.2s ==========
