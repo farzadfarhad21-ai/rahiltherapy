@@ -26,6 +26,13 @@ Sitemap resubmitted by Farzad 2026-10-22 — Google read 104 URLs immediately (w
 - **New `/attachment-test`**: 12-item self-reflection test (anxiety/avoidance model), client-side only, nothing stored; GA event `attachment_test_complete`. Linked from the 3 attachment articles + all footers.
 - **Daily blog**: swapped NLP / دروغ / شکرگزاری / قدرت تفکر (same indices — no rotation shift) for وسواس وارسی، وسواس رابطه (ROCD)، وسواس آلودگی، افکار مزاحم. New-article prompt now requires a real sources block, 900–1200 words, and OCD posts link `/ocd`.
 
+### 2026-11-03 — check + 25 new topics
+- 6 new articles Oct 29–Nov 3, all on Telegram + IndexNow (IndexNow fix 80f904c works). 115 sitemap URLs 200. New pages indexed (/online-therapy, /en, /ocd, /dubai, new articles); /attachment-test unknown.
+- GSC 28d: 20 clicks, 159 impr (prev 91). "iranian psychologist in dubai" visible at ~pos 10.
+- ⚠️ booking_request fell to ~1/week since Oct 26 (was 5–7). /booking views fell too; chatgpt.com sessions ~30/wk (Sep) → ~16/wk. Booking page verified working. Watch this.
+- Directories still not live (iranianpsychologists unapproved after 8 days; dubaiparsi unpaid).
+- TOPICS 49 → 74 (appended; modulo reshuffle simulated: all 43 uncovered topics get articles by ~2027-01-16, daily NEW through mid-Nov).
+
 ### Added 2026-10-27 — money pages
 Data: since June, 44 of 64 bookings came from chatgpt.com, 3 from Google; 47 started on the homepage. Commercial SERPs ("روانشناس فارسی زبان دبی", "Persian speaking therapist Dubai") have one competitor (thrive.ae, sessions in English).
 - Homepage: title/meta/H1 now "روانشناس فارسی‌زبان ویژه بانوان در دبی و آنلاین"; 5-question client FAQ + FAQPage schema.
