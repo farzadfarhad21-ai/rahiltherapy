@@ -170,10 +170,18 @@ body{font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;}
 .en-nav nav a{color:var(--ink);}
 .en-foot{background:#3B2E2A;color:#F4E9E2;padding:36px 0;font-size:14.5px;line-height:1.9;}
 .en-foot a{color:#fff;}
+.fa-bar{background:#3B2E2A;color:#F4E9E2;font-family:'Vazirmatn',system-ui,sans-serif;font-size:14.5px;padding:10px 16px;text-align:center;direction:rtl;line-height:1.9;}
+.fa-bar a{color:#fff;font-weight:700;text-decoration:underline;margin:0 6px;white-space:nowrap;}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-weight:700;border-radius:999px;padding:14px 26px;text-decoration:none;}
+.en-note{font-size:14px;color:#806B63;margin:14px 0 0;}
+.en-mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid #E8D0C7;padding:10px 14px;gap:10px;box-shadow:0 -6px 18px -10px rgba(59,46,42,.35);}
+.en-mbar a{flex:1;text-align:center;border-radius:999px;padding:12px 10px;font-weight:700;font-size:15px;text-decoration:none;}
+@media(max-width:760px){.en-mbar{display:flex;}body{padding-bottom:72px;}}
 @media(max-width:760px){.en-hero .wrap{grid-template-columns:1fr;}.en-hero img{max-width:180px;grid-row:1;}.en-nav nav{display:none;}.en-nav .btn{padding:10px 16px;font-size:14px;}.en-nav .logo{font-size:17px;}}
 </style>
 </head>
 <body>
+<div class="fa-bar" lang="fa">فارسی‌زبان هستید؟ همهٔ جلسات به زبان فارسی است — <a href="/" hreflang="fa">نسخهٔ فارسی سایت</a>·<a href="https://wa.me/971503475269?text=Hi%20Raheleh%2C%20I%20found%20you%20on%20rahiltherapy.com%20and%20would%20like%20to%20book%20a%20free%20first%20session.%0A%D8%B3%D9%84%D8%A7%D9%85%20%D8%B1%D8%A7%D8%AD%D9%84%D9%87%20%D8%AE%D8%A7%D9%86%D9%85%D8%8C%20%D8%A7%D8%B2%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85%20%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%AC%D9%84%D8%B3%D9%87%D9%94%20%D8%A7%D9%88%D9%84%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%B1%D8%A7%20%D8%B1%D8%B2%D8%B1%D9%88%20%DA%A9%D9%86%D9%85." target="_blank" rel="noopener">پیام در واتساپ</a></div>
 <header>
   <div class="container en-nav">
     <a class="logo" href="/en"><span class="mk"></span>Raheleh Avinipour</a>
@@ -193,7 +201,8 @@ body{font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;}
       <h1>Persian-speaking psychologist in Dubai, for women</h1>
       <p class="lead">I'm Raheleh Avinipour, a Farsi-speaking general psychologist based in Dubai. For more than 15 years I have helped Iranian and Persian-speaking women with anxiety, depression, OCD, relationships and the quiet weight of living far from home — in the language they feel in.</p>
       <a class="btn btn-fill" href="/booking">Book a free first session</a>
-      <a class="btn" href="https://wa.me/971503475269" target="_blank" rel="noopener" style="margin-left:8px;">WhatsApp +971 50 347 5269</a>
+      <a class="btn-wa" href="https://wa.me/971503475269?text=Hi%20Raheleh%2C%20I%20found%20you%20on%20rahiltherapy.com%20and%20would%20like%20to%20book%20a%20free%20first%20session.%0A%D8%B3%D9%84%D8%A7%D9%85%20%D8%B1%D8%A7%D8%AD%D9%84%D9%87%20%D8%AE%D8%A7%D9%86%D9%85%D8%8C%20%D8%A7%D8%B2%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85%20%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%AC%D9%84%D8%B3%D9%87%D9%94%20%D8%A7%D9%88%D9%84%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%B1%D8%A7%20%D8%B1%D8%B2%D8%B1%D9%88%20%DA%A9%D9%86%D9%85." target="_blank" rel="noopener" style="margin-left:8px;">WhatsApp — message in English or Farsi</a>
+      <p class="en-note">Quickest way: send a WhatsApp message to +971 50 347 5269 — replies usually within 24 hours. (The booking form is in Farsi.)</p>
     </div>
     <img src="/profile.webp" alt="Raheleh Avinipour, Persian-speaking psychologist in Dubai" width="340" height="340">
   </div>
@@ -264,7 +273,7 @@ body{font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;}
       <h2>The first step is just a conversation</h2>
       <p>Free first session, 30–45 minutes, in Farsi — in Dubai or online.</p>
       <a class="btn" href="/booking">Book a free first session</a>
-      <a class="btn" href="https://wa.me/971503475269" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="https://wa.me/971503475269?text=Hi%20Raheleh%2C%20I%20found%20you%20on%20rahiltherapy.com%20and%20would%20like%20to%20book%20a%20free%20first%20session.%0A%D8%B3%D9%84%D8%A7%D9%85%20%D8%B1%D8%A7%D8%AD%D9%84%D9%87%20%D8%AE%D8%A7%D9%86%D9%85%D8%8C%20%D8%A7%D8%B2%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85%20%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%AC%D9%84%D8%B3%D9%87%D9%94%20%D8%A7%D9%88%D9%84%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%B1%D8%A7%20%D8%B1%D8%B2%D8%B1%D9%88%20%DA%A9%D9%86%D9%85." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
@@ -276,5 +285,6 @@ body{font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',sans-serif;}
     <p style="margin:0;"><a href="/" hreflang="fa" lang="fa">نسخهٔ فارسی سایت</a> · <a href="/privacy">Privacy</a> · © 2026 Raheleh Avinipour</p>
   </div>
 </footer>
+<div class="en-mbar"><a href="https://wa.me/971503475269?text=Hi%20Raheleh%2C%20I%20found%20you%20on%20rahiltherapy.com%20and%20would%20like%20to%20book%20a%20free%20first%20session.%0A%D8%B3%D9%84%D8%A7%D9%85%20%D8%B1%D8%A7%D8%AD%D9%84%D9%87%20%D8%AE%D8%A7%D9%86%D9%85%D8%8C%20%D8%A7%D8%B2%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D9%BE%DB%8C%D8%A7%D9%85%20%D9%85%DB%8C%E2%80%8C%D8%AF%D9%87%D9%85%20%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%87%D9%85%20%D8%AC%D9%84%D8%B3%D9%87%D9%94%20%D8%A7%D9%88%D9%84%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%B1%D8%A7%20%D8%B1%D8%B2%D8%B1%D9%88%20%DA%A9%D9%86%D9%85." target="_blank" rel="noopener" style="background:#25D366;color:#fff;">WhatsApp</a><a href="/booking" style="background:#9C6A60;color:#fff;">Book free session</a></div>
 </body>
 </html>

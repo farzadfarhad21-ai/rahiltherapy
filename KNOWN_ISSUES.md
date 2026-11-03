@@ -3,6 +3,12 @@
 > This file is a living memory. Every bug we hit gets documented here with the fix applied.
 > Add new entries at the top (newest first).
 
+## 2026-11-03 — /en page became a dead end that ate ChatGPT traffic (bookings fell ~7/wk → ~1/wk)
+**Symptom:** booking_request dropped from 5–7/week to 0–1 from Oct 26, though chatgpt.com sessions held (15.7 → 13.2/wk).
+**Root cause:** ChatGPT searches in English behind the scenes, so after `/en` launched (6105e0c, Oct 26) it started linking `/en` and `/online-therapy` instead of the homepage (homepage landings from ChatGPT 11.7/wk → 1.6/wk). `/en` had 15 views and **zero onward clicks** (no booking, no WhatsApp, 36 s average) — its only CTAs were a plain booking button to a Persian form and a grey WhatsApp button.
+**Fix:** Persian top bar (→ Persian site + WhatsApp), big green pre-filled WhatsApp button in the hero, note that the booking form is in Farsi, sticky WhatsApp/Book bar on mobile; WhatsApp button added to the `/online-therapy` hero.
+**Lesson:** any new landing page that AI assistants may link to needs the same conversion path as the homepage (WhatsApp up front + sticky mobile CTA). Check GA landing pages × booking events after launching pages.
+
 ## 2026-10-07 (b)
 
 ### [PENDING] Licence number — reissue requested, expected ~27 October 2026
