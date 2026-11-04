@@ -2311,3 +2311,18 @@
 [2026-11-03T08:18:12.316Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-03T08:21:12.605Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793693860314-health-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-03T08:21:12.606Z] [INFO] ========== Automation Completed Successfully in 262.3s ==========
+[2026-11-04T08:16:40.932Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-04T08:16:40.933Z] [INFO] Selected topic: احساس گناه نسبت به والدینی که در ایران مانده‌اند؛ بار پنهان مهاجرت (Topic #42/74)
+[2026-11-04T08:16:40.934Z] [INFO] Generating article for topic: احساس گناه نسبت به والدینی که در ایران مانده‌اند؛ بار پنهان مهاجرت
+[2026-11-04T08:17:41.702Z] [INFO] Article created: articles/1793780261689-parent-guilt-migration.html
+[2026-11-04T08:17:41.703Z] [INFO] Article generated: احساس گناه نسبت به والدینی که در ایران مانده‌اند: از کجا می‌آید و با آن چه کنیم؟
+[2026-11-04T08:17:41.703Z] [INFO] Generating image via Segmind for topic: احساس گناه نسبت به والدین در ایران
+[2026-11-04T08:17:47.040Z] [INFO] Image saved: articles/1793780266548-parent-guilt-migration.jpg
+[2026-11-04T08:17:47.041Z] [INFO] Updated article with new image: 1793780266548-parent-guilt-migration.jpg
+[2026-11-04T08:17:47.042Z] [INFO] Updated blog.html with new article card
+[2026-11-04T08:17:47.042Z] [INFO] Updated sitemap.xml
+[2026-11-04T08:17:47.043Z] [INFO] Starting Vercel deployment...
+[2026-11-04T08:18:12.834Z] [INFO] Vercel deployment completed
+[2026-11-04T08:18:12.834Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-04T08:21:13.013Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793780261689-parent-guilt-migration → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-04T08:21:13.013Z] [INFO] ========== Automation Completed Successfully in 272.1s ==========
