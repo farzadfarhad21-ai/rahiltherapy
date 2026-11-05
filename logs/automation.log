@@ -2326,3 +2326,18 @@
 [2026-11-04T08:18:12.834Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-04T08:21:13.013Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793780261689-parent-guilt-migration → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-04T08:21:13.013Z] [INFO] ========== Automation Completed Successfully in 272.1s ==========
+[2026-11-05T08:16:42.998Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-05T08:16:43.000Z] [INFO] Selected topic: رابطه از راه دور؛ حفظ پیوند عاطفی در فاصله جغرافیایی (Topic #43/74)
+[2026-11-05T08:16:43.000Z] [INFO] Generating article for topic: رابطه از راه دور؛ حفظ پیوند عاطفی در فاصله جغرافیایی
+[2026-11-05T08:17:34.880Z] [INFO] Article created: articles/1793866654862-long-distance-relationship.html
+[2026-11-05T08:17:34.880Z] [INFO] Article generated: رابطه از راه دور: چطور بدون دیدن هر روزه، نزدیک بمانیم؟
+[2026-11-05T08:17:34.880Z] [INFO] Generating image via Segmind for topic: رابطه از راه دور در مهاجرت
+[2026-11-05T08:17:39.112Z] [INFO] Image saved: articles/1793866658444-long-distance-relationship.jpg
+[2026-11-05T08:17:39.112Z] [INFO] Updated article with new image: 1793866658444-long-distance-relationship.jpg
+[2026-11-05T08:17:39.113Z] [INFO] Updated blog.html with new article card
+[2026-11-05T08:17:39.114Z] [INFO] Updated sitemap.xml
+[2026-11-05T08:17:39.115Z] [INFO] Starting Vercel deployment...
+[2026-11-05T08:18:03.945Z] [INFO] Vercel deployment completed
+[2026-11-05T08:18:03.945Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-05T08:21:04.260Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793866654862-long-distance-relationship → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-05T08:21:04.261Z] [INFO] ========== Automation Completed Successfully in 261.3s ==========
