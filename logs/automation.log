@@ -2341,3 +2341,18 @@
 [2026-11-05T08:18:03.945Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-05T08:21:04.260Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793866654862-long-distance-relationship → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-05T08:21:04.261Z] [INFO] ========== Automation Completed Successfully in 261.3s ==========
+[2026-11-06T08:16:41.459Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-06T08:16:41.461Z] [INFO] Selected topic: اضطراب ویزا و بلاتکلیفی اقامت؛ زندگی در انتظار یک پاسخ (Topic #44/74)
+[2026-11-06T08:16:41.462Z] [INFO] Generating article for topic: اضطراب ویزا و بلاتکلیفی اقامت؛ زندگی در انتظار یک پاسخ
+[2026-11-06T08:17:27.820Z] [INFO] Article created: articles/1793953047808-visa-anxiety.html
+[2026-11-06T08:17:27.821Z] [INFO] Article generated: اضطراب ویزا و بلاتکلیفی اقامت: وقتی زندگی‌تان به یک ایمیل گره خورده است
+[2026-11-06T08:17:27.821Z] [INFO] Generating image via Segmind for topic: اضطراب ویزا و بلاتکلیفی اقامت
+[2026-11-06T08:17:31.883Z] [INFO] Image saved: articles/1793953051425-visa-anxiety.jpg
+[2026-11-06T08:17:31.884Z] [INFO] Updated article with new image: 1793953051425-visa-anxiety.jpg
+[2026-11-06T08:17:31.885Z] [INFO] Updated blog.html with new article card
+[2026-11-06T08:17:31.886Z] [INFO] Updated sitemap.xml
+[2026-11-06T08:17:31.887Z] [INFO] Starting Vercel deployment...
+[2026-11-06T08:17:56.752Z] [INFO] Vercel deployment completed
+[2026-11-06T08:17:56.753Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-06T08:20:56.986Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793953047808-visa-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-06T08:20:56.986Z] [INFO] ========== Automation Completed Successfully in 255.5s ==========
