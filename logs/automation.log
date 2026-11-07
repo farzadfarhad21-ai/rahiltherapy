@@ -2356,3 +2356,18 @@
 [2026-11-06T08:17:56.753Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-06T08:20:56.986Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1793953047808-visa-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-06T08:20:56.986Z] [INFO] ========== Automation Completed Successfully in 255.5s ==========
+[2026-11-07T08:16:40.183Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-07T08:16:40.185Z] [INFO] Selected topic: چگونه روان‌درمانگر فارسی‌زبان مناسب پیدا کنیم؛ راهنمای عملی برای ایرانیان خارج از کشور (Topic #45/74)
+[2026-11-07T08:16:40.186Z] [INFO] Generating article for topic: چگونه روان‌درمانگر فارسی‌زبان مناسب پیدا کنیم؛ راهنمای عملی برای ایرانیان خارج از کشور
+[2026-11-07T08:17:29.376Z] [INFO] Article created: articles/1794039449364-finding-farsi-therapist.html
+[2026-11-07T08:17:29.377Z] [INFO] Article generated: چگونه روان‌درمانگر فارسی‌زبان مناسب پیدا کنیم؟ راهنمای عملی برای ایرانیان خارج از کشور
+[2026-11-07T08:17:29.377Z] [INFO] Generating image via Segmind for topic: یافتن روان‌درمانگر فارسی‌زبان در خارج از کشور
+[2026-11-07T08:17:33.875Z] [INFO] Image saved: articles/1794039453176-finding-farsi-therapist.jpg
+[2026-11-07T08:17:33.876Z] [INFO] Updated article with new image: 1794039453176-finding-farsi-therapist.jpg
+[2026-11-07T08:17:33.877Z] [INFO] Updated blog.html with new article card
+[2026-11-07T08:17:33.878Z] [INFO] Updated sitemap.xml
+[2026-11-07T08:17:33.879Z] [INFO] Starting Vercel deployment...
+[2026-11-07T08:17:58.660Z] [INFO] Vercel deployment completed
+[2026-11-07T08:17:58.660Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-07T08:20:59.029Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794039449364-finding-farsi-therapist → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-07T08:20:59.029Z] [INFO] ========== Automation Completed Successfully in 258.8s ==========
