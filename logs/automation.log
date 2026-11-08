@@ -2371,3 +2371,18 @@
 [2026-11-07T08:17:58.660Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-07T08:20:59.029Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794039449364-finding-farsi-therapist → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-07T08:20:59.029Z] [INFO] ========== Automation Completed Successfully in 258.8s ==========
+[2026-11-08T08:16:39.478Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-08T08:16:39.480Z] [INFO] Selected topic: باورهای ذهنی؛ قوانین نانوشته‌ای که رفتار ما را هدایت می‌کنند (Topic #46/74)
+[2026-11-08T08:16:39.481Z] [INFO] Generating article for topic: باورهای ذهنی؛ قوانین نانوشته‌ای که رفتار ما را هدایت می‌کنند
+[2026-11-08T08:17:25.646Z] [INFO] Article created: articles/1794125845633-core-beliefs.html
+[2026-11-08T08:17:25.646Z] [INFO] Article generated: باورهای ذهنی: قوانین نانوشته‌ای که بدون اجازه ما تصمیم می‌گیرند
+[2026-11-08T08:17:25.646Z] [INFO] Generating image via Segmind for topic: باورهای ذهنی
+[2026-11-08T08:17:31.794Z] [INFO] Image saved: articles/1794125851331-core-beliefs.jpg
+[2026-11-08T08:17:31.795Z] [INFO] Updated article with new image: 1794125851331-core-beliefs.jpg
+[2026-11-08T08:17:31.796Z] [INFO] Updated blog.html with new article card
+[2026-11-08T08:17:31.796Z] [INFO] Updated sitemap.xml
+[2026-11-08T08:17:31.797Z] [INFO] Starting Vercel deployment...
+[2026-11-08T08:17:54.223Z] [INFO] Vercel deployment completed
+[2026-11-08T08:17:54.223Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-08T08:20:54.582Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794125845633-core-beliefs → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-08T08:20:54.583Z] [INFO] ========== Automation Completed Successfully in 255.1s ==========
