@@ -2386,3 +2386,18 @@
 [2026-11-08T08:17:54.223Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-08T08:20:54.582Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794125845633-core-beliefs → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-08T08:20:54.583Z] [INFO] ========== Automation Completed Successfully in 255.1s ==========
+[2026-11-09T08:16:47.436Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-09T08:16:47.438Z] [INFO] Selected topic: درمان افسردگی با CBT؛ فعال‌سازی رفتاری و بازسازی شناختی گام به گام (Topic #47/74)
+[2026-11-09T08:16:47.439Z] [INFO] Generating article for topic: درمان افسردگی با CBT؛ فعال‌سازی رفتاری و بازسازی شناختی گام به گام
+[2026-11-09T08:17:35.238Z] [INFO] Article created: articles/1794212255223-cbt-for-depression.html
+[2026-11-09T08:17:35.238Z] [INFO] Article generated: درمان افسردگی با CBT: از فعال‌سازی رفتاری تا بازسازی شناختی، قدم به قدم
+[2026-11-09T08:17:35.239Z] [INFO] Generating image via Segmind for topic: درمان افسردگی با CBT
+[2026-11-09T08:17:40.482Z] [INFO] Image saved: articles/1794212259733-cbt-for-depression.jpg
+[2026-11-09T08:17:40.483Z] [INFO] Updated article with new image: 1794212259733-cbt-for-depression.jpg
+[2026-11-09T08:17:40.484Z] [INFO] Updated blog.html with new article card
+[2026-11-09T08:17:40.485Z] [INFO] Updated sitemap.xml
+[2026-11-09T08:17:40.485Z] [INFO] Starting Vercel deployment...
+[2026-11-09T08:18:05.837Z] [INFO] Vercel deployment completed
+[2026-11-09T08:18:05.838Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-09T08:21:06.095Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794212255223-cbt-for-depression → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-09T08:21:06.095Z] [INFO] ========== Automation Completed Successfully in 258.7s ==========
