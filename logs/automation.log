@@ -2401,3 +2401,18 @@
 [2026-11-09T08:18:05.838Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-09T08:21:06.095Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794212255223-cbt-for-depression → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-09T08:21:06.095Z] [INFO] ========== Automation Completed Successfully in 258.7s ==========
+[2026-11-10T08:16:44.274Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-10T08:16:44.277Z] [INFO] Selected topic: درمان اضطراب با CBT؛ از شناسایی افکار خودکار تا مواجهه تدریجی (Topic #48/74)
+[2026-11-10T08:16:44.278Z] [INFO] Generating article for topic: درمان اضطراب با CBT؛ از شناسایی افکار خودکار تا مواجهه تدریجی
+[2026-11-10T08:17:30.442Z] [INFO] Article created: articles/1794298650424-cbt-for-anxiety.html
+[2026-11-10T08:17:30.442Z] [INFO] Article generated: درمان اضطراب با CBT: از شناسایی افکار خودکار تا مواجهه تدریجی
+[2026-11-10T08:17:30.443Z] [INFO] Generating image via Segmind for topic: درمان اضطراب با CBT
+[2026-11-10T08:17:56.854Z] [INFO] Image saved: articles/1794298676135-cbt-for-anxiety.jpg
+[2026-11-10T08:17:56.855Z] [INFO] Updated article with new image: 1794298676135-cbt-for-anxiety.jpg
+[2026-11-10T08:17:56.857Z] [INFO] Updated blog.html with new article card
+[2026-11-10T08:17:56.857Z] [INFO] Updated sitemap.xml
+[2026-11-10T08:17:56.858Z] [INFO] Starting Vercel deployment...
+[2026-11-10T08:18:22.752Z] [INFO] Vercel deployment completed
+[2026-11-10T08:18:22.753Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-10T08:21:23.068Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794298650424-cbt-for-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-10T08:21:23.068Z] [INFO] ========== Automation Completed Successfully in 278.8s ==========
