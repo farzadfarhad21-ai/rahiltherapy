@@ -2416,3 +2416,18 @@
 [2026-11-10T08:18:22.753Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-10T08:21:23.068Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794298650424-cbt-for-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-10T08:21:23.068Z] [INFO] ========== Automation Completed Successfully in 278.8s ==========
+[2026-11-11T08:16:39.851Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-11T08:16:39.852Z] [INFO] Selected topic: سبک‌های دلبستگی؛ چهار الگوی رابطه و اینکه کدام یک شماست (Topic #49/74)
+[2026-11-11T08:16:39.853Z] [INFO] Generating article for topic: سبک‌های دلبستگی؛ چهار الگوی رابطه و اینکه کدام یک شماست
+[2026-11-11T08:17:26.484Z] [INFO] Article created: articles/1794385046473-attachment-styles.html
+[2026-11-11T08:17:26.484Z] [INFO] Article generated: سبک‌های دلبستگی: چهار الگوی رابطه و اینکه کدام‌یک شماست
+[2026-11-11T08:17:26.484Z] [INFO] Generating image via Segmind for topic: سبک‌های دلبستگی
+[2026-11-11T08:17:30.653Z] [INFO] Image saved: articles/1794385050019-attachment-styles.jpg
+[2026-11-11T08:17:30.653Z] [INFO] Updated article with new image: 1794385050019-attachment-styles.jpg
+[2026-11-11T08:17:30.654Z] [INFO] Updated blog.html with new article card
+[2026-11-11T08:17:30.655Z] [INFO] Updated sitemap.xml
+[2026-11-11T08:17:30.655Z] [INFO] Starting Vercel deployment...
+[2026-11-11T08:17:51.471Z] [INFO] Vercel deployment completed
+[2026-11-11T08:17:51.472Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-11T08:20:51.614Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794385046473-attachment-styles → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-11T08:20:51.614Z] [INFO] ========== Automation Completed Successfully in 251.8s ==========
