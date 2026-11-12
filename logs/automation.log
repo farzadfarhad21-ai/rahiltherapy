@@ -2431,3 +2431,18 @@
 [2026-11-11T08:17:51.472Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-11T08:20:51.614Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794385046473-attachment-styles → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-11T08:20:51.614Z] [INFO] ========== Automation Completed Successfully in 251.8s ==========
+[2026-11-12T08:16:40.937Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-12T08:16:40.939Z] [INFO] Selected topic: روانشناس آنلاین یا حضوری؛ کدام برای شما بهتر است و چه فرقی در نتیجه دارد (Topic #50/74)
+[2026-11-12T08:16:40.940Z] [INFO] Generating article for topic: روانشناس آنلاین یا حضوری؛ کدام برای شما بهتر است و چه فرقی در نتیجه دارد
+[2026-11-12T08:17:27.127Z] [INFO] Article created: articles/1794471447110-online-vs-inperson.html
+[2026-11-12T08:17:27.127Z] [INFO] Article generated: روانشناس آنلاین یا حضوری؛ کدام برای شما بهتر است؟
+[2026-11-12T08:17:27.128Z] [INFO] Generating image via Segmind for topic: روانشناس آنلاین یا حضوری
+[2026-11-12T08:17:32.017Z] [INFO] Image saved: articles/1794471451383-online-vs-inperson.jpg
+[2026-11-12T08:17:32.018Z] [INFO] Updated article with new image: 1794471451383-online-vs-inperson.jpg
+[2026-11-12T08:17:32.020Z] [INFO] Updated blog.html with new article card
+[2026-11-12T08:17:32.020Z] [INFO] Updated sitemap.xml
+[2026-11-12T08:17:32.021Z] [INFO] Starting Vercel deployment...
+[2026-11-12T08:17:57.861Z] [INFO] Vercel deployment completed
+[2026-11-12T08:17:57.861Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-12T08:20:58.081Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794471447110-online-vs-inperson → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-12T08:20:58.082Z] [INFO] ========== Automation Completed Successfully in 257.1s ==========
