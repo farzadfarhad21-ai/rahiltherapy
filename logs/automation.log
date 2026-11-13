@@ -2446,3 +2446,18 @@
 [2026-11-12T08:17:57.861Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-12T08:20:58.081Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794471447110-online-vs-inperson → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-12T08:20:58.082Z] [INFO] ========== Automation Completed Successfully in 257.1s ==========
+[2026-11-13T08:16:42.482Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-13T08:16:42.485Z] [INFO] Selected topic: چرا بعضی زنان روانشناس زن را ترجیح می‌دهند و این انتخاب چه اثری بر درمان دارد (Topic #51/74)
+[2026-11-13T08:16:42.486Z] [INFO] Generating article for topic: چرا بعضی زنان روانشناس زن را ترجیح می‌دهند و این انتخاب چه اثری بر درمان دارد
+[2026-11-13T08:17:30.564Z] [INFO] Article created: articles/1794557850545-female-therapist.html
+[2026-11-13T08:17:30.564Z] [INFO] Article generated: روانشناس زن یا مرد؟ آنچه پژوهش‌ها درباره انتخاب درمانگر به زنان می‌گویند
+[2026-11-13T08:17:30.565Z] [INFO] Generating image via Segmind for topic: ترجیح روانشناس زن
+[2026-11-13T08:17:35.463Z] [INFO] Image saved: articles/1794557854786-female-therapist.jpg
+[2026-11-13T08:17:35.464Z] [INFO] Updated article with new image: 1794557854786-female-therapist.jpg
+[2026-11-13T08:17:35.465Z] [INFO] Updated blog.html with new article card
+[2026-11-13T08:17:35.466Z] [INFO] Updated sitemap.xml
+[2026-11-13T08:17:35.467Z] [INFO] Starting Vercel deployment...
+[2026-11-13T08:18:02.463Z] [INFO] Vercel deployment completed
+[2026-11-13T08:18:02.464Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-13T08:21:02.821Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794557850545-female-therapist → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-13T08:21:02.821Z] [INFO] ========== Automation Completed Successfully in 260.3s ==========
