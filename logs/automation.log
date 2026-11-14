@@ -2461,3 +2461,18 @@
 [2026-11-13T08:18:02.464Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-13T08:21:02.821Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794557850545-female-therapist → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-13T08:21:02.821Z] [INFO] ========== Automation Completed Successfully in 260.3s ==========
+[2026-11-14T08:16:44.150Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-14T08:16:44.152Z] [INFO] Selected topic: روان‌درمانی چند جلسه طول می‌کشد؛ آنچه پژوهش‌ها دربارهٔ طول درمان می‌گویند (Topic #52/74)
+[2026-11-14T08:16:44.153Z] [INFO] Generating article for topic: روان‌درمانی چند جلسه طول می‌کشد؛ آنچه پژوهش‌ها دربارهٔ طول درمان می‌گویند
+[2026-11-14T08:17:30.491Z] [INFO] Article created: articles/1794644250476-how-many-sessions.html
+[2026-11-14T08:17:30.491Z] [INFO] Article generated: روان‌درمانی چند جلسه طول می‌کشد؟ آنچه پژوهش‌ها دربارهٔ طول درمان می‌گویند
+[2026-11-14T08:17:30.491Z] [INFO] Generating image via Segmind for topic: تعداد جلسات روان‌درمانی
+[2026-11-14T08:17:35.211Z] [INFO] Image saved: articles/1794644254566-how-many-sessions.jpg
+[2026-11-14T08:17:35.211Z] [INFO] Updated article with new image: 1794644254566-how-many-sessions.jpg
+[2026-11-14T08:17:35.213Z] [INFO] Updated blog.html with new article card
+[2026-11-14T08:17:35.213Z] [INFO] Updated sitemap.xml
+[2026-11-14T08:17:35.214Z] [INFO] Starting Vercel deployment...
+[2026-11-14T08:17:59.329Z] [INFO] Vercel deployment completed
+[2026-11-14T08:17:59.329Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-14T08:20:59.664Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794644250476-how-many-sessions → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-14T08:20:59.664Z] [INFO] ========== Automation Completed Successfully in 255.5s ==========
