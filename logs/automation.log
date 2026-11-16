@@ -2491,3 +2491,18 @@
 [2026-11-15T08:17:57.747Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-15T08:20:57.813Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794730652413-online-erp → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-15T08:20:57.814Z] [INFO] ========== Automation Completed Successfully in 252.1s ==========
+[2026-11-16T08:16:41.837Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-16T08:16:41.839Z] [INFO] Selected topic: افسردگی پس از زایمان در غربت؛ وقتی مادر شدن دور از خانواده سنگین می‌شود (Topic #54/74)
+[2026-11-16T08:16:41.840Z] [INFO] Generating article for topic: افسردگی پس از زایمان در غربت؛ وقتی مادر شدن دور از خانواده سنگین می‌شود
+[2026-11-16T08:17:26.650Z] [INFO] Article created: articles/1794817046635-postpartum-depression.html
+[2026-11-16T08:17:26.651Z] [INFO] Article generated: افسردگی پس از زایمان در غربت: چرا مادر شدن دور از خانواده سنگین‌تر می‌شود؟
+[2026-11-16T08:17:26.651Z] [INFO] Generating image via Segmind for topic: افسردگی پس از زایمان در غربت
+[2026-11-16T08:17:32.943Z] [INFO] Image saved: articles/1794817052261-postpartum-depression.jpg
+[2026-11-16T08:17:32.944Z] [INFO] Updated article with new image: 1794817052261-postpartum-depression.jpg
+[2026-11-16T08:17:32.945Z] [INFO] Updated blog.html with new article card
+[2026-11-16T08:17:32.946Z] [INFO] Updated sitemap.xml
+[2026-11-16T08:17:32.947Z] [INFO] Starting Vercel deployment...
+[2026-11-16T08:17:59.187Z] [INFO] Vercel deployment completed
+[2026-11-16T08:17:59.187Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-16T08:20:59.407Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794817046635-postpartum-depression → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-16T08:20:59.407Z] [INFO] ========== Automation Completed Successfully in 257.6s ==========
