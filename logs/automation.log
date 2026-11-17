@@ -2506,3 +2506,18 @@
 [2026-11-16T08:17:59.187Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-16T08:20:59.407Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794817046635-postpartum-depression → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-16T08:20:59.407Z] [INFO] ========== Automation Completed Successfully in 257.6s ==========
+[2026-11-17T08:16:41.848Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-17T08:16:41.850Z] [INFO] Selected topic: فرسودگی مادران شاغل؛ وقتی کار و مادری با هم تمام انرژی را می‌گیرند (Topic #55/74)
+[2026-11-17T08:16:41.851Z] [INFO] Generating article for topic: فرسودگی مادران شاغل؛ وقتی کار و مادری با هم تمام انرژی را می‌گیرند
+[2026-11-17T08:17:30.395Z] [INFO] Article created: articles/1794903450376-working-mothers.html
+[2026-11-17T08:17:30.396Z] [INFO] Article generated: فرسودگی مادران شاغل: چرا با وجود تلاش زیاد، همیشه خالی هستید؟
+[2026-11-17T08:17:30.396Z] [INFO] Generating image via Segmind for topic: فرسودگی مادران شاغل
+[2026-11-17T08:17:39.678Z] [INFO] Image saved: articles/1794903459029-working-mothers.jpg
+[2026-11-17T08:17:39.679Z] [INFO] Updated article with new image: 1794903459029-working-mothers.jpg
+[2026-11-17T08:17:39.680Z] [INFO] Updated blog.html with new article card
+[2026-11-17T08:17:39.680Z] [INFO] Updated sitemap.xml
+[2026-11-17T08:17:39.681Z] [INFO] Starting Vercel deployment...
+[2026-11-17T08:18:04.190Z] [INFO] Vercel deployment completed
+[2026-11-17T08:18:04.191Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-17T08:21:04.405Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794903450376-working-mothers → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-17T08:21:04.406Z] [INFO] ========== Automation Completed Successfully in 262.6s ==========
