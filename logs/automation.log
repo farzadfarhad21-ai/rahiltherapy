@@ -2521,3 +2521,18 @@
 [2026-11-17T08:18:04.191Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-17T08:21:04.405Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794903450376-working-mothers → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-17T08:21:04.406Z] [INFO] ========== Automation Completed Successfully in 262.6s ==========
+[2026-11-18T08:16:48.983Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-18T08:16:48.985Z] [INFO] Selected topic: اضطراب و نوسان خلق در دوران یائسگی؛ آنچه در بدن و ذهن می‌گذرد (Topic #56/74)
+[2026-11-18T08:16:48.986Z] [INFO] Generating article for topic: اضطراب و نوسان خلق در دوران یائسگی؛ آنچه در بدن و ذهن می‌گذرد
+[2026-11-18T08:17:38.897Z] [INFO] Article created: articles/1794989858883-menopause-anxiety.html
+[2026-11-18T08:17:38.897Z] [INFO] Article generated: اضطراب و نوسان خلق در یائسگی: چه چیزی در بدن و ذهن شما تغییر می‌کند؟
+[2026-11-18T08:17:38.898Z] [INFO] Generating image via Segmind for topic: اضطراب در دوران یائسگی
+[2026-11-18T08:17:43.507Z] [INFO] Image saved: articles/1794989862851-menopause-anxiety.jpg
+[2026-11-18T08:17:43.508Z] [INFO] Updated article with new image: 1794989862851-menopause-anxiety.jpg
+[2026-11-18T08:17:43.509Z] [INFO] Updated blog.html with new article card
+[2026-11-18T08:17:43.509Z] [INFO] Updated sitemap.xml
+[2026-11-18T08:17:43.510Z] [INFO] Starting Vercel deployment...
+[2026-11-18T08:18:08.945Z] [INFO] Vercel deployment completed
+[2026-11-18T08:18:08.946Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-18T08:21:09.279Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794989858883-menopause-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-18T08:21:09.279Z] [INFO] ========== Automation Completed Successfully in 260.3s ==========
