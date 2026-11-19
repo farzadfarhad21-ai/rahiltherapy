@@ -2536,3 +2536,18 @@
 [2026-11-18T08:18:08.946Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-18T08:21:09.279Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1794989858883-menopause-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-18T08:21:09.279Z] [INFO] ========== Automation Completed Successfully in 260.3s ==========
+[2026-11-19T08:16:42.639Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-19T08:16:42.641Z] [INFO] Selected topic: PMDD؛ وقتی پیش از قاعدگی خلق و رابطه‌ها به‌هم می‌ریزد (Topic #57/74)
+[2026-11-19T08:16:42.641Z] [INFO] Generating article for topic: PMDD؛ وقتی پیش از قاعدگی خلق و رابطه‌ها به‌هم می‌ریزد
+[2026-11-19T08:17:36.456Z] [INFO] Article created: articles/1795076256441-pmdd.html
+[2026-11-19T08:17:36.456Z] [INFO] Article generated: PMDD چیست و چرا پیش از قاعدگی خلق و رابطه‌هایم به‌هم می‌ریزد؟
+[2026-11-19T08:17:36.456Z] [INFO] Generating image via Segmind for topic: PMDD و نوسان خلق پیش از قاعدگی
+[2026-11-19T08:17:41.316Z] [INFO] Image saved: articles/1795076260626-pmdd.jpg
+[2026-11-19T08:17:41.317Z] [INFO] Updated article with new image: 1795076260626-pmdd.jpg
+[2026-11-19T08:17:41.318Z] [INFO] Updated blog.html with new article card
+[2026-11-19T08:17:41.319Z] [INFO] Updated sitemap.xml
+[2026-11-19T08:17:41.320Z] [INFO] Starting Vercel deployment...
+[2026-11-19T08:18:05.887Z] [INFO] Vercel deployment completed
+[2026-11-19T08:18:05.887Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-19T08:21:06.198Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795076256441-pmdd → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-19T08:21:06.198Z] [INFO] ========== Automation Completed Successfully in 263.6s ==========
