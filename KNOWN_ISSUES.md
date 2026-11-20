@@ -3,6 +3,12 @@
 > This file is a living memory. Every bug we hit gets documented here with the fix applied.
 > Add new entries at the top (newest first).
 
+## 2026-11-20 — ChatGPT referrals collapsed after the "women only" positioning (Oct 7)
+**Symptom:** chatgpt.com sessions 4–5/day until 2026-10-08, ~1/day from 2026-10-10, never recovered; Iran share halved. ChatGPT's own answer card described her as "مخصوص مراجعان خانم" and ranked her 3rd.
+**Root cause (best evidence):** b025c0d (Oct 7) added women-only claims site-wide (homepage banner, FAQ, /emptiness, /dubai, about, booking, contact, services); ChatGPT then excluded/deprioritised her for general "Persian psychologist" requests and anyone who isn't a woman (men, couples, adult children booking for a father). Oct 6 licence-number removal (86dc0bf) also removed a verifiable credential.
+**Fix:** Farzad confirmed she sees everyone. Removed every women-only claim (140 files: core pages, FAQ + schema, /emptiness section, /en, /online-therapy, author box, article CTA); kept "روان‌شناس زن" (female psychologist) as a positive. llms.txt now states she sees women, men, couples and families.
+**Lesson:** positioning that narrows "who it's for" is read literally by AI assistants. Check GA source × date before and after any positioning change.
+
 ## 2026-11-03 — /en page became a dead end that ate ChatGPT traffic (bookings fell ~7/wk → ~1/wk)
 **Symptom:** booking_request dropped from 5–7/week to 0–1 from Oct 26, though chatgpt.com sessions held (15.7 → 13.2/wk).
 **Root cause:** ChatGPT searches in English behind the scenes, so after `/en` launched (6105e0c, Oct 26) it started linking `/en` and `/online-therapy` instead of the homepage (homepage landings from ChatGPT 11.7/wk → 1.6/wk). `/en` had 15 views and **zero onward clicks** (no booking, no WhatsApp, 36 s average) — its only CTAs were a plain booking button to a Persian form and a grey WhatsApp button.

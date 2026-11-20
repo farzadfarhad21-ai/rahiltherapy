@@ -43,18 +43,18 @@ writing `+971…` or `0912…` undoes the signal.
 
 **Tagline (EN, 90 chars)**
 ```
-Farsi-speaking psychologist for women in Dubai. CBT & Schema Therapy. First session free.
+Farsi-speaking psychologist in Dubai. CBT & Schema Therapy. First session free.
 ```
 
 **Tagline (FA)**
 ```
-روان‌شناس فارسی‌زبان ویژه بانوان، مقیم دبی — جلسه اول رایگان
+روان‌شناس فارسی‌زبان مقیم دبی — جلسه اول رایگان
 ```
 
 **Short bio, 50 words (EN)**
 ```
 Raheleh Avinipour is a Persian-speaking psychologist based in Dubai, specialising in
-Cognitive Behavioral Therapy and Schema Therapy. She works with women — in person in Dubai
+Cognitive Behavioral Therapy and Schema Therapy. She works with adults, couples and families — in person in Dubai
 and online worldwide on anxiety, depression, OCD, self-esteem, relationships, and the identity and
 belonging questions that come with migration. First consultation is free.
 ```
@@ -198,7 +198,7 @@ Check what has actually landed: https://ahrefs.com/backlink-checker (free, weekl
 ```
 راحله اوینی‌پور، روان‌شناس عمومی فارسی‌زبان مقیم دبی، با بیش از ۱۵ سال تجربه بالینی و ۳٬۰۰۰+ ساعت کار حرفه‌ای با مراجعان ایرانی در سراسر جهان. تخصص: درمان شناختی-رفتاری (CBT) و طرحواره‌درمانی (Schema Therapy).
 
-خدمات: درمان اضطراب، افسردگی، OCD، ADHD، عزت نفس، روابط، کودک درون، و چالش‌های روان‌شناختی مهاجرت. جلسات فقط برای بانوان و به زبان فارسی، آنلاین یا حضوری در دبی برگزار می‌شود.
+خدمات: درمان اضطراب، افسردگی، OCD، ADHD، عزت نفس، روابط، کودک درون، و چالش‌های روان‌شناختی مهاجرت. جلسات به زبان فارسی برای بزرگسالان، زوج‌ها و خانواده‌ها، آنلاین یا حضوری در دبی برگزار می‌شود.
 
 تحصیلات: کارشناسی ارشد روان‌شناسی عمومی، دوره‌های پیشرفته CBT و Schema Therapy (دانشگاه علوم پزشکی تهران).
 
@@ -217,7 +217,7 @@ Raheleh Avinipour is a Persian-speaking general psychologist based in Dubai, UAE
 
 Services include treatment for anxiety, depression, OCD, ADHD, self-esteem issues, relationship challenges, inner-child work, and the unique psychological challenges faced by the Iranian diaspora — identity, migration stress, and bicultural belonging.
 
-Sessions are for women only, conducted in Farsi (Persian) via secure video (Zoom, Google Meet, WhatsApp) or in person in Dubai. The first consultation is free.
+Sessions are open to women, men, couples and families, conducted in Farsi (Persian) via secure video (Zoom, Google Meet, WhatsApp) or in person in Dubai. The first consultation is free.
 
 Education: M.Sc. in General Psychology with clinical specialization, advanced certifications in CBT and Schema Therapy (Tehran University of Medical Sciences).
 
