@@ -2551,3 +2551,18 @@
 [2026-11-19T08:18:05.887Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-19T08:21:06.198Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795076256441-pmdd → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-19T08:21:06.198Z] [INFO] ========== Automation Completed Successfully in 263.6s ==========
+[2026-11-20T08:16:42.609Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-20T08:16:42.611Z] [INFO] Selected topic: خودانتقادی و صدای درونی سرزنشگر؛ چرا با خودمان این‌قدر سخت‌گیریم (Topic #58/74)
+[2026-11-20T08:16:42.611Z] [INFO] Generating article for topic: خودانتقادی و صدای درونی سرزنشگر؛ چرا با خودمان این‌قدر سخت‌گیریم
+[2026-11-20T08:17:30.946Z] [INFO] Article created: articles/1795162650932-self-criticism.html
+[2026-11-20T08:17:30.946Z] [INFO] Article generated: چرا این‌قدر با خودم سخت‌گیرم؟ نگاهی علمی به صدای درونی سرزنشگر
+[2026-11-20T08:17:30.946Z] [INFO] Generating image via Segmind for topic: خودانتقادی
+[2026-11-20T08:17:35.279Z] [INFO] Image saved: articles/1795162654783-self-criticism.jpg
+[2026-11-20T08:17:35.280Z] [INFO] Updated article with new image: 1795162654783-self-criticism.jpg
+[2026-11-20T08:17:35.281Z] [INFO] Updated blog.html with new article card
+[2026-11-20T08:17:35.282Z] [INFO] Updated sitemap.xml
+[2026-11-20T08:17:35.283Z] [INFO] Starting Vercel deployment...
+[2026-11-20T08:17:59.354Z] [INFO] Vercel deployment completed
+[2026-11-20T08:17:59.354Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-20T08:20:59.536Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795162650932-self-criticism → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-20T08:20:59.536Z] [INFO] ========== Automation Completed Successfully in 256.9s ==========
