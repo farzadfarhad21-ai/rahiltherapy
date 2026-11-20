@@ -26,6 +26,13 @@ Sitemap resubmitted by Farzad 2026-10-22 — Google read 104 URLs immediately (w
 - **New `/attachment-test`**: 12-item self-reflection test (anxiety/avoidance model), client-side only, nothing stored; GA event `attachment_test_complete`. Linked from the 3 attachment articles + all footers.
 - **Daily blog**: swapped NLP / دروغ / شکرگزاری / قدرت تفکر (same indices — no rotation shift) for وسواس وارسی، وسواس رابطه (ROCD)، وسواس آلودگی، افکار مزاحم. New-article prompt now requires a real sources block, 900–1200 words, and OCD posts link `/ocd`.
 
+### 2026-11-20 — scheduled check
+- Blog: 12/12 daily runs OK (Nov 9–20), all NEW articles, all on Telegram + IndexNow. 132 sitemap URLs 200; Google read sitemap Nov 19 (131).
+- GSC 28d to Nov 17: 22 clicks (prev 19), 262 impressions (prev 119). "iranian psychologist in dubai" 22 impr, pos 9.8, 1 click. /en 47 impr / 4 clicks.
+- GA: bookings wk46 = 4, wk47 (partial) = 0. Since Nov 3: 6 booking_request + 4 WhatsApp taps; **/online-therapy converts best** (4 sessions → 3 bookings + 2 WA). /en now converts (11 → 1 booking + 2 WA).
+- chatgpt.com still low: 3–11/wk (was 19–30 in Sep/Oct). Telegram now top source since Nov 3 (23 sessions).
+- Still open: iranianpsychologists unapproved (~3.5 weeks), dubaiparsi unpaid, Instagram still "evinipour", GBP unverified, homepage title name-first awaiting decision.
+
 ### 2026-11-03 — check + 25 new topics
 - 6 new articles Oct 29–Nov 3, all on Telegram + IndexNow (IndexNow fix 80f904c works). 115 sitemap URLs 200. New pages indexed (/online-therapy, /en, /ocd, /dubai, new articles); /attachment-test unknown.
 - GSC 28d: 20 clicks, 159 impr (prev 91). "iranian psychologist in dubai" visible at ~pos 10.
