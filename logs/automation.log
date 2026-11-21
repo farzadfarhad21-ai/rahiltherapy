@@ -2566,3 +2566,18 @@
 [2026-11-20T08:17:59.354Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-20T08:20:59.536Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795162650932-self-criticism → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-20T08:20:59.536Z] [INFO] ========== Automation Completed Successfully in 256.9s ==========
+[2026-11-21T08:16:40.501Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-21T08:16:40.504Z] [INFO] Selected topic: ترس از قضاوت دیگران؛ وقتی نظر مردم تصمیم‌های ما را می‌گیرد (Topic #59/74)
+[2026-11-21T08:16:40.505Z] [INFO] Generating article for topic: ترس از قضاوت دیگران؛ وقتی نظر مردم تصمیم‌های ما را می‌گیرد
+[2026-11-21T08:17:25.932Z] [INFO] Article created: articles/1795249045911-fear-of-judgment.html
+[2026-11-21T08:17:25.932Z] [INFO] Article generated: ترس از قضاوت دیگران: وقتی نظر مردم تصمیم‌های ما را می‌گیرد
+[2026-11-21T08:17:25.932Z] [INFO] Generating image via Segmind for topic: ترس از قضاوت دیگران
+[2026-11-21T08:17:30.310Z] [INFO] Image saved: articles/1795249049662-fear-of-judgment.jpg
+[2026-11-21T08:17:30.311Z] [INFO] Updated article with new image: 1795249049662-fear-of-judgment.jpg
+[2026-11-21T08:17:30.312Z] [INFO] Updated blog.html with new article card
+[2026-11-21T08:17:30.313Z] [INFO] Updated sitemap.xml
+[2026-11-21T08:17:30.314Z] [INFO] Starting Vercel deployment...
+[2026-11-21T08:17:55.323Z] [INFO] Vercel deployment completed
+[2026-11-21T08:17:55.324Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-21T08:20:55.572Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795249045911-fear-of-judgment → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-21T08:20:55.572Z] [INFO] ========== Automation Completed Successfully in 255.1s ==========
