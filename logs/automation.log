@@ -2581,3 +2581,18 @@
 [2026-11-21T08:17:55.324Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-21T08:20:55.572Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795249045911-fear-of-judgment → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-21T08:20:55.572Z] [INFO] ========== Automation Completed Successfully in 255.1s ==========
+[2026-11-22T08:16:40.515Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-22T08:16:40.518Z] [INFO] Selected topic: تنهایی همسران همراه در دبی؛ وقتی برای کار همسر مهاجرت کرده‌اید (Topic #60/74)
+[2026-11-22T08:16:40.519Z] [INFO] Generating article for topic: تنهایی همسران همراه در دبی؛ وقتی برای کار همسر مهاجرت کرده‌اید
+[2026-11-22T08:17:26.915Z] [INFO] Article created: articles/1795335446897-trailing-spouse.html
+[2026-11-22T08:17:26.916Z] [INFO] Article generated: تنهایی همسران همراه در دبی: وقتی برای کار همسرتان مهاجرت کرده‌اید
+[2026-11-22T08:17:26.916Z] [INFO] Generating image via Segmind for topic: تنهایی همسران همراه در دبی
+[2026-11-22T08:17:31.178Z] [INFO] Image saved: articles/1795335450687-trailing-spouse.jpg
+[2026-11-22T08:17:31.179Z] [INFO] Updated article with new image: 1795335450687-trailing-spouse.jpg
+[2026-11-22T08:17:31.180Z] [INFO] Updated blog.html with new article card
+[2026-11-22T08:17:31.181Z] [INFO] Updated sitemap.xml
+[2026-11-22T08:17:31.182Z] [INFO] Starting Vercel deployment...
+[2026-11-22T08:17:58.369Z] [INFO] Vercel deployment completed
+[2026-11-22T08:17:58.369Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-22T08:20:58.551Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795335446897-trailing-spouse → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-22T08:20:58.551Z] [INFO] ========== Automation Completed Successfully in 258.0s ==========
