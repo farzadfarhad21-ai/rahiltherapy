@@ -2611,3 +2611,18 @@
 [2026-11-23T08:18:12.135Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-23T08:21:12.337Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795421858202-return-decision → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-23T08:21:12.338Z] [INFO] ========== Automation Completed Successfully in 270.0s ==========
+[2026-11-24T08:16:41.266Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-24T08:16:41.268Z] [INFO] Selected topic: ازدواج بین‌فرهنگی؛ اختلاف‌های پنهان و راه‌های نزدیک شدن (Topic #62/74)
+[2026-11-24T08:16:41.270Z] [INFO] Generating article for topic: ازدواج بین‌فرهنگی؛ اختلاف‌های پنهان و راه‌های نزدیک شدن
+[2026-11-24T08:17:35.085Z] [INFO] Article created: articles/1795508255066-intercultural-marriage.html
+[2026-11-24T08:17:35.085Z] [INFO] Article generated: ازدواج بین‌فرهنگی: وقتی دو نفر یک جمله را به دو شکل می‌شنوند
+[2026-11-24T08:17:35.085Z] [INFO] Generating image via Segmind for topic: ازدواج بین‌فرهنگی
+[2026-11-24T08:17:39.617Z] [INFO] Image saved: articles/1795508258948-intercultural-marriage.jpg
+[2026-11-24T08:17:39.617Z] [INFO] Updated article with new image: 1795508258948-intercultural-marriage.jpg
+[2026-11-24T08:17:39.619Z] [INFO] Updated blog.html with new article card
+[2026-11-24T08:17:39.620Z] [INFO] Updated sitemap.xml
+[2026-11-24T08:17:39.621Z] [INFO] Starting Vercel deployment...
+[2026-11-24T08:18:08.490Z] [INFO] Vercel deployment completed
+[2026-11-24T08:18:08.490Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-24T08:21:08.699Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795508255066-intercultural-marriage → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-24T08:21:08.700Z] [INFO] ========== Automation Completed Successfully in 267.4s ==========
