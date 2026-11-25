@@ -61,6 +61,30 @@
       "destination": "/online-therapy.html"
     },
     {
+      "source": "/farsi-therapist-germany",
+      "destination": "/farsi-therapist-germany.html"
+    },
+    {
+      "source": "/farsi-therapist-canada",
+      "destination": "/farsi-therapist-canada.html"
+    },
+    {
+      "source": "/farsi-therapist-uk",
+      "destination": "/farsi-therapist-uk.html"
+    },
+    {
+      "source": "/farsi-therapist-usa",
+      "destination": "/farsi-therapist-usa.html"
+    },
+    {
+      "source": "/farsi-therapist-australia",
+      "destination": "/farsi-therapist-australia.html"
+    },
+    {
+      "source": "/farsi-therapist-turkey",
+      "destination": "/farsi-therapist-turkey.html"
+    },
+    {
       "source": "/parents",
       "destination": "/parents.html"
     },
