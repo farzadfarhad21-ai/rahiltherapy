@@ -26,6 +26,13 @@ Sitemap resubmitted by Farzad 2026-10-22 — Google read 104 URLs immediately (w
 - **New `/attachment-test`**: 12-item self-reflection test (anxiety/avoidance model), client-side only, nothing stored; GA event `attachment_test_complete`. Linked from the 3 attachment articles + all footers.
 - **Daily blog**: swapped NLP / دروغ / شکرگزاری / قدرت تفکر (same indices — no rotation shift) for وسواس وارسی، وسواس رابطه (ROCD)، وسواس آلودگی، افکار مزاحم. New-article prompt now requires a real sources block, 900–1200 words, and OCD posts link `/ocd`.
 
+### 2026-11-25 — check after positioning changes
+- Changes this week: women-only removed (d35eea9, Nov 20); homepage + llms.txt abroad-first (bd95a3f); 6 country pages (28cb657).
+- Blog 10/10 daily OK; 143 sitemap URLs 200; Google read sitemap Nov 23 (135). Country pages not yet known to Google (published today).
+- GSC 28d to Nov 22: 18 clicks (prev 18), 272 impressions (prev 116; Aug 81). Last full week dipped to 39 impr / 2 clicks. Target query "مشاوره روانشناسی آنلاین برای ایرانیان خارج از کشور" at pos ~107.
+- GA: bookings 0 for wk47 and wk48 (partial); chatgpt.com 4–6/wk (Sep 19–30). Since Oct 26 bookings by country: Iran 3, Australia 1, Spain 1, UAE 1.
+- Next: GSC "Request indexing" for the 6 country pages + homepage (Farzad); ChatGPT test prompts with screenshots; re-check ~Dec 4–9.
+
 ### 2026-11-20 — scheduled check
 - Blog: 12/12 daily runs OK (Nov 9–20), all NEW articles, all on Telegram + IndexNow. 132 sitemap URLs 200; Google read sitemap Nov 19 (131).
 - GSC 28d to Nov 17: 22 clicks (prev 19), 262 impressions (prev 119). "iranian psychologist in dubai" 22 impr, pos 9.8, 1 click. /en 47 impr / 4 clicks.
