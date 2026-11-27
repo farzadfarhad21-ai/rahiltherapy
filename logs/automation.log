@@ -2656,3 +2656,18 @@
 [2026-11-26T08:18:02.600Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-26T08:21:02.892Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795681051662-child-migration-anxiety → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-26T08:21:02.892Z] [INFO] ========== Automation Completed Successfully in 261.2s ==========
+[2026-11-27T08:16:42.808Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-27T08:16:42.810Z] [INFO] Selected topic: افت شغلی بعد از مهاجرت؛ وقتی عنوان و جایگاه قبلی را از دست می‌دهید (Topic #65/74)
+[2026-11-27T08:16:42.811Z] [INFO] Generating article for topic: افت شغلی بعد از مهاجرت؛ وقتی عنوان و جایگاه قبلی را از دست می‌دهید
+[2026-11-27T08:17:29.119Z] [INFO] Article created: articles/1795767449101-career-downgrade-migration.html
+[2026-11-27T08:17:29.119Z] [INFO] Article generated: افت شغلی بعد از مهاجرت: وقتی عنوان و جایگاه قبلی را از دست می‌دهید
+[2026-11-27T08:17:29.119Z] [INFO] Generating image via Segmind for topic: افت شغلی بعد از مهاجرت
+[2026-11-27T08:17:34.345Z] [INFO] Image saved: articles/1795767453685-career-downgrade-migration.jpg
+[2026-11-27T08:17:34.346Z] [INFO] Updated article with new image: 1795767453685-career-downgrade-migration.jpg
+[2026-11-27T08:17:34.348Z] [INFO] Updated blog.html with new article card
+[2026-11-27T08:17:34.349Z] [INFO] Updated sitemap.xml
+[2026-11-27T08:17:34.350Z] [INFO] Starting Vercel deployment...
+[2026-11-27T08:18:00.486Z] [INFO] Vercel deployment completed
+[2026-11-27T08:18:00.487Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-27T08:21:00.715Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795767449101-career-downgrade-migration → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-27T08:21:00.715Z] [INFO] ========== Automation Completed Successfully in 257.9s ==========
