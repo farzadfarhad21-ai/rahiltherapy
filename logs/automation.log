@@ -2671,3 +2671,18 @@
 [2026-11-27T08:18:00.487Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
 [2026-11-27T08:21:00.715Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795767449101-career-downgrade-migration → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
 [2026-11-27T08:21:00.715Z] [INFO] ========== Automation Completed Successfully in 257.9s ==========
+[2026-11-28T08:16:40.316Z] [INFO] ========== Daily Automation Started ==========
+[2026-11-28T08:16:40.319Z] [INFO] Selected topic: جدایی و طلاق در مهاجرت؛ وقتی دور از خانواده باید از نو شروع کنید (Topic #66/74)
+[2026-11-28T08:16:40.320Z] [INFO] Generating article for topic: جدایی و طلاق در مهاجرت؛ وقتی دور از خانواده باید از نو شروع کنید
+[2026-11-28T08:17:22.804Z] [INFO] Article created: articles/1795853842782-divorce-abroad.html
+[2026-11-28T08:17:22.804Z] [INFO] Article generated: جدایی و طلاق در مهاجرت: وقتی دور از خانواده باید از نو شروع کنید
+[2026-11-28T08:17:22.805Z] [INFO] Generating image via Segmind for topic: جدایی در مهاجرت
+[2026-11-28T08:17:26.711Z] [INFO] Image saved: articles/1795853846295-divorce-abroad.jpg
+[2026-11-28T08:17:26.711Z] [INFO] Updated article with new image: 1795853846295-divorce-abroad.jpg
+[2026-11-28T08:17:26.713Z] [INFO] Updated blog.html with new article card
+[2026-11-28T08:17:26.713Z] [INFO] Updated sitemap.xml
+[2026-11-28T08:17:26.714Z] [INFO] Starting Vercel deployment...
+[2026-11-28T08:17:52.631Z] [INFO] Vercel deployment completed
+[2026-11-28T08:17:52.632Z] [INFO] Post-deploy check: waiting 3min for Vercel to propagate...
+[2026-11-28T08:20:52.759Z] [WARN] Post-deploy check: https://rahiltherapy.com/articles/1795853842782-divorce-abroad → 404 (new pages usually go live with the git-push deploy a few minutes later; notify-telegram.js waits for it and pings IndexNow)
+[2026-11-28T08:20:52.759Z] [INFO] ========== Automation Completed Successfully in 252.4s ==========
